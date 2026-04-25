@@ -1,0 +1,2080 @@
+[
+  {
+    "element_id": "E0",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.8563,
+    "box": [
+      1597.21,
+      1089.89,
+      1872.68,
+      1190.15
+    ],
+    "box_format": "xyxy",
+    "text": "\u963f\u56de",
+    "matched_ocr": [
+      {
+        "text": "\u963f\u56de",
+        "confidence": 0.6436,
+        "box": [
+          1618.12,
+          1111.02,
+          1766.02,
+          1164.25
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E1",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.8402,
+    "box": [
+      1171.41,
+      2037.41,
+      1312.22,
+      2181.36
+    ],
+    "box_format": "xyxy",
+    "text": "n",
+    "matched_ocr": [
+      {
+        "text": "n",
+        "confidence": 0.5687,
+        "box": [
+          1195.32,
+          2058.91,
+          1278.84,
+          2143.05
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E2",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.8264,
+    "box": [
+      609.13,
+      2034.62,
+      744.34,
+      2186.59
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E3",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.8258,
+    "box": [
+      2146.19,
+      1892.4,
+      2301.77,
+      1998.57
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E4",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.8251,
+    "box": [
+      1317.87,
+      2039.47,
+      1456.12,
+      2178.57
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "n"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "n",
+        "confidence": 0.5687,
+        "box": [
+          1195.32,
+          2058.91,
+          1278.84,
+          2143.05
+        ],
+        "box_format": "xyxy",
+        "distance": 150.13
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "n",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E5",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.8149,
+    "box": [
+      463.8,
+      2034.73,
+      601.24,
+      2185.09
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "3:13 PM |mdf-ntse-fdn"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "3:13 PM |mdf-ntse-fdn",
+        "confidence": 0.9626,
+        "box": [
+          43.5,
+          1923.25,
+          426.28,
+          1962.75
+        ],
+        "box_format": "xyxy",
+        "distance": 341.24
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "3:13 PM |mdf-ntse-fdn",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E6",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.8126,
+    "box": [
+      889.73,
+      2034.25,
+      1029.39,
+      2184.37
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E7",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.8071,
+    "box": [
+      1030.95,
+      2038.56,
+      1167.87,
+      2182.64
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "n"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "n",
+        "confidence": 0.5687,
+        "box": [
+          1195.32,
+          2058.91,
+          1278.84,
+          2143.05
+        ],
+        "box_format": "xyxy",
+        "distance": 138.01
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "n",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E8",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7853,
+    "box": [
+      2514.16,
+      2030.31,
+      2666.37,
+      2186.24
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E9",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7849,
+    "box": [
+      1803.42,
+      2035.47,
+      1944.2,
+      2183.9
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "\u56fd",
+      "?"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "\u56fd",
+        "confidence": 0.5262,
+        "box": [
+          1840.83,
+          1924.97,
+          1882.59,
+          1959.31
+        ],
+        "box_format": "xyxy",
+        "distance": 167.98
+      },
+      {
+        "text": "?",
+        "confidence": 0.5047,
+        "box": [
+          1717.3,
+          1926.68,
+          1750.36,
+          1955.88
+        ],
+        "box_format": "xyxy",
+        "distance": 218.99
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "\u56fd ?",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E10",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7817,
+    "box": [
+      749.31,
+      2036.16,
+      889.33,
+      2189.2
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E11",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7792,
+    "box": [
+      1654.61,
+      2038.7,
+      1801.82,
+      2172.65
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "?",
+      "\u56fd"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "?",
+        "confidence": 0.5047,
+        "box": [
+          1717.3,
+          1926.68,
+          1750.36,
+          1955.88
+        ],
+        "box_format": "xyxy",
+        "distance": 164.49
+      },
+      {
+        "text": "\u56fd",
+        "confidence": 0.5262,
+        "box": [
+          1840.83,
+          1924.97,
+          1882.59,
+          1959.31
+        ],
+        "box_format": "xyxy",
+        "distance": 211.1
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "? \u56fd",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E12",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7719,
+    "box": [
+      3306.83,
+      310.92,
+      3438.26,
+      389.01
+    ],
+    "box_format": "xyxy",
+    "text": "K",
+    "matched_ocr": [
+      {
+        "text": "K",
+        "confidence": 0.9939,
+        "box": [
+          3330.21,
+          331.42,
+          3359.78,
+          362.33
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E13",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7628,
+    "box": [
+      3220.76,
+      47.23,
+      3448.54,
+      115.64
+    ],
+    "box_format": "xyxy",
+    "text": "Ask Gemini",
+    "matched_ocr": [
+      {
+        "text": "Ask Gemini",
+        "confidence": 0.9748,
+        "box": [
+          3267.57,
+          61.82,
+          3425.9,
+          96.16
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "C",
+      "\u2606"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "C",
+        "confidence": 0.751,
+        "box": [
+          3210.15,
+          149.4,
+          3257.13,
+          185.46
+        ],
+        "box_format": "xyxy",
+        "distance": 132.66
+      },
+      {
+        "text": "\u2606",
+        "confidence": 0.634,
+        "box": [
+          3121.42,
+          154.55,
+          3147.51,
+          178.59
+        ],
+        "box_format": "xyxy",
+        "distance": 217.54
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "C \u2606",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E14",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7622,
+    "box": [
+      1547.91,
+      1889.6,
+      1669.23,
+      1999.42
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "?"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "?",
+        "confidence": 0.5047,
+        "box": [
+          1717.3,
+          1926.68,
+          1750.36,
+          1955.88
+        ],
+        "box_format": "xyxy",
+        "distance": 125.3
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "?",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E15",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7618,
+    "box": [
+      1946.57,
+      2037.08,
+      2084.22,
+      2184.86
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "\u56fd"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "\u56fd",
+        "confidence": 0.5262,
+        "box": [
+          1840.83,
+          1924.97,
+          1882.59,
+          1959.31
+        ],
+        "box_format": "xyxy",
+        "distance": 228.3
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "\u56fd",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E16",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7577,
+    "box": [
+      2087.59,
+      2031.22,
+      2230.3,
+      2181.16
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E17",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7571,
+    "box": [
+      2232.72,
+      2032.84,
+      2372.31,
+      2184.18
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E18",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.742,
+    "box": [
+      2373.18,
+      2031.07,
+      2513.3,
+      2184.03
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E19",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.74,
+    "box": [
+      299.44,
+      144.81,
+      969.78,
+      190.11
+    ],
+    "box_format": "xyxy",
+    "text": "meet.google.com/mdf-ntse-fdn?authuser=0&pli=1",
+    "matched_ocr": [
+      {
+        "text": "meet.google.com/mdf-ntse-fdn?authuser=0&pli=1",
+        "confidence": 0.9971,
+        "box": [
+          307.97,
+          145.96,
+          981.31,
+          187.17
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "nx nxtex",
+      "Advix",
+      "Smallpdf.com - A...",
+      "Intrcx",
+      "Advix",
+      "M Inbox",
+      "YouTube"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "nx nxtex",
+        "confidence": 0.8843,
+        "box": [
+          584.61,
+          68.69,
+          735.99,
+          92.73
+        ],
+        "box_format": "xyxy",
+        "distance": 90.47
+      },
+      {
+        "text": "Advix",
+        "confidence": 0.9516,
+        "box": [
+          394.96,
+          63.54,
+          546.33,
+          97.88
+        ],
+        "box_format": "xyxy",
+        "distance": 185.5
+      },
+      {
+        "text": "Smallpdf.com - A...",
+        "confidence": 0.9522,
+        "box": [
+          328.84,
+          224.95,
+          549.81,
+          259.3
+        ],
+        "box_format": "xyxy",
+        "distance": 209.07
+      },
+      {
+        "text": "Intrcx",
+        "confidence": 0.8926,
+        "box": [
+          779.48,
+          63.54,
+          929.12,
+          97.88
+        ],
+        "box_format": "xyxy",
+        "distance": 236.2
+      },
+      {
+        "text": "Advix",
+        "confidence": 0.932,
+        "box": [
+          203.57,
+          63.54,
+          353.2,
+          97.88
+        ],
+        "box_format": "xyxy",
+        "distance": 366.64
+      },
+      {
+        "text": "M Inbox",
+        "confidence": 0.8441,
+        "box": [
+          963.92,
+          61.82,
+          1115.29,
+          99.6
+        ],
+        "box_format": "xyxy",
+        "distance": 414.18
+      },
+      {
+        "text": "YouTube",
+        "confidence": 0.9954,
+        "box": [
+          151.37,
+          223.23,
+          260.99,
+          257.58
+        ],
+        "box_format": "xyxy",
+        "distance": 434.6
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "nx nxtex Advix Smallpdf.com - A...",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E20",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7183,
+    "box": [
+      1457.98,
+      2035.56,
+      1592.38,
+      2172.85
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E21",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7138,
+    "box": [
+      328.31,
+      219.74,
+      549.46,
+      259.14
+    ],
+    "box_format": "xyxy",
+    "text": "Smallpdf.com - A...",
+    "matched_ocr": [
+      {
+        "text": "Smallpdf.com - A...",
+        "confidence": 0.9522,
+        "box": [
+          328.84,
+          224.95,
+          549.81,
+          259.3
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "meet.google.com/mdf-ntse-fdn?authuser=0&pli=1",
+      "YouTube"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "meet.google.com/mdf-ntse-fdn?authuser=0&pli=1",
+        "confidence": 0.9971,
+        "box": [
+          307.97,
+          145.96,
+          981.31,
+          187.17
+        ],
+        "box_format": "xyxy",
+        "distance": 218.28
+      },
+      {
+        "text": "YouTube",
+        "confidence": 0.9954,
+        "box": [
+          151.37,
+          223.23,
+          260.99,
+          257.58
+        ],
+        "box_format": "xyxy",
+        "distance": 232.71
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "meet.google.com/mdf-ntse-fdn?authuser=0&pli=1 YouTube",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E22",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7137,
+    "box": [
+      3303.92,
+      137.08,
+      3377.77,
+      196.44
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "Ask Gemini",
+      "C"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "Ask Gemini",
+        "confidence": 0.9748,
+        "box": [
+          3267.57,
+          61.82,
+          3425.9,
+          96.16
+        ],
+        "box_format": "xyxy",
+        "distance": 87.97
+      },
+      {
+        "text": "C",
+        "confidence": 0.751,
+        "box": [
+          3210.15,
+          149.4,
+          3257.13,
+          185.46
+        ],
+        "box_format": "xyxy",
+        "distance": 107.21
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "Ask Gemini C",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E23",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.7103,
+    "box": [
+      155.55,
+      221.87,
+      266.3,
+      259.76
+    ],
+    "box_format": "xyxy",
+    "text": "YouTube",
+    "matched_ocr": [
+      {
+        "text": "YouTube",
+        "confidence": 0.9954,
+        "box": [
+          151.37,
+          223.23,
+          260.99,
+          257.58
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "\u54c1",
+      "Smallpdf.com - A...",
+      "meet.google.com/mdf-ntse-fdn?authuser=0&pli=1"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "\u54c1",
+        "confidence": 0.9328,
+        "box": [
+          20.88,
+          219.8,
+          60.9,
+          261.01
+        ],
+        "box_format": "xyxy",
+        "distance": 170.04
+      },
+      {
+        "text": "Smallpdf.com - A...",
+        "confidence": 0.9522,
+        "box": [
+          328.84,
+          224.95,
+          549.81,
+          259.3
+        ],
+        "box_format": "xyxy",
+        "distance": 228.4
+      },
+      {
+        "text": "meet.google.com/mdf-ntse-fdn?authuser=0&pli=1",
+        "confidence": 0.9971,
+        "box": [
+          307.97,
+          145.96,
+          981.31,
+          187.17
+        ],
+        "box_format": "xyxy",
+        "distance": 440.02
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "\u54c1 Smallpdf.com - A... meet.google.com/mdf-ntse-fdn?authuser=0&pli=1",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E24",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.6936,
+    "box": [
+      1798.02,
+      1888.64,
+      1928.5,
+      2000.28
+    ],
+    "box_format": "xyxy",
+    "text": "\u56fd",
+    "matched_ocr": [
+      {
+        "text": "\u56fd",
+        "confidence": 0.5262,
+        "box": [
+          1840.83,
+          1924.97,
+          1882.59,
+          1959.31
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "?"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "?",
+        "confidence": 0.5047,
+        "box": [
+          1717.3,
+          1926.68,
+          1750.36,
+          1955.88
+        ],
+        "box_format": "xyxy",
+        "distance": 129.47
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "?",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E25",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.6567,
+    "box": [
+      3152.42,
+      1907.77,
+      3237.26,
+      1977.74
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E26",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.6539,
+    "box": [
+      2291.32,
+      56.05,
+      2341.58,
+      110.57
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "enr\""
+    ],
+    "nearby_ocr": [
+      {
+        "text": "enr\"",
+        "confidence": 0.8567,
+        "box": [
+          2345.41,
+          68.69,
+          2401.09,
+          94.45
+        ],
+        "box_format": "xyxy",
+        "distance": 56.83
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "enr\"",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E27",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.6532,
+    "box": [
+      1670.69,
+      1886.7,
+      1797.29,
+      2000.03
+    ],
+    "box_format": "xyxy",
+    "text": "?",
+    "matched_ocr": [
+      {
+        "text": "?",
+        "confidence": 0.5047,
+        "box": [
+          1717.3,
+          1926.68,
+          1750.36,
+          1955.88
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "\u56fd"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "\u56fd",
+        "confidence": 0.5262,
+        "box": [
+          1840.83,
+          1924.97,
+          1882.59,
+          1959.31
+        ],
+        "box_format": "xyxy",
+        "distance": 127.73
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "\u56fd",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E28",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.6512,
+    "box": [
+      1360.0,
+      1889.06,
+      1541.7,
+      1996.69
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "n"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "n",
+        "confidence": 0.5687,
+        "box": [
+          1195.32,
+          2058.91,
+          1278.84,
+          2143.05
+        ],
+        "box_format": "xyxy",
+        "distance": 265.88
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "n",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E29",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.647,
+    "box": [
+      3340.1,
+      431.05,
+      3417.58,
+      497.55
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "K"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "K",
+        "confidence": 0.9939,
+        "box": [
+          3330.21,
+          331.42,
+          3359.78,
+          362.33
+        ],
+        "box_format": "xyxy",
+        "distance": 122.21
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "K",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E30",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.6303,
+    "box": [
+      3201.65,
+      140.48,
+      3273.92,
+      198.84
+    ],
+    "box_format": "xyxy",
+    "text": "C",
+    "matched_ocr": [
+      {
+        "text": "C",
+        "confidence": 0.751,
+        "box": [
+          3210.15,
+          149.4,
+          3257.13,
+          185.46
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "\u2606",
+      "Ask Gemini"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "\u2606",
+        "confidence": 0.634,
+        "box": [
+          3121.42,
+          154.55,
+          3147.51,
+          178.59
+        ],
+        "box_format": "xyxy",
+        "distance": 103.37
+      },
+      {
+        "text": "Ask Gemini",
+        "confidence": 0.9748,
+        "box": [
+          3267.57,
+          61.82,
+          3425.9,
+          96.16
+        ],
+        "box_format": "xyxy",
+        "distance": 141.74
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "\u2606 Ask Gemini",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E31",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.614,
+    "box": [
+      16.79,
+      218.17,
+      66.99,
+      261.17
+    ],
+    "box_format": "xyxy",
+    "text": "\u54c1",
+    "matched_ocr": [
+      {
+        "text": "\u54c1",
+        "confidence": 0.9328,
+        "box": [
+          20.88,
+          219.8,
+          60.9,
+          261.01
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "YouTube"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "YouTube",
+        "confidence": 0.9954,
+        "box": [
+          151.37,
+          223.23,
+          260.99,
+          257.58
+        ],
+        "box_format": "xyxy",
+        "distance": 164.29
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "YouTube",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E32",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.6019,
+    "box": [
+      37.8,
+      1780.9,
+      309.86,
+      1850.0
+    ],
+    "box_format": "xyxy",
+    "text": "Kaartik Tejwani",
+    "matched_ocr": [
+      {
+        "text": "Kaartik Tejwani",
+        "confidence": 0.9629,
+        "box": [
+          60.9,
+          1792.74,
+          295.79,
+          1832.24
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "3:13 PM |mdf-ntse-fdn"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "3:13 PM |mdf-ntse-fdn",
+        "confidence": 0.9626,
+        "box": [
+          43.5,
+          1923.25,
+          426.28,
+          1962.75
+        ],
+        "box_format": "xyxy",
+        "distance": 141.41
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "3:13 PM |mdf-ntse-fdn",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E33",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.5974,
+    "box": [
+      1162.52,
+      1883.53,
+      1349.29,
+      1999.29
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "n"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "n",
+        "confidence": 0.5687,
+        "box": [
+          1195.32,
+          2058.91,
+          1278.84,
+          2143.05
+        ],
+        "box_format": "xyxy",
+        "distance": 160.68
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "n",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E34",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.5912,
+    "box": [
+      3054.56,
+      1908.93,
+      3146.36,
+      1984.18
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E35",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.5802,
+    "box": [
+      2739.17,
+      60.92,
+      2785.72,
+      103.22
+    ],
+    "box_format": "xyxy",
+    "text": "MO",
+    "matched_ocr": [
+      {
+        "text": "MO",
+        "confidence": 0.6389,
+        "box": [
+          2709.05,
+          65.25,
+          2778.65,
+          96.16
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [],
+    "nearby_ocr": [],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E36",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.569,
+    "box": [
+      1912.6,
+      55.88,
+      1959.59,
+      110.61
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "Usinx",
+      "howx"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "Usinx",
+        "confidence": 0.9189,
+        "box": [
+          1922.61,
+          65.25,
+          2065.28,
+          94.45
+        ],
+        "box_format": "xyxy",
+        "distance": 57.95
+      },
+      {
+        "text": "howx",
+        "confidence": 0.9311,
+        "box": [
+          1774.72,
+          65.25,
+          1875.63,
+          94.45
+        ],
+        "box_format": "xyxy",
+        "distance": 110.97
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "Usinx howx",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E37",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.5522,
+    "box": [
+      2852.46,
+      48.55,
+      3034.69,
+      122.11
+    ],
+    "box_format": "xyxy",
+    "text": "UI-D",
+    "matched_ocr": [
+      {
+        "text": "UI-D",
+        "confidence": 0.9682,
+        "box": [
+          2916.1,
+          66.97,
+          2971.78,
+          91.01
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "MO",
+      "\u2606"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "MO",
+        "confidence": 0.6389,
+        "box": [
+          2709.05,
+          65.25,
+          2778.65,
+          96.16
+        ],
+        "box_format": "xyxy",
+        "distance": 199.78
+      },
+      {
+        "text": "\u2606",
+        "confidence": 0.634,
+        "box": [
+          3121.42,
+          154.55,
+          3147.51,
+          178.59
+        ],
+        "box_format": "xyxy",
+        "distance": 207.46
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "MO \u2606",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E38",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.5463,
+    "box": [
+      1199.92,
+      60.42,
+      1265.96,
+      103.02
+    ],
+    "box_format": "xyxy",
+    "text": "Opex",
+    "matched_ocr": [
+      {
+        "text": "Opex",
+        "confidence": 0.952,
+        "box": [
+          1204.02,
+          65.25,
+          1303.2,
+          96.16
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "a",
+      "M Inbox"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "a",
+        "confidence": 0.9961,
+        "box": [
+          1357.14,
+          66.97,
+          1381.5,
+          89.29
+        ],
+        "box_format": "xyxy",
+        "distance": 136.43
+      },
+      {
+        "text": "M Inbox",
+        "confidence": 0.8441,
+        "box": [
+          963.92,
+          61.82,
+          1115.29,
+          99.6
+        ],
+        "box_format": "xyxy",
+        "distance": 193.34
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "a M Inbox",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E39",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.546,
+    "box": [
+      2673.88,
+      59.17,
+      2723.46,
+      104.43
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "MO",
+      "UI-D"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "MO",
+        "confidence": 0.6389,
+        "box": [
+          2709.05,
+          65.25,
+          2778.65,
+          96.16
+        ],
+        "box_format": "xyxy",
+        "distance": 45.19
+      },
+      {
+        "text": "UI-D",
+        "confidence": 0.9737,
+        "box": [
+          2517.66,
+          65.25,
+          2597.7,
+          94.45
+        ],
+        "box_format": "xyxy",
+        "distance": 141.0
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "MO UI-D",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E40",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.5448,
+    "box": [
+      243.38,
+      137.53,
+      308.49,
+      197.53
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "Advix",
+      "YouTube",
+      "Smallpdf.com - A...",
+      "Advix",
+      "meet.google.com/mdf-ntse-fdn?authuser=0&pli=1"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "Advix",
+        "confidence": 0.932,
+        "box": [
+          203.57,
+          63.54,
+          353.2,
+          97.88
+        ],
+        "box_format": "xyxy",
+        "distance": 86.85
+      },
+      {
+        "text": "YouTube",
+        "confidence": 0.9954,
+        "box": [
+          151.37,
+          223.23,
+          260.99,
+          257.58
+        ],
+        "box_format": "xyxy",
+        "distance": 100.88
+      },
+      {
+        "text": "Smallpdf.com - A...",
+        "confidence": 0.9522,
+        "box": [
+          328.84,
+          224.95,
+          549.81,
+          259.3
+        ],
+        "box_format": "xyxy",
+        "distance": 179.61
+      },
+      {
+        "text": "Advix",
+        "confidence": 0.9516,
+        "box": [
+          394.96,
+          63.54,
+          546.33,
+          97.88
+        ],
+        "box_format": "xyxy",
+        "distance": 213.19
+      },
+      {
+        "text": "meet.google.com/mdf-ntse-fdn?authuser=0&pli=1",
+        "confidence": 0.9971,
+        "box": [
+          307.97,
+          145.96,
+          981.31,
+          187.17
+        ],
+        "box_format": "xyxy",
+        "distance": 368.71
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "Advix YouTube Smallpdf.com - A...",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E41",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.5425,
+    "box": [
+      1927.53,
+      1887.94,
+      2050.04,
+      1999.19
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "\u56fd"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "\u56fd",
+        "confidence": 0.5262,
+        "box": [
+          1840.83,
+          1924.97,
+          1882.59,
+          1959.31
+        ],
+        "box_format": "xyxy",
+        "distance": 127.08
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "\u56fd",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E42",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.5405,
+    "box": [
+      2339.9,
+      61.82,
+      2403.74,
+      103.09
+    ],
+    "box_format": "xyxy",
+    "text": "enr\"",
+    "matched_ocr": [
+      {
+        "text": "enr\"",
+        "confidence": 0.8567,
+        "box": [
+          2345.41,
+          68.69,
+          2401.09,
+          94.45
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "UI-D"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "UI-D",
+        "confidence": 0.9737,
+        "box": [
+          2517.66,
+          65.25,
+          2597.7,
+          94.45
+        ],
+        "box_format": "xyxy",
+        "distance": 185.88
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "UI-D",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E43",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.511,
+    "box": [
+      1717.31,
+      57.63,
+      1832.34,
+      104.52
+    ],
+    "box_format": "xyxy",
+    "text": "howx",
+    "matched_ocr": [
+      {
+        "text": "howx",
+        "confidence": 0.9311,
+        "box": [
+          1774.72,
+          65.25,
+          1875.63,
+          94.45
+        ],
+        "box_format": "xyxy"
+      }
+    ],
+    "nearby_text": [
+      "X",
+      "New",
+      "Usinx"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "X",
+        "confidence": 0.5455,
+        "box": [
+          1659.88,
+          72.12,
+          1679.02,
+          87.58
+        ],
+        "box_format": "xyxy",
+        "distance": 105.38
+      },
+      {
+        "text": "New",
+        "confidence": 0.9044,
+        "box": [
+          1571.15,
+          65.25,
+          1644.22,
+          94.45
+        ],
+        "box_format": "xyxy",
+        "distance": 167.14
+      },
+      {
+        "text": "Usinx",
+        "confidence": 0.9189,
+        "box": [
+          1922.61,
+          65.25,
+          2065.28,
+          94.45
+        ],
+        "box_format": "xyxy",
+        "distance": 219.12
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "X New Usinx",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E44",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.5085,
+    "box": [
+      3091.3,
+      0.0,
+      3173.32,
+      28.26
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "UI-D",
+      "Ask Gemini"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "UI-D",
+        "confidence": 0.9682,
+        "box": [
+          2916.1,
+          66.97,
+          2971.78,
+          91.01
+        ],
+        "box_format": "xyxy",
+        "distance": 199.22
+      },
+      {
+        "text": "Ask Gemini",
+        "confidence": 0.9748,
+        "box": [
+          3267.57,
+          61.82,
+          3425.9,
+          96.16
+        ],
+        "box_format": "xyxy",
+        "distance": 224.02
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "UI-D Ask Gemini",
+      "source": "rules"
+    }
+  },
+  {
+    "element_id": "E45",
+    "class": "button",
+    "class_id": 0,
+    "confidence": 0.5061,
+    "box": [
+      281.43,
+      219.46,
+      330.17,
+      265.56
+    ],
+    "box_format": "xyxy",
+    "text": "",
+    "matched_ocr": [],
+    "nearby_text": [
+      "YouTube",
+      "Smallpdf.com - A...",
+      "meet.google.com/mdf-ntse-fdn?authuser=0&pli=1"
+    ],
+    "nearby_ocr": [
+      {
+        "text": "YouTube",
+        "confidence": 0.9954,
+        "box": [
+          151.37,
+          223.23,
+          260.99,
+          257.58
+        ],
+        "box_format": "xyxy",
+        "distance": 99.64
+      },
+      {
+        "text": "Smallpdf.com - A...",
+        "confidence": 0.9522,
+        "box": [
+          328.84,
+          224.95,
+          549.81,
+          259.3
+        ],
+        "box_format": "xyxy",
+        "distance": 133.53
+      },
+      {
+        "text": "meet.google.com/mdf-ntse-fdn?authuser=0&pli=1",
+        "confidence": 0.9971,
+        "box": [
+          307.97,
+          145.96,
+          981.31,
+          187.17
+        ],
+        "box_format": "xyxy",
+        "distance": 347.25
+      }
+    ],
+    "semantic": {
+      "role": "button_action",
+      "likely_action": "unknown",
+      "context": "YouTube Smallpdf.com - A... meet.google.com/mdf-ntse-fdn?authuser=0&pli=1",
+      "source": "rules"
+    }
+  }
+]

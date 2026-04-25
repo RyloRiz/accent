@@ -1,0 +1,10 @@
+gradio==4.44.1
+pydantic<2.11
+torch>=2.0.0
+opencv-python-headless==4.10.0.84
+pillow>=10.0.0
+numpy>=1.24.0
+supervision>=0.22.0
+rapidocr_onnxruntime==1.4.4
+langchain-ollama==0.3.10
+rfdetr
