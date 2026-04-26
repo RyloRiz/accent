@@ -1,105 +1,145 @@
-from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_ollama import ChatOllama
 from pathlib import Path
 from PIL import Image
 import base64
 import io
 import json
 import os
+import re
+import requests
 import sys
 
 OUTPUT_DIR = Path("/Users/kaartiktejwani/UCLA Files/Playground Code/UI-DETR-1/test_outputs")
-DEFAULT_IMAGE_FILE = OUTPUT_DIR / "input_image.png"
-DEFAULT_DETECTIONS_FILE = OUTPUT_DIR / "detections.json"
+DEFAULT_ANNOTATED_IMAGE_FILE = OUTPUT_DIR / "annotated_image.png"
+DEFAULT_ELEMENT_IDS_FILE = OUTPUT_DIR / "element_ids.json"
 CHAT_LOG_FILE = OUTPUT_DIR / "llm_chat_log.json"
 SEMANTICS_FILE = OUTPUT_DIR / "llm_semantics.json"
-MAX_DETECTIONS = int(os.getenv("LLM_MAX_DETECTIONS", "40"))
+LLMS_FILE = OUTPUT_DIR / "llms.json"
+ENV_FILE = Path("/Users/kaartiktejwani/UCLA Files/Playground Code/UI-DETR-1/.env")
 
 
-def image_to_base64_png(image_path: Path) -> str:
+def load_dotenv(env_file: Path) -> None:
+    if not env_file.exists():
+        return
+
+    for line in env_file.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in stripped:
+            continue
+
+        key, value = stripped.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip("'\"")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
+def image_to_png_bytes(image_path: Path) -> bytes:
     with Image.open(image_path) as image:
         buffer = io.BytesIO()
         image.convert("RGB").save(buffer, format="PNG")
-    return base64.b64encode(buffer.getvalue()).decode("ascii")
+    return buffer.getvalue()
+
+
+def gemini_api_url(model_name: str) -> str:
+    api_version = os.getenv("GEMINI_API_VERSION", "v1alpha")
+    return (
+        f"https://generativelanguage.googleapis.com/{api_version}/models/"
+        f"{model_name}:generateContent"
+    )
+
+
+def supports_thinking_level(model_name: str) -> bool:
+    no_thinking_level_models = {
+        "gemini-2.5-flash-lite",
+        "gemini-2.5-flash-lite-preview-09-2025",
+        "gemini-2.0-flash-lite",
+        "gemini-2.0-flash-lite-001",
+    }
+    return model_name not in no_thinking_level_models
+
+
+def extract_gemini_text(response_json: dict) -> str:
+    parts = (
+        response_json.get("candidates", [{}])[0]
+        .get("content", {})
+        .get("parts", [])
+    )
+    text_parts = [part.get("text", "") for part in parts if part.get("text")]
+    return "\n".join(text_parts).strip()
+
+
+def response_schema(element_ids: list[str]) -> dict:
+    return {
+        "type": "object",
+        "properties": {
+            element_id: {
+                "type": "string",
+                "description": f"Short semantic meaning for UI element {element_id}.",
+            }
+            for element_id in element_ids
+        },
+        "required": element_ids,
+        "propertyOrdering": element_ids,
+    }
 
 
 def system_prompt() -> str:
     return (
-        "You are a UI semantics analyzer. You receive one screenshot image and one JSON "
-        "array of detections produced by a UI object detector plus OCR/spatial matching. "
-        "Use the screenshot as visual ground truth. Use the JSON for exact boxes, class "
-        "labels, OCR text, matched OCR, and nearby text. Do not ask for the image; it is "
-        "attached in the same user message. Return only valid JSON. Do not include markdown. "
-        "Do not include a state field."
+        "You are a UI semantics labeling assistant. You will receive one annotated "
+        "screenshot and a checklist of expected element ids. Green boxes identify UI "
+        "elements. Each green label is an element id such as E0, E1, E2. Use the "
+        "checklist to make sure no ids are skipped. Return only valid JSON. Do not "
+        "include markdown, explanations, arrays, coordinates, or a state field."
     )
 
 
-def user_prompt(detections: list) -> str:
+def sort_element_ids(element_ids: list[str]) -> list[str]:
+    return sorted(element_ids, key=lambda element_id: int(element_id[1:]))
+
+
+def load_element_ids(element_ids_file: Path) -> list[str]:
+    data = json.loads(element_ids_file.read_text(encoding="utf-8"))
+    if not isinstance(data, list):
+        raise ValueError(f"Expected {element_ids_file} to contain a JSON list.")
+
+    element_ids = []
+    for item in data:
+        element_id = str(item)
+        if re.fullmatch(r"E\d+", element_id):
+            element_ids.append(element_id)
+
+    deduped = list(dict.fromkeys(element_ids))
+    if not deduped:
+        raise ValueError(f"No element ids found in {element_ids_file}.")
+    return sort_element_ids(deduped)
+
+
+def user_prompt(element_ids: list[str]) -> str:
+    element_ids_json = json.dumps(element_ids)
     return (
-        "Analyze the screenshot and the full detections JSON. Add semantic meaning for "
-        "UI elements, especially buttons, links, fields, headings, labels, and icon-like "
-        "controls.\n\n"
-        "Return exactly this JSON shape:\n"
-        '{"items":[{"index":0,"role":"string","likely_action":"string",'
-        '"context":"string","confidence":0.0}]}\n\n'
-        "Rules:\n"
-        "- Do not echo or copy the detections input JSON.\n"
-        "- The only top-level key in your response must be items.\n"
-        "- index must match the array index in detections.\n"
-        "- role should be concise, e.g. primary_button, destructive_button, navigation_link, "
-        "text_input, section_heading, label, icon_button, image, text_block.\n"
-        "- likely_action should describe what the user expects if they click/type/use it.\n"
-        "- context should be a short phrase from the visible screen context.\n"
-        "- confidence must be between 0 and 1.\n"
-        "- Include every detection in the compact detections list.\n"
-        "- If the detector/OCR is uncertain, still give the best guess with lower confidence.\n\n"
-        f"Compact detections JSON:\n{json.dumps({'detections': detections}, ensure_ascii=True)}"
+        "Label every boxed UI element in this screenshot with what it does if clicked "
+        "or used.\n\n"
+        f"Element id checklist, complete and ordered:\n{element_ids_json}\n\n"
+        "Return exactly one JSON object in this shape:\n"
+        '{"E0":"semantic meaning","E1":"semantic meaning"}\n\n'
+        "Requirements:\n"
+        "- Use exactly the element ids from the checklist as keys. No missing keys. No extra keys.\n"
+        "- Order keys by element id ascending, exactly matching the checklist order.\n"
+        "- Be specific enough that a human knows what clicking the element would do.\n"
+        "- Inspect each box in the screenshot independently. Do not assume adjacent "
+        "element ids are the same type of UI.\n"
+        "- Do not write generic labels like app icon or system utility when a specific "
+        "meaning is visible. Name the app or utility, for example Chrome icon, Finder "
+        "icon, microphone mute button, camera toggle, meeting hang up button, screen "
+        "share button, captions button, participants button, chat button, more options "
+        "button, address bar, bookmark, tab, or extension button.\n"
+        "- If an element is hard to read, keep its key and use the best visible "
+        "interpretation. If there is no useful visual context, write unknown element.\n"
+        "- Values must be short strings, not nested objects."
     )
 
 
-def detection_priority(detection: dict) -> int:
-    class_name = detection.get("class", "")
-    text = detection.get("text", "")
-    nearby_text = detection.get("nearby_text", [])
-
-    if class_name in {"button", "field", "link", "heading"}:
-        return 0
-    if text:
-        return 1
-    if nearby_text:
-        return 2
-    if class_name in {"label", "text"}:
-        return 3
-    return 4
-
-
-def compact_detections(detections: list) -> list:
-    indexed = [
-        {
-            "index": index,
-            "element_id": detection.get("element_id", f"E{index}"),
-            "class": detection.get("class"),
-            "confidence": detection.get("confidence"),
-            "box": detection.get("box"),
-            "text": detection.get("text", ""),
-            "nearby_text": detection.get("nearby_text", [])[:5],
-            "matched_text": [item.get("text", "") for item in detection.get("matched_ocr", [])[:3]],
-            "rule_semantic": detection.get("semantic", {}),
-            "_priority": detection_priority(detection),
-        }
-        for index, detection in enumerate(detections)
-    ]
-    indexed.sort(key=lambda item: (item["_priority"], -float(item.get("confidence") or 0)))
-    compact = indexed[:MAX_DETECTIONS]
-    compact.sort(key=lambda item: item["index"])
-
-    for item in compact:
-        item.pop("_priority", None)
-
-    return compact
-
-
-def parse_json_response(content: str) -> dict:
+def parse_json_object(content: str) -> dict:
     text = content.strip()
     if text.startswith("```"):
         text = text.strip("`").strip()
@@ -111,89 +151,168 @@ def parse_json_response(content: str) -> dict:
     except json.JSONDecodeError:
         start = text.find("{")
         end = text.rfind("}")
-        if start != -1 and end != -1 and end > start:
-            parsed = json.loads(text[start:end + 1])
-        else:
+        if start == -1 or end == -1 or end <= start:
             raise
+        parsed = json.loads(text[start:end + 1])
 
-    if not isinstance(parsed, dict) or not isinstance(parsed.get("items"), list):
-        raise ValueError("LLM response did not match expected schema with top-level items list.")
-    return parsed
+    if not isinstance(parsed, dict):
+        raise ValueError("Expected a JSON object mapping element ids to semantic strings.")
+
+    cleaned = {}
+    for key, value in parsed.items():
+        if not re.fullmatch(r"E\d+", str(key)):
+            continue
+        cleaned[str(key)] = str(value)
+
+    return dict(sorted(cleaned.items(), key=lambda item: int(item[0][1:])))
+
+
+def parse_complete_string_pairs(content: str) -> dict:
+    pairs = {}
+    pattern = re.compile(r'"(E\d+)"\s*:\s*"((?:\\.|[^"\\])*)"')
+    for match in pattern.finditer(content):
+        key = match.group(1)
+        raw_value = match.group(2)
+        try:
+            value = json.loads(f'"{raw_value}"')
+        except json.JSONDecodeError:
+            value = raw_value
+        pairs[key] = value
+    return dict(sorted(pairs.items(), key=lambda item: int(item[0][1:])))
+
+
+def normalize_semantics(parsed: dict, element_ids: list[str]) -> dict:
+    normalized = {}
+    for element_id in element_ids:
+        value = parsed.get(element_id, "unknown element")
+        if not isinstance(value, str):
+            value = json.dumps(value, ensure_ascii=False)
+        normalized[element_id] = value
+    return normalized
 
 
 def main() -> None:
-    image_file = Path(sys.argv[1]).expanduser() if len(sys.argv) > 1 else DEFAULT_IMAGE_FILE
-    detections_file = Path(sys.argv[2]).expanduser() if len(sys.argv) > 2 else DEFAULT_DETECTIONS_FILE
+    load_dotenv(ENV_FILE)
 
-    if not image_file.exists():
-        raise FileNotFoundError(f"Image file not found: {image_file}")
-    if not detections_file.exists():
-        raise FileNotFoundError(f"Detections file not found: {detections_file}")
+    annotated_image_file = Path(sys.argv[1]).expanduser() if len(sys.argv) > 1 else DEFAULT_ANNOTATED_IMAGE_FILE
+    element_ids_file = Path(sys.argv[2]).expanduser() if len(sys.argv) > 2 else DEFAULT_ELEMENT_IDS_FILE
 
-    detections = json.loads(detections_file.read_text(encoding="utf-8"))
-    compact = compact_detections(detections)
-    image_b64 = image_to_base64_png(image_file)
-    model_name = os.getenv("OLLAMA_MODEL", "gemma4:e2b")
+    if not annotated_image_file.exists():
+        raise FileNotFoundError(f"Annotated image file not found: {annotated_image_file}")
+    if not element_ids_file.exists():
+        raise FileNotFoundError(f"Element ids file not found: {element_ids_file}")
 
-    messages = [
-        SystemMessage(content=system_prompt()),
-        HumanMessage(content=[
-            {"type": "text", "text": user_prompt(compact)},
-            {"type": "image_url", "image_url": "data:image/png;base64," + image_b64},
-        ]),
-    ]
+    element_ids = load_element_ids(element_ids_file)
+    image_bytes = image_to_png_bytes(annotated_image_file)
+    image_b64 = base64.b64encode(image_bytes).decode("ascii")
+    model_name = os.getenv("GEMINI_MODEL", "gemini-3-flash-preview")
+    prompt = user_prompt(element_ids)
 
-    llm = ChatOllama(
-        model=model_name,
-        base_url=os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434"),
-        format="json",
-        temperature=0,
-        num_ctx=int(os.getenv("OLLAMA_NUM_CTX", "32768")),
-        num_predict=int(os.getenv("OLLAMA_NUM_PREDICT", "6000")),
-        reasoning=os.getenv("OLLAMA_REASONING", "0") == "1",
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        raise EnvironmentError("Set GEMINI_API_KEY before running llm.py.")
+
+    payload = {
+        "systemInstruction": {
+            "parts": [{"text": system_prompt()}],
+        },
+        "contents": [
+            {
+                "role": "user",
+                "parts": [
+                    {"text": prompt},
+                    {
+                        "inlineData": {
+                            "mimeType": "image/png",
+                            "data": image_b64,
+                        }
+                    },
+                ],
+            }
+        ],
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "responseSchema": response_schema(element_ids),
+            "maxOutputTokens": int(os.getenv("GEMINI_MAX_OUTPUT_TOKENS", "12000")),
+        },
+    }
+    if supports_thinking_level(model_name):
+        payload["generationConfig"]["thinkingConfig"] = {
+            "thinkingLevel": os.getenv("GEMINI_THINKING_LEVEL", "low"),
+        }
+
+    response = requests.post(
+        gemini_api_url(model_name),
+        headers={
+            "Content-Type": "application/json",
+            "x-goog-api-key": api_key,
+        },
+        json=payload,
+        timeout=int(os.getenv("GEMINI_TIMEOUT_SECONDS", "120")),
     )
-
-    response = llm.invoke(messages)
-    content = response.content if isinstance(response.content, str) else json.dumps(response.content)
+    try:
+        response.raise_for_status()
+    except requests.HTTPError as exc:
+        raise RuntimeError(
+            f"Gemini API request failed for model {model_name}: "
+            f"{response.status_code} {response.text}"
+        ) from exc
+    response_json = response.json()
+    content = extract_gemini_text(response_json)
 
     chat_log = {
         "model": model_name,
-        "orchestrator": "langchain",
-        "image_file": str(image_file),
-        "detections_file": str(detections_file),
-        "input_detection_count": len(detections),
-        "sent_detection_count": len(compact),
-        "sent_detection_indexes": [item["index"] for item in compact],
+        "provider": "gemini",
+        "orchestrator": "rest",
+        "api_version": os.getenv("GEMINI_API_VERSION", "v1alpha"),
+        "annotated_image_file": str(annotated_image_file),
+        "element_ids_file": str(element_ids_file),
+        "element_ids": element_ids,
         "messages": [
             {"role": "system", "content": system_prompt()},
             {
                 "role": "user",
-                "content": user_prompt(compact),
+                "content": prompt,
                 "image_base64_png": image_b64,
             },
             {
                 "role": "assistant",
                 "content": content,
-                "additional_kwargs": response.additional_kwargs,
-                "response_metadata": response.response_metadata,
+                "thinking": "Gemini API does not expose hidden reasoning text.",
+                "usage_metadata": response_json.get("usageMetadata", {}),
+                "candidates": response_json.get("candidates", []),
             },
         ],
+        "raw_response": response_json,
     }
 
     try:
-        semantics = parse_json_response(content)
+        parsed = parse_json_object(content)
+        semantics = normalize_semantics(parsed, element_ids)
     except (json.JSONDecodeError, ValueError) as exc:
-        semantics = {
-            "items": [],
-            "error": str(exc),
-            "raw_content": content,
-        }
+        partial = parse_complete_string_pairs(content)
+        semantics = normalize_semantics(partial, element_ids)
+        if not partial:
+            semantics = {
+                "_error": str(exc),
+                "_raw_content": content,
+            }
 
     OUTPUT_DIR.mkdir(exist_ok=True)
     CHAT_LOG_FILE.write_text(json.dumps(chat_log, indent=2), encoding="utf-8")
     SEMANTICS_FILE.write_text(json.dumps(semantics, indent=2), encoding="utf-8")
+    LLMS_FILE.write_text(json.dumps(semantics, indent=2), encoding="utf-8")
 
     print(f"Saved LLM outputs to {OUTPUT_DIR}")
+    # print("\n=== LLM conversation ===")
+    # print(f"model: {model_name}")
+    # print(f"system: {system_prompt()}")
+    # print(f"user: {prompt}")
+    # print(f"image: {annotated_image_file}")
+    # print(f"element_ids: {element_ids_file}")
+    # print(f"assistant: {content}")
+    # print("thinking: Gemini API does not expose hidden reasoning text.")
+    # print(f"metadata: {json.dumps(response_json.get('usageMetadata', {}), indent=2)}")
 
 
 if __name__ == "__main__":

@@ -22,6 +22,8 @@ CLASSES = ['button', 'field', 'heading', 'iframe', 'image', 'label', 'link', 'te
 
 # Single color for all boxes (BGR format for OpenCV)
 BOX_COLOR = (0, 255, 0)  # Green
+LABEL_BG_COLOR = (0, 0, 0)  # Black
+LABEL_TEXT_COLOR = (255, 255, 255)  # White
 
 # Global model variable
 model = None
@@ -451,7 +453,7 @@ def draw_detections(
     classes: List[int],
     element_ids: List[str],
     thickness: int = 3,
-    font_scale: float = 1.8
+    font_scale: float = 0.8
 ) -> np.ndarray:
     """Draw detection boxes and labels on image"""
     img_with_boxes = image.copy()
@@ -465,29 +467,44 @@ def draw_detections(
         label = element_id
 
         # Calculate label size and position
+        text_thickness = 4
+        pad_x = 10
+        pad_y = 8
         (label_width, label_height), baseline = cv2.getTextSize(
-            label, cv2.FONT_HERSHEY_SIMPLEX, font_scale, thickness=2
+            label, cv2.FONT_HERSHEY_SIMPLEX, font_scale, thickness=text_thickness
         )
 
         # Draw label background
-        label_y = max(y1 - 10, label_height + 10)
+        label_y = max(y1 - 10, label_height + baseline + (pad_y * 2))
+        bg_x1 = x1
+        bg_y1 = label_y - label_height - baseline - (pad_y * 2)
+        bg_x2 = x1 + label_width + (pad_x * 2)
+        bg_y2 = label_y
+
         cv2.rectangle(
             img_with_boxes,
-            (x1, label_y - label_height - baseline - 5),
-            (x1 + label_width + 5, label_y + baseline - 5),
-            BOX_COLOR,
+            (bg_x1, bg_y1),
+            (bg_x2, bg_y2),
+            LABEL_BG_COLOR,
             -1
+        )
+        cv2.rectangle(
+            img_with_boxes,
+            (bg_x1, bg_y1),
+            (bg_x2, bg_y2),
+            BOX_COLOR,
+            max(2, thickness)
         )
 
         # Draw label text
         cv2.putText(
             img_with_boxes,
             label,
-            (x1 + 2, label_y - baseline - 5),
+            (x1 + pad_x, label_y - baseline - pad_y),
             cv2.FONT_HERSHEY_SIMPLEX,
             font_scale,
-            (255, 255, 255),
-            thickness=2
+            LABEL_TEXT_COLOR,
+            thickness=text_thickness
         )
 
     return img_with_boxes

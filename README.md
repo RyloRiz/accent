@@ -30,7 +30,7 @@ pip install -r requirements.txt
 python app.py
 
 
-To test:
+# To test:
 Step 1: 
 ```
 python3 app.py
@@ -50,3 +50,4 @@ Run for semantic embadding done via lanagchain (og base image passed plus detect
 ```
 python3 llm.py
 ```
+

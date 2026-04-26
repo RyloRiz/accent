@@ -10,6 +10,7 @@ INPUT_IMAGE_FILE = OUTPUT_DIR / "input_image.png"
 ANNOTATED_IMAGE_FILE = OUTPUT_DIR / "annotated_image.png"
 SUMMARY_FILE = OUTPUT_DIR / "summary.txt"
 DETECTIONS_FILE = OUTPUT_DIR / "detections.json"
+ELEMENT_IDS_FILE = OUTPUT_DIR / "element_ids.json"
 SERVER_URL = os.getenv("GRADIO_SERVER_URL", "http://127.0.0.1:7860/")
 
 
@@ -29,7 +30,7 @@ client = Client(SERVER_URL)
 annotated_image, summary, detections, _ = client.predict(
     image=handle_file(str(image_path)),
     confidence_threshold=0.5,
-    line_thickness=5,
+    line_thickness=1,
     use_llm=False,
     api_name="/detect_ui_elements",
 )
@@ -40,12 +41,20 @@ for stale_file in (
     OUTPUT_DIR / "raw_gemma_output.json",
     OUTPUT_DIR / "llm_chat_log.json",
     OUTPUT_DIR / "llm_semantics.json",
+    OUTPUT_DIR / "llms.json",
 ):
     stale_file.unlink(missing_ok=True)
+
+element_ids = [
+    detection["element_id"]
+    for detection in detections
+    if isinstance(detection, dict) and detection.get("element_id")
+]
 
 shutil.copyfile(image_path, INPUT_IMAGE_FILE)
 shutil.copyfile(annotated_image, ANNOTATED_IMAGE_FILE)
 SUMMARY_FILE.write_text(summary, encoding="utf-8")
 DETECTIONS_FILE.write_text(json.dumps(detections, indent=2), encoding="utf-8")
+ELEMENT_IDS_FILE.write_text(json.dumps(element_ids, indent=2), encoding="utf-8")
 
 print(f"Saved detector/OCR outputs to {OUTPUT_DIR} from {SERVER_URL}")
