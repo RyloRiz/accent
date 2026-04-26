@@ -1,2 +1,6 @@
 env
 .env
+.DS_Store
+test_outputs
+app/.build
+app/runtime

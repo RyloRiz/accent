@@ -8,14 +8,14 @@ import shutil
 import sys
 
 PROJECT_DIR = Path(__file__).resolve().parent
-ENV_FILE = PROJECT_DIR / ".env"
+ENV_FILE = Path(os.getenv("PIPELINE_ENV_FILE", str(PROJECT_DIR / ".env")))
 OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "test_outputs"))
 if not OUTPUT_DIR.is_absolute():
     OUTPUT_DIR = PROJECT_DIR / OUTPUT_DIR
 
 INPUT_IMAGE_FILE = OUTPUT_DIR / "input_image.png"
 ANNOTATED_IMAGE_FILE = OUTPUT_DIR / "annotated_image.png"
-CROP_SHEET_FILE = OUTPUT_DIR / "crop_sheet.png"
+CROP_SHEET_FILES = [OUTPUT_DIR / f"crop_sheet_{index}.png" for index in range(1, 5)]
 SUMMARY_FILE = OUTPUT_DIR / "summary.txt"
 DETECTIONS_FILE = OUTPUT_DIR / "detections.json"
 ELEMENT_IDS_FILE = OUTPUT_DIR / "element_ids.json"
@@ -45,11 +45,50 @@ def default_image_path() -> Path:
     raise FileNotFoundError("Pass an image path or set TEST_IMAGE in .env.")
 
 
-def make_crop_sheet(image_path: Path, detections: list[dict], output_path: Path) -> None:
+def confidence_threshold() -> float:
+    value = os.getenv("CONFIDENCE_THRESHOLD", "0.1")
+    try:
+        threshold = float(value)
+    except ValueError as exc:
+        raise ValueError(f"CONFIDENCE_THRESHOLD must be a number, got {value!r}") from exc
+    if not 0.0 <= threshold <= 1.0:
+        raise ValueError(f"CONFIDENCE_THRESHOLD must be between 0 and 1, got {threshold}")
+    return threshold
+
+
+def crop_sheet_chunks(detections: list[dict]) -> list[list[dict]]:
+    chunks = []
+    start = 0
+    for sheet_index in range(4):
+        if start >= len(detections):
+            break
+        end = len(detections) if sheet_index == 3 else min(start + 50, len(detections))
+        chunks.append(detections[start:end])
+        start = end
+    return chunks
+
+
+def sheet_title(sheet_number: int, detections: list[dict]) -> str:
+    element_ids = [str(detection.get("element_id")) for detection in detections if detection.get("element_id")]
+    if not element_ids:
+        return f"Crop sheet {sheet_number}"
+    if len(element_ids) == 1:
+        return f"Crop sheet {sheet_number}: {element_ids[0]}"
+    return f"Crop sheet {sheet_number}: {element_ids[0]}-{element_ids[-1]}"
+
+
+def make_crop_sheet(
+    image_path: Path,
+    detections: list[dict],
+    output_path: Path,
+    sheet_number: int,
+) -> None:
     tile_width = 260
     tile_height = 220
     label_height = 46
+    title_height = 48
     gap = 5
+    inner_padding = 8
     cols = 5
     crop_margin = 28
 
@@ -57,13 +96,18 @@ def make_crop_sheet(image_path: Path, detections: list[dict], output_path: Path)
     image_width, image_height = source.size
     rows = max(1, math.ceil(len(detections) / cols))
     sheet_width = (cols * tile_width) + ((cols + 1) * gap)
-    sheet_height = (rows * tile_height) + ((rows + 1) * gap)
+    sheet_height = title_height + (rows * tile_height) + ((rows + 1) * gap)
     sheet = Image.new("RGB", (sheet_width, sheet_height), (18, 18, 18))
     draw = ImageDraw.Draw(sheet)
     try:
         font = ImageFont.truetype("Arial Bold.ttf", 32)
+        title_font = ImageFont.truetype("Arial Bold.ttf", 30)
     except OSError:
         font = ImageFont.load_default()
+        title_font = ImageFont.load_default()
+
+    draw.rectangle((0, 0, sheet_width, title_height), fill=(0, 0, 0))
+    draw.text((12, 8), sheet_title(sheet_number, detections), fill=(255, 255, 255), font=title_font)
 
     for index, detection in enumerate(detections):
         box = detection.get("box")
@@ -86,12 +130,15 @@ def make_crop_sheet(image_path: Path, detections: list[dict], output_path: Path)
             outline=(255, 0, 0),
             width=max(3, min(crop.size) // 30),
         )
-        crop.thumbnail((tile_width - 10, tile_height - label_height - 10), Image.Resampling.LANCZOS)
+        crop.thumbnail(
+            (tile_width - inner_padding, tile_height - label_height - inner_padding),
+            Image.Resampling.LANCZOS,
+        )
 
         row = index // cols
         col = index % cols
         tile_x = gap + col * (tile_width + gap)
-        tile_y = gap + row * (tile_height + gap)
+        tile_y = title_height + gap + row * (tile_height + gap)
 
         draw.rectangle(
             (tile_x, tile_y, tile_x + tile_width, tile_y + tile_height),
@@ -122,7 +169,7 @@ if not image_path.exists():
 client = Client(SERVER_URL)
 annotated_image, summary, detections, _ = client.predict(
     image=handle_file(str(image_path)),
-    confidence_threshold=0.5,
+    confidence_threshold=confidence_threshold(),
     line_thickness=1,
     use_llm=False,
     api_name="/detect_ui_elements",
@@ -136,6 +183,8 @@ for stale_file in (
     OUTPUT_DIR / "llms.json",
     OUTPUT_DIR / "final_action_buttons.json",
     OUTPUT_DIR / "conflict_resolution.json",
+    OUTPUT_DIR / "crop_sheet.png",
+    *CROP_SHEET_FILES,
 ):
     stale_file.unlink(missing_ok=True)
 
@@ -147,9 +196,10 @@ element_ids = [
 
 shutil.copyfile(image_path, INPUT_IMAGE_FILE)
 shutil.copyfile(annotated_image, ANNOTATED_IMAGE_FILE)
-make_crop_sheet(image_path, detections, CROP_SHEET_FILE)
+for sheet_number, (crop_sheet_file, chunk) in enumerate(zip(CROP_SHEET_FILES, crop_sheet_chunks(detections)), 1):
+    make_crop_sheet(image_path, chunk, crop_sheet_file, sheet_number)
 SUMMARY_FILE.write_text(summary, encoding="utf-8")
 DETECTIONS_FILE.write_text(json.dumps(detections, indent=2), encoding="utf-8")
 ELEMENT_IDS_FILE.write_text(json.dumps(element_ids, indent=2), encoding="utf-8")
 
-print(f"Saved detector outputs and crop sheet to {OUTPUT_DIR} from {SERVER_URL}")
+print(f"Saved detector outputs and crop sheets to {OUTPUT_DIR} from {SERVER_URL}")

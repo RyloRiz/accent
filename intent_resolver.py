@@ -12,7 +12,7 @@ OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "test_outputs"))
 if not OUTPUT_DIR.is_absolute():
     OUTPUT_DIR = PROJECT_DIR / OUTPUT_DIR
 
-ENV_FILE = PROJECT_DIR / ".env"
+ENV_FILE = Path(os.getenv("PIPELINE_ENV_FILE", str(PROJECT_DIR / ".env")))
 LLMS_FILE = OUTPUT_DIR / "llms.json"
 ANNOTATED_IMAGE_FILE = OUTPUT_DIR / "annotated_image.png"
 CONFLICT_RESOLUTION_FILE = OUTPUT_DIR / "conflict_resolution.json"

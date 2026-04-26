@@ -1,7 +1,7 @@
 {
-  "user_intent": "ve mujhe sun kyon nahin sakate?",
-  "plaintext_response": "WHAT: The user is asking 'why can't they hear me?' in Hindi. WHY: This indicates their microphone is likely muted during the video call, so they need to turn on the microphone. ACTION: Highlighting element E33.",
-  "selected_element_id": "E33",
-  "selected_semantic": "Turn on microphone toggle with settings arrow in the bottom center Google Meet control bar.",
-  "direction_for_user": "apna maikrofon on karne ke liye is button par click karein."
+  "user_intent": "I want to create a new document.",
+  "plaintext_response": "The user wants to start a new document. Since they expressed the desire to create a fresh file, the 'Blank document button' is the most direct way to initiate that process. ACTION: E5.",
+  "selected_element_id": "E5",
+  "selected_semantic": "Blank document button, page content.",
+  "direction_for_user": "Click on the blank document button to start a new file."
 }

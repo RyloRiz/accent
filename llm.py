@@ -7,6 +7,7 @@ import os
 import re
 import requests
 import sys
+import time
 
 PROJECT_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "test_outputs"))
@@ -14,13 +15,14 @@ if not OUTPUT_DIR.is_absolute():
     OUTPUT_DIR = PROJECT_DIR / OUTPUT_DIR
 
 DEFAULT_ANNOTATED_IMAGE_FILE = OUTPUT_DIR / "annotated_image.png"
-DEFAULT_CROP_SHEET_FILE = OUTPUT_DIR / "crop_sheet.png"
+DEFAULT_CROP_SHEET_FILES = [OUTPUT_DIR / f"crop_sheet_{index}.png" for index in range(1, 5)]
+LEGACY_CROP_SHEET_FILE = OUTPUT_DIR / "crop_sheet.png"
 DEFAULT_ELEMENT_IDS_FILE = OUTPUT_DIR / "element_ids.json"
 DEFAULT_DETECTIONS_FILE = OUTPUT_DIR / "detections.json"
 CHAT_LOG_FILE = OUTPUT_DIR / "llm_chat_log.json"
 LLMS_FILE = OUTPUT_DIR / "llms.json"
 FINAL_ACTION_BUTTONS_FILE = OUTPUT_DIR / "final_action_buttons.json"
-ENV_FILE = PROJECT_DIR / ".env"
+ENV_FILE = Path(os.getenv("PIPELINE_ENV_FILE", str(PROJECT_DIR / ".env")))
 
 
 def load_dotenv(env_file: Path) -> None:
@@ -65,6 +67,49 @@ def supports_thinking_level(model_name: str) -> bool:
     return model_name not in no_thinking_level_models
 
 
+def model_candidates() -> list[str]:
+    models = [os.getenv("GEMINI_MODEL", "gemini-3.1-pro-preview")]
+    fallback = os.getenv("GEMINI_FALLBACK_MODEL", "gemini-3.1-pro-preview")
+    if fallback and fallback not in models:
+        models.append(fallback)
+    return models
+
+
+def post_gemini_with_retries(
+    payload: dict,
+    api_key: str,
+    model_name: str,
+    batch_label: str,
+) -> requests.Response:
+    attempts = int(os.getenv("GEMINI_RETRIES", "3"))
+    base_delay = float(os.getenv("GEMINI_RETRY_BASE_SECONDS", "2"))
+    retry_statuses = {429, 500, 502, 503, 504}
+
+    for attempt in range(1, attempts + 1):
+        response = requests.post(
+            gemini_api_url(model_name),
+            headers={
+                "Content-Type": "application/json",
+                "x-goog-api-key": api_key,
+            },
+            json=payload,
+            timeout=int(os.getenv("GEMINI_TIMEOUT_SECONDS", "120")),
+        )
+        if response.status_code not in retry_statuses:
+            return response
+        if attempt == attempts:
+            return response
+
+        delay = base_delay * attempt
+        print(
+            f"Gemini {model_name} returned {response.status_code} for {batch_label}; "
+            f"retrying in {delay:.1f}s..."
+        )
+        time.sleep(delay)
+
+    return response
+
+
 def extract_gemini_text(response_json: dict) -> str:
     parts = (
         response_json.get("candidates", [{}])[0]
@@ -93,12 +138,12 @@ def response_schema(element_ids: list[str]) -> dict:
 def system_prompt() -> str:
     return (
         "You are a UI semantics labeling assistant. You will receive one annotated "
-        "screenshot, one crop-sheet image, and a checklist of expected element ids. "
-        "The annotated screenshot gives full-page context. The crop sheet contains "
-        "zoomed tiles labeled E0, E1, E2, etc.; those crop tiles are the source of "
-        "truth for which id belongs to which exact element. Use the checklist to make "
-        "sure no ids are skipped. Return only valid JSON. Do not include markdown, "
-        "explanations, arrays, coordinates, or a state field."
+        "screenshot, one or more crop-sheet images, and a checklist of expected element "
+        "ids. The annotated screenshot gives full-page context. The crop sheets contain "
+        "zoomed tiles labeled E0, E1, E2, etc.; those crop tiles are the source of truth "
+        "for which id belongs to which exact element. Use the checklist to make sure no "
+        "ids are skipped. Return only valid JSON. Do not include markdown, explanations, "
+        "arrays, coordinates, or a state field."
     )
 
 
@@ -129,9 +174,9 @@ def user_prompt(element_ids: list[str]) -> str:
         "Label every boxed UI element in this screenshot with what it does if clicked "
         "or used.\n\n"
         f"Element id checklist, complete and ordered:\n{element_ids_json}\n\n"
-        "You will receive two images:\n"
+        "You will receive multiple images:\n"
         "1. Full annotated screenshot for overall screen context.\n"
-        "2. Crop sheet with one zoomed tile per element id. Use this crop sheet to "
+        "2. Crop sheets with one zoomed tile per element id. Use these crop sheets to "
         "identify the exact icon/control for each id.\n\n"
         "Return exactly one JSON object in this shape:\n"
         '{"E0":"semantic meaning","E1":"semantic meaning"}\n\n'
@@ -143,7 +188,7 @@ def user_prompt(element_ids: list[str]) -> str:
         "screen location, nearby visual context, selected/disabled/emphasized state, "
         "and whether it appears in the menu bar, browser chrome, page content, meeting "
         "controls, or dock.\n"
-        "- Use the crop sheet to decide which label belongs to which exact element. "
+        "- Use the crop sheets to decide which label belongs to which exact element. "
         "Do not label a neighboring arrow, menu, or grouped control unless that "
         "specific id's crop shows it.\n"
         "- Use the full annotated screenshot only for broader context and location.\n"
@@ -255,20 +300,79 @@ def build_final_action_buttons(detections: list[dict], semantics: dict) -> dict:
     return dict(sorted(final.items(), key=lambda item: int(item[0][1:])))
 
 
+def default_crop_sheet_files() -> list[Path]:
+    files = [path for path in DEFAULT_CROP_SHEET_FILES if path.exists()]
+    if files:
+        return files
+    if LEGACY_CROP_SHEET_FILE.exists():
+        return [LEGACY_CROP_SHEET_FILE]
+    return DEFAULT_CROP_SHEET_FILES
+
+
+def element_id_chunks(element_ids: list[str]) -> list[list[str]]:
+    chunks = []
+    start = 0
+    for sheet_index in range(4):
+        if start >= len(element_ids):
+            break
+        end = len(element_ids) if sheet_index == 3 else min(start + 50, len(element_ids))
+        chunks.append(element_ids[start:end])
+        start = end
+    return chunks
+
+
+def grouped_batches(
+    crop_sheet_files: list[Path],
+    id_chunks: list[list[str]],
+    sheets_per_call: int,
+    max_ids_per_call: int,
+) -> list[tuple[list[Path], list[str]]]:
+    batches = []
+    sheets_per_call = max(1, sheets_per_call)
+    max_ids_per_call = max(1, max_ids_per_call)
+
+    entries = []
+    for crop_sheet_file, ids in zip(crop_sheet_files, id_chunks):
+        for start in range(0, len(ids), max_ids_per_call):
+            entries.append((crop_sheet_file, ids[start:start + max_ids_per_call]))
+
+    batch_files = []
+    batch_ids = []
+    for crop_sheet_file, ids in entries:
+        next_files = batch_files if crop_sheet_file in batch_files else [*batch_files, crop_sheet_file]
+        would_exceed_files = len(next_files) > sheets_per_call
+        would_exceed_ids = batch_ids and len(batch_ids) + len(ids) > max_ids_per_call
+
+        if would_exceed_files or would_exceed_ids:
+            batches.append((batch_files, batch_ids))
+            batch_files = []
+            batch_ids = []
+            next_files = [crop_sheet_file]
+
+        batch_files = next_files
+        batch_ids.extend(ids)
+
+    if batch_ids:
+        batches.append((batch_files, batch_ids))
+
+    return batches
+
+
 def main() -> None:
     load_dotenv(ENV_FILE)
 
     annotated_image_file = Path(sys.argv[1]).expanduser() if len(sys.argv) > 1 else DEFAULT_ANNOTATED_IMAGE_FILE
     element_ids_file = Path(sys.argv[2]).expanduser() if len(sys.argv) > 2 else DEFAULT_ELEMENT_IDS_FILE
-    crop_sheet_file = Path(sys.argv[3]).expanduser() if len(sys.argv) > 3 else DEFAULT_CROP_SHEET_FILE
+    crop_sheet_files = [Path(sys.argv[3]).expanduser()] if len(sys.argv) > 3 else default_crop_sheet_files()
     detections_file = Path(sys.argv[4]).expanduser() if len(sys.argv) > 4 else DEFAULT_DETECTIONS_FILE
 
     if not annotated_image_file.exists():
         raise FileNotFoundError(f"Annotated image file not found: {annotated_image_file}")
     if not element_ids_file.exists():
         raise FileNotFoundError(f"Element ids file not found: {element_ids_file}")
-    if not crop_sheet_file.exists():
-        raise FileNotFoundError(f"Crop sheet file not found: {crop_sheet_file}")
+    missing_crop_sheets = [path for path in crop_sheet_files if not path.exists()]
+    if missing_crop_sheets:
+        raise FileNotFoundError(f"Crop sheet file not found: {missing_crop_sheets[0]}")
     if not detections_file.exists():
         raise FileNotFoundError(f"Detections file not found: {detections_file}")
 
@@ -276,111 +380,136 @@ def main() -> None:
     detections = load_detections(detections_file)
     annotated_image_bytes = image_to_png_bytes(annotated_image_file)
     annotated_image_b64 = base64.b64encode(annotated_image_bytes).decode("ascii")
-    crop_sheet_bytes = image_to_png_bytes(crop_sheet_file)
-    crop_sheet_b64 = base64.b64encode(crop_sheet_bytes).decode("ascii")
-    model_name = os.getenv("GEMINI_MODEL", "gemini-3.1-pro-preview")
-    prompt = user_prompt(element_ids)
+    primary_model_name = os.getenv("GEMINI_MODEL", "gemini-3-flash-preview")
 
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         raise EnvironmentError("Set GEMINI_API_KEY before running llm.py.")
 
-    payload = {
-        "systemInstruction": {
-            "parts": [{"text": system_prompt()}],
-        },
-        "contents": [
-            {
-                "role": "user",
-                "parts": [
-                    {"text": prompt},
-                    {"text": "Image 1: full annotated screenshot for context."},
-                    {
-                        "inlineData": {
-                            "mimeType": "image/png",
-                            "data": annotated_image_b64,
-                        }
-                    },
-                    {"text": "Image 2: crop sheet. Use these labeled tiles as the source of truth for each id."},
-                    {
-                        "inlineData": {
-                            "mimeType": "image/png",
-                            "data": crop_sheet_b64,
-                        }
-                    },
-                ],
-            }
-        ],
-        "generationConfig": {
-            "responseMimeType": "application/json",
-            "responseSchema": response_schema(element_ids),
-            "maxOutputTokens": int(os.getenv("GEMINI_MAX_OUTPUT_TOKENS", "12000")),
-        },
-    }
-    if supports_thinking_level(model_name):
-        payload["generationConfig"]["thinkingConfig"] = {
-            "thinkingLevel": os.getenv("GEMINI_THINKING_LEVEL", "low"),
-        }
+    id_chunks = element_id_chunks(element_ids)
+    if len(crop_sheet_files) == 1 and crop_sheet_files[0] == LEGACY_CROP_SHEET_FILE:
+        id_chunks = [element_ids]
+    if len(crop_sheet_files) < len(id_chunks):
+        raise ValueError(
+            f"Found {len(crop_sheet_files)} crop sheet(s), but {len(id_chunks)} are needed "
+            f"for {len(element_ids)} element ids. Run test.py again."
+        )
 
-    response = requests.post(
-        gemini_api_url(model_name),
-        headers={
-            "Content-Type": "application/json",
-            "x-goog-api-key": api_key,
-        },
-        json=payload,
-        timeout=int(os.getenv("GEMINI_TIMEOUT_SECONDS", "120")),
-    )
-    try:
-        response.raise_for_status()
-    except requests.HTTPError as exc:
-        raise RuntimeError(
-            f"Gemini API request failed for model {model_name}: "
-            f"{response.status_code} {response.text}"
-        ) from exc
-    response_json = response.json()
-    content = extract_gemini_text(response_json)
+    sheets_per_call = int(os.getenv("CROP_SHEETS_PER_LLM_CALL", "4"))
+    max_ids_per_call = int(os.getenv("MAX_IDS_PER_LLM_CALL", "150"))
+    batches = grouped_batches(crop_sheet_files, id_chunks, sheets_per_call, max_ids_per_call)
+    semantics = {}
+    batch_logs = []
+
+    for batch_index, (batch_crop_sheet_files, batch_ids) in enumerate(batches, 1):
+        prompt = user_prompt(batch_ids)
+        user_parts = [
+            {"text": prompt},
+            {"text": "Image 1: full annotated screenshot for context."},
+            {
+                "inlineData": {
+                    "mimeType": "image/png",
+                    "data": annotated_image_b64,
+                }
+            },
+        ]
+        for sheet_index, crop_sheet_file in enumerate(batch_crop_sheet_files, 1):
+            crop_sheet_b64 = base64.b64encode(image_to_png_bytes(crop_sheet_file)).decode("ascii")
+            user_parts.extend([
+                {
+                    "text": (
+                        f"Crop sheet {sheet_index} in this request. Use these labeled "
+                        "tiles as the source of truth for only the ids shown in this sheet."
+                    )
+                },
+                {
+                    "inlineData": {
+                        "mimeType": "image/png",
+                        "data": crop_sheet_b64,
+                    }
+                },
+            ])
+
+        response = None
+        used_model_name = primary_model_name
+        batch_label = f"batch {batch_index}, ids {batch_ids[0]}-{batch_ids[-1]}"
+        last_error = None
+        candidates = model_candidates()
+
+        for candidate_model_name in candidates:
+            payload = {
+                "systemInstruction": {
+                    "parts": [{"text": system_prompt()}],
+                },
+                "contents": [
+                    {
+                        "role": "user",
+                        "parts": user_parts,
+                    }
+                ],
+                "generationConfig": {
+                    "responseMimeType": "application/json",
+                    "responseSchema": response_schema(batch_ids),
+                    "maxOutputTokens": int(os.getenv("GEMINI_MAX_OUTPUT_TOKENS", "12000")),
+                },
+            }
+            if supports_thinking_level(candidate_model_name):
+                payload["generationConfig"]["thinkingConfig"] = {
+                    "thinkingLevel": os.getenv("GEMINI_THINKING_LEVEL", "low"),
+                }
+
+            response = post_gemini_with_retries(payload, api_key, candidate_model_name, batch_label)
+            if response.ok:
+                used_model_name = candidate_model_name
+                break
+
+            last_error = (
+                f"Gemini API request failed for model {candidate_model_name}, "
+                f"{batch_label}: {response.status_code} {response.text}"
+            )
+            if candidate_model_name != candidates[-1]:
+                print(f"{last_error}\nTrying fallback model...")
+
+        if response is None or not response.ok:
+            raise RuntimeError(last_error or f"Gemini API request failed for {batch_label}")
+
+        response_json = response.json()
+        content = extract_gemini_text(response_json)
+        try:
+            parsed = parse_json_object(content)
+            batch_semantics = normalize_semantics(parsed, batch_ids)
+        except (json.JSONDecodeError, ValueError):
+            partial = parse_complete_string_pairs(content)
+            batch_semantics = normalize_semantics(partial, batch_ids)
+
+        semantics.update(batch_semantics)
+        batch_logs.append({
+            "batch_index": batch_index,
+            "model": used_model_name,
+            "crop_sheet_files": [str(path) for path in batch_crop_sheet_files],
+            "element_ids": batch_ids,
+            "content": content,
+            "usage_metadata": response_json.get("usageMetadata", {}),
+            "candidates": response_json.get("candidates", []),
+            "raw_response": response_json,
+        })
+
+    semantics = normalize_semantics(semantics, element_ids)
 
     chat_log = {
-        "model": model_name,
+        "model": primary_model_name,
+        "model_candidates": model_candidates(),
         "provider": "gemini",
         "orchestrator": "rest",
         "api_version": os.getenv("GEMINI_API_VERSION", "v1alpha"),
         "annotated_image_file": str(annotated_image_file),
-        "crop_sheet_file": str(crop_sheet_file),
+        "crop_sheet_files": [str(path) for path in crop_sheet_files],
         "element_ids_file": str(element_ids_file),
         "detections_file": str(detections_file),
         "element_ids": element_ids,
-        "messages": [
-            {"role": "system", "content": system_prompt()},
-            {
-                "role": "user",
-                "content": prompt,
-                "annotated_image_base64_png": annotated_image_b64,
-                "crop_sheet_base64_png": crop_sheet_b64,
-            },
-            {
-                "role": "assistant",
-                "content": content,
-                "thinking": "Gemini API does not expose hidden reasoning text.",
-                "usage_metadata": response_json.get("usageMetadata", {}),
-                "candidates": response_json.get("candidates", []),
-            },
-        ],
-        "raw_response": response_json,
+        "system_prompt": system_prompt(),
+        "batch_logs": batch_logs,
     }
-
-    try:
-        parsed = parse_json_object(content)
-        semantics = normalize_semantics(parsed, element_ids)
-    except (json.JSONDecodeError, ValueError) as exc:
-        partial = parse_complete_string_pairs(content)
-        semantics = normalize_semantics(partial, element_ids)
-        if not partial:
-            semantics = {
-                "_error": str(exc),
-                "_raw_content": content,
-            }
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     CHAT_LOG_FILE.write_text(json.dumps(chat_log, indent=2), encoding="utf-8")
@@ -396,7 +525,7 @@ def main() -> None:
     # print(f"system: {system_prompt()}")
     # print(f"user: {prompt}")
     # print(f"image: {annotated_image_file}")
-    # print(f"crop_sheet: {crop_sheet_file}")
+    # print(f"crop_sheets: {crop_sheet_files}")
     # print(f"element_ids: {element_ids_file}")
     # print(f"assistant: {content}")
     # print("thinking: Gemini API does not expose hidden reasoning text.")
