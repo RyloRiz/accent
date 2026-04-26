@@ -22,11 +22,14 @@ git clone https://huggingface.co/spaces/racineai/UI-DETR-1
 cd UI-DETR-1 -->
 
 # Create and activate Python environment
+```
 python -m venv env
 source env/bin/activate
-
+```
 # Install dependencies and run
+```
 pip install -r requirements.txt
+```
 <!-- python app.py -->
 
 
@@ -36,18 +39,14 @@ Step 1:
 python3 app.py
 ```
 
-Open new terminal. Run:
+Open new terminal. Activate env again. 
+
+Update .env with your fancy stuff. 
+
+
+run:
 ```
-python3 test.py 'img_path'
+python3 complete_run.py
 ```
 
-Need ollama and gemma4:e2b install
-```
-ollama list
-ollama pull gemma4:e2b
-```
-Run for semantic embadding done via lanagchain (og base image passed plus detections json)
-```
-python3 llm.py
-```
-
+:)

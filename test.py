@@ -34,7 +34,7 @@ def load_dotenv(env_file: Path) -> None:
         key, value = stripped.split("=", 1)
         key = key.strip()
         value = value.strip().strip("'\"")
-        if key and key not in os.environ:
+        if key:
             os.environ[key] = value
 
 

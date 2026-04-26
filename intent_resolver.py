@@ -30,7 +30,7 @@ def load_dotenv(env_file: Path) -> None:
         key, value = stripped.split("=", 1)
         key = key.strip()
         value = value.strip().strip("'\"")
-        if key and key not in os.environ:
+        if key:
             os.environ[key] = value
 
 
@@ -157,8 +157,9 @@ def user_prompt(user_intent: str, semantics: dict) -> str:
         "people cannot hear the user and prefer the microphone/unmute control.\n"
         "- Use the screenshot only as context when the semantic descriptions are ambiguous.\n"
         "- Be concise but explicit. The plaintext_response should be plain English.\n"
-        "- direction_for_user must be one short sentence shown above the selected button, "
-        "for example: Click the microphone button to unmute yourself."
+        "- direction_for_user must be one short sentence shown above the selected button. "
+        "Write direction_for_user in the same human language as the user's sentence "
+        "(Spanish, Hindi, English, etc.). Keep the action clear and natural in that language."
     )
 
 
@@ -250,6 +251,7 @@ def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     CONFLICT_RESOLUTION_FILE.write_text(json.dumps(resolution, indent=2), encoding="utf-8")
     print(f"Saved intent resolution to {CONFLICT_RESOLUTION_FILE}")
+    print(f"Resolved user intent: {user_intent}")
     print(resolution["plaintext_response"])
 
 

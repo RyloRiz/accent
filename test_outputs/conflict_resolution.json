@@ -1,7 +1,7 @@
 {
-  "user_intent": "Why do I keep dying?",
-  "plaintext_response": "WHAT: The user is likely asking about their battery status. WHY: 'Why do I keep dying?' is a figurative way to say a device keeps running out of power or shutting down, which implies a battery issue. ACTION: Selecting the battery status icon.",
-  "selected_element_id": "E64",
-  "selected_semantic": "Battery status icon in the menu bar",
-  "direction_for_user": "Click the battery icon to check your current charge level and settings."
+  "user_intent": "ve mujhe sun kyon nahin sakate?",
+  "plaintext_response": "WHAT: The user is asking 'why can't they hear me?' in Hindi. WHY: This indicates their microphone is likely muted during the video call, so they need to turn on the microphone. ACTION: Highlighting element E33.",
+  "selected_element_id": "E33",
+  "selected_semantic": "Turn on microphone toggle with settings arrow in the bottom center Google Meet control bar.",
+  "direction_for_user": "apna maikrofon on karne ke liye is button par click karein."
 }
