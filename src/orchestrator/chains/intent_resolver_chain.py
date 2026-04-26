@@ -1,103 +1,109 @@
 """Intent Resolver chain.
 
-Two-pass disambiguation: a structured draft pass decides whether a web search
-is needed; if so, results are folded into a refinement pass. Search is injected
-as a callable so the chain runs offline by default.
+Single multimodal LLM pass: given transcript + apps hint + screenshot,
+produce a 'How do I do X in Y' question and an instruction-optimized search
+query. Search ALWAYS runs after the LLM call; its output is appended to the
+state untouched. The understanding is NEVER altered by the search results —
+results are downstream context for the next stage to consume.
 """
 
 from __future__ import annotations
 
-from typing import Any, Callable, Optional, Protocol
+from typing import Any, Callable, Optional
 
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.messages import HumanMessage, SystemMessage
 from pydantic import BaseModel, Field
 
 from orchestrator.core.llm import get_chat_model
 
 
-class SearchResult(BaseModel):
-    title: str
-    snippet: str
-    url: str
+SearchTool = Callable[[str], str]
 
 
-class _ResolverDraft(BaseModel):
+def _noop_search(query: str) -> str:
+    return ""
+
+
+class _ResolverOutput(BaseModel):
     understanding: str = Field(
-        description="Concrete one-or-two sentence statement of the user's intent in the current app."
+        description=(
+            "The user's intent phrased as a short, to-the-point question of the "
+            "form 'How do I do {XYZ} in {APP}'. {APP} is the application the "
+            "user is operating inside; if that app is a web browser, {APP} must "
+            "be the website or platform shown in the screenshot (e.g. ChatGPT, "
+            "Gmail, GitHub) — never the browser name itself."
+        )
     )
-    needs_search: bool = Field(
-        description="True iff resolving this intent requires external/domain knowledge."
-    )
-    search_query: Optional[str] = Field(
-        default=None,
-        description="Focused web-search query iff needs_search is True; null otherwise.",
-    )
-
-
-class _ResolverFinal(BaseModel):
-    understanding: str = Field(
-        description="Final concrete intent statement, refined using search results."
+    search_query: str = Field(
+        description=(
+            "Focused web-search query optimized to surface step-by-step "
+            "instructions or how-to guides answering the understanding question."
+        )
     )
 
 
-class SearchTool(Protocol):
-    def __call__(self, query: str) -> list[dict]: ...
-
-
-def _noop_search(query: str) -> list[dict]:
-    return []
-
-
-_DRAFT_SYSTEM = (
+_SYSTEM_PROMPT = (
     "You are the Intent Resolver in a voice-guided UI automation pipeline. "
-    "Given a raw voice transcript and lightweight screen context, produce a "
-    "concrete, detailed natural-language statement of what the user wants to "
-    "accomplish. Do NOT pick UI elements or click targets — that is a downstream "
-    "job. Resolve deictic references ('that thing', 'the blue one') using the "
-    "provided context whenever possible. Always qualify the understanding with "
-    "the application context.\n\n"
-    "Decide whether a web search is needed. Search ONLY when the transcript "
-    "references a concept, setting, feature, or error that requires "
-    "external/domain knowledge to interpret confidently. Do NOT search for "
-    "self-evident UI commands like 'click submit' or 'open settings'. When "
-    "search is needed, provide a focused query.\n\n"
+    "Your job is to convert a vague voice transcript into a precise procedural "
+    "question of the form 'How do I do {XYZ} in {APP}'.\n\n"
+    "Inputs you receive:\n"
+    "- transcript: the user's raw speech (often vague, e.g. 'where's the images').\n"
+    "- apps: a list of applications the macOS client detected as running "
+    "on-screen. This is a HINT, not ground truth. Multiple apps may be open; "
+    "the user is only acting in one of them. Pick the most likely target by "
+    "cross-referencing the transcript and the screenshot.\n"
+    "- screenshot: an image of the current screen. Use this to identify which "
+    "app is actually focused and what the user is looking at.\n\n"
+    "Rules for {APP}:\n"
+    "1. If the focused app is a desktop app (Xcode, Finder, Slack, etc.), "
+    "use its name.\n"
+    "2. If the focused app is a web browser (Safari, Chrome, Arc, Firefox, "
+    "etc.), DO NOT use the browser name. Identify the website or platform "
+    "from the screenshot (ChatGPT, Gmail, GitHub, YouTube, Google Docs, etc.) "
+    "and use that as {APP}.\n"
+    "3. If the apps list is empty or unhelpful, infer {APP} entirely from the "
+    "screenshot.\n\n"
+    "Rules for {XYZ}:\n"
+    "- Resolve deictic references ('that thing', 'the blue one') using the "
+    "screenshot.\n"
+    "- Keep it short and procedural — a question a step-by-step tutorial "
+    "would answer. NOT a description of UI layout.\n"
+    "- Do NOT pick UI elements or click targets — that is a downstream job.\n\n"
+    "You must also produce a focused web-search query optimized to retrieve "
+    "step-by-step instructions for the question. A query is ALWAYS required.\n\n"
     "If the intent is genuinely ambiguous and cannot be grounded even with "
-    "context, say so plainly in `understanding`."
+    "the screenshot, say so plainly in `understanding`."
 )
 
-_DRAFT_HUMAN = (
+_HUMAN_TEMPLATE = (
     "Transcript: {transcript}\n\n"
-    "Context:\n"
-    "- app_name: {app_name}\n"
-    "- window_title: {window_title}\n"
-    "- url: {url}\n"
-    "- active_element: {active_element}"
-)
-
-_FINAL_SYSTEM = (
-    "You are refining the Intent Resolver's understanding after a web search. "
-    "Use the search results to ground the understanding more concretely. Keep "
-    "it to one or two sentences. Do not invent UI navigation paths you are not "
-    "certain about."
-)
-
-_FINAL_HUMAN = (
-    "Transcript: {transcript}\n\n"
-    "Context:\n"
-    "- app_name: {app_name}\n"
-    "- window_title: {window_title}\n"
-    "- url: {url}\n"
-    "- active_element: {active_element}\n\n"
-    "Initial understanding: {initial_understanding}\n\n"
-    "Search results:\n{search_results}"
+    "Detected running apps (hint, not ground truth): {apps}\n"
+    "Screenshot attached: {screenshot_available}"
 )
 
 
-def _format_search_results(results: list[dict]) -> str:
-    if not results:
-        return "(no results)"
-    return "\n".join(
-        f"- {r.get('title', '')}: {r.get('snippet', '')} ({r.get('url', '')})" for r in results
+def _format_apps(apps: Any) -> str:
+    if not apps:
+        return "(none detected)"
+    if isinstance(apps, str):
+        return apps
+    try:
+        return ", ".join(str(a) for a in apps)
+    except TypeError:
+        return str(apps)
+
+
+def _build_human_message(text: str, image: Optional[dict]) -> HumanMessage:
+    if image is None:
+        return HumanMessage(content=text)
+    fmt = (image.get("format") or "png").lower()
+    b64 = image.get("data_b64") or ""
+    data_url = f"data:image/{fmt};base64,{b64}"
+    return HumanMessage(
+        content=[
+            {"type": "text", "text": text},
+            {"type": "image_url", "image_url": data_url},
+        ]
     )
 
 
@@ -105,44 +111,34 @@ class IntentResolverChain:
     def __init__(self, search_tool: Optional[SearchTool] = None, llm: Any = None):
         self._search = search_tool or _noop_search
         base_llm = llm or get_chat_model()
-        self._draft_chain = (
-            ChatPromptTemplate.from_messages([("system", _DRAFT_SYSTEM), ("human", _DRAFT_HUMAN)])
-            | base_llm.with_structured_output(_ResolverDraft)
-        )
-        self._final_chain = (
-            ChatPromptTemplate.from_messages([("system", _FINAL_SYSTEM), ("human", _FINAL_HUMAN)])
-            | base_llm.with_structured_output(_ResolverFinal)
-        )
+        self._llm = base_llm.with_structured_output(_ResolverOutput)
 
     def invoke(self, payload: dict) -> dict:
-        transcript = payload.get("transcript", "") or ""
-        ctx = payload.get("context", {}) or {}
-        prompt_vars = {
-            "transcript": transcript,
-            "app_name": ctx.get("app_name", ""),
-            "window_title": ctx.get("window_title", ""),
-            "url": ctx.get("url") or "(not available)",
-            "active_element": ctx.get("active_element") or "(not available)",
+        inputs = payload.get("inputs") or {}
+        artifacts = payload.get("artifacts") or {}
+        transcript = inputs.get("transcript", "") or ""
+        ctx = inputs.get("context") or {}
+        images = artifacts.get("images") or []
+        screenshot = images[0] if images else None
+
+        human_text = _HUMAN_TEMPLATE.format(
+            transcript=transcript,
+            apps=_format_apps(ctx.get("apps")),
+            screenshot_available="yes" if screenshot else "no",
+        )
+
+        result: _ResolverOutput = self._llm.invoke([
+            SystemMessage(content=_SYSTEM_PROMPT),
+            _build_human_message(human_text, screenshot),
+        ])
+
+        search_results = self._search(result.search_query) or ""
+
+        return {
+            "understanding": result.understanding,
+            "search_query": result.search_query,
+            "search_results": search_results,
         }
-
-        draft: _ResolverDraft = self._draft_chain.invoke(prompt_vars)
-
-        if not draft.needs_search or not draft.search_query:
-            return {"understanding": draft.understanding}
-
-        raw = self._search(draft.search_query) or []
-        search_results = [SearchResult(**r).model_dump() for r in raw[:3]]
-
-        refined: _ResolverFinal = self._final_chain.invoke({
-            **prompt_vars,
-            "initial_understanding": draft.understanding,
-            "search_results": _format_search_results(search_results),
-        })
-
-        out: dict = {"understanding": refined.understanding}
-        if search_results:
-            out["search_results"] = search_results
-        return out
 
 
 def build_chain(search_tool: Optional[SearchTool] = None) -> IntentResolverChain:

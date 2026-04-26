@@ -20,10 +20,8 @@ Context → Context update (dict patch)
 ## Core Rule
 
 A stage MUST:
-- Accept a Context object
-- Return a dict with optional keys:
-  - "state"
-  - "artifacts"
+- Extend `LangChainStage` (not `Stage` directly — see "Extending Stage directly" below for the rare exception)
+- Be constructed with a unique `name` and a chain that conforms to `Runnable`-style `.invoke(payload)`
 - Never mutate Context directly
 - Never call other stages
 - Never control orchestration flow
@@ -32,18 +30,36 @@ A stage MUST:
 
 ## Output Contract
 
-Every stage returns:
+`LangChainStage.invoke` already produces the standard patch shape:
 
 ```python
 {
     "state": {
-        "key": "value"
-    },
-    "artifacts": {
-        "key": "value"
+        "<stage_name>": <chain result>
     }
 }
 ```
+
+If a stage needs to also write to artifacts (e.g. an image-generating stage), override `invoke` and merge `{"artifacts": {...}}` into the returned dict.
+
+---
+
+## Chain Input Contract
+
+`LangChainStage.invoke` calls `chain.invoke(payload)` with this exact shape:
+
+```python
+{
+    "inputs":    context.inputs,      # raw user-supplied inputs
+    "state":     context.state,       # accumulated outputs of prior stages
+    "artifacts": context.artifacts,   # multimodal slots: text, images, audio, structured
+}
+```
+
+Your chain's `invoke` MUST accept this shape. Pull what you need from the right slot:
+- `payload["inputs"]["transcript"]` — original transcript
+- `payload["state"]["<earlier_stage_name>"]` — output from a prior stage
+- `payload["artifacts"]["images"]` — list of `{name, format, data_b64, width?, height?}` dicts
 
 ---
 
@@ -52,36 +68,66 @@ Every stage returns:
 A new stage requires TWO files:
 
 ### 1. LangChain logic
-```src/orchestrator/chains/<name>_chain.py```
+```
+src/orchestrator/chains/<name>_chain.py
+```
 
 ### 2. Stage wrapper
-```src/orchestrator/stages/<name>.py```
+```
+src/orchestrator/stages/<name>.py
+```
 
 ---
 
 ## Stage Template
 
 ```python
-from orchestrator.core.context import Context
+from orchestrator.stages.langchain_stage import LangChainStage
 from orchestrator.chains.<name>_chain import build_chain
 
 
-class MyStage:
-    name = "<stage_name>"
-
+class MyStage(LangChainStage):
     def __init__(self):
-        self.chain = build_chain()
+        super().__init__("<stage_name>", build_chain())
+```
 
-    def invoke(self, context: Context):
-        result = self.chain.invoke({
-            "text": context.inputs.get("text", "")
-        })
+That's it. No `invoke` override unless the stage writes artifacts.
 
-        return {
-            "state": {
-                "<key>": result
-            }
-        }
+### Reference example (real stage in this repo)
+
+```python
+# src/orchestrator/stages/intent_resolver.py
+class IntentResolverStage(LangChainStage):
+    def __init__(self, search_tool: Optional[SearchTool] = None):
+        super().__init__("intent_resolver", build_chain(search_tool=search_tool))
+```
+
+---
+
+## Chain Template
+
+```python
+class MyChain:
+    def __init__(self):
+        self._llm_chain = (
+            ChatPromptTemplate.from_messages([...])
+            | get_chat_model().with_structured_output(MyOutputModel)
+        )
+
+    def invoke(self, payload: dict) -> dict:
+        inputs = payload.get("inputs") or {}
+        state = payload.get("state") or {}
+        artifacts = payload.get("artifacts") or {}
+
+        # 1. Extract what you need
+        # 2. Run LLM chain(s)
+        # 3. Normalize and return a plain dict
+        result = self._llm_chain.invoke({...})
+        return result.model_dump()
+
+
+def build_chain() -> MyChain:
+    return MyChain()
 ```
 
 ---
@@ -92,9 +138,6 @@ class MyStage:
 from orchestrator.stages.my_stage import MyStage
 
 orch.add_stage(MyStage(), "my_stage")
-```
-
-```python
 orch.connect("previous_stage", "my_stage")
 ```
 
@@ -105,28 +148,40 @@ orch.connect("previous_stage", "my_stage")
 You are NOT building chains of LLM calls.
 
 You ARE building:
-> A graph of state transformations where LLMs are internal tools
+> A graph of state transformations where LLMs are internal tools.
+
+`LangChainStage` is the boundary that:
+- Reads from Context (inputs / state / artifacts)
+- Hands a normalized payload to your chain
+- Writes the chain's result back into `state[<stage_name>]`
+
+Your chain owns the LLM logic; the stage owns the Context glue.
 
 ---
 
 ## What NOT to do
 
 ```python
-def invoke(self, context):
-    return llm.invoke(...)
+# Wrong — bypasses LangChainStage glue and skips kernel patching
+class MyStage(Stage):
+    def invoke(self, context):
+        return llm.invoke(...)
+```
+
+```python
+# Wrong — chains MUST accept the {inputs, state, artifacts} payload, not flat kwargs
+def invoke(self, transcript, context):
+    ...
 ```
 
 ---
 
-## Correct Pattern
+## Extending Stage directly (rare)
 
-1. Extract from Context
-2. Run chain
-3. Normalize output
-4. Return patch
+Only override `Stage` directly if you need behavior `LangChainStage` cannot express — e.g. a stage that does no LLM work, or one that fans out to multiple chains and merges. Even then, prefer composing chains over a custom stage.
 
 ---
 
 ## Summary
 
-A stage is a pure transformation unit in a LangGraph orchestration system using LangChain internally.
+A stage is a thin wrapper around a chain. Extend `LangChainStage`, pass a name and a chain, and let the kernel + LangGraph do the orchestration.
