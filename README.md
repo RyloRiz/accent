@@ -1,6 +1,6 @@
-# Screen Intent
+# Accent
 
-Screen Intent is a local macOS assistant that lets you press a keyboard shortcut, ask what you want to do on screen, and get a highlighted UI element plus a short direction.
+Accent is a local macOS assistant that lets you press a keyboard shortcut, ask what you want to do on screen, and get a highlighted UI element plus a short direction.
 
 The repo has three pieces:
 
