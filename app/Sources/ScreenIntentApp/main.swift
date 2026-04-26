@@ -18,6 +18,7 @@ struct Paths {
     let conflictResolutionURL: URL
     let finalActionButtonsURL: URL
     let inputImageURL: URL
+    let detectionsURL: URL
 
     static func detect() -> Paths {
         let current = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
@@ -40,7 +41,8 @@ struct Paths {
             pythonURL: repoDir.appendingPathComponent("env/bin/python3"),
             conflictResolutionURL: outputDir.appendingPathComponent("conflict_resolution.json"),
             finalActionButtonsURL: outputDir.appendingPathComponent("final_action_buttons.json"),
-            inputImageURL: outputDir.appendingPathComponent("input_image.png")
+            inputImageURL: outputDir.appendingPathComponent("input_image.png"),
+            detectionsURL: outputDir.appendingPathComponent("detections.json")
         )
     }
 }
@@ -63,6 +65,12 @@ struct PixelBox: Decodable {
     let y1: Double
     let x2: Double
     let y2: Double
+}
+
+struct DetectionItem: Decodable {
+    let element_id: String
+    let box: [Double]
+    let confidence: Double?
 }
 
 final class AppLogger {
@@ -442,6 +450,11 @@ final class ElevenLabsMicController: NSObject {
 
     func toggle() {
         isListening ? stopAndTranscribe() : startRecording()
+    }
+
+    func startListening() {
+        guard !isListening else { return }
+        startRecording()
     }
 
     func cancel() {
@@ -902,6 +915,7 @@ final class CommandBarWindow: NSPanel, NSTextFieldDelegate {
         makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
         textField.becomeFirstResponder()
+        mic.startListening()
     }
 
     override var canBecomeKey: Bool { true }
@@ -954,7 +968,7 @@ final class DetectiveBlobView: NSView {
     func startAnimation() {
         startDate = Date()
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0 / 30.0, repeats: true) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60.0, repeats: true) { [weak self] _ in
             self?.needsDisplay = true
         }
     }
@@ -979,10 +993,36 @@ final class DetectiveBlobView: NSView {
         drawHat(elapsed: elapsed)
         drawCheeksAndFace(elapsed: elapsed)
         drawMagnifyingGlass(elapsed: elapsed)
+        drawCloudPuffs(elapsed: elapsed)
         drawSparkle(center: NSPoint(x: 320, y: 157), size: 14, elapsed: elapsed, delay: 0)
         drawSparkle(center: NSPoint(x: 90, y: 174), size: 8, elapsed: elapsed, delay: 0.5)
 
         NSGraphicsContext.restoreGraphicsState()
+    }
+
+    private func drawCloudPuffs(elapsed: CGFloat) {
+        let puffs: [(x: CGFloat, y: CGFloat, size: CGFloat, delay: CGFloat)] = [
+            (96, 104, 22, 0.0),
+            (302, 116, 18, 0.7),
+            (82, 264, 14, 1.4),
+            (315, 284, 16, 2.1)
+        ]
+        for puff in puffs {
+            let cycle = ((elapsed + puff.delay).truncatingRemainder(dividingBy: 3.2)) / 3.2
+            let rise = 28 * cycle
+            let drift = 8 * sin((elapsed + puff.delay) * 1.7)
+            let alpha = max(0, sin(cycle * .pi)) * 0.32
+            let rect = NSRect(
+                x: puff.x + drift - puff.size / 2,
+                y: puff.y - rise - puff.size / 2,
+                width: puff.size,
+                height: puff.size * 0.68
+            )
+            NSColor.white.withAlphaComponent(alpha).setFill()
+            NSBezierPath(ovalIn: rect).fill()
+            NSBezierPath(ovalIn: rect.offsetBy(dx: puff.size * 0.28, dy: -puff.size * 0.08)).fill()
+            NSBezierPath(ovalIn: rect.offsetBy(dx: -puff.size * 0.24, dy: -puff.size * 0.04)).fill()
+        }
     }
 
     private func drawBlobBody() {
@@ -1119,6 +1159,7 @@ final class LoadingWindow: NSWindow {
     )
     private var startedAt: Date?
     private var timer: Timer?
+    private var dotStep = 0
     var onStop: (() -> Void)?
 
     init() {
@@ -1134,27 +1175,28 @@ final class LoadingWindow: NSWindow {
         content.layer?.backgroundColor = NSColor.clear.cgColor
         contentView = content
 
-        detectiveBlob.frame = NSRect(x: frame.midX - 110, y: frame.midY - 110, width: 220, height: 220)
+        detectiveBlob.frame = NSRect(x: frame.midX - 135, y: frame.midY - 130, width: 270, height: 270)
         content.addSubview(detectiveBlob)
 
         label.textColor = .white
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
+        label.font = .systemFont(ofSize: 21, weight: .semibold)
         label.alignment = .center
-        label.frame = NSRect(x: frame.midX - 160, y: frame.midY - 150, width: 320, height: 24)
+        label.frame = NSRect(x: frame.midX - 180, y: frame.midY - 178, width: 360, height: 30)
         content.addSubview(label)
 
         stopButton.target = self
         stopButton.action = #selector(stopThinking)
-        stopButton.frame = NSRect(x: frame.midX - 48, y: frame.midY - 198, width: 96, height: 34)
+        stopButton.frame = NSRect(x: frame.midX - 62, y: frame.midY - 232, width: 124, height: 42)
         content.addSubview(stopButton)
     }
 
     func show() {
         startedAt = Date()
-        updateTimerLabel()
+        dotStep = 0
+        updateThinkingLabel()
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] _ in
-            self?.updateTimerLabel()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.55, repeats: true) { [weak self] _ in
+            self?.updateThinkingLabel()
         }
         detectiveBlob.startAnimation()
         orderFrontRegardless()
@@ -1164,17 +1206,293 @@ final class LoadingWindow: NSWindow {
         timer?.invalidate()
         timer = nil
         startedAt = nil
+        dotStep = 0
         detectiveBlob.stopAnimation()
         orderOut(nil)
     }
 
-    private func updateTimerLabel() {
-        let elapsed = startedAt.map { Int(Date().timeIntervalSince($0)) } ?? 0
-        label.stringValue = "Thinking... \(elapsed)s"
+    private func updateThinkingLabel() {
+        dotStep = (dotStep + 1) % 4
+        label.stringValue = "Thinking" + String(repeating: ".", count: dotStep)
     }
 
     @objc private func stopThinking() {
         onStop?()
+    }
+}
+
+final class ScanningBoxesWindow: NSWindow {
+    private let scanningView: ScanningBoxesView
+
+    init() {
+        let frame = NSScreen.main?.frame ?? .zero
+        scanningView = ScanningBoxesView(frame: frame)
+        super.init(contentRect: frame, styleMask: [.borderless], backing: .buffered, defer: false)
+        level = NSWindow.Level(Int(CGWindowLevelForKey(.screenSaverWindow)) + 1)
+        collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
+        backgroundColor = .clear
+        isOpaque = false
+        ignoresMouseEvents = true
+        contentView = scanningView
+    }
+
+    func start(detections: [DetectionItem], screenshotSize: NSSize) {
+        scanningView.start(detections: detections, screenshotSize: screenshotSize)
+        orderFrontRegardless()
+    }
+
+    func stop() {
+        scanningView.stop()
+        orderOut(nil)
+    }
+}
+
+final class ScanningBoxesView: NSView {
+    private let colors: [NSColor] = [
+        NSColor(red: 0.45, green: 0.62, blue: 0.49, alpha: 0.58),
+        NSColor(red: 0.47, green: 0.56, blue: 0.68, alpha: 0.58),
+        NSColor(red: 0.67, green: 0.48, blue: 0.46, alpha: 0.58),
+        NSColor(red: 0.66, green: 0.58, blue: 0.43, alpha: 0.58),
+        NSColor(red: 0.57, green: 0.50, blue: 0.66, alpha: 0.58),
+    ]
+    private let bubbleMessages = [
+        "Case file open.",
+        "Dusting buttons for clues.",
+        "The trail is warming up.",
+        "Interrogating the icons.",
+        "Checking the usual suspects.",
+        "This clue looks suspicious.",
+        "Following the control trail.",
+        "Magnifier says: almost.",
+        "The case is narrowing.",
+        "One more clue to verify."
+    ]
+    private var detections: [DetectionItem] = []
+    private var screenshotSize: NSSize = .zero
+    private var activeBoxes: [(detection: DetectionItem, revealedAt: TimeInterval, life: TimeInterval)] = []
+    private var activeBubble: (message: String, shownAt: TimeInterval)?
+    private var shownBubbleCount = 0
+    private var nextDetectionIndex = 0
+    private var timer: Timer?
+    private var startedAt = Date()
+    private var nextRevealAt: TimeInterval = 0.5
+
+    override var isFlipped: Bool { true }
+
+    func start(detections: [DetectionItem], screenshotSize: NSSize) {
+        self.detections = detections
+            .filter { $0.box.count == 4 && ($0.confidence ?? 0) > 0.6 }
+            .sorted { lhs, rhs in
+                let lhsY = lhs.box[1]
+                let rhsY = rhs.box[1]
+                if abs(lhsY - rhsY) > 28 {
+                    return lhsY < rhsY
+                }
+                return lhs.box[0] < rhs.box[0]
+            }
+        self.screenshotSize = screenshotSize
+        activeBoxes = []
+        activeBubble = nil
+        shownBubbleCount = 0
+        nextDetectionIndex = 0
+        startedAt = Date()
+        nextRevealAt = 0.5
+        needsDisplay = true
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60.0, repeats: true) { [weak self] _ in
+            guard let self else { return }
+            if self.detections.isEmpty {
+                return
+            }
+            let elapsed = Date().timeIntervalSince(self.startedAt)
+            self.activeBoxes.removeAll { elapsed - $0.revealedAt > $0.life }
+            if self.activeBoxes.count > 42 {
+                self.activeBoxes.removeFirst(self.activeBoxes.count - 42)
+            }
+            if let bubble = self.activeBubble, elapsed - bubble.shownAt > 4.6 {
+                self.activeBubble = nil
+            }
+
+            while elapsed >= self.nextRevealAt {
+                if let visible = self.nextVisibleDetection() {
+                    let detection = visible.detection
+                    let life = 13.0 + Double((self.nextDetectionIndex % 5)) * 1.7
+                    self.activeBoxes.append((detection: detection, revealedAt: elapsed, life: life))
+                    if self.activeBubble == nil && self.shownBubbleCount < self.bubbleMessages.count && self.nextDetectionIndex % 8 == 1 {
+                        self.activeBubble = (message: self.bubbleMessages[self.shownBubbleCount], shownAt: elapsed)
+                        self.shownBubbleCount += 1
+                    }
+                    self.nextDetectionIndex = visible.nextIndex
+                } else {
+                    self.nextDetectionIndex += 1
+                }
+                self.nextRevealAt += self.revealInterval(nextRevealAt: self.nextRevealAt)
+            }
+
+            self.needsDisplay = true
+        }
+    }
+
+    private func nextVisibleDetection() -> (detection: DetectionItem, nextIndex: Int)? {
+        guard !detections.isEmpty else { return nil }
+        let protectedRect = logoProtectionRect()
+        let scaleX = bounds.width / max(screenshotSize.width, 1)
+        let scaleY = bounds.height / max(screenshotSize.height, 1)
+        for offset in 0..<detections.count {
+            let detectionIndex = (nextDetectionIndex + offset) % detections.count
+            let detection = detections[detectionIndex]
+            let box = detection.box
+            let rect = NSRect(
+                x: box[0] * scaleX,
+                y: box[1] * scaleY,
+                width: (box[2] - box[0]) * scaleX,
+                height: (box[3] - box[1]) * scaleY
+            )
+            if !rect.intersects(protectedRect) {
+                return (detection: detection, nextIndex: detectionIndex + 1)
+            }
+        }
+        return nil
+    }
+
+    private func revealInterval(nextRevealAt: TimeInterval) -> TimeInterval {
+        let startRate = 1.0 / 0.5
+        let rampedRate = startRate * pow(1.33, nextRevealAt)
+        let cappedRate = min(8.0, rampedRate)
+        return 1.0 / cappedRate
+    }
+
+    func stop() {
+        timer?.invalidate()
+        timer = nil
+        detections = []
+        activeBoxes = []
+        activeBubble = nil
+        shownBubbleCount = 0
+        nextDetectionIndex = 0
+        needsDisplay = true
+    }
+
+    override func draw(_ dirtyRect: NSRect) {
+        guard screenshotSize.width > 0, screenshotSize.height > 0 else { return }
+        let scaleX = bounds.width / screenshotSize.width
+        let scaleY = bounds.height / screenshotSize.height
+        for (index, activeBox) in activeBoxes.enumerated() {
+            let detection = activeBox.detection
+            let box = detection.box
+            let rect = NSRect(
+                x: box[0] * scaleX,
+                y: box[1] * scaleY,
+                width: (box[2] - box[0]) * scaleX,
+                height: (box[3] - box[1]) * scaleY
+            )
+            let color = colors[index % colors.count]
+            let age = Date().timeIntervalSince(startedAt) - activeBox.revealedAt
+            let progress = max(0, min(1, age / activeBox.life))
+            drawBox(rect: rect, label: detection.element_id, color: color, progress: progress)
+        }
+        drawBubbleIfNeeded()
+    }
+
+    private func drawBox(rect: NSRect, label: String, color: NSColor, progress: Double) {
+        let fadeIn = min(1, progress / 0.18)
+        let fadeOut = progress > 0.82 ? max(0, 1 - ((progress - 0.82) / 0.18)) : 1
+        let alpha = CGFloat(fadeIn * fadeOut)
+        let pulse = 0.5 + 0.5 * sin(CGFloat(progress) * .pi * 6)
+        let drawColor = color.withAlphaComponent(color.alphaComponent * alpha)
+        let lineWidth: CGFloat = 0.95 + 0.35 * pulse
+        let border = NSBezierPath(rect: rect)
+        border.lineWidth = lineWidth
+        drawColor.setStroke()
+        border.stroke()
+
+        let sweepX = rect.minX + rect.width * CGFloat(progress)
+        let sweep = NSBezierPath()
+        sweep.move(to: NSPoint(x: sweepX, y: rect.minY))
+        sweep.line(to: NSPoint(x: sweepX, y: rect.maxY))
+        sweep.lineWidth = 1
+        color.withAlphaComponent(0.25 * alpha).setStroke()
+        sweep.stroke()
+
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: NSFont.systemFont(ofSize: 15, weight: .semibold),
+            .foregroundColor: NSColor.white.withAlphaComponent(alpha)
+        ]
+        let text = NSString(string: label)
+        let size = text.size(withAttributes: attributes)
+        let labelRect = NSRect(
+            x: rect.minX,
+            y: max(0, rect.minY - size.height - 5),
+            width: size.width + 10,
+            height: size.height + 5
+        )
+        drawColor.setFill()
+        NSBezierPath(roundedRect: labelRect, xRadius: 4, yRadius: 4).fill()
+        text.draw(in: labelRect.insetBy(dx: 5, dy: 2.5), withAttributes: attributes)
+    }
+
+    private func drawBubbleIfNeeded() {
+        guard let activeBubble else { return }
+        let age = Date().timeIntervalSince(startedAt) - activeBubble.shownAt
+        let alpha = CGFloat(min(1, age / 0.25) * min(1, max(0, 4.6 - age) / 1.2))
+        guard alpha > 0 else { return }
+
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: NSFont.systemFont(ofSize: 24, weight: .bold),
+            .foregroundColor: NSColor.white.withAlphaComponent(alpha)
+        ]
+        let text = NSString(string: activeBubble.message)
+        let size = text.size(withAttributes: attributes)
+        let padding: CGFloat = 18
+        let bubbleSize = NSSize(width: size.width + padding * 2, height: size.height + padding * 2)
+        let bubbleRect = movingBubbleRect(size: bubbleSize, age: age)
+        NSColor(red: 0.00, green: 0.46, blue: 1.00, alpha: 0.98 * alpha).setFill()
+        NSBezierPath(roundedRect: bubbleRect, xRadius: 22, yRadius: 22).fill()
+
+        NSColor.white.withAlphaComponent(0.82 * alpha).setStroke()
+        let outline = NSBezierPath(roundedRect: bubbleRect, xRadius: 22, yRadius: 22)
+        outline.lineWidth = 2
+        outline.stroke()
+
+        text.draw(in: bubbleRect.insetBy(dx: padding, dy: padding), withAttributes: attributes)
+    }
+
+    private func movingBubbleRect(size: NSSize, age: TimeInterval) -> NSRect {
+        let margin: CGFloat = 30
+        let safeMaxX = max(margin, bounds.maxX - size.width - margin)
+        let safeMaxY = max(margin, bounds.maxY - size.height - margin)
+        let protected = logoProtectionRect().insetBy(dx: -36, dy: -24)
+        let rightX = protected.maxX + 34
+        let leftX = protected.minX - size.width - 34
+        let topY = protected.minY + 88
+        let bottomY = protected.maxY - size.height - 88
+        let anchors = [
+            NSPoint(x: rightX, y: topY),
+            NSPoint(x: leftX, y: topY),
+            NSPoint(x: rightX, y: bottomY),
+            NSPoint(x: leftX, y: bottomY)
+        ]
+        let anchor = anchors[max(0, shownBubbleCount - 1) % anchors.count]
+        let baseX = min(max(margin, anchor.x), safeMaxX)
+        let baseY = min(max(margin, anchor.y), safeMaxY)
+
+        let driftX = CGFloat(sin(age * 1.15)) * 18 + CGFloat(sin(age * 0.41)) * 7
+        let driftY = CGFloat(cos(age * 0.92)) * 12 + CGFloat(sin(age * 0.53)) * 5
+        return NSRect(
+            x: min(max(margin, baseX + driftX), safeMaxX),
+            y: min(max(margin, baseY + driftY), safeMaxY),
+            width: size.width,
+            height: size.height
+        )
+    }
+
+    private func logoProtectionRect() -> NSRect {
+        NSRect(
+            x: bounds.midX - 230,
+            y: bounds.midY - 265,
+            width: 460,
+            height: 560
+        )
     }
 }
 
@@ -1409,6 +1727,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var hotKey: HotKeyManager?
     private var commandBar: CommandBarWindow?
     private var loadingWindow: LoadingWindow?
+    private var scanningWindow: ScanningBoxesWindow?
+    private var scanPollTimer: Timer?
     private var highlightWindow: HighlightWindow?
     private var replayWindow: ReplayWindow?
     private var activeProcess: Process?
@@ -1421,6 +1741,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         AppLogger.shared.configure(paths.appLogURL)
         commandBar = CommandBarWindow(paths: paths, elevenLabs: elevenLabs)
         loadingWindow = LoadingWindow()
+        scanningWindow = ScanningBoxesWindow()
         loadingWindow?.onStop = { [weak self] in
             self?.cancelCurrentRun()
         }
@@ -1442,10 +1763,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             try captureScreenshot()
             try writeRunEnv(intent: intent)
             loadingWindow?.show()
+            startScanningWhenDetectionsAreReady()
             runCompletePipeline()
         } catch {
             currentRunStartedAt = nil
             loadingWindow?.hide()
+            stopScanning()
             showError(error.localizedDescription)
         }
     }
@@ -1497,6 +1820,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             DispatchQueue.main.async {
                 self?.activeProcess = nil
                 self?.loadingWindow?.hide()
+                self?.stopScanning()
                 if self?.didCancelCurrentRun == true {
                     AppLogger.shared.log("Pipeline cancellation completed")
                     self?.didCancelCurrentRun = false
@@ -1517,8 +1841,56 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         } catch {
             activeProcess = nil
             loadingWindow?.hide()
+            stopScanning()
             showError(error.localizedDescription)
         }
+    }
+
+    private func startScanningWhenDetectionsAreReady() {
+        stopScanning()
+        scanPollTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] timer in
+            guard let self else { return }
+            guard let startedAt = self.currentRunStartedAt else {
+                timer.invalidate()
+                self.scanPollTimer = nil
+                return
+            }
+            guard
+                FileManager.default.fileExists(atPath: self.paths.detectionsURL.path),
+                FileManager.default.fileExists(atPath: self.paths.inputImageURL.path),
+                self.fileWasUpdated(self.paths.detectionsURL, after: startedAt),
+                self.fileWasUpdated(self.paths.inputImageURL, after: startedAt)
+            else {
+                return
+            }
+            do {
+                let detectionsData = try Data(contentsOf: self.paths.detectionsURL)
+                let detections = try JSONDecoder().decode([DetectionItem].self, from: detectionsData)
+                let imageSize = try self.screenshotPixelSize()
+                self.scanningWindow?.start(detections: detections, screenshotSize: imageSize)
+                timer.invalidate()
+                self.scanPollTimer = nil
+                AppLogger.shared.log("Started progressive scanning boxes from fresh detections.json: \(detections.count)")
+            } catch {
+                AppLogger.shared.log("Waiting for valid detections before scanning: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    private func fileWasUpdated(_ url: URL, after startedAt: Date) -> Bool {
+        guard
+            let attributes = try? FileManager.default.attributesOfItem(atPath: url.path),
+            let modifiedAt = attributes[.modificationDate] as? Date
+        else {
+            return false
+        }
+        return modifiedAt >= startedAt.addingTimeInterval(-1)
+    }
+
+    private func stopScanning() {
+        scanPollTimer?.invalidate()
+        scanPollTimer = nil
+        scanningWindow?.stop()
     }
 
     private func cancelCurrentRun() {

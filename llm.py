@@ -41,11 +41,17 @@ def load_dotenv(env_file: Path) -> None:
             os.environ[key] = value
 
 
-def image_to_png_bytes(image_path: Path) -> bytes:
+def image_to_model_image(image_path: Path) -> tuple[str, bytes]:
+    image_format = os.getenv("GEMINI_IMAGE_FORMAT", "jpeg").strip().lower()
     with Image.open(image_path) as image:
         buffer = io.BytesIO()
-        image.convert("RGB").save(buffer, format="PNG")
-    return buffer.getvalue()
+        rgb = image.convert("RGB")
+        if image_format == "png":
+            rgb.save(buffer, format="PNG")
+            return "image/png", buffer.getvalue()
+        quality = int(os.getenv("GEMINI_IMAGE_JPEG_QUALITY", "82"))
+        rgb.save(buffer, format="JPEG", quality=quality, optimize=True)
+        return "image/jpeg", buffer.getvalue()
 
 
 def gemini_api_url(model_name: str) -> str:
@@ -54,6 +60,15 @@ def gemini_api_url(model_name: str) -> str:
         f"https://generativelanguage.googleapis.com/{api_version}/models/"
         f"{model_name}:generateContent"
     )
+
+
+def provider_name() -> str:
+    return os.getenv("LLM_PROVIDER", "gemini").strip().lower()
+
+
+def ollama_api_url() -> str:
+    base_url = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434").rstrip("/")
+    return f"{base_url}/api/chat"
 
 
 def supports_thinking_level(model_name: str) -> bool:
@@ -73,6 +88,10 @@ def model_candidates() -> list[str]:
     if fallback and fallback not in models:
         models.append(fallback)
     return models
+
+
+def ollama_model_name() -> str:
+    return os.getenv("OLLAMA_MODEL", "gemma4:e4b")
 
 
 def post_gemini_with_retries(
@@ -110,6 +129,45 @@ def post_gemini_with_retries(
     return response
 
 
+def post_ollama_chat(
+    *,
+    system: str,
+    prompt: str,
+    image_b64s: list[str],
+    model_name: str,
+) -> dict:
+    payload = {
+        "model": model_name,
+        "messages": [
+            {"role": "system", "content": system},
+            {
+                "role": "user",
+                "content": prompt,
+                "images": image_b64s,
+            },
+        ],
+        "stream": False,
+        "format": "json",
+        "options": {
+            "temperature": float(os.getenv("OLLAMA_TEMPERATURE", "0")),
+            "num_predict": int(os.getenv("OLLAMA_NUM_PREDICT", "12000")),
+        },
+    }
+    response = requests.post(
+        ollama_api_url(),
+        json=payload,
+        timeout=int(os.getenv("OLLAMA_TIMEOUT_SECONDS", "240")),
+    )
+    try:
+        response.raise_for_status()
+    except requests.HTTPError as exc:
+        raise RuntimeError(
+            f"Ollama request failed for model {model_name}: "
+            f"{response.status_code} {response.text}"
+        ) from exc
+    return response.json()
+
+
 def extract_gemini_text(response_json: dict) -> str:
     parts = (
         response_json.get("candidates", [{}])[0]
@@ -118,6 +176,14 @@ def extract_gemini_text(response_json: dict) -> str:
     )
     text_parts = [part.get("text", "") for part in parts if part.get("text")]
     return "\n".join(text_parts).strip()
+
+
+def extract_ollama_text(response_json: dict) -> str:
+    return (
+        response_json.get("message", {}).get("content")
+        or response_json.get("response")
+        or ""
+    ).strip()
 
 
 def response_schema(element_ids: list[str]) -> dict:
@@ -378,12 +444,13 @@ def main() -> None:
 
     element_ids = load_element_ids(element_ids_file)
     detections = load_detections(detections_file)
-    annotated_image_bytes = image_to_png_bytes(annotated_image_file)
+    annotated_mime_type, annotated_image_bytes = image_to_model_image(annotated_image_file)
     annotated_image_b64 = base64.b64encode(annotated_image_bytes).decode("ascii")
     primary_model_name = os.getenv("GEMINI_MODEL", "gemini-3-flash-preview")
+    provider = provider_name()
 
     api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
+    if provider == "gemini" and not api_key:
         raise EnvironmentError("Set GEMINI_API_KEY before running llm.py.")
 
     id_chunks = element_id_chunks(element_ids)
@@ -400,7 +467,6 @@ def main() -> None:
     batches = grouped_batches(crop_sheet_files, id_chunks, sheets_per_call, max_ids_per_call)
     semantics = {}
     batch_logs = []
-
     for batch_index, (batch_crop_sheet_files, batch_ids) in enumerate(batches, 1):
         prompt = user_prompt(batch_ids)
         user_parts = [
@@ -408,13 +474,14 @@ def main() -> None:
             {"text": "Image 1: full annotated screenshot for context."},
             {
                 "inlineData": {
-                    "mimeType": "image/png",
+                    "mimeType": annotated_mime_type,
                     "data": annotated_image_b64,
                 }
             },
         ]
         for sheet_index, crop_sheet_file in enumerate(batch_crop_sheet_files, 1):
-            crop_sheet_b64 = base64.b64encode(image_to_png_bytes(crop_sheet_file)).decode("ascii")
+            crop_sheet_mime_type, crop_sheet_bytes = image_to_model_image(crop_sheet_file)
+            crop_sheet_b64 = base64.b64encode(crop_sheet_bytes).decode("ascii")
             user_parts.extend([
                 {
                     "text": (
@@ -424,57 +491,77 @@ def main() -> None:
                 },
                 {
                     "inlineData": {
-                        "mimeType": "image/png",
+                        "mimeType": crop_sheet_mime_type,
                         "data": crop_sheet_b64,
                     }
                 },
             ])
 
-        response = None
-        used_model_name = primary_model_name
         batch_label = f"batch {batch_index}, ids {batch_ids[0]}-{batch_ids[-1]}"
-        last_error = None
-        candidates = model_candidates()
 
-        for candidate_model_name in candidates:
-            payload = {
-                "systemInstruction": {
-                    "parts": [{"text": system_prompt()}],
-                },
-                "contents": [
-                    {
-                        "role": "user",
-                        "parts": user_parts,
-                    }
-                ],
-                "generationConfig": {
-                    "responseMimeType": "application/json",
-                    "responseSchema": response_schema(batch_ids),
-                    "maxOutputTokens": int(os.getenv("GEMINI_MAX_OUTPUT_TOKENS", "12000")),
-                },
-            }
-            if supports_thinking_level(candidate_model_name):
-                payload["generationConfig"]["thinkingConfig"] = {
-                    "thinkingLevel": os.getenv("GEMINI_THINKING_LEVEL", "low"),
-                }
-
-            response = post_gemini_with_retries(payload, api_key, candidate_model_name, batch_label)
-            if response.ok:
-                used_model_name = candidate_model_name
-                break
-
-            last_error = (
-                f"Gemini API request failed for model {candidate_model_name}, "
-                f"{batch_label}: {response.status_code} {response.text}"
+        if provider == "ollama":
+            used_model_name = ollama_model_name()
+            ollama_prompt = "\n\n".join(
+                part["text"] for part in user_parts if "text" in part
             )
-            if candidate_model_name != candidates[-1]:
-                print(f"{last_error}\nTrying fallback model...")
+            image_b64s = [
+                part["inlineData"]["data"]
+                for part in user_parts
+                if "inlineData" in part
+            ]
+            response_json = post_ollama_chat(
+                system=system_prompt(),
+                prompt=ollama_prompt,
+                image_b64s=image_b64s,
+                model_name=used_model_name,
+            )
+            content = extract_ollama_text(response_json)
+        else:
+            response = None
+            used_model_name = primary_model_name
+            last_error = None
+            candidates = model_candidates()
 
-        if response is None or not response.ok:
-            raise RuntimeError(last_error or f"Gemini API request failed for {batch_label}")
+            for candidate_model_name in candidates:
+                payload = {
+                    "systemInstruction": {
+                        "parts": [{"text": system_prompt()}],
+                    },
+                    "contents": [
+                        {
+                            "role": "user",
+                            "parts": user_parts,
+                        }
+                    ],
+                    "generationConfig": {
+                        "responseMimeType": "application/json",
+                        "responseSchema": response_schema(batch_ids),
+                        "maxOutputTokens": int(os.getenv("GEMINI_MAX_OUTPUT_TOKENS", "12000")),
+                    },
+                }
+                if supports_thinking_level(candidate_model_name):
+                    payload["generationConfig"]["thinkingConfig"] = {
+                        "thinkingLevel": os.getenv("GEMINI_THINKING_LEVEL", "low"),
+                    }
 
-        response_json = response.json()
-        content = extract_gemini_text(response_json)
+                response = post_gemini_with_retries(payload, api_key, candidate_model_name, batch_label)
+                if response.ok:
+                    used_model_name = candidate_model_name
+                    break
+
+                last_error = (
+                    f"Gemini API request failed for model {candidate_model_name}, "
+                    f"{batch_label}: {response.status_code} {response.text}"
+                )
+                if candidate_model_name != candidates[-1]:
+                    print(f"{last_error}\nTrying fallback model...")
+
+            if response is None or not response.ok:
+                raise RuntimeError(last_error or f"Gemini API request failed for {batch_label}")
+
+            response_json = response.json()
+            content = extract_gemini_text(response_json)
+
         try:
             parsed = parse_json_object(content)
             batch_semantics = normalize_semantics(parsed, batch_ids)
@@ -489,7 +576,7 @@ def main() -> None:
             "crop_sheet_files": [str(path) for path in batch_crop_sheet_files],
             "element_ids": batch_ids,
             "content": content,
-            "usage_metadata": response_json.get("usageMetadata", {}),
+            "usage_metadata": response_json.get("usageMetadata", response_json.get("eval_count", {})),
             "candidates": response_json.get("candidates", []),
             "raw_response": response_json,
         })
@@ -497,11 +584,14 @@ def main() -> None:
     semantics = normalize_semantics(semantics, element_ids)
 
     chat_log = {
-        "model": primary_model_name,
+        "model": ollama_model_name() if provider == "ollama" else primary_model_name,
         "model_candidates": model_candidates(),
-        "provider": "gemini",
+        "ollama_model": ollama_model_name(),
+        "provider": provider,
         "orchestrator": "rest",
         "api_version": os.getenv("GEMINI_API_VERSION", "v1alpha"),
+        "image_format": os.getenv("GEMINI_IMAGE_FORMAT", "jpeg"),
+        "image_jpeg_quality": os.getenv("GEMINI_IMAGE_JPEG_QUALITY", "82"),
         "annotated_image_file": str(annotated_image_file),
         "crop_sheet_files": [str(path) for path in crop_sheet_files],
         "element_ids_file": str(element_ids_file),

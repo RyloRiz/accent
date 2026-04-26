@@ -4,3 +4,10 @@ env
 test_outputs
 app/.build
 app/runtime
+__pycache__/
+*.py[cod]
+*.log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.swiftpm/

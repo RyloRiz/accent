@@ -1,3170 +1,3442 @@
 {
   "E0": {
-    "semantic": "Letter Spearmint template, page content.",
+    "semantic": "thumbnail button for project data slide in the bottom horizontal carousel",
     "box": {
-      "x1": 1548.9,
-      "y1": 562.22,
-      "x2": 1853.22,
-      "y2": 944.45,
-      "width": 304.32,
-      "height": 382.23,
-      "center_x": 1701.06,
-      "center_y": 753.34
+      "x1": 2715.93,
+      "y1": 1810.42,
+      "x2": 2950.55,
+      "y2": 1960.2,
+      "width": 234.62,
+      "height": 149.78,
+      "center_x": 2833.24,
+      "center_y": 1885.31
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.9493
+    "confidence": 0.8915
   },
   "E1": {
-    "semantic": "Resume Coral template, page content.",
+    "semantic": "thumbnail button for pipeline pt. 5 slide in the bottom horizontal carousel",
     "box": {
-      "x1": 1221.6,
-      "y1": 557.82,
-      "x2": 1532.42,
-      "y2": 950.24,
-      "width": 310.82,
-      "height": 392.42,
-      "center_x": 1377.01,
-      "center_y": 754.03
+      "x1": 2454.36,
+      "y1": 1806.81,
+      "x2": 2688.7,
+      "y2": 1960.24,
+      "width": 234.34,
+      "height": 153.43,
+      "center_x": 2571.53,
+      "center_y": 1883.52
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.944
+    "confidence": 0.8903
   },
   "E2": {
-    "semantic": "Report Luxe template, page content.",
+    "semantic": "Visual Studio Code application icon in the dock",
     "box": {
-      "x1": 2527.63,
-      "y1": 566.96,
-      "x2": 2834.52,
-      "y2": 954.28,
-      "width": 306.89,
-      "height": 387.32,
-      "center_x": 2681.08,
-      "center_y": 760.62
+      "x1": 1959.55,
+      "y1": 2058.49,
+      "x2": 2104.23,
+      "y2": 2227.95,
+      "width": 144.68,
+      "height": 169.46,
+      "center_x": 2031.89,
+      "center_y": 2143.22
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.9381
+    "confidence": 0.8751
   },
   "E3": {
-    "semantic": "Resume Serif template, page content.",
+    "semantic": "slide header text Pipeline Pt. 5 in the page content area",
     "box": {
-      "x1": 900.18,
-      "y1": 558.39,
-      "x2": 1200.48,
-      "y2": 952.72,
-      "width": 300.3,
-      "height": 394.33,
-      "center_x": 1050.33,
-      "center_y": 755.55
+      "x1": 1630.02,
+      "y1": 612.0,
+      "x2": 2655.83,
+      "y2": 759.36,
+      "width": 1025.81,
+      "height": 147.36,
+      "center_x": 2142.93,
+      "center_y": 685.68
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.9348
+    "confidence": 0.8742
   },
   "E4": {
-    "semantic": "Brochure Geometric template, page content.",
+    "semantic": "thumbnail button for pipeline pt. 2 slide in the bottom horizontal carousel",
     "box": {
-      "x1": 2198.41,
-      "y1": 560.2,
-      "x2": 2509.29,
-      "y2": 944.36,
-      "width": 310.88,
-      "height": 384.16,
-      "center_x": 2353.85,
-      "center_y": 752.28
+      "x1": 1931.21,
+      "y1": 1815.36,
+      "x2": 2170.56,
+      "y2": 1957.94,
+      "width": 239.35,
+      "height": 142.58,
+      "center_x": 2050.89,
+      "center_y": 1886.65
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.9289
+    "confidence": 0.8646
   },
   "E5": {
-    "semantic": "Blank document button, page content.",
+    "semantic": "thumbnail button for pipeline pt. 1 slide in the bottom horizontal carousel",
     "box": {
-      "x1": 570.73,
-      "y1": 566.43,
-      "x2": 878.0,
-      "y2": 957.42,
-      "width": 307.27,
-      "height": 390.99,
-      "center_x": 724.37,
-      "center_y": 761.92
+      "x1": 1676.84,
+      "y1": 1813.59,
+      "x2": 1913.99,
+      "y2": 1959.05,
+      "width": 237.15,
+      "height": 145.46,
+      "center_x": 1795.41,
+      "center_y": 1886.32
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.925
+    "confidence": 0.86
   },
   "E6": {
-    "semantic": "Fetch.ai Company Challenge document, page content.",
+    "semantic": "Google Chrome application icon in the dock",
     "box": {
-      "x1": 2405.28,
-      "y1": 1225.9,
-      "x2": 2831.83,
-      "y2": 1892.81,
-      "width": 426.55,
-      "height": 666.91,
-      "center_x": 2618.56,
-      "center_y": 1559.36
+      "x1": 1813.46,
+      "y1": 2063.91,
+      "x2": 1958.93,
+      "y2": 2228.36,
+      "width": 145.47,
+      "height": 164.45,
+      "center_x": 1886.19,
+      "center_y": 2146.13
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.9153
+    "confidence": 0.8572
   },
   "E7": {
-    "semantic": "Project proposal Tropic template, page content.",
+    "semantic": "Signal messaging application icon in the dock",
     "box": {
-      "x1": 1865.03,
-      "y1": 553.61,
-      "x2": 2173.39,
-      "y2": 936.84,
-      "width": 308.36,
-      "height": 383.23,
-      "center_x": 2019.21,
-      "center_y": 745.23
+      "x1": 2259.36,
+      "y1": 2057.78,
+      "x2": 2404.4,
+      "y2": 2219.87,
+      "width": 145.04,
+      "height": 162.09,
+      "center_x": 2331.88,
+      "center_y": 2138.83
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.914
+    "confidence": 0.8569
   },
   "E8": {
-    "semantic": "Upgrade account button, page content.",
+    "semantic": "Apple Music application icon in the dock",
     "box": {
-      "x1": 2974.08,
-      "y1": 326.44,
-      "x2": 3211.73,
-      "y2": 439.44,
-      "width": 237.65,
-      "height": 113.0,
-      "center_x": 3092.9,
-      "center_y": 382.94
+      "x1": 1143.09,
+      "y1": 2061.77,
+      "x2": 1284.78,
+      "y2": 2225.72,
+      "width": 141.69,
+      "height": 163.95,
+      "center_x": 1213.93,
+      "center_y": 2143.74
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8864
+    "confidence": 0.8559
   },
   "E9": {
-    "semantic": "ECE M16 (CS M51A) [Spring 2024] - Schedule document, page content.",
+    "semantic": "System Settings application icon in the dock",
     "box": {
-      "x1": 565.18,
-      "y1": 1226.9,
-      "x2": 986.37,
-      "y2": 1911.56,
-      "width": 421.19,
-      "height": 684.66,
-      "center_x": 775.77,
-      "center_y": 1569.23
+      "x1": 1295.63,
+      "y1": 2057.48,
+      "x2": 1434.92,
+      "y2": 2219.48,
+      "width": 139.29,
+      "height": 162.0,
+      "center_x": 1365.28,
+      "center_y": 2138.48
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8734
+    "confidence": 0.8528
   },
   "E10": {
-    "semantic": "Google Chrome application icon, dock.",
+    "semantic": "thumbnail button for demo slide in the bottom horizontal carousel",
     "box": {
-      "x1": 1808.61,
-      "y1": 2067.33,
-      "x2": 1945.84,
-      "y2": 2219.16,
-      "width": 137.23,
-      "height": 151.83,
-      "center_x": 1877.22,
-      "center_y": 2143.24
+      "x1": 1415.82,
+      "y1": 1810.9,
+      "x2": 1647.07,
+      "y2": 1954.99,
+      "width": 231.25,
+      "height": 144.09,
+      "center_x": 1531.44,
+      "center_y": 1882.95
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8427
+    "confidence": 0.8492
   },
   "E11": {
-    "semantic": "System Settings application icon, dock.",
+    "semantic": "GIPHY Capture application icon in the dock",
     "box": {
-      "x1": 1302.46,
-      "y1": 2066.96,
-      "x2": 1439.5,
-      "y2": 2216.92,
-      "width": 137.04,
-      "height": 149.96,
-      "center_x": 1370.98,
-      "center_y": 2141.94
+      "x1": 2109.63,
+      "y1": 2058.6,
+      "x2": 2248.7,
+      "y2": 2227.19,
+      "width": 139.07,
+      "height": 168.59,
+      "center_x": 2179.16,
+      "center_y": 2142.89
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8384
+    "confidence": 0.8458
   },
   "E12": {
-    "semantic": "Terminal application icon, dock.",
+    "semantic": "thumbnail button for important data slide in the bottom horizontal carousel",
     "box": {
-      "x1": 1444.43,
-      "y1": 2068.48,
-      "x2": 1590.48,
-      "y2": 2219.75,
-      "width": 146.05,
-      "height": 151.27,
-      "center_x": 1517.46,
-      "center_y": 2144.12
+      "x1": 3237.77,
+      "y1": 1813.46,
+      "x2": 3457.71,
+      "y2": 1959.71,
+      "width": 219.94,
+      "height": 146.25,
+      "center_x": 3347.74,
+      "center_y": 1886.59
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8383
+    "confidence": 0.8454
   },
   "E13": {
-    "semantic": "Music application icon, dock.",
+    "semantic": "Share button with upward arrow icon in the page header chrome",
     "box": {
-      "x1": 1153.16,
-      "y1": 2066.67,
-      "x2": 1289.82,
-      "y2": 2222.81,
-      "width": 136.66,
-      "height": 156.14,
-      "center_x": 1221.49,
-      "center_y": 2144.74
+      "x1": 3251.66,
+      "y1": 329.64,
+      "x2": 3450.43,
+      "y2": 420.07,
+      "width": 198.77,
+      "height": 90.43,
+      "center_x": 3351.05,
+      "center_y": 374.86
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8366
+    "confidence": 0.8411
   },
   "E14": {
-    "semantic": "Launchpad application icon, dock.",
+    "semantic": "Terminal application icon in the dock",
     "box": {
-      "x1": 559.74,
-      "y1": 2069.76,
-      "x2": 694.57,
-      "y2": 2209.53,
-      "width": 134.83,
-      "height": 139.77,
-      "center_x": 627.15,
-      "center_y": 2139.65
+      "x1": 1442.24,
+      "y1": 2056.26,
+      "x2": 1596.46,
+      "y2": 2229.72,
+      "width": 154.22,
+      "height": 173.46,
+      "center_x": 1519.35,
+      "center_y": 2142.99
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8331
+    "confidence": 0.8394
   },
   "E15": {
-    "semantic": "Firefox application icon, dock.",
+    "semantic": "Applications folder shortcut in the dock",
     "box": {
-      "x1": 1658.01,
-      "y1": 2071.63,
-      "x2": 1797.39,
-      "y2": 2211.77,
-      "width": 139.38,
-      "height": 140.14,
-      "center_x": 1727.7,
-      "center_y": 2141.7
+      "x1": 544.58,
+      "y1": 2060.14,
+      "x2": 684.82,
+      "y2": 2218.83,
+      "width": 140.24,
+      "height": 158.69,
+      "center_x": 614.7,
+      "center_y": 2139.48
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8312
+    "confidence": 0.8367
   },
   "E16": {
-    "semantic": "Sublime Text application icon, dock.",
+    "semantic": "Finder application icon in the dock",
     "box": {
-      "x1": 2553.84,
-      "y1": 2068.76,
-      "x2": 2682.11,
-      "y2": 2207.02,
-      "width": 128.27,
-      "height": 138.26,
-      "center_x": 2617.98,
-      "center_y": 2137.89
+      "x1": 393.59,
+      "y1": 2056.74,
+      "x2": 531.51,
+      "y2": 2218.67,
+      "width": 137.92,
+      "height": 161.93,
+      "center_x": 462.55,
+      "center_y": 2137.7
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8308
+    "confidence": 0.8357
   },
   "E17": {
-    "semantic": "Visual Studio Code application icon, dock.",
+    "semantic": "Messages application icon in the dock",
     "box": {
-      "x1": 2255.2,
-      "y1": 2067.86,
-      "x2": 2385.27,
-      "y2": 2210.73,
-      "width": 130.07,
-      "height": 142.87,
-      "center_x": 2320.23,
-      "center_y": 2139.3
+      "x1": 695.27,
+      "y1": 2069.57,
+      "x2": 830.67,
+      "y2": 2219.45,
+      "width": 135.4,
+      "height": 149.88,
+      "center_x": 762.97,
+      "center_y": 2144.51
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8292
+    "confidence": 0.835
   },
   "E18": {
-    "semantic": "Notes application icon, dock.",
+    "semantic": "QuickTime Player application icon in the dock",
     "box": {
-      "x1": 1002.25,
-      "y1": 2066.4,
-      "x2": 1142.1,
-      "y2": 2216.39,
-      "width": 139.85,
-      "height": 149.99,
-      "center_x": 1072.17,
-      "center_y": 2141.39
+      "x1": 2415.61,
+      "y1": 2063.54,
+      "x2": 2549.02,
+      "y2": 2217.91,
+      "width": 133.41,
+      "height": 154.37,
+      "center_x": 2482.32,
+      "center_y": 2140.72
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8281
+    "confidence": 0.8347
   },
   "E19": {
-    "semantic": "Messages application icon, dock.",
+    "semantic": "Firefox application icon in the dock",
     "box": {
-      "x1": 708.1,
-      "y1": 2069.19,
-      "x2": 843.84,
-      "y2": 2213.04,
-      "width": 135.74,
-      "height": 143.85,
-      "center_x": 775.97,
-      "center_y": 2141.12
+      "x1": 1656.75,
+      "y1": 2061.42,
+      "x2": 1806.69,
+      "y2": 2223.68,
+      "width": 149.94,
+      "height": 162.26,
+      "center_x": 1731.72,
+      "center_y": 2142.55
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8244
+    "confidence": 0.8278
   },
   "E20": {
-    "semantic": "Activity Monitor application icon, dock.",
+    "semantic": "FaceTime application icon in the dock",
     "box": {
-      "x1": 1960.82,
-      "y1": 2069.89,
-      "x2": 2097.43,
-      "y2": 2216.79,
-      "width": 136.61,
-      "height": 146.9,
-      "center_x": 2029.12,
-      "center_y": 2143.34
+      "x1": 844.92,
+      "y1": 2064.6,
+      "x2": 982.25,
+      "y2": 2212.01,
+      "width": 137.33,
+      "height": 147.41,
+      "center_x": 913.58,
+      "center_y": 2138.3
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8211
+    "confidence": 0.827
   },
   "E21": {
-    "semantic": "Finder application icon, dock.",
+    "semantic": "KT initialed user profile button in the page header chrome",
     "box": {
-      "x1": 410.31,
-      "y1": 2068.63,
-      "x2": 548.84,
-      "y2": 2209.12,
-      "width": 138.53,
-      "height": 140.49,
-      "center_x": 479.57,
-      "center_y": 2138.88
+      "x1": 2583.07,
+      "y1": 332.65,
+      "x2": 2735.68,
+      "y2": 422.43,
+      "width": 152.61,
+      "height": 89.78,
+      "center_x": 2659.38,
+      "center_y": 377.54
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8132
+    "confidence": 0.8242
   },
   "E22": {
-    "semantic": "Recent documents header, page content.",
+    "semantic": "blue character avatar application icon in the dock",
     "box": {
-      "x1": 562.52,
-      "y1": 1118.25,
-      "x2": 858.94,
-      "y2": 1177.61,
-      "width": 296.42,
-      "height": 59.36,
-      "center_x": 710.73,
-      "center_y": 1147.93
+      "x1": 2775.49,
+      "y1": 2062.82,
+      "x2": 2917.72,
+      "y2": 2211.73,
+      "width": 142.23,
+      "height": 148.91,
+      "center_x": 2846.6,
+      "center_y": 2137.28
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8111
+    "confidence": 0.8229
   },
   "E23": {
-    "semantic": "FaceTime application icon, dock.",
+    "semantic": "Zoom application icon in the dock",
     "box": {
-      "x1": 855.57,
-      "y1": 2069.03,
-      "x2": 990.19,
-      "y2": 2209.85,
-      "width": 134.62,
-      "height": 140.82,
-      "center_x": 922.88,
-      "center_y": 2139.44
+      "x1": 2563.85,
+      "y1": 2061.52,
+      "x2": 2712.55,
+      "y2": 2217.22,
+      "width": 148.7,
+      "height": 155.7,
+      "center_x": 2638.2,
+      "center_y": 2139.37
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8109
+    "confidence": 0.8212
   },
   "E24": {
-    "semantic": "Photos application icon, dock.",
+    "semantic": "purple search icon button in the page header chrome",
     "box": {
-      "x1": 2105.62,
-      "y1": 2069.73,
-      "x2": 2242.87,
-      "y2": 2214.97,
-      "width": 137.25,
-      "height": 145.24,
-      "center_x": 2174.24,
-      "center_y": 2142.35
+      "x1": 2840.39,
+      "y1": 333.36,
+      "x2": 2927.35,
+      "y2": 419.12,
+      "width": 86.96,
+      "height": 85.76,
+      "center_x": 2883.87,
+      "center_y": 376.24
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.806
+    "confidence": 0.8135
   },
   "E25": {
-    "semantic": "Trash application icon, dock.",
+    "semantic": "thumbnail button for accent slide in the bottom horizontal carousel",
     "box": {
-      "x1": 2919.58,
-      "y1": 2059.6,
-      "x2": 3048.48,
-      "y2": 2220.37,
-      "width": 128.9,
-      "height": 160.77,
-      "center_x": 2984.03,
-      "center_y": 2139.99
+      "x1": 894.76,
+      "y1": 1817.43,
+      "x2": 1133.5,
+      "y2": 1957.09,
+      "width": 238.74,
+      "height": 139.66,
+      "center_x": 1014.13,
+      "center_y": 1887.26
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.8023
+    "confidence": 0.7991
   },
   "E26": {
-    "semantic": "Archive utility icon, dock.",
+    "semantic": "thumbnail button for pipeline pt. 4 slide in the bottom horizontal carousel",
     "box": {
-      "x1": 2779.19,
-      "y1": 2061.37,
-      "x2": 2888.77,
-      "y2": 2210.97,
-      "width": 109.58,
-      "height": 149.6,
-      "center_x": 2833.98,
-      "center_y": 2136.17
+      "x1": 2196.01,
+      "y1": 1815.94,
+      "x2": 2434.52,
+      "y2": 1958.04,
+      "width": 238.51,
+      "height": 142.1,
+      "center_x": 2315.27,
+      "center_y": 1886.99
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7944
+    "confidence": 0.7967
   },
   "E27": {
-    "semantic": "School folder bookmark, bookmarks bar.",
+    "semantic": "Trash icon in the dock",
     "box": {
-      "x1": 3186.51,
-      "y1": 164.94,
-      "x2": 3379.08,
-      "y2": 243.58,
-      "width": 192.57,
-      "height": 78.64,
-      "center_x": 3282.8,
-      "center_y": 204.26
+      "x1": 2936.7,
+      "y1": 2053.03,
+      "x2": 3079.8,
+      "y2": 2219.58,
+      "width": 143.1,
+      "height": 166.55,
+      "center_x": 3008.25,
+      "center_y": 2136.31
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7942
+    "confidence": 0.7949
   },
   "E28": {
-    "semantic": "Template gallery button, page content.",
+    "semantic": "school project folder button in the page header breadcrumbs",
     "box": {
-      "x1": 2385.85,
-      "y1": 483.05,
-      "x2": 2624.06,
-      "y2": 539.02,
-      "width": 238.21,
-      "height": 55.97,
-      "center_x": 2504.95,
-      "center_y": 511.04
+      "x1": 3189.73,
+      "y1": 167.71,
+      "x2": 3378.1,
+      "y2": 241.33,
+      "width": 188.37,
+      "height": 73.62,
+      "center_x": 3283.91,
+      "center_y": 204.52
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7907
+    "confidence": 0.7917
   },
   "E29": {
-    "semantic": "Owner filter dropdown, page content.",
+    "semantic": "Notes application icon in the dock",
     "box": {
-      "x1": 2039.08,
-      "y1": 1115.86,
-      "x2": 2336.46,
-      "y2": 1162.59,
-      "width": 297.38,
-      "height": 46.73,
-      "center_x": 2187.77,
-      "center_y": 1139.22
+      "x1": 994.06,
+      "y1": 2065.23,
+      "x2": 1132.43,
+      "y2": 2220.49,
+      "width": 138.37,
+      "height": 155.26,
+      "center_x": 1063.24,
+      "center_y": 2142.86
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7785
+    "confidence": 0.7884
   },
   "E30": {
-    "semantic": "App icon in dock.",
+    "semantic": "final project label text in the page content area",
     "box": {
-      "x1": 2408.17,
-      "y1": 2068.79,
-      "x2": 2536.03,
-      "y2": 2211.61,
-      "width": 127.86,
-      "height": 142.82,
-      "center_x": 2472.1,
-      "center_y": 2140.2
+      "x1": 2735.01,
+      "y1": 916.53,
+      "x2": 2999.87,
+      "y2": 971.1,
+      "width": 264.86,
+      "height": 54.57,
+      "center_x": 2867.44,
+      "center_y": 943.81
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7782
+    "confidence": 0.7834
   },
   "E31": {
-    "semantic": "ECE M16 (CS M51A) [Spring 2024] - Syllabus document, page content.",
+    "semantic": "thumbnail button for work team slide in the bottom horizontal carousel",
     "box": {
-      "x1": 571.81,
-      "y1": 1937.96,
-      "x2": 988.56,
-      "y2": 2055.04,
-      "width": 416.75,
-      "height": 117.08,
-      "center_x": 780.18,
-      "center_y": 1996.5
+      "x1": 2967.35,
+      "y1": 1800.29,
+      "x2": 3216.71,
+      "y2": 1965.66,
+      "width": 249.36,
+      "height": 165.37,
+      "center_x": 3092.03,
+      "center_y": 1882.97
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7739
+    "confidence": 0.7691
   },
   "E32": {
-    "semantic": "Start a new document label, page content.",
+    "semantic": "Present button with play icon in the page header chrome",
     "box": {
-      "x1": 582.05,
-      "y1": 484.09,
-      "x2": 924.77,
-      "y2": 543.3,
-      "width": 342.72,
-      "height": 59.21,
-      "center_x": 753.41,
-      "center_y": 513.69
+      "x1": 3014.9,
+      "y1": 351.27,
+      "x2": 3135.32,
+      "y2": 399.29,
+      "width": 120.42,
+      "height": 48.02,
+      "center_x": 3075.11,
+      "center_y": 375.28
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7389
+    "confidence": 0.7578
   },
   "E33": {
-    "semantic": "Document URL address bar, browser chrome.",
+    "semantic": "URL address bar in the browser chrome showing canva.com",
     "box": {
-      "x1": 308.17,
-      "y1": 176.36,
-      "x2": 746.01,
-      "y2": 231.81,
-      "width": 437.84,
-      "height": 55.45,
-      "center_x": 527.09,
-      "center_y": 204.09
+      "x1": 305.94,
+      "y1": 176.59,
+      "x2": 1399.27,
+      "y2": 224.69,
+      "width": 1093.33,
+      "height": 48.1,
+      "center_x": 852.61,
+      "center_y": 200.64
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7343
+    "confidence": 0.7561
   },
   "E34": {
-    "semantic": "Chrome menu button, menu bar.",
+    "semantic": "color picker button in the page editing toolbar chrome",
     "box": {
-      "x1": 98.39,
-      "y1": 12.78,
-      "x2": 227.33,
-      "y2": 64.95,
-      "width": 128.94,
-      "height": 52.17,
-      "center_x": 162.86,
-      "center_y": 38.87
+      "x1": 2044.66,
+      "y1": 458.1,
+      "x2": 2116.15,
+      "y2": 521.17,
+      "width": 71.49,
+      "height": 63.07,
+      "center_x": 2080.41,
+      "center_y": 489.64
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7275
+    "confidence": 0.7514
   },
   "E35": {
-    "semantic": "Date last opened for Fetch.ai document, page content.",
+    "semantic": "photos section horizontal scroll button in the left sidebar",
     "box": {
-      "x1": 2486.79,
-      "y1": 1825.07,
-      "x2": 2702.78,
-      "y2": 1875.4,
-      "width": 215.99,
-      "height": 50.33,
-      "center_x": 2594.78,
-      "center_y": 1850.23
+      "x1": 179.17,
+      "y1": 1791.13,
+      "x2": 815.49,
+      "y2": 1971.44,
+      "width": 636.32,
+      "height": 180.31,
+      "center_x": 497.33,
+      "center_y": 1881.29
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7256
+    "confidence": 0.7499
   },
   "E36": {
-    "semantic": "Date last opened for ZETIC document, page content.",
+    "semantic": "Pages application icon in the dock",
     "box": {
-      "x1": 1568.63,
-      "y1": 1823.63,
-      "x2": 1787.79,
-      "y2": 1874.43,
-      "width": 219.16,
-      "height": 50.8,
-      "center_x": 1678.21,
-      "center_y": 1849.03
+      "x1": 2950.1,
+      "y1": 1975.27,
+      "x2": 3103.18,
+      "y2": 2049.75,
+      "width": 153.08,
+      "height": 74.48,
+      "center_x": 3026.64,
+      "center_y": 2012.51
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7235
+    "confidence": 0.7483
   },
   "E37": {
-    "semantic": "Project proposal label, page content.",
+    "semantic": "bar chart icon button in the page header chrome",
     "box": {
-      "x1": 1880.1,
-      "y1": 951.06,
-      "x2": 2114.25,
-      "y2": 1006.19,
-      "width": 234.15,
-      "height": 55.13,
-      "center_x": 1997.17,
-      "center_y": 978.62
+      "x1": 2746.38,
+      "y1": 331.64,
+      "x2": 2832.12,
+      "y2": 416.97,
+      "width": 85.74,
+      "height": 85.33,
+      "center_x": 2789.25,
+      "center_y": 374.31
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7233
+    "confidence": 0.7461
   },
   "E38": {
-    "semantic": "Open file picker button, page content.",
+    "semantic": "accent project folder button in the page header breadcrumbs",
     "box": {
-      "x1": 2736.7,
-      "y1": 1110.32,
-      "x2": 2808.94,
-      "y2": 1164.28,
-      "width": 72.24,
-      "height": 53.96,
-      "center_x": 2772.82,
-      "center_y": 1137.3
+      "x1": 2428.41,
+      "y1": 348.47,
+      "x2": 2544.7,
+      "y2": 400.7,
+      "width": 116.29,
+      "height": 52.23,
+      "center_x": 2486.55,
+      "center_y": 374.59
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7207
+    "confidence": 0.7311
   },
   "E39": {
-    "semantic": "User profile icon, menu bar.",
+    "semantic": "Timer button with clock icon in the page footer chrome",
     "box": {
-      "x1": 2656.76,
-      "y1": 12.64,
-      "x2": 2710.41,
-      "y2": 64.47,
-      "width": 53.65,
-      "height": 51.83,
-      "center_x": 2683.59,
-      "center_y": 38.55
+      "x1": 1056.01,
+      "y1": 1985.71,
+      "x2": 1104.63,
+      "y2": 2035.92,
+      "width": 48.62,
+      "height": 50.21,
+      "center_x": 1080.32,
+      "center_y": 2010.82
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7198
+    "confidence": 0.7252
   },
   "E40": {
-    "semantic": "User initial icon, page content.",
+    "semantic": "Position button in the page editing toolbar chrome",
     "box": {
-      "x1": 3319.32,
-      "y1": 344.07,
-      "x2": 3402.96,
-      "y2": 422.05,
-      "width": 83.64,
-      "height": 77.98,
-      "center_x": 3361.14,
-      "center_y": 383.06
+      "x1": 2330.95,
+      "y1": 465.79,
+      "x2": 2467.98,
+      "y2": 513.61,
+      "width": 137.03,
+      "height": 47.82,
+      "center_x": 2399.46,
+      "center_y": 489.7
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7161
+    "confidence": 0.7226
   },
   "E41": {
-    "semantic": "List view toggle button, page content.",
+    "semantic": "Resize button in the page editing toolbar chrome",
     "box": {
-      "x1": 2572.33,
-      "y1": 1108.95,
-      "x2": 2640.44,
-      "y2": 1166.91,
-      "width": 68.11,
-      "height": 57.96,
-      "center_x": 2606.38,
-      "center_y": 1137.93
+      "x1": 245.1,
+      "y1": 344.93,
+      "x2": 375.54,
+      "y2": 408.63,
+      "width": 130.44,
+      "height": 63.7,
+      "center_x": 310.32,
+      "center_y": 376.78
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7155
+    "confidence": 0.7211
   },
   "E42": {
-    "semantic": "Google apps menu button, page content.",
+    "semantic": "magnifying glass search icon in the browser address bar",
     "box": {
-      "x1": 3232.58,
-      "y1": 344.14,
-      "x2": 3295.88,
-      "y2": 416.99,
-      "width": 63.3,
-      "height": 72.85,
-      "center_x": 3264.23,
-      "center_y": 380.56
+      "x1": 3034.41,
+      "y1": 15.59,
+      "x2": 3084.74,
+      "y2": 60.42,
+      "width": 50.33,
+      "height": 44.83,
+      "center_x": 3059.57,
+      "center_y": 38.0
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7062
+    "confidence": 0.7171
   },
   "E43": {
-    "semantic": "Date last opened for Accent document, page content.",
+    "semantic": "Adobe Acrobat extension icon in the browser chrome",
     "box": {
-      "x1": 1111.26,
-      "y1": 1825.87,
-      "x2": 1334.45,
-      "y2": 1873.5,
-      "width": 223.19,
-      "height": 47.63,
-      "center_x": 1222.86,
-      "center_y": 1849.68
+      "x1": 1983.41,
+      "y1": 88.65,
+      "x2": 2035.39,
+      "y2": 145.52,
+      "width": 51.98,
+      "height": 56.87,
+      "center_x": 2009.4,
+      "center_y": 117.09
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7055
+    "confidence": 0.7154
   },
   "E44": {
-    "semantic": "Sorting options button, page content.",
+    "semantic": "browser extension icon in the browser chrome",
     "box": {
-      "x1": 2658.31,
-      "y1": 1109.29,
-      "x2": 2723.47,
-      "y2": 1161.79,
-      "width": 65.16,
-      "height": 52.5,
-      "center_x": 2690.89,
-      "center_y": 1135.54
+      "x1": 2598.97,
+      "y1": 13.79,
+      "x2": 2652.13,
+      "y2": 64.13,
+      "width": 53.16,
+      "height": 50.34,
+      "center_x": 2625.55,
+      "center_y": 38.96
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.7034
+    "confidence": 0.7149
   },
   "E45": {
-    "semantic": "Search history button, address bar.",
+    "semantic": "search input field in the elements sidebar menu",
     "box": {
-      "x1": 3007.19,
-      "y1": 175.91,
-      "x2": 3079.4,
-      "y2": 230.96,
-      "width": 72.21,
-      "height": 55.05,
-      "center_x": 3043.3,
-      "center_y": 203.44
+      "x1": 618.04,
+      "y1": 733.37,
+      "x2": 727.27,
+      "y2": 773.61,
+      "width": 109.23,
+      "height": 40.24,
+      "center_x": 672.65,
+      "center_y": 753.49
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6991
+    "confidence": 0.7081
   },
   "E46": {
-    "semantic": "Chrome user profile icon, menu bar.",
+    "semantic": "Ask Gemini button with sparkle icon in the page header chrome",
     "box": {
-      "x1": 2588.88,
-      "y1": 12.07,
-      "x2": 2651.1,
-      "y2": 66.63,
-      "width": 62.22,
-      "height": 54.56,
-      "center_x": 2619.99,
-      "center_y": 39.35
+      "x1": 3225.98,
+      "y1": 89.98,
+      "x2": 3275.36,
+      "y2": 142.22,
+      "width": 49.38,
+      "height": 52.24,
+      "center_x": 3250.67,
+      "center_y": 116.1
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6974
+    "confidence": 0.7033
   },
   "E47": {
-    "semantic": "Media playback controls icon, menu bar.",
+    "semantic": "browser tab labeled Search slides - Canva",
     "box": {
-      "x1": 2721.88,
-      "y1": 13.38,
-      "x2": 2775.82,
-      "y2": 65.65,
-      "width": 53.94,
-      "height": 52.27,
-      "center_x": 2748.85,
-      "center_y": 39.52
+      "x1": 1683.62,
+      "y1": 90.66,
+      "x2": 1873.28,
+      "y2": 139.86,
+      "width": 189.66,
+      "height": 49.2,
+      "center_x": 1778.45,
+      "center_y": 115.26
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.689
+    "confidence": 0.7002
   },
   "E48": {
-    "semantic": "Search button, address bar.",
+    "semantic": "checklist button in the page footer chrome",
     "box": {
-      "x1": 973.26,
-      "y1": 353.84,
-      "x2": 1046.45,
-      "y2": 409.09,
-      "width": 73.19,
-      "height": 55.25,
-      "center_x": 1009.86,
-      "center_y": 381.46
+      "x1": 881.57,
+      "y1": 343.77,
+      "x2": 960.28,
+      "y2": 404.7,
+      "width": 78.71,
+      "height": 60.93,
+      "center_x": 920.93,
+      "center_y": 374.23
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6819
+    "confidence": 0.7
   },
   "E49": {
-    "semantic": "Address bar search icon, browser chrome.",
+    "semantic": "browser tab labeled [2403.04984] UI s...",
     "box": {
-      "x1": 3022.82,
-      "y1": 13.46,
-      "x2": 3077.44,
-      "y2": 62.79,
-      "width": 54.62,
-      "height": 49.33,
-      "center_x": 3050.13,
-      "center_y": 38.12
+      "x1": 1329.29,
+      "y1": 90.03,
+      "x2": 1543.43,
+      "y2": 141.25,
+      "width": 214.14,
+      "height": 51.22,
+      "center_x": 1436.36,
+      "center_y": 115.64
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6804
+    "confidence": 0.6963
   },
   "E50": {
-    "semantic": "Pocket extension icon, browser chrome.",
+    "semantic": "Animate button in the page editing toolbar chrome",
     "box": {
-      "x1": 434.45,
-      "y1": 91.8,
-      "x2": 492.3,
-      "y2": 143.8,
-      "width": 57.85,
-      "height": 52.0,
-      "center_x": 463.38,
-      "center_y": 117.8
+      "x1": 2135.14,
+      "y1": 464.56,
+      "x2": 2287.41,
+      "y2": 515.68,
+      "width": 152.27,
+      "height": 51.12,
+      "center_x": 2211.28,
+      "center_y": 490.12
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6914
+  },
+  "E51": {
+    "semantic": "browser tab labeled ENG 110 Spring 20...",
+    "box": {
+      "x1": 711.6,
+      "y1": 254.16,
+      "x2": 996.44,
+      "y2": 299.1,
+      "width": 284.84,
+      "height": 44.94,
+      "center_x": 854.02,
+      "center_y": 276.63
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6883
+  },
+  "E52": {
+    "semantic": "timer button showing 5.0s in the page editing toolbar chrome",
+    "box": {
+      "x1": 1885.09,
+      "y1": 459.81,
+      "x2": 2016.31,
+      "y2": 515.55,
+      "width": 131.22,
+      "height": 55.74,
+      "center_x": 1950.7,
+      "center_y": 487.68
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6879
+  },
+  "E53": {
+    "semantic": "Wi-Fi signal strength icon in the system menu bar",
+    "box": {
+      "x1": 2960.2,
+      "y1": 12.94,
+      "x2": 3018.29,
+      "y2": 60.31,
+      "width": 58.09,
+      "height": 47.37,
+      "center_x": 2989.24,
+      "center_y": 36.62
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6865
+  },
+  "E54": {
+    "semantic": "Chrome menu button in the system menu bar",
+    "box": {
+      "x1": 101.63,
+      "y1": 15.38,
+      "x2": 223.07,
+      "y2": 62.74,
+      "width": 121.44,
+      "height": 47.36,
+      "center_x": 162.35,
+      "center_y": 39.06
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6859
+  },
+  "E55": {
+    "semantic": "Play button icon in the browser chrome",
+    "box": {
+      "x1": 2729.92,
+      "y1": 15.08,
+      "x2": 2786.07,
+      "y2": 63.51,
+      "width": 56.15,
+      "height": 48.43,
+      "center_x": 2757.99,
+      "center_y": 39.3
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6829
+  },
+  "E56": {
+    "semantic": "Editing dropdown menu button with pencil icon in the page editing toolbar chrome",
+    "box": {
+      "x1": 394.44,
+      "y1": 335.74,
+      "x2": 641.04,
+      "y2": 420.29,
+      "width": 246.6,
+      "height": 84.55,
+      "center_x": 517.74,
+      "center_y": 378.01
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6801
+  },
+  "E57": {
+    "semantic": "Bookmarks menu button in the system menu bar",
+    "box": {
+      "x1": 645.15,
+      "y1": 16.4,
+      "x2": 795.48,
+      "y2": 63.22,
+      "width": 150.33,
+      "height": 46.82,
+      "center_x": 720.31,
+      "center_y": 39.81
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6797
+  },
+  "E58": {
+    "semantic": "Window menu button in the system menu bar",
+    "box": {
+      "x1": 1039.58,
+      "y1": 18.25,
+      "x2": 1148.57,
+      "y2": 59.72,
+      "width": 108.99,
+      "height": 41.47,
+      "center_x": 1094.07,
+      "center_y": 38.98
     },
     "box_format": "xyxy",
     "class": "button",
     "confidence": 0.6788
   },
-  "E51": {
-    "semantic": "Battery status icon, menu bar.",
-    "box": {
-      "x1": 2864.26,
-      "y1": 14.37,
-      "x2": 2935.05,
-      "y2": 62.56,
-      "width": 70.79,
-      "height": 48.19,
-      "center_x": 2899.66,
-      "center_y": 38.46
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.668
-  },
-  "E52": {
-    "semantic": "Google account switcher, menu bar.",
-    "box": {
-      "x1": 193.71,
-      "y1": 88.38,
-      "x2": 253.56,
-      "y2": 142.96,
-      "width": 59.85,
-      "height": 54.58,
-      "center_x": 223.64,
-      "center_y": 115.67
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.6619
-  },
-  "E53": {
-    "semantic": "Google account profile, page content.",
-    "box": {
-      "x1": 3317.69,
-      "y1": 344.09,
-      "x2": 3408.57,
-      "y2": 427.88,
-      "width": 90.88,
-      "height": 83.79,
-      "center_x": 3363.13,
-      "center_y": 385.98
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.6607
-  },
-  "E54": {
-    "semantic": "Tab management icon, browser chrome.",
-    "box": {
-      "x1": 2508.69,
-      "y1": 92.19,
-      "x2": 2559.79,
-      "y2": 142.26,
-      "width": 51.1,
-      "height": 50.07,
-      "center_x": 2534.24,
-      "center_y": 117.22
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.6594
-  },
-  "E55": {
-    "semantic": "Resume Coral template label, page content.",
-    "box": {
-      "x1": 1222.35,
-      "y1": 953.96,
-      "x2": 1351.8,
-      "y2": 999.96,
-      "width": 129.45,
-      "height": 46.0,
-      "center_x": 1287.07,
-      "center_y": 976.96
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.6584
-  },
-  "E56": {
-    "semantic": "Report Luxe template label, page content.",
-    "box": {
-      "x1": 2531.83,
-      "y1": 953.8,
-      "x2": 2644.76,
-      "y2": 1000.27,
-      "width": 112.93,
-      "height": 46.47,
-      "center_x": 2588.3,
-      "center_y": 977.03
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.6574
-  },
-  "E57": {
-    "semantic": "Letter Spearmint template label, page content.",
-    "box": {
-      "x1": 1552.38,
-      "y1": 988.76,
-      "x2": 1697.73,
-      "y2": 1036.78,
-      "width": 145.35,
-      "height": 48.02,
-      "center_x": 1625.06,
-      "center_y": 1012.77
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.6548
-  },
-  "E58": {
-    "semantic": "New folder button, bookmarks bar.",
-    "box": {
-      "x1": 159.92,
-      "y1": 254.75,
-      "x2": 311.92,
-      "y2": 300.43,
-      "width": 152.0,
-      "height": 45.68,
-      "center_x": 235.92,
-      "center_y": 277.59
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.654
-  },
   "E59": {
-    "semantic": "Resume Serif template label, page content.",
+    "semantic": "Focus mode moon icon in the system menu bar",
     "box": {
-      "x1": 915.9,
-      "y1": 576.15,
-      "x2": 1033.39,
-      "y2": 619.52,
-      "width": 117.49,
-      "height": 43.37,
-      "center_x": 974.64,
-      "center_y": 597.83
+      "x1": 2803.98,
+      "y1": 14.41,
+      "x2": 2854.36,
+      "y2": 63.29,
+      "width": 50.38,
+      "height": 48.88,
+      "center_x": 2829.17,
+      "center_y": 38.85
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6525
+    "confidence": 0.6778
   },
   "E60": {
-    "semantic": "ZETIC Company Challenge document name, page content.",
+    "semantic": "horizontal double arrow icon in the left elements sidebar",
     "box": {
-      "x1": 1513.12,
-      "y1": 1773.19,
-      "x2": 1883.41,
-      "y2": 1835.24,
-      "width": 370.29,
-      "height": 62.05,
-      "center_x": 1698.26,
-      "center_y": 1804.22
+      "x1": 551.03,
+      "y1": 1001.69,
+      "x2": 690.36,
+      "y2": 1102.86,
+      "width": 139.33,
+      "height": 101.17,
+      "center_x": 620.69,
+      "center_y": 1052.28
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6513
+    "confidence": 0.6762
   },
   "E61": {
-    "semantic": "Extension manager icon, browser chrome.",
+    "semantic": "Profiles menu button in the system menu bar",
     "box": {
-      "x1": 2898.74,
-      "y1": 172.52,
-      "x2": 2968.24,
-      "y2": 230.85,
-      "width": 69.5,
-      "height": 58.33,
-      "center_x": 2933.49,
-      "center_y": 201.69
+      "x1": 820.87,
+      "y1": 16.32,
+      "x2": 928.46,
+      "y2": 60.68,
+      "width": 107.59,
+      "height": 44.36,
+      "center_x": 874.66,
+      "center_y": 38.5
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6501
+    "confidence": 0.6755
   },
   "E62": {
-    "semantic": "Search field, page content.",
+    "semantic": "See all button for the photos section in the left sidebar",
     "box": {
-      "x1": 1056.05,
-      "y1": 356.48,
-      "x2": 1187.44,
-      "y2": 416.23,
-      "width": 131.39,
-      "height": 59.75,
-      "center_x": 1121.74,
-      "center_y": 386.36
+      "x1": 712.8,
+      "y1": 1429.07,
+      "x2": 810.19,
+      "y2": 1472.39,
+      "width": 97.39,
+      "height": 43.32,
+      "center_x": 761.5,
+      "center_y": 1450.73
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6484
+    "confidence": 0.6752
   },
   "E63": {
-    "semantic": "Google account selector, menu bar.",
+    "semantic": "dropdown arrow icon in the page header chrome",
     "box": {
-      "x1": 2807.3,
-      "y1": 86.97,
-      "x2": 2872.31,
-      "y2": 144.42,
-      "width": 65.01,
-      "height": 57.45,
-      "center_x": 2839.81,
-      "center_y": 115.69
+      "x1": 3154.49,
+      "y1": 334.14,
+      "x2": 3240.09,
+      "y2": 419.36,
+      "width": 85.6,
+      "height": 85.22,
+      "center_x": 3197.29,
+      "center_y": 376.75
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6483
+    "confidence": 0.6729
   },
   "E64": {
-    "semantic": "GitHub extension icon, browser chrome.",
+    "semantic": "grid view button in the page footer chrome",
     "box": {
-      "x1": 1630.7,
-      "y1": 86.11,
-      "x2": 1694.25,
-      "y2": 144.66,
-      "width": 63.55,
-      "height": 58.55,
-      "center_x": 1662.48,
-      "center_y": 115.38
+      "x1": 3244.29,
+      "y1": 1977.58,
+      "x2": 3305.43,
+      "y2": 2040.13,
+      "width": 61.14,
+      "height": 62.55,
+      "center_x": 3274.86,
+      "center_y": 2008.86
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6479
+    "confidence": 0.6714
   },
   "E65": {
-    "semantic": "Accent - LA Hacks document name, page content.",
+    "semantic": "Present button with crown and play icons in the page header chrome",
     "box": {
-      "x1": 1055.91,
-      "y1": 1776.21,
-      "x2": 1345.89,
-      "y2": 1831.02,
-      "width": 289.98,
-      "height": 54.81,
-      "center_x": 1200.9,
-      "center_y": 1803.62
+      "x1": 2951.13,
+      "y1": 345.39,
+      "x2": 3008.98,
+      "y2": 406.23,
+      "width": 57.85,
+      "height": 60.84,
+      "center_x": 2980.06,
+      "center_y": 375.81
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6475
+    "confidence": 0.6659
   },
   "E66": {
-    "semantic": "Google account selector, menu bar.",
+    "semantic": "Frames section header in the left elements sidebar",
     "box": {
-      "x1": 2861.28,
-      "y1": 92.77,
-      "x2": 2919.35,
-      "y2": 143.83,
-      "width": 58.07,
-      "height": 51.06,
-      "center_x": 2890.32,
-      "center_y": 118.3
+      "x1": 667.76,
+      "y1": 830.08,
+      "x2": 788.27,
+      "y2": 881.82,
+      "width": 120.51,
+      "height": 51.74,
+      "center_x": 728.01,
+      "center_y": 855.95
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6469
+    "confidence": 0.6565
   },
   "E67": {
-    "semantic": "Google Docs file icon, page content.",
+    "semantic": "zoom level button showing 56% in the page footer chrome",
     "box": {
-      "x1": 2431.78,
-      "y1": 1823.79,
-      "x2": 2492.77,
-      "y2": 1875.46,
-      "width": 60.99,
-      "height": 51.67,
-      "center_x": 2462.28,
-      "center_y": 1849.62
+      "x1": 2850.05,
+      "y1": 1989.17,
+      "x2": 2925.63,
+      "y2": 2033.46,
+      "width": 75.58,
+      "height": 44.29,
+      "center_x": 2887.84,
+      "center_y": 2011.32
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6459
+    "confidence": 0.6521
   },
   "E68": {
-    "semantic": "MLH extension icon, browser chrome.",
+    "semantic": "See all button for the frames section in the left sidebar",
     "box": {
-      "x1": 908.9,
-      "y1": 89.28,
-      "x2": 970.6,
-      "y2": 142.01,
-      "width": 61.7,
-      "height": 52.73,
-      "center_x": 939.75,
-      "center_y": 115.64
+      "x1": 744.66,
+      "y1": 928.75,
+      "x2": 851.56,
+      "y2": 979.53,
+      "width": 106.9,
+      "height": 50.78,
+      "center_x": 798.11,
+      "center_y": 954.14
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6428
+    "confidence": 0.6454
   },
   "E69": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "browser tab labeled Google Meet",
     "box": {
-      "x1": 3081.07,
-      "y1": 13.79,
-      "x2": 3144.27,
-      "y2": 62.27,
-      "width": 63.2,
-      "height": 48.48,
-      "center_x": 3112.67,
-      "center_y": 38.03
+      "x1": 607.95,
+      "y1": 96.87,
+      "x2": 764.97,
+      "y2": 136.1,
+      "width": 157.02,
+      "height": 39.23,
+      "center_x": 686.46,
+      "center_y": 116.48
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6409
+    "confidence": 0.6439
   },
   "E70": {
-    "semantic": "ENG 110 Spring 20... bookmark, bookmarks bar.",
+    "semantic": "system clock showing 3:25 AM in the menu bar",
     "box": {
-      "x1": 710.44,
-      "y1": 251.3,
-      "x2": 993.8,
-      "y2": 305.29,
-      "width": 283.36,
-      "height": 53.99,
-      "center_x": 852.12,
-      "center_y": 278.3
+      "x1": 3318.43,
+      "y1": 16.03,
+      "x2": 3430.31,
+      "y2": 56.27,
+      "width": 111.88,
+      "height": 40.24,
+      "center_x": 3374.37,
+      "center_y": 36.15
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6399
+    "confidence": 0.6419
   },
   "E71": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "Present button with crown icon in the page header chrome",
     "box": {
-      "x1": 1983.48,
-      "y1": 88.59,
-      "x2": 2045.47,
-      "y2": 142.75,
-      "width": 61.99,
-      "height": 54.16,
-      "center_x": 2014.47,
-      "center_y": 115.67
+      "x1": 2942.33,
+      "y1": 332.43,
+      "x2": 3161.38,
+      "y2": 419.32,
+      "width": 219.05,
+      "height": 86.89,
+      "center_x": 3051.86,
+      "center_y": 375.88
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6384
+    "confidence": 0.6419
   },
   "E72": {
-    "semantic": "Wi-Fi status icon, menu bar.",
+    "semantic": "New folder button in the browser chrome",
     "box": {
-      "x1": 2948.95,
-      "y1": 12.8,
-      "x2": 3010.96,
-      "y2": 61.16,
-      "width": 62.01,
-      "height": 48.36,
-      "center_x": 2979.95,
-      "center_y": 36.98
+      "x1": 165.11,
+      "y1": 256.85,
+      "x2": 300.99,
+      "y2": 294.69,
+      "width": 135.88,
+      "height": 37.84,
+      "center_x": 233.05,
+      "center_y": 275.77
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6376
+    "confidence": 0.6398
   },
   "E73": {
-    "semantic": "BruinLearn bookmark, bookmarks bar.",
+    "semantic": "KT user button in the page header chrome",
     "box": {
-      "x1": 516.39,
-      "y1": 252.78,
-      "x2": 681.37,
-      "y2": 303.05,
-      "width": 164.98,
-      "height": 50.27,
-      "center_x": 598.88,
-      "center_y": 277.92
+      "x1": 2589.47,
+      "y1": 340.0,
+      "x2": 2664.37,
+      "y2": 400.12,
+      "width": 74.9,
+      "height": 60.12,
+      "center_x": 2626.92,
+      "center_y": 370.06
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6362
+    "confidence": 0.639
   },
   "E74": {
-    "semantic": "Window menu button, menu bar.",
+    "semantic": "See all button for the graphics section in the left sidebar",
     "box": {
-      "x1": 1035.14,
-      "y1": 12.82,
-      "x2": 1155.25,
-      "y2": 64.61,
-      "width": 120.11,
-      "height": 51.79,
-      "center_x": 1095.2,
-      "center_y": 38.72
+      "x1": 746.78,
+      "y1": 1748.28,
+      "x2": 844.74,
+      "y2": 1794.67,
+      "width": 97.96,
+      "height": 46.39,
+      "center_x": 795.76,
+      "center_y": 1771.47
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.636
+    "confidence": 0.6361
   },
   "E75": {
-    "semantic": "World U Company Challenge document, page content.",
+    "semantic": "See all button for the 3D graphics section in the left sidebar",
     "box": {
-      "x1": 1977.82,
-      "y1": 1773.24,
-      "x2": 2345.02,
-      "y2": 1838.58,
-      "width": 367.2,
-      "height": 65.34,
-      "center_x": 2161.42,
-      "center_y": 1805.91
+      "x1": 746.71,
+      "y1": 2019.83,
+      "x2": 839.13,
+      "y2": 2063.3,
+      "width": 92.42,
+      "height": 43.47,
+      "center_x": 792.92,
+      "center_y": 2041.56
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6354
+    "confidence": 0.6344
   },
   "E76": {
-    "semantic": "Blank document label, page content.",
+    "semantic": "Undo button with curved left arrow in the page header chrome",
     "box": {
-      "x1": 581.5,
-      "y1": 951.98,
-      "x2": 840.91,
-      "y2": 1002.85,
-      "width": 259.41,
-      "height": 50.87,
-      "center_x": 711.21,
-      "center_y": 977.41
+      "x1": 765.0,
+      "y1": 343.03,
+      "x2": 850.22,
+      "y2": 406.47,
+      "width": 85.22,
+      "height": 63.44,
+      "center_x": 807.61,
+      "center_y": 374.75
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6318
+    "confidence": 0.6317
   },
   "E77": {
-    "semantic": "Current time, menu bar.",
+    "semantic": "See all button for the magic recommendations section in the left sidebar",
     "box": {
-      "x1": 3308.52,
-      "y1": 13.11,
-      "x2": 3438.17,
-      "y2": 60.32,
-      "width": 129.65,
-      "height": 47.21,
-      "center_x": 3373.34,
-      "center_y": 36.72
+      "x1": 743.77,
+      "y1": 1150.68,
+      "x2": 845.7,
+      "y2": 1203.06,
+      "width": 101.93,
+      "height": 52.38,
+      "center_x": 794.74,
+      "center_y": 1176.87
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6305
+    "confidence": 0.6299
   },
   "E78": {
-    "semantic": "Extensions menu icon, browser chrome.",
+    "semantic": "Google icon button in the browser chrome",
     "box": {
-      "x1": 11.82,
-      "y1": 249.27,
-      "x2": 90.63,
-      "y2": 302.19,
-      "width": 78.81,
-      "height": 52.92,
-      "center_x": 51.23,
-      "center_y": 275.73
+      "x1": 2696.62,
+      "y1": 89.19,
+      "x2": 2750.08,
+      "y2": 143.23,
+      "width": 53.46,
+      "height": 54.04,
+      "center_x": 2723.35,
+      "center_y": 116.21
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.629
+    "confidence": 0.6299
   },
   "E79": {
-    "semantic": "Current date, menu bar.",
+    "semantic": "Shapes section button in the left elements sidebar",
     "box": {
-      "x1": 3156.23,
-      "y1": 11.88,
-      "x2": 3299.0,
-      "y2": 63.49,
-      "width": 142.77,
-      "height": 51.61,
-      "center_x": 3227.62,
-      "center_y": 37.69
+      "x1": 171.79,
+      "y1": 936.12,
+      "x2": 287.46,
+      "y2": 977.14,
+      "width": 115.67,
+      "height": 41.02,
+      "center_x": 229.62,
+      "center_y": 956.63
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6288
+    "confidence": 0.6294
   },
   "E80": {
-    "semantic": "Folder icon, browser chrome.",
+    "semantic": "Uploads menu button in the far left vertical navigation bar",
     "box": {
-      "x1": 107.31,
-      "y1": 252.94,
-      "x2": 168.95,
-      "y2": 301.63,
-      "width": 61.64,
-      "height": 48.69,
-      "center_x": 138.13,
-      "center_y": 277.28
+      "x1": 16.66,
+      "y1": 1110.04,
+      "x2": 129.49,
+      "y2": 1159.01,
+      "width": 112.83,
+      "height": 48.97,
+      "center_x": 73.08,
+      "center_y": 1134.52
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6279
+    "confidence": 0.6274
   },
   "E81": {
-    "semantic": "Chrome profile icon, menu bar.",
+    "semantic": "browser tab labeled figma make - G...",
     "box": {
-      "x1": 2033.94,
-      "y1": 88.24,
-      "x2": 2092.08,
-      "y2": 140.28,
-      "width": 58.14,
-      "height": 52.04,
-      "center_x": 2063.01,
-      "center_y": 114.26
+      "x1": 2747.55,
+      "y1": 92.4,
+      "x2": 2902.08,
+      "y2": 137.89,
+      "width": 154.53,
+      "height": 45.49,
+      "center_x": 2824.82,
+      "center_y": 115.15
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6271
+    "confidence": 0.6212
   },
   "E82": {
-    "semantic": "Ask Gemini button, address bar.",
+    "semantic": "Help button with question mark icon in the page footer chrome",
     "box": {
-      "x1": 3212.15,
-      "y1": 76.93,
-      "x2": 3447.92,
-      "y2": 148.7,
-      "width": 235.77,
-      "height": 71.77,
-      "center_x": 3330.04,
-      "center_y": 112.81
+      "x1": 3380.65,
+      "y1": 1979.4,
+      "x2": 3443.99,
+      "y2": 2040.95,
+      "width": 63.34,
+      "height": 61.55,
+      "center_x": 3412.32,
+      "center_y": 2010.18
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6255
+    "confidence": 0.6211
   },
   "E83": {
-    "semantic": "Chrome profile icon, menu bar.",
+    "semantic": "label text Resolution + Annotations in the page content area",
     "box": {
-      "x1": 1389.55,
-      "y1": 87.21,
-      "x2": 1451.79,
-      "y2": 144.17,
-      "width": 62.24,
-      "height": 56.96,
-      "center_x": 1420.67,
-      "center_y": 115.69
+      "x1": 1196.09,
+      "y1": 914.25,
+      "x2": 1692.94,
+      "y2": 969.97,
+      "width": 496.85,
+      "height": 55.72,
+      "center_x": 1444.51,
+      "center_y": 942.11
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6235
+    "confidence": 0.6194
   },
   "E84": {
-    "semantic": "Upgrade button, page content.",
+    "semantic": "browser extension icon in the browser chrome",
     "box": {
-      "x1": 3026.0,
-      "y1": 356.26,
-      "x2": 3167.11,
-      "y2": 414.28,
-      "width": 141.11,
-      "height": 58.02,
-      "center_x": 3096.55,
-      "center_y": 385.27
+      "x1": 3093.51,
+      "y1": 15.32,
+      "x2": 3143.64,
+      "y2": 59.59,
+      "width": 50.13,
+      "height": 44.27,
+      "center_x": 3118.58,
+      "center_y": 37.45
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6195
+    "confidence": 0.6192
   },
   "E85": {
-    "semantic": "Apple menu icon, menu bar.",
+    "semantic": "close button for the sidebar panels",
     "box": {
-      "x1": 28.59,
-      "y1": 9.28,
-      "x2": 85.72,
-      "y2": 64.5,
-      "width": 57.13,
-      "height": 55.22,
-      "center_x": 57.16,
-      "center_y": 36.89
+      "x1": 744.42,
+      "y1": 490.17,
+      "x2": 799.16,
+      "y2": 544.49,
+      "width": 54.74,
+      "height": 54.32,
+      "center_x": 771.79,
+      "center_y": 517.33
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6143
+    "confidence": 0.6116
   },
   "E86": {
-    "semantic": "ECE M16 (CS M51A) document name, page content.",
+    "semantic": "Photos menu button in the left elements sidebar",
     "box": {
-      "x1": 602.09,
-      "y1": 1773.61,
-      "x2": 959.81,
-      "y2": 1837.18,
-      "width": 357.72,
-      "height": 63.57,
-      "center_x": 780.95,
-      "center_y": 1805.39
+      "x1": 540.39,
+      "y1": 830.67,
+      "x2": 649.17,
+      "y2": 882.35,
+      "width": 108.78,
+      "height": 51.68,
+      "center_x": 594.78,
+      "center_y": 856.51
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6139
+    "confidence": 0.6092
   },
   "E87": {
-    "semantic": "Brochure Geometric template label, page content.",
+    "semantic": "Timer button in the page footer chrome",
     "box": {
-      "x1": 2206.01,
-      "y1": 988.1,
-      "x2": 2346.29,
-      "y2": 1038.46,
-      "width": 140.28,
-      "height": 50.36,
-      "center_x": 2276.15,
-      "center_y": 1013.28
+      "x1": 1106.2,
+      "y1": 1991.53,
+      "x2": 1199.72,
+      "y2": 2034.43,
+      "width": 93.52,
+      "height": 42.9,
+      "center_x": 1152.96,
+      "center_y": 2012.98
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6106
+    "confidence": 0.6069
   },
   "E88": {
-    "semantic": "Reddit extension icon, browser chrome.",
+    "semantic": "browser tab labeled BruinLearn",
     "box": {
-      "x1": 1749.79,
-      "y1": 90.07,
-      "x2": 1811.56,
-      "y2": 142.75,
-      "width": 61.77,
-      "height": 52.68,
-      "center_x": 1780.67,
-      "center_y": 116.41
+      "x1": 537.68,
+      "y1": 255.73,
+      "x2": 677.93,
+      "y2": 296.26,
+      "width": 140.25,
+      "height": 40.53,
+      "center_x": 607.8,
+      "center_y": 276.0
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6095
+    "confidence": 0.6061
   },
   "E89": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "Tools menu button in the far left vertical navigation bar",
     "box": {
-      "x1": 2746.14,
-      "y1": 92.81,
-      "x2": 2796.07,
-      "y2": 139.72,
-      "width": 49.93,
-      "height": 46.91,
-      "center_x": 2771.11,
-      "center_y": 116.27
+      "x1": 40.81,
+      "y1": 1186.54,
+      "x2": 106.23,
+      "y2": 1248.09,
+      "width": 65.42,
+      "height": 61.55,
+      "center_x": 73.52,
+      "center_y": 1217.32
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6091
+    "confidence": 0.6045
   },
   "E90": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "close button for a sidebar panel",
     "box": {
-      "x1": 1562.97,
-      "y1": 89.78,
-      "x2": 1615.88,
-      "y2": 141.59,
-      "width": 52.91,
-      "height": 51.81,
-      "center_x": 1589.42,
-      "center_y": 115.69
+      "x1": 2623.48,
+      "y1": 94.42,
+      "x2": 2670.11,
+      "y2": 136.99,
+      "width": 46.63,
+      "height": 42.57,
+      "center_x": 2646.8,
+      "center_y": 115.7
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6085
+    "confidence": 0.6036
   },
   "E91": {
-    "semantic": "History menu button, menu bar.",
+    "semantic": "Graphics section button in the left elements sidebar",
     "box": {
-      "x1": 513.46,
-      "y1": 13.54,
-      "x2": 621.31,
-      "y2": 64.88,
-      "width": 107.85,
-      "height": 51.34,
-      "center_x": 567.38,
-      "center_y": 39.21
+      "x1": 165.58,
+      "y1": 1148.18,
+      "x2": 308.97,
+      "y2": 1205.97,
+      "width": 143.39,
+      "height": 57.79,
+      "center_x": 237.28,
+      "center_y": 1177.08
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6023
+    "confidence": 0.6011
   },
   "E92": {
-    "semantic": "MyUCLA bookmark, bookmarks bar.",
+    "semantic": "Delete button with trash can icon in the page editing toolbar chrome",
     "box": {
-      "x1": 328.0,
-      "y1": 253.11,
-      "x2": 481.34,
-      "y2": 302.06,
-      "width": 153.34,
-      "height": 48.95,
-      "center_x": 404.67,
-      "center_y": 277.59
+      "x1": 2504.91,
+      "y1": 459.54,
+      "x2": 2559.6,
+      "y2": 514.77,
+      "width": 54.69,
+      "height": 55.23,
+      "center_x": 2532.25,
+      "center_y": 487.16
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6013
+    "confidence": 0.5986
   },
   "E93": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "Pages application icon in the page footer dock",
     "box": {
-      "x1": 1320.64,
-      "y1": 87.94,
-      "x2": 1373.24,
-      "y2": 139.97,
-      "width": 52.6,
-      "height": 52.03,
-      "center_x": 1346.94,
-      "center_y": 113.95
+      "x1": 2952.24,
+      "y1": 1983.4,
+      "x2": 3003.97,
+      "y2": 2035.97,
+      "width": 51.73,
+      "height": 52.57,
+      "center_x": 2978.1,
+      "center_y": 2009.69
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.6003
+    "confidence": 0.5861
   },
   "E94": {
-    "semantic": "Google Docs icon, browser chrome.",
+    "semantic": "Generate button for elements in the left sidebar",
     "box": {
-      "x1": 127.03,
-      "y1": 337.33,
-      "x2": 212.06,
-      "y2": 438.66,
-      "width": 85.03,
-      "height": 101.33,
-      "center_x": 169.55,
-      "center_y": 388.0
+      "x1": 258.18,
+      "y1": 734.95,
+      "x2": 394.6,
+      "y2": 773.36,
+      "width": 136.42,
+      "height": 38.41,
+      "center_x": 326.39,
+      "center_y": 754.16
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5997
+    "confidence": 0.5817
   },
   "E95": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "right arrow icon button in the browser chrome",
     "box": {
-      "x1": 1147.72,
-      "y1": 86.67,
-      "x2": 1211.85,
-      "y2": 142.96,
-      "width": 64.13,
-      "height": 56.29,
-      "center_x": 1179.79,
-      "center_y": 114.81
+      "x1": 96.06,
+      "y1": 179.84,
+      "x2": 143.34,
+      "y2": 224.73,
+      "width": 47.28,
+      "height": 44.89,
+      "center_x": 119.7,
+      "center_y": 202.28
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5995
+    "confidence": 0.5793
   },
   "E96": {
-    "semantic": "Letter Spearmint template label, page content.",
+    "semantic": "Edit button in the page editing toolbar chrome",
     "box": {
-      "x1": 1550.22,
-      "y1": 954.8,
-      "x2": 1666.98,
-      "y2": 1001.24,
-      "width": 116.76,
-      "height": 46.44,
-      "center_x": 1608.6,
-      "center_y": 978.02
+      "x1": 1768.52,
+      "y1": 464.75,
+      "x2": 1854.59,
+      "y2": 515.69,
+      "width": 86.07,
+      "height": 50.94,
+      "center_x": 1811.56,
+      "center_y": 490.22
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5976
+    "confidence": 0.5786
   },
   "E97": {
-    "semantic": "GitHub extension icon, browser chrome.",
+    "semantic": "premium crown icon button in the left sidebar",
     "box": {
-      "x1": 1684.2,
-      "y1": 89.16,
-      "x2": 1733.15,
-      "y2": 144.89,
-      "width": 48.95,
-      "height": 55.73,
-      "center_x": 1708.67,
-      "center_y": 117.02
+      "x1": 441.86,
+      "y1": 1322.68,
+      "x2": 518.79,
+      "y2": 1380.51,
+      "width": 76.93,
+      "height": 57.83,
+      "center_x": 480.33,
+      "center_y": 1351.6
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5948
+    "confidence": 0.5778
   },
   "E98": {
-    "semantic": "Accent - LA Hacks document thumbnail, page content.",
+    "semantic": "Ask Gemini button with sparkle icon in the page header chrome",
     "box": {
-      "x1": 1008.43,
-      "y1": 1218.1,
-      "x2": 1452.41,
-      "y2": 1913.65,
-      "width": 443.98,
-      "height": 695.55,
-      "center_x": 1230.42,
-      "center_y": 1565.88
+      "x1": 3208.61,
+      "y1": 76.03,
+      "x2": 3447.51,
+      "y2": 149.13,
+      "width": 238.9,
+      "height": 73.1,
+      "center_x": 3328.06,
+      "center_y": 112.58
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.593
+    "confidence": 0.5767
   },
   "E99": {
-    "semantic": "Date last opened for World U document, page content.",
+    "semantic": "Tab menu button in the system menu bar",
     "box": {
-      "x1": 2024.69,
-      "y1": 1823.28,
-      "x2": 2244.76,
-      "y2": 1875.6,
-      "width": 220.07,
-      "height": 52.32,
-      "center_x": 2134.72,
-      "center_y": 1849.44
+      "x1": 951.9,
+      "y1": 15.76,
+      "x2": 1018.81,
+      "y2": 58.9,
+      "width": 66.91,
+      "height": 43.14,
+      "center_x": 985.36,
+      "center_y": 37.33
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5928
+    "confidence": 0.5762
   },
   "E100": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "right chevron arrow button in the elements sidebar",
     "box": {
-      "x1": 2980.86,
-      "y1": 91.47,
-      "x2": 3033.22,
-      "y2": 141.59,
-      "width": 52.36,
-      "height": 50.12,
-      "center_x": 3007.04,
-      "center_y": 116.53
+      "x1": 788.23,
+      "y1": 832.64,
+      "x2": 827.51,
+      "y2": 881.93,
+      "width": 39.28,
+      "height": 49.29,
+      "center_x": 807.87,
+      "center_y": 857.28
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5874
+    "confidence": 0.5731
   },
   "E101": {
-    "semantic": "Chrome close tab button, browser chrome.",
+    "semantic": "arrow label text in the sidebar search results",
     "box": {
-      "x1": 2464.2,
-      "y1": 90.62,
-      "x2": 2515.41,
-      "y2": 142.39,
-      "width": 51.21,
-      "height": 51.77,
-      "center_x": 2489.8,
-      "center_y": 116.51
+      "x1": 202.69,
+      "y1": 498.83,
+      "x2": 298.14,
+      "y2": 542.38,
+      "width": 95.45,
+      "height": 43.55,
+      "center_x": 250.41,
+      "center_y": 520.61
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5873
+    "confidence": 0.5715
   },
   "E102": {
-    "semantic": "Resume Coral template label, page content.",
+    "semantic": "browser tab labeled New...",
     "box": {
-      "x1": 1223.78,
-      "y1": 989.2,
-      "x2": 1320.6,
-      "y2": 1033.96,
-      "width": 96.82,
-      "height": 44.76,
-      "center_x": 1272.19,
-      "center_y": 1011.58
+      "x1": 111.86,
+      "y1": 253.92,
+      "x2": 164.89,
+      "y2": 298.16,
+      "width": 53.03,
+      "height": 44.24,
+      "center_x": 138.38,
+      "center_y": 276.04
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5858
+    "confidence": 0.5711
   },
   "E103": {
-    "semantic": "Profiles menu button, menu bar.",
+    "semantic": "browser tab labeled Happening now: riz...",
     "box": {
-      "x1": 818.04,
-      "y1": 11.89,
-      "x2": 935.88,
-      "y2": 63.74,
-      "width": 117.84,
-      "height": 51.85,
-      "center_x": 876.96,
-      "center_y": 37.81
+      "x1": 256.18,
+      "y1": 95.21,
+      "x2": 469.86,
+      "y2": 137.32,
+      "width": 213.68,
+      "height": 42.11,
+      "center_x": 363.02,
+      "center_y": 116.26
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.578
+    "confidence": 0.5699
   },
   "E104": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "Templates menu button in the far left vertical navigation bar",
     "box": {
-      "x1": 1921.52,
-      "y1": 90.92,
-      "x2": 1969.03,
-      "y2": 139.82,
-      "width": 47.51,
-      "height": 48.9,
-      "center_x": 1945.28,
-      "center_y": 115.37
+      "x1": 12.12,
+      "y1": 538.33,
+      "x2": 137.12,
+      "y2": 576.69,
+      "width": 125.0,
+      "height": 38.36,
+      "center_x": 74.62,
+      "center_y": 557.51
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5758
+    "confidence": 0.5647
   },
   "E105": {
-    "semantic": "Help menu button, menu bar.",
+    "semantic": "Elements menu button in the far left vertical navigation bar",
     "box": {
-      "x1": 1169.01,
-      "y1": 14.58,
-      "x2": 1252.58,
-      "y2": 64.35,
-      "width": 83.57,
-      "height": 49.77,
-      "center_x": 1210.8,
-      "center_y": 39.47
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.574
-  },
-  "E106": {
-    "semantic": "Google Docs file icon, page content.",
-    "box": {
-      "x1": 1051.93,
-      "y1": 1824.97,
-      "x2": 1110.96,
-      "y2": 1875.9,
-      "width": 59.03,
-      "height": 50.93,
-      "center_x": 1081.45,
-      "center_y": 1850.43
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5735
-  },
-  "E107": {
-    "semantic": "Refresh page button, browser chrome.",
-    "box": {
-      "x1": 162.18,
-      "y1": 176.74,
-      "x2": 219.06,
-      "y2": 230.53,
-      "width": 56.88,
-      "height": 53.79,
-      "center_x": 190.62,
-      "center_y": 203.64
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.569
-  },
-  "E108": {
-    "semantic": "Focus mode icon, menu bar.",
-    "box": {
-      "x1": 2793.58,
-      "y1": 12.56,
-      "x2": 2853.3,
-      "y2": 65.56,
-      "width": 59.72,
-      "height": 53.0,
-      "center_x": 2823.44,
-      "center_y": 39.06
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5685
-  },
-  "E109": {
-    "semantic": "Main menu button, page content.",
-    "box": {
-      "x1": 37.2,
-      "y1": 348.89,
-      "x2": 112.49,
-      "y2": 414.57,
-      "width": 75.29,
-      "height": 65.68,
-      "center_x": 74.84,
-      "center_y": 381.73
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5649
-  },
-  "E110": {
-    "semantic": "Date icon, menu bar.",
-    "box": {
-      "x1": 3157.39,
-      "y1": 12.23,
-      "x2": 3301.83,
-      "y2": 63.51,
-      "width": 144.44,
-      "height": 51.28,
-      "center_x": 3229.61,
-      "center_y": 37.87
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.562
-  },
-  "E111": {
-    "semantic": "Google Docs file icon, page content.",
-    "box": {
-      "x1": 1513.76,
-      "y1": 1824.75,
-      "x2": 1570.7,
-      "y2": 1872.81,
-      "width": 56.94,
-      "height": 48.06,
-      "center_x": 1542.23,
-      "center_y": 1848.78
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5616
-  },
-  "E112": {
-    "semantic": "Extension icon, browser chrome.",
-    "box": {
-      "x1": 2696.86,
-      "y1": 91.24,
-      "x2": 2753.38,
-      "y2": 140.29,
-      "width": 56.52,
-      "height": 49.05,
-      "center_x": 2725.12,
-      "center_y": 115.76
+      "x1": 21.78,
+      "y1": 680.6,
+      "x2": 126.97,
+      "y2": 719.17,
+      "width": 105.19,
+      "height": 38.57,
+      "center_x": 74.38,
+      "center_y": 699.88
     },
     "box_format": "xyxy",
     "class": "button",
     "confidence": 0.5614
   },
-  "E113": {
-    "semantic": "Back button, browser chrome.",
+  "E106": {
+    "semantic": "user profile icon in the system menu bar",
     "box": {
-      "x1": 13.52,
-      "y1": 177.35,
-      "x2": 78.79,
-      "y2": 232.75,
-      "width": 65.27,
-      "height": 55.4,
-      "center_x": 46.16,
-      "center_y": 205.05
+      "x1": 2531.26,
+      "y1": 13.1,
+      "x2": 2584.23,
+      "y2": 63.7,
+      "width": 52.97,
+      "height": 50.6,
+      "center_x": 2557.75,
+      "center_y": 38.4
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5571
+    "confidence": 0.5606
+  },
+  "E107": {
+    "semantic": "Brand menu button in the far left vertical navigation bar",
+    "box": {
+      "x1": 31.36,
+      "y1": 968.53,
+      "x2": 125.63,
+      "y2": 1011.98,
+      "width": 94.27,
+      "height": 43.45,
+      "center_x": 78.5,
+      "center_y": 990.25
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5598
+  },
+  "E108": {
+    "semantic": "browser tab labeled LA Hacks",
+    "box": {
+      "x1": 2344.86,
+      "y1": 89.09,
+      "x2": 2390.33,
+      "y2": 141.87,
+      "width": 45.47,
+      "height": 52.78,
+      "center_x": 2367.6,
+      "center_y": 115.48
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5487
+  },
+  "E109": {
+    "semantic": "browser indicator light in the browser chrome",
+    "box": {
+      "x1": 34.18,
+      "y1": 99.35,
+      "x2": 82.38,
+      "y2": 136.28,
+      "width": 48.2,
+      "height": 36.93,
+      "center_x": 58.28,
+      "center_y": 117.81
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5485
+  },
+  "E110": {
+    "semantic": "premium crown icon button in the left sidebar",
+    "box": {
+      "x1": 90.38,
+      "y1": 874.57,
+      "x2": 134.86,
+      "y2": 914.49,
+      "width": 44.48,
+      "height": 39.92,
+      "center_x": 112.62,
+      "center_y": 894.53
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5434
+  },
+  "E111": {
+    "semantic": "refresh page button icon in the browser chrome",
+    "box": {
+      "x1": 170.19,
+      "y1": 179.87,
+      "x2": 214.86,
+      "y2": 226.47,
+      "width": 44.67,
+      "height": 46.6,
+      "center_x": 192.53,
+      "center_y": 203.17
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5424
+  },
+  "E112": {
+    "semantic": "premium crown icon button in the left sidebar",
+    "box": {
+      "x1": 590.3,
+      "y1": 1608.3,
+      "x2": 649.11,
+      "y2": 1655.08,
+      "width": 58.81,
+      "height": 46.78,
+      "center_x": 619.7,
+      "center_y": 1631.69
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5318
+  },
+  "E113": {
+    "semantic": "battery status icon in the system menu bar",
+    "box": {
+      "x1": 2870.27,
+      "y1": 15.33,
+      "x2": 2941.4,
+      "y2": 59.87,
+      "width": 71.13,
+      "height": 44.54,
+      "center_x": 2905.84,
+      "center_y": 37.6
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5263
   },
   "E114": {
-    "semantic": "New tab button, browser chrome.",
+    "semantic": "browser tab labeled Accent - Pr...",
     "box": {
-      "x1": 3043.17,
-      "y1": 87.9,
-      "x2": 3097.99,
-      "y2": 142.62,
-      "width": 54.82,
-      "height": 54.72,
-      "center_x": 3070.58,
-      "center_y": 115.26
+      "x1": 2032.59,
+      "y1": 90.37,
+      "x2": 2140.16,
+      "y2": 141.96,
+      "width": 107.57,
+      "height": 51.59,
+      "center_x": 2086.38,
+      "center_y": 116.17
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.556
+    "confidence": 0.5233
   },
   "E115": {
-    "semantic": "Gmail notification, menu bar.",
+    "semantic": "Help menu button in the system menu bar",
     "box": {
-      "x1": 2388.83,
-      "y1": 90.67,
-      "x2": 2441.96,
-      "y2": 139.09,
-      "width": 53.13,
-      "height": 48.42,
-      "center_x": 2415.39,
-      "center_y": 114.88
+      "x1": 1172.32,
+      "y1": 17.73,
+      "x2": 1245.82,
+      "y2": 61.01,
+      "width": 73.5,
+      "height": 43.28,
+      "center_x": 1209.07,
+      "center_y": 39.37
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5559
+    "confidence": 0.5226
   },
   "E116": {
-    "semantic": "Fetch.ai Company Challenge document name, page content.",
+    "semantic": "close tab button for Google Meet",
     "box": {
-      "x1": 2435.65,
-      "y1": 1774.55,
-      "x2": 2803.87,
-      "y2": 1839.84,
-      "width": 368.22,
-      "height": 65.29,
-      "center_x": 2619.76,
-      "center_y": 1807.19
+      "x1": 2268.05,
+      "y1": 91.73,
+      "x2": 2312.1,
+      "y2": 143.28,
+      "width": 44.05,
+      "height": 51.55,
+      "center_x": 2290.08,
+      "center_y": 117.5
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5537
+    "confidence": 0.5218
   },
   "E117": {
-    "semantic": "Extension icon, menu bar.",
+    "semantic": "browser tab tooltip for Google Chrome",
     "box": {
-      "x1": 2152.13,
-      "y1": 90.42,
-      "x2": 2206.53,
-      "y2": 141.89,
-      "width": 54.4,
-      "height": 51.47,
-      "center_x": 2179.33,
-      "center_y": 116.16
+      "x1": 1752.39,
+      "y1": 1961.42,
+      "x2": 2006.99,
+      "y2": 2032.2,
+      "width": 254.6,
+      "height": 70.78,
+      "center_x": 1879.69,
+      "center_y": 1996.81
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5533
+    "confidence": 0.5209
   },
   "E118": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "browser tab labeled MyUCLA",
     "box": {
-      "x1": 1269.8,
-      "y1": 87.49,
-      "x2": 1332.33,
-      "y2": 141.26,
-      "width": 62.53,
-      "height": 53.77,
-      "center_x": 1301.07,
-      "center_y": 114.38
+      "x1": 357.23,
+      "y1": 255.37,
+      "x2": 481.74,
+      "y2": 295.8,
+      "width": 124.51,
+      "height": 40.43,
+      "center_x": 419.49,
+      "center_y": 275.58
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5516
+    "confidence": 0.5166
   },
   "E119": {
-    "semantic": "Google Meet icon, browser chrome.",
+    "semantic": "Magic recommendations header in the left sidebar",
     "box": {
-      "x1": 2578.15,
-      "y1": 92.11,
-      "x2": 2639.25,
-      "y2": 142.34,
-      "width": 61.1,
-      "height": 50.23,
-      "center_x": 2608.7,
-      "center_y": 117.22
+      "x1": 280.11,
+      "y1": 1420.41,
+      "x2": 644.77,
+      "y2": 1475.24,
+      "width": 364.66,
+      "height": 54.83,
+      "center_x": 462.44,
+      "center_y": 1447.83
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.549
+    "confidence": 0.5162
   },
   "E120": {
-    "semantic": "Resume Serif template label, page content.",
+    "semantic": "Search icon in the system menu bar",
     "box": {
-      "x1": 894.21,
-      "y1": 988.67,
-      "x2": 982.6,
-      "y2": 1030.25,
-      "width": 88.39,
-      "height": 41.58,
-      "center_x": 938.41,
-      "center_y": 1009.46
+      "x1": 1627.68,
+      "y1": 88.94,
+      "x2": 1679.65,
+      "y2": 147.65,
+      "width": 51.97,
+      "height": 58.71,
+      "center_x": 1653.66,
+      "center_y": 118.3
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.548
+    "confidence": 0.5155
   },
   "E121": {
-    "semantic": "Gmail icon, browser chrome.",
+    "semantic": "grid dashboard icon in the browser chrome",
     "box": {
-      "x1": 2336.34,
-      "y1": 90.41,
-      "x2": 2397.66,
-      "y2": 140.16,
-      "width": 61.32,
-      "height": 49.75,
-      "center_x": 2367.0,
-      "center_y": 115.28
+      "x1": 13.28,
+      "y1": 248.78,
+      "x2": 79.53,
+      "y2": 299.21,
+      "width": 66.25,
+      "height": 50.43,
+      "center_x": 46.41,
+      "center_y": 274.0
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.5454
+    "confidence": 0.5018
   },
   "E122": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "browser tab labeled LA Hacks",
     "box": {
-      "x1": 843.77,
-      "y1": 91.78,
-      "x2": 897.1,
-      "y2": 141.92,
-      "width": 53.33,
-      "height": 50.14,
-      "center_x": 870.43,
-      "center_y": 116.85
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5443
-  },
-  "E123": {
-    "semantic": "Project proposal Tropic template label, page content.",
-    "box": {
-      "x1": 1878.83,
-      "y1": 986.95,
-      "x2": 1971.66,
-      "y2": 1033.97,
-      "width": 92.83,
-      "height": 47.02,
-      "center_x": 1925.24,
-      "center_y": 1010.46
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5406
-  },
-  "E124": {
-    "semantic": "Extension icon, browser chrome.",
-    "box": {
-      "x1": 3221.97,
-      "y1": 86.42,
-      "x2": 3282.12,
-      "y2": 144.0,
-      "width": 60.15,
-      "height": 57.58,
-      "center_x": 3252.04,
-      "center_y": 115.21
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5401
-  },
-  "E125": {
-    "semantic": "Tab menu button, menu bar.",
-    "box": {
-      "x1": 948.82,
-      "y1": 11.86,
-      "x2": 1024.07,
-      "y2": 63.16,
-      "width": 75.25,
-      "height": 51.3,
-      "center_x": 986.45,
-      "center_y": 37.51
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5388
-  },
-  "E126": {
-    "semantic": "Resume Serif template label, page content.",
-    "box": {
-      "x1": 895.01,
-      "y1": 953.68,
-      "x2": 1024.38,
-      "y2": 1004.38,
-      "width": 129.37,
-      "height": 50.7,
-      "center_x": 959.69,
-      "center_y": 979.03
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.537
-  },
-  "E127": {
-    "semantic": "Date last opened for ECE M16 document, page content.",
-    "box": {
-      "x1": 644.22,
-      "y1": 1824.81,
-      "x2": 897.3,
-      "y2": 1873.59,
-      "width": 253.08,
-      "height": 48.78,
-      "center_x": 770.76,
-      "center_y": 1849.2
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5335
-  },
-  "E128": {
-    "semantic": "Google account switcher, menu bar.",
-    "box": {
-      "x1": 2928.97,
-      "y1": 86.62,
-      "x2": 3012.69,
-      "y2": 146.67,
-      "width": 83.72,
-      "height": 60.05,
-      "center_x": 2970.83,
-      "center_y": 116.65
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5327
-  },
-  "E129": {
-    "semantic": "Google Docs file icon, page content.",
-    "box": {
-      "x1": 593.6,
-      "y1": 1824.71,
-      "x2": 647.92,
-      "y2": 1873.6,
-      "width": 54.32,
-      "height": 48.89,
-      "center_x": 620.76,
-      "center_y": 1849.15
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5319
-  },
-  "E130": {
-    "semantic": "Gmail icon, browser chrome.",
-    "box": {
-      "x1": 674.0,
-      "y1": 89.68,
-      "x2": 727.77,
-      "y2": 138.77,
-      "width": 53.77,
-      "height": 49.09,
-      "center_x": 700.88,
-      "center_y": 114.23
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5266
-  },
-  "E131": {
-    "semantic": "Google Docs file icon, page content.",
-    "box": {
-      "x1": 2430.44,
-      "y1": 1825.87,
-      "x2": 2490.07,
-      "y2": 1876.49,
-      "width": 59.63,
-      "height": 50.62,
-      "center_x": 2460.26,
-      "center_y": 1851.18
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5255
-  },
-  "E132": {
-    "semantic": "Edit menu button, menu bar.",
-    "box": {
-      "x1": 321.37,
-      "y1": 12.94,
-      "x2": 400.76,
-      "y2": 63.58,
-      "width": 79.39,
-      "height": 50.64,
-      "center_x": 361.06,
-      "center_y": 38.26
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5254
-  },
-  "E133": {
-    "semantic": "Extension icon, browser chrome.",
-    "box": {
-      "x1": 1033.66,
-      "y1": 89.26,
-      "x2": 1090.63,
-      "y2": 141.59,
-      "width": 56.97,
-      "height": 52.33,
-      "center_x": 1062.14,
-      "center_y": 115.43
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5253
-  },
-  "E134": {
-    "semantic": "MyUCLA bookmark, bookmarks bar.",
-    "box": {
-      "x1": 491.02,
-      "y1": 254.11,
-      "x2": 546.33,
-      "y2": 305.14,
-      "width": 55.31,
-      "height": 51.03,
-      "center_x": 518.67,
-      "center_y": 279.62
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.523
-  },
-  "E135": {
-    "semantic": "Extension icon, browser chrome.",
-    "box": {
-      "x1": 248.73,
-      "y1": 177.6,
-      "x2": 303.71,
-      "y2": 229.24,
-      "width": 54.98,
-      "height": 51.64,
-      "center_x": 276.22,
-      "center_y": 203.42
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5122
-  },
-  "E136": {
-    "semantic": "Extension icon, browser chrome.",
-    "box": {
-      "x1": 960.83,
-      "y1": 86.8,
-      "x2": 1023.85,
-      "y2": 143.48,
-      "width": 63.02,
-      "height": 56.68,
-      "center_x": 992.34,
-      "center_y": 115.14
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5092
-  },
-  "E137": {
-    "semantic": "Extension icon, browser chrome.",
-    "box": {
-      "x1": 1147.23,
-      "y1": 86.06,
-      "x2": 1211.46,
-      "y2": 143.62,
-      "width": 64.23,
-      "height": 57.56,
-      "center_x": 1179.35,
-      "center_y": 114.84
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.5064
-  },
-  "E138": {
-    "semantic": "Close tab icon, browser chrome.",
-    "box": {
-      "x1": 603.39,
-      "y1": 91.52,
-      "x2": 651.59,
-      "y2": 142.18,
-      "width": 48.2,
-      "height": 50.66,
-      "center_x": 627.49,
-      "center_y": 116.85
+      "x1": 2391.94,
+      "y1": 90.92,
+      "x2": 2511.68,
+      "y2": 139.78,
+      "width": 119.74,
+      "height": 48.86,
+      "center_x": 2451.81,
+      "center_y": 115.35
     },
     "box_format": "xyxy",
     "class": "button",
     "confidence": 0.5009
   },
-  "E139": {
-    "semantic": "Gmail notification, menu bar.",
+  "E123": {
+    "semantic": "Apple menu icon in the system menu bar",
     "box": {
-      "x1": 2268.39,
-      "y1": 93.65,
-      "x2": 2323.5,
-      "y2": 139.26,
-      "width": 55.11,
-      "height": 45.61,
-      "center_x": 2295.94,
-      "center_y": 116.46
+      "x1": 31.3,
+      "y1": 11.21,
+      "x2": 81.94,
+      "y2": 61.9,
+      "width": 50.64,
+      "height": 50.69,
+      "center_x": 56.62,
+      "center_y": 36.55
     },
     "box_format": "xyxy",
     "class": "button",
     "confidence": 0.4995
   },
-  "E140": {
-    "semantic": "Extension icon, browser chrome.",
+  "E124": {
+    "semantic": "vertical double arrow icon in the left elements sidebar",
     "box": {
-      "x1": 320.75,
-      "y1": 94.06,
-      "x2": 365.86,
-      "y2": 138.71,
-      "width": 45.11,
-      "height": 44.65,
-      "center_x": 343.31,
-      "center_y": 116.39
+      "x1": 692.55,
+      "y1": 988.57,
+      "x2": 805.1,
+      "y2": 1116.38,
+      "width": 112.55,
+      "height": 127.81,
+      "center_x": 748.82,
+      "center_y": 1052.48
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4974
+    "confidence": 0.4963
+  },
+  "E125": {
+    "semantic": "browser extension icon in the browser chrome",
+    "box": {
+      "x1": 3009.85,
+      "y1": 174.83,
+      "x2": 3072.45,
+      "y2": 227.68,
+      "width": 62.6,
+      "height": 52.85,
+      "center_x": 3041.15,
+      "center_y": 201.26
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4955
+  },
+  "E126": {
+    "semantic": "date and time in the system menu bar showing Sun Apr 26 3:25 AM",
+    "box": {
+      "x1": 3168.26,
+      "y1": 15.12,
+      "x2": 3313.57,
+      "y2": 60.17,
+      "width": 145.31,
+      "height": 45.05,
+      "center_x": 3240.92,
+      "center_y": 37.64
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4952
+  },
+  "E127": {
+    "semantic": "browser tab labeled Presentat...",
+    "box": {
+      "x1": 2140.63,
+      "y1": 90.84,
+      "x2": 2255.3,
+      "y2": 141.33,
+      "width": 114.67,
+      "height": 50.49,
+      "center_x": 2197.97,
+      "center_y": 116.09
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4905
+  },
+  "E128": {
+    "semantic": "browser tab tooltip for Google Chrome",
+    "box": {
+      "x1": 1746.76,
+      "y1": 1962.79,
+      "x2": 2014.34,
+      "y2": 2027.69,
+      "width": 267.58,
+      "height": 64.9,
+      "center_x": 1880.55,
+      "center_y": 1995.24
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4898
+  },
+  "E129": {
+    "semantic": "Templates section icon button in the far left vertical navigation bar",
+    "box": {
+      "x1": 42.96,
+      "y1": 470.71,
+      "x2": 109.01,
+      "y2": 529.48,
+      "width": 66.05,
+      "height": 58.77,
+      "center_x": 75.98,
+      "center_y": 500.09
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4866
+  },
+  "E130": {
+    "semantic": "Tools menu button in the left elements sidebar",
+    "box": {
+      "x1": 34.29,
+      "y1": 1256.48,
+      "x2": 118.67,
+      "y2": 1302.49,
+      "width": 84.38,
+      "height": 46.01,
+      "center_x": 76.48,
+      "center_y": 1279.49
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4857
+  },
+  "E131": {
+    "semantic": "Elements section icon button in the far left vertical navigation bar",
+    "box": {
+      "x1": 34.48,
+      "y1": 605.8,
+      "x2": 114.34,
+      "y2": 681.93,
+      "width": 79.86,
+      "height": 76.13,
+      "center_x": 74.41,
+      "center_y": 643.87
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4855
+  },
+  "E132": {
+    "semantic": "Search button with magnifying glass icon in the page header chrome",
+    "box": {
+      "x1": 516.98,
+      "y1": 710.36,
+      "x2": 841.53,
+      "y2": 807.28,
+      "width": 324.55,
+      "height": 96.92,
+      "center_x": 679.25,
+      "center_y": 758.82
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4798
+  },
+  "E133": {
+    "semantic": "Audio section icon button in the far left vertical navigation bar",
+    "box": {
+      "x1": 45.35,
+      "y1": 1643.78,
+      "x2": 109.19,
+      "y2": 1708.34,
+      "width": 63.84,
+      "height": 64.56,
+      "center_x": 77.27,
+      "center_y": 1676.06
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4779
+  },
+  "E134": {
+    "semantic": "browser tab labeled e - Goog...",
+    "box": {
+      "x1": 2900.83,
+      "y1": 96.23,
+      "x2": 2971.97,
+      "y2": 134.82,
+      "width": 71.14,
+      "height": 38.59,
+      "center_x": 2936.4,
+      "center_y": 115.53
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4765
+  },
+  "E135": {
+    "semantic": "File menu button in the system menu bar",
+    "box": {
+      "x1": 241.96,
+      "y1": 17.04,
+      "x2": 302.78,
+      "y2": 59.11,
+      "width": 60.82,
+      "height": 42.07,
+      "center_x": 272.37,
+      "center_y": 38.08
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4737
+  },
+  "E136": {
+    "semantic": "Background section icon button in the far left vertical navigation bar",
+    "box": {
+      "x1": 5.34,
+      "y1": 1852.81,
+      "x2": 147.28,
+      "y2": 1906.48,
+      "width": 141.94,
+      "height": 53.67,
+      "center_x": 76.31,
+      "center_y": 1879.64
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4729
+  },
+  "E137": {
+    "semantic": "Audio section button in the left elements sidebar",
+    "box": {
+      "x1": 28.46,
+      "y1": 1710.82,
+      "x2": 119.64,
+      "y2": 1757.86,
+      "width": 91.18,
+      "height": 47.04,
+      "center_x": 74.05,
+      "center_y": 1734.34
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4695
+  },
+  "E138": {
+    "semantic": "Projects section icon button in the far left vertical navigation bar",
+    "box": {
+      "x1": 40.98,
+      "y1": 1331.78,
+      "x2": 105.61,
+      "y2": 1396.09,
+      "width": 64.63,
+      "height": 64.31,
+      "center_x": 73.29,
+      "center_y": 1363.93
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4684
+  },
+  "E139": {
+    "semantic": "3D graphics section button in the left elements sidebar",
+    "box": {
+      "x1": 158.11,
+      "y1": 2015.43,
+      "x2": 239.04,
+      "y2": 2062.7,
+      "width": 80.93,
+      "height": 47.27,
+      "center_x": 198.58,
+      "center_y": 2039.07
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4652
+  },
+  "E140": {
+    "semantic": "slide count button showing 7 / 13 in the page footer chrome",
+    "box": {
+      "x1": 3136.52,
+      "y1": 1987.28,
+      "x2": 3176.38,
+      "y2": 2032.96,
+      "width": 39.86,
+      "height": 45.68,
+      "center_x": 3156.45,
+      "center_y": 2010.12
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4613
   },
   "E141": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "Share button in the page header chrome",
     "box": {
-      "x1": 1198.66,
-      "y1": 85.93,
-      "x2": 1256.34,
-      "y2": 142.17,
-      "width": 57.68,
-      "height": 56.24,
-      "center_x": 1227.5,
-      "center_y": 114.05
+      "x1": 3333.97,
+      "y1": 350.18,
+      "x2": 3419.38,
+      "y2": 400.04,
+      "width": 85.41,
+      "height": 49.86,
+      "center_x": 3376.67,
+      "center_y": 375.11
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4973
+    "confidence": 0.4568
   },
   "E142": {
-    "semantic": "Google account switcher, menu bar.",
+    "semantic": "purple search icon button in the page header chrome",
     "box": {
-      "x1": 2808.19,
-      "y1": 88.51,
-      "x2": 2881.21,
-      "y2": 145.64,
-      "width": 73.02,
-      "height": 57.13,
-      "center_x": 2844.7,
-      "center_y": 117.08
+      "x1": 2841.42,
+      "y1": 330.32,
+      "x2": 2931.47,
+      "y2": 424.49,
+      "width": 90.05,
+      "height": 94.17,
+      "center_x": 2886.45,
+      "center_y": 377.4
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4902
+    "confidence": 0.456
   },
   "E143": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "premium crown icon button in the left sidebar",
     "box": {
-      "x1": 359.12,
-      "y1": 94.05,
-      "x2": 414.78,
-      "y2": 141.09,
-      "width": 55.66,
-      "height": 47.04,
-      "center_x": 386.95,
-      "center_y": 117.57
+      "x1": 286.51,
+      "y1": 1609.25,
+      "x2": 346.18,
+      "y2": 1652.3,
+      "width": 59.67,
+      "height": 43.05,
+      "center_x": 316.34,
+      "center_y": 1630.78
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4889
+    "confidence": 0.4559
   },
   "E144": {
-    "semantic": "Google Docs file icon, bookmarks bar.",
+    "semantic": "close tab button for figma make",
     "box": {
-      "x1": 693.0,
-      "y1": 253.35,
-      "x2": 747.45,
-      "y2": 309.63,
-      "width": 54.45,
-      "height": 56.28,
-      "center_x": 720.23,
-      "center_y": 281.49
+      "x1": 2978.24,
+      "y1": 90.83,
+      "x2": 3023.32,
+      "y2": 139.97,
+      "width": 45.08,
+      "height": 49.14,
+      "center_x": 3000.78,
+      "center_y": 115.4
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4879
+    "confidence": 0.4534
   },
   "E145": {
-    "semantic": "Gmail icon, browser chrome.",
+    "semantic": "blue character illustration in the page content area",
     "box": {
-      "x1": 2221.47,
-      "y1": 88.03,
-      "x2": 2315.69,
-      "y2": 142.56,
-      "width": 94.22,
-      "height": 54.53,
-      "center_x": 2268.58,
-      "center_y": 115.3
+      "x1": 1227.05,
+      "y1": 1511.79,
+      "x2": 1409.42,
+      "y2": 1727.45,
+      "width": 182.37,
+      "height": 215.66,
+      "center_x": 1318.23,
+      "center_y": 1619.62
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4859
+    "confidence": 0.4505
   },
   "E146": {
-    "semantic": "Desktop background wallpaper, page content.",
+    "semantic": "browser tab labeled Ha...",
     "box": {
-      "x1": 3056.52,
-      "y1": 2058.81,
-      "x2": 3457.56,
-      "y2": 2236.05,
-      "width": 401.04,
-      "height": 177.24,
-      "center_x": 3257.04,
-      "center_y": 2147.43
+      "x1": 196.62,
+      "y1": 92.61,
+      "x2": 246.63,
+      "y2": 138.8,
+      "width": 50.01,
+      "height": 46.19,
+      "center_x": 221.62,
+      "center_y": 115.7
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4854
+    "confidence": 0.4503
   },
   "E147": {
-    "semantic": "Divider in address bar, browser chrome.",
+    "semantic": "close tab button for Search slides",
     "box": {
-      "x1": 3069.45,
-      "y1": 175.0,
-      "x2": 3114.92,
-      "y2": 227.24,
-      "width": 45.47,
-      "height": 52.24,
-      "center_x": 3092.18,
-      "center_y": 201.12
+      "x1": 1551.12,
+      "y1": 90.2,
+      "x2": 1605.25,
+      "y2": 142.66,
+      "width": 54.13,
+      "height": 52.46,
+      "center_x": 1578.18,
+      "center_y": 116.43
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4836
+    "confidence": 0.45
   },
   "E148": {
-    "semantic": "Gmail notification icon, menu bar.",
+    "semantic": "close tab button for [2403.04984]",
     "box": {
-      "x1": 723.73,
-      "y1": 92.14,
-      "x2": 774.81,
-      "y2": 140.52,
-      "width": 51.08,
-      "height": 48.38,
-      "center_x": 749.27,
-      "center_y": 116.33
+      "x1": 478.42,
+      "y1": 95.47,
+      "x2": 528.1,
+      "y2": 138.41,
+      "width": 49.68,
+      "height": 42.94,
+      "center_x": 503.26,
+      "center_y": 116.94
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4658
+    "confidence": 0.4489
   },
   "E149": {
-    "semantic": "Extension icon, browser chrome.",
+    "semantic": "Text menu button in the far left vertical navigation bar",
     "box": {
-      "x1": 29.02,
-      "y1": 93.43,
-      "x2": 91.57,
-      "y2": 140.82,
-      "width": 62.55,
-      "height": 47.39,
-      "center_x": 60.3,
-      "center_y": 117.12
+      "x1": 42.49,
+      "y1": 829.74,
+      "x2": 106.99,
+      "y2": 864.93,
+      "width": 64.5,
+      "height": 35.19,
+      "center_x": 74.74,
+      "center_y": 847.34
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4641
+    "confidence": 0.447
   },
   "E150": {
-    "semantic": "star button in the browser address bar to bookmark the current page, grey star icon on a dark background.",
+    "semantic": "Clickable Notes button with a pencil icon in the left sidebar of the Canva editor to view or edit page notes.",
     "box": {
-      "x1": 2795.45,
-      "y1": 172.45,
-      "x2": 2862.33,
-      "y2": 232.08,
-      "width": 66.88,
-      "height": 59.63,
-      "center_x": 2828.89,
-      "center_y": 202.26
+      "x1": 940.25,
+      "y1": 1990.3,
+      "x2": 1033.49,
+      "y2": 2033.7,
+      "width": 93.24,
+      "height": 43.4,
+      "center_x": 986.87,
+      "center_y": 2012.0
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.463
+    "confidence": 0.4468
   },
   "E151": {
-    "semantic": "small grey circular indicator icon in the browser tab bar.",
+    "semantic": "Premium crown icon on a line graphic in the page content, indicating a paid asset.",
     "box": {
-      "x1": 106.06,
-      "y1": 92.19,
-      "x2": 158.56,
-      "y2": 141.02,
-      "width": 52.5,
-      "height": 48.83,
-      "center_x": 132.31,
-      "center_y": 116.6
+      "x1": 265.69,
+      "y1": 1321.58,
+      "x2": 342.85,
+      "y2": 1380.71,
+      "width": 77.16,
+      "height": 59.13,
+      "center_x": 304.27,
+      "center_y": 1351.14
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4626
+    "confidence": 0.4463
   },
   "E152": {
-    "semantic": "Bookmarks menu button in the browser toolbar, showing the text 'Bookmarks'.",
+    "semantic": "Adjust settings icon for a graphic in the left panel, allowing the user to modify its properties.",
     "box": {
-      "x1": 644.86,
-      "y1": 11.56,
-      "x2": 802.33,
-      "y2": 66.32,
-      "width": 157.47,
-      "height": 54.76,
-      "center_x": 723.6,
-      "center_y": 38.94
+      "x1": 308.28,
+      "y1": 591.31,
+      "x2": 365.34,
+      "y2": 646.05,
+      "width": 57.06,
+      "height": 54.74,
+      "center_x": 336.81,
+      "center_y": 618.68
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4566
+    "confidence": 0.4425
   },
   "E153": {
-    "semantic": "more options vertical ellipsis button for an individual document card.",
+    "semantic": "Favicon for a Google Meet tab in the browser chrome, representing an active or background video meeting.",
     "box": {
-      "x1": 1372.54,
-      "y1": 1817.03,
-      "x2": 1417.38,
-      "y2": 1871.03,
-      "width": 44.84,
-      "height": 54.0,
-      "center_x": 1394.96,
-      "center_y": 1844.03
+      "x1": 556.08,
+      "y1": 93.77,
+      "x2": 603.57,
+      "y2": 137.96,
+      "width": 47.49,
+      "height": 44.19,
+      "center_x": 579.83,
+      "center_y": 115.86
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4548
+    "confidence": 0.4415
   },
   "E154": {
-    "semantic": "title text 'ECE M16 (CS M51A) [Spring 2028] - Syllabus' for a document in the recent documents section.",
+    "semantic": "Templates tab label in the left sidebar of the Canva editor for browsing design templates.",
     "box": {
-      "x1": 649.05,
-      "y1": 1981.84,
-      "x2": 903.04,
-      "y2": 2015.98,
-      "width": 253.99,
-      "height": 34.14,
-      "center_x": 776.04,
-      "center_y": 1998.91
+      "x1": 15.07,
+      "y1": 538.11,
+      "x2": 134.91,
+      "y2": 575.78,
+      "width": 119.84,
+      "height": 37.67,
+      "center_x": 74.99,
+      "center_y": 556.95
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4538
+    "confidence": 0.4343
   },
   "E155": {
-    "semantic": "vertical ellipsis options button for a document in the list view.",
+    "semantic": "'All' filter tab for assets in the Canva left sidebar, showing all types of elements.",
     "box": {
-      "x1": 3391.35,
-      "y1": 171.52,
-      "x2": 3443.91,
-      "y2": 234.86,
-      "width": 52.56,
-      "height": 63.34,
-      "center_x": 3417.63,
-      "center_y": 203.19
+      "x1": 185.41,
+      "y1": 831.02,
+      "x2": 244.51,
+      "y2": 882.31,
+      "width": 59.1,
+      "height": 51.29,
+      "center_x": 214.96,
+      "center_y": 856.66
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4537
+    "confidence": 0.4338
   },
   "E156": {
-    "semantic": "Reddit browser extension icon in the toolbar, featuring the orange Reddit logo.",
+    "semantic": "Bar chart icon button in the top menu bar, likely used for adding or viewing data visualizations.",
     "box": {
-      "x1": 1747.41,
-      "y1": 84.72,
-      "x2": 1863.07,
-      "y2": 149.69,
-      "width": 115.66,
-      "height": 64.97,
-      "center_x": 1805.24,
-      "center_y": 117.2
+      "x1": 2743.19,
+      "y1": 332.27,
+      "x2": 2836.14,
+      "y2": 422.99,
+      "width": 92.95,
+      "height": 90.72,
+      "center_x": 2789.66,
+      "center_y": 377.63
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4526
+    "confidence": 0.4292
   },
   "E157": {
-    "semantic": "label text 'Luxe' for the Report document template.",
+    "semantic": "Premium crown icon on a curved line graphic in the page content, indicating a paid asset.",
     "box": {
-      "x1": 2531.77,
-      "y1": 985.37,
-      "x2": 2610.19,
-      "y2": 1034.14,
-      "width": 78.42,
-      "height": 48.77,
-      "center_x": 2570.98,
-      "center_y": 1009.75
+      "x1": 620.94,
+      "y1": 1321.59,
+      "x2": 693.69,
+      "y2": 1378.36,
+      "width": 72.75,
+      "height": 56.77,
+      "center_x": 657.32,
+      "center_y": 1349.97
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4438
+    "confidence": 0.4286
   },
   "E158": {
-    "semantic": "Google Meet extension icon in the browser toolbar.",
+    "semantic": "'Ask Gemini' button in the browser toolbar, likely for triggering a Google AI assistant.",
     "box": {
-      "x1": 2575.32,
-      "y1": 91.1,
-      "x2": 2637.45,
-      "y2": 144.23,
-      "width": 62.13,
-      "height": 53.13,
-      "center_x": 2606.39,
-      "center_y": 117.66
+      "x1": 3216.11,
+      "y1": 78.69,
+      "x2": 3448.1,
+      "y2": 153.22,
+      "width": 231.99,
+      "height": 74.53,
+      "center_x": 3332.11,
+      "center_y": 115.95
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.441
+    "confidence": 0.4266
   },
   "E159": {
-    "semantic": "Apple icon in the top left system menu bar.",
+    "semantic": "Tooltip label identifying the Google Chrome application in the macOS dock.",
     "box": {
-      "x1": 28.23,
-      "y1": 11.41,
-      "x2": 87.67,
-      "y2": 63.84,
-      "width": 59.44,
-      "height": 52.43,
-      "center_x": 57.95,
-      "center_y": 37.62
+      "x1": 1756.62,
+      "y1": 1964.73,
+      "x2": 2002.75,
+      "y2": 2033.68,
+      "width": 246.13,
+      "height": 68.95,
+      "center_x": 1879.68,
+      "center_y": 1999.2
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4357
+    "confidence": 0.4233
   },
   "E160": {
-    "semantic": "up and down arrow toggle for expanding or collapsing the template gallery section.",
+    "semantic": "Add button with a plus icon in the top menu bar for creating a new design element or page.",
     "box": {
-      "x1": 2640.33,
-      "y1": 481.77,
-      "x2": 2675.8,
-      "y2": 529.09,
-      "width": 35.47,
-      "height": 47.32,
-      "center_x": 2658.07,
-      "center_y": 505.43
+      "x1": 2669.49,
+      "y1": 340.92,
+      "x2": 2719.56,
+      "y2": 406.45,
+      "width": 50.07,
+      "height": 65.53,
+      "center_x": 2694.52,
+      "center_y": 373.69
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4352
+    "confidence": 0.4206
   },
   "E161": {
-    "semantic": "extension icon labeled 'EC' in the browser toolbar.",
+    "semantic": "UCLA logo favicon for a browser tab in the chrome, representing a university-related website.",
     "box": {
-      "x1": 484.96,
-      "y1": 90.1,
-      "x2": 535.65,
-      "y2": 145.64,
-      "width": 50.69,
-      "height": 55.54,
-      "center_x": 510.3,
-      "center_y": 117.87
+      "x1": 319.94,
+      "y1": 256.65,
+      "x2": 360.13,
+      "y2": 298.8,
+      "width": 40.19,
+      "height": 42.15,
+      "center_x": 340.03,
+      "center_y": 277.72
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4348
+    "confidence": 0.4199
   },
   "E162": {
-    "semantic": "'Ask Gemini' button in the browser toolbar, featuring a colorful sparkle icon.",
+    "semantic": "Magic Media button with a sparkly icon in the left sidebar for AI-powered media generation.",
     "box": {
-      "x1": 3214.88,
-      "y1": 78.01,
-      "x2": 3451.11,
-      "y2": 153.82,
-      "width": 236.23,
-      "height": 75.81,
-      "center_x": 3332.99,
-      "center_y": 115.92
+      "x1": 184.22,
+      "y1": 718.75,
+      "x2": 247.66,
+      "y2": 784.81,
+      "width": 63.44,
+      "height": 66.06,
+      "center_x": 215.94,
+      "center_y": 751.78
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4249
+    "confidence": 0.4177
   },
   "E163": {
-    "semantic": "extension icon with a yellow character on a dark background in the browser toolbar.",
+    "semantic": "Close button icon for a file or tab, located near the top left of the Canva editor workspace.",
     "box": {
-      "x1": 1868.45,
-      "y1": 88.62,
-      "x2": 1947.39,
-      "y2": 143.63,
-      "width": 78.94,
-      "height": 55.01,
-      "center_x": 1907.92,
-      "center_y": 116.12
+      "x1": 1268.52,
+      "y1": 86.07,
+      "x2": 1323.83,
+      "y2": 145.67,
+      "width": 55.31,
+      "height": 59.6,
+      "center_x": 1296.17,
+      "center_y": 115.87
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4249
+    "confidence": 0.4133
   },
   "E164": {
-    "semantic": "background wallpaper showing green foliage at the bottom of the screen.",
+    "semantic": "Down arrow icon button in the top right menu bar, likely a dropdown for additional settings or export options.",
     "box": {
-      "x1": -4.17,
-      "y1": 2053.63,
-      "x2": 397.95,
-      "y2": 2238.83,
-      "width": 402.12,
-      "height": 185.2,
-      "center_x": 196.89,
-      "center_y": 2146.23
+      "x1": 3176.4,
+      "y1": 351.84,
+      "x2": 3223.93,
+      "y2": 399.57,
+      "width": 47.53,
+      "height": 47.73,
+      "center_x": 3200.16,
+      "center_y": 375.7
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4174
+    "confidence": 0.4112
   },
   "E165": {
-    "semantic": "extension icon with 'An' text in the browser toolbar.",
+    "semantic": "Undo button with a left-curved arrow in the top toolbar to revert the last action.",
     "box": {
-      "x1": 1437.33,
-      "y1": 87.8,
-      "x2": 1499.02,
-      "y2": 141.31,
-      "width": 61.69,
-      "height": 53.51,
-      "center_x": 1468.17,
-      "center_y": 114.55
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.4153
-  },
-  "E166": {
-    "semantic": "extension icon with a blue circle logo in the browser toolbar.",
-    "box": {
-      "x1": 2131.89,
-      "y1": 89.22,
-      "x2": 2205.24,
-      "y2": 143.1,
-      "width": 73.35,
-      "height": 53.88,
-      "center_x": 2168.57,
-      "center_y": 116.16
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.4123
-  },
-  "E167": {
-    "semantic": "label text 'Serif' for the Resume document template.",
-    "box": {
-      "x1": 895.9,
-      "y1": 986.73,
-      "x2": 981.94,
-      "y2": 1030.4,
-      "width": 86.04,
-      "height": 43.67,
-      "center_x": 938.92,
-      "center_y": 1008.57
+      "x1": 674.07,
+      "y1": 344.45,
+      "x2": 751.42,
+      "y2": 404.37,
+      "width": 77.35,
+      "height": 59.92,
+      "center_x": 712.75,
+      "center_y": 374.41
     },
     "box_format": "xyxy",
     "class": "button",
     "confidence": 0.4111
   },
-  "E168": {
-    "semantic": "Google Meet extension icon in the browser toolbar.",
+  "E166": {
+    "semantic": "Edit button in the top toolbar of the Canva editor for modifying the selected element.",
     "box": {
-      "x1": 2627.76,
-      "y1": 90.4,
-      "x2": 2680.66,
-      "y2": 141.7,
-      "width": 52.9,
-      "height": 51.3,
-      "center_x": 2654.21,
-      "center_y": 116.05
+      "x1": 326.29,
+      "y1": 15.95,
+      "x2": 396.93,
+      "y2": 61.28,
+      "width": 70.64,
+      "height": 45.33,
+      "center_x": 361.61,
+      "center_y": 38.61
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4031
+    "confidence": 0.4066
+  },
+  "E167": {
+    "semantic": "Thumbnail for page 2 titled 'PIPELINE PT. 2' in the bottom page navigation bar.",
+    "box": {
+      "x1": 2077.36,
+      "y1": 1829.4,
+      "x2": 2171.19,
+      "y2": 1955.9,
+      "width": 93.83,
+      "height": 126.5,
+      "center_x": 2124.28,
+      "center_y": 1892.65
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4055
+  },
+  "E168": {
+    "semantic": "Graphics tab label in the left sidebar for browsing and adding illustrations and shapes.",
+    "box": {
+      "x1": 386.84,
+      "y1": 829.32,
+      "x2": 519.04,
+      "y2": 885.47,
+      "width": 132.2,
+      "height": 56.15,
+      "center_x": 452.94,
+      "center_y": 857.4
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.4013
   },
   "E169": {
-    "semantic": "blue heart extension icon in the browser toolbar.",
+    "semantic": "Search field button in the top right of the Canva editor for finding tools and content.",
     "box": {
-      "x1": 2102.81,
-      "y1": 87.82,
-      "x2": 2166.11,
-      "y2": 142.8,
-      "width": 63.3,
-      "height": 54.98,
-      "center_x": 2134.46,
-      "center_y": 115.31
+      "x1": 516.72,
+      "y1": 710.03,
+      "x2": 832.48,
+      "y2": 799.56,
+      "width": 315.76,
+      "height": 89.53,
+      "center_x": 674.6,
+      "center_y": 754.79
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.4026
+    "confidence": 0.3999
   },
   "E170": {
-    "semantic": "extension icon with a circular logo in the browser toolbar.",
+    "semantic": "Thumbnail for page 10 titled 'IMPORTANT DATA' in the bottom page navigation bar.",
     "box": {
-      "x1": 1387.06,
-      "y1": 87.81,
-      "x2": 1454.18,
-      "y2": 145.0,
-      "width": 67.12,
-      "height": 57.19,
-      "center_x": 1420.62,
-      "center_y": 116.41
+      "x1": 3237.64,
+      "y1": 1846.69,
+      "x2": 3456.05,
+      "y2": 1952.15,
+      "width": 218.41,
+      "height": 105.46,
+      "center_x": 3346.84,
+      "center_y": 1899.42
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3966
+    "confidence": 0.3982
   },
   "E171": {
-    "semantic": "'Ask Gemini' button with a colorful sparkle icon in the browser toolbar.",
+    "semantic": "'Editing' status label with a checkmark in the top toolbar, showing the current workspace mode.",
     "box": {
-      "x1": 3216.96,
-      "y1": 78.48,
-      "x2": 3453.39,
-      "y2": 154.26,
-      "width": 236.43,
-      "height": 75.78,
-      "center_x": 3335.18,
-      "center_y": 116.37
+      "x1": 463.28,
+      "y1": 353.47,
+      "x2": 583.81,
+      "y2": 401.45,
+      "width": 120.53,
+      "height": 47.98,
+      "center_x": 523.54,
+      "center_y": 377.46
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3836
+    "confidence": 0.3976
   },
   "E172": {
-    "semantic": "extension icon with 'MLH' text in the browser toolbar.",
+    "semantic": "Active application indicator, a small dot under the Finder icon in the macOS dock.",
     "box": {
-      "x1": 795.01,
-      "y1": 90.78,
-      "x2": 854.24,
-      "y2": 140.19,
-      "width": 59.23,
-      "height": 49.41,
-      "center_x": 824.62,
-      "center_y": 115.48
+      "x1": 3084.08,
+      "y1": 2051.78,
+      "x2": 3447.44,
+      "y2": 2231.97,
+      "width": 363.36,
+      "height": 180.19,
+      "center_x": 3265.76,
+      "center_y": 2141.88
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3826
+    "confidence": 0.3971
   },
   "E173": {
-    "semantic": "Google Docs document icon, blue with white horizontal lines, for a recent document.",
+    "semantic": "Back arrow icon in the top left browser chrome for navigating to the previous webpage.",
     "box": {
-      "x1": 1512.46,
-      "y1": 91.02,
-      "x2": 1576.27,
-      "y2": 145.19,
-      "width": 63.81,
-      "height": 54.17,
-      "center_x": 1544.37,
-      "center_y": 118.1
+      "x1": 20.3,
+      "y1": 177.69,
+      "x2": 74.93,
+      "y2": 225.05,
+      "width": 54.63,
+      "height": 47.36,
+      "center_x": 47.62,
+      "center_y": 201.37
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3781
+    "confidence": 0.3962
   },
   "E174": {
-    "semantic": "gray vertical bar separator in the browser toolbar.",
+    "semantic": "Expand icon button in the bottom right corner of the Canva editor to enter full-screen mode.",
     "box": {
-      "x1": 2959.52,
-      "y1": 174.09,
-      "x2": 3012.08,
-      "y2": 228.72,
-      "width": 52.56,
-      "height": 54.63,
-      "center_x": 2985.8,
-      "center_y": 201.41
+      "x1": 3319.51,
+      "y1": 1976.44,
+      "x2": 3375.74,
+      "y2": 2041.08,
+      "width": 56.23,
+      "height": 64.64,
+      "center_x": 3347.62,
+      "center_y": 2008.76
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3778
+    "confidence": 0.3956
   },
   "E175": {
-    "semantic": "extension icon with 'Hi' text in the browser toolbar.",
+    "semantic": "Right arrow icon button in the left sidebar to expand a category or view more elements.",
     "box": {
-      "x1": 242.19,
-      "y1": 91.25,
-      "x2": 301.31,
-      "y2": 140.41,
-      "width": 59.12,
-      "height": 49.16,
-      "center_x": 271.75,
-      "center_y": 115.83
+      "x1": 786.12,
+      "y1": 1019.43,
+      "x2": 825.85,
+      "y2": 1073.53,
+      "width": 39.73,
+      "height": 54.1,
+      "center_x": 805.99,
+      "center_y": 1046.48
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.371
+    "confidence": 0.3896
   },
   "E176": {
-    "semantic": "extension icon with a purple circular logo and 'YO' text in the browser toolbar.",
+    "semantic": "Settings icon button in the browser chrome, represented by a Cogwheel over a person icon.",
     "box": {
-      "x1": 1983.8,
-      "y1": 83.07,
-      "x2": 2102.99,
-      "y2": 154.78,
-      "width": 119.19,
-      "height": 71.71,
-      "center_x": 2043.39,
-      "center_y": 118.92
+      "x1": 2667.41,
+      "y1": 13.82,
+      "x2": 2716.88,
+      "y2": 64.83,
+      "width": 49.47,
+      "height": 51.01,
+      "center_x": 2692.14,
+      "center_y": 39.33
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3672
+    "confidence": 0.3884
   },
   "E177": {
-    "semantic": "label text 'Report' for a document template.",
+    "semantic": "Close button with an 'X' icon for a small UI overlay or notification window in the editor.",
     "box": {
-      "x1": 2531.93,
-      "y1": 953.06,
-      "x2": 2647.19,
-      "y2": 998.75,
-      "width": 115.26,
-      "height": 45.69,
-      "center_x": 2589.56,
-      "center_y": 975.9
+      "x1": 1197.54,
+      "y1": 95.18,
+      "x2": 1239.59,
+      "y2": 138.1,
+      "width": 42.05,
+      "height": 42.92,
+      "center_x": 1218.57,
+      "center_y": 116.64
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3619
+    "confidence": 0.3837
   },
   "E178": {
-    "semantic": "Google Docs document icon, blue with white horizontal lines, for a recent document.",
+    "semantic": "Uploads button in the left sidebar with a cloud and arrow icon for managing personal assets.",
     "box": {
-      "x1": 1972.45,
-      "y1": 1826.9,
-      "x2": 2033.19,
-      "y2": 1874.86,
-      "width": 60.74,
-      "height": 47.96,
-      "center_x": 2002.82,
-      "center_y": 1850.88
+      "x1": 41.42,
+      "y1": 1048.29,
+      "x2": 101.26,
+      "y2": 1103.67,
+      "width": 59.84,
+      "height": 55.38,
+      "center_x": 71.34,
+      "center_y": 1075.98
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3819
+  },
+  "E179": {
+    "semantic": "Home button with a house icon in the top left Canva toolbar to return to the dashboard.",
+    "box": {
+      "x1": 42.56,
+      "y1": 346.36,
+      "x2": 104.66,
+      "y2": 405.91,
+      "width": 62.1,
+      "height": 59.55,
+      "center_x": 73.61,
+      "center_y": 376.13
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3794
+  },
+  "E180": {
+    "semantic": "'View' button in the browser chrome menu bar for adjusting display options.",
+    "box": {
+      "x1": 417.27,
+      "y1": 16.96,
+      "x2": 489.93,
+      "y2": 59.83,
+      "width": 72.66,
+      "height": 42.87,
+      "center_x": 453.6,
+      "center_y": 38.39
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3758
+  },
+  "E181": {
+    "semantic": "Brand tab label in the left sidebar for accessing saved brand colors, logos, and fonts.",
+    "box": {
+      "x1": 44.78,
+      "y1": 902.78,
+      "x2": 104.31,
+      "y2": 964.61,
+      "width": 59.53,
+      "height": 61.83,
+      "center_x": 74.55,
+      "center_y": 933.69
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3744
+  },
+  "E182": {
+    "semantic": "Gmail favicon for an inbox tab in the browser chrome, showing a notification for new mail.",
+    "box": {
+      "x1": 912.79,
+      "y1": 93.04,
+      "x2": 962.86,
+      "y2": 143.22,
+      "width": 50.07,
+      "height": 50.18,
+      "center_x": 937.82,
+      "center_y": 118.13
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3696
+  },
+  "E183": {
+    "semantic": "Photos tab label in the left sidebar for browsing and adding stock images to the design.",
+    "box": {
+      "x1": 170.5,
+      "y1": 1740.94,
+      "x2": 292.69,
+      "y2": 1795.69,
+      "width": 122.19,
+      "height": 54.75,
+      "center_x": 231.59,
+      "center_y": 1768.32
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3689
+  },
+  "E184": {
+    "semantic": "Close button with an 'X' icon on a search or filter bar in the left sidebar.",
+    "box": {
+      "x1": 838.7,
+      "y1": 93.95,
+      "x2": 882.84,
+      "y2": 135.49,
+      "width": 44.14,
+      "height": 41.54,
+      "center_x": 860.77,
+      "center_y": 114.72
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3689
+  },
+  "E185": {
+    "semantic": "Close button on a browser tab titled 'Accent - Presentation' in the chrome.",
+    "box": {
+      "x1": 1851.15,
+      "y1": 92.75,
+      "x2": 1901.96,
+      "y2": 138.51,
+      "width": 50.81,
+      "height": 45.76,
+      "center_x": 1876.56,
+      "center_y": 115.63
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3641
+  },
+  "E186": {
+    "semantic": "Dropdown arrow button in the left sidebar for expanding a menu or options list.",
+    "box": {
+      "x1": 418.41,
+      "y1": 712.06,
+      "x2": 501.76,
+      "y2": 795.92,
+      "width": 83.35,
+      "height": 83.86,
+      "center_x": 460.09,
+      "center_y": 753.99
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3595
+  },
+  "E187": {
+    "semantic": "Favicon for a Gmail inbox tab in the browser chrome.",
+    "box": {
+      "x1": 944.95,
+      "y1": 91.74,
+      "x2": 1185.68,
+      "y2": 138.66,
+      "width": 240.73,
+      "height": 46.92,
+      "center_x": 1065.32,
+      "center_y": 115.2
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3594
+  },
+  "E188": {
+    "semantic": "Page navigation control showing '7 / 13' with a grid icon, used to switch between design pages.",
+    "box": {
+      "x1": 3133.81,
+      "y1": 1975.21,
+      "x2": 3240.55,
+      "y2": 2044.45,
+      "width": 106.74,
+      "height": 69.24,
+      "center_x": 3187.18,
+      "center_y": 2009.83
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3582
+  },
+  "E189": {
+    "semantic": "Label for an 'arrow' asset in the left sidebar search results.",
+    "box": {
+      "x1": 200.57,
+      "y1": 492.79,
+      "x2": 304.09,
+      "y2": 548.2,
+      "width": 103.52,
+      "height": 55.41,
+      "center_x": 252.33,
+      "center_y": 520.5
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3577
+  },
+  "E190": {
+    "semantic": "Vertical ellipsis menu button in the browser chrome for accessing more browser settings.",
+    "box": {
+      "x1": 3394.99,
+      "y1": 173.85,
+      "x2": 3434.83,
+      "y2": 233.01,
+      "width": 39.84,
+      "height": 59.16,
+      "center_x": 3414.91,
+      "center_y": 203.43
     },
     "box_format": "xyxy",
     "class": "button",
     "confidence": 0.3569
   },
-  "E179": {
-    "semantic": "profile picture icon for the user account in the top right browser corner.",
-    "box": {
-      "x1": 3202.77,
-      "y1": 178.22,
-      "x2": 3260.26,
-      "y2": 225.5,
-      "width": 57.49,
-      "height": 47.28,
-      "center_x": 3231.51,
-      "center_y": 201.86
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.3568
-  },
-  "E180": {
-    "semantic": "tab close button, white 'X' on a dark background in the browser tab bar.",
-    "box": {
-      "x1": 2410.56,
-      "y1": 88.18,
-      "x2": 2547.51,
-      "y2": 148.78,
-      "width": 136.95,
-      "height": 60.6,
-      "center_x": 2479.03,
-      "center_y": 118.48
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.3504
-  },
-  "E181": {
-    "semantic": "GitHub extension icon in the browser toolbar, showing the Octocat logo.",
-    "box": {
-      "x1": 1618.06,
-      "y1": 85.87,
-      "x2": 1705.15,
-      "y2": 148.38,
-      "width": 87.09,
-      "height": 62.51,
-      "center_x": 1661.61,
-      "center_y": 117.12
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.3476
-  },
-  "E182": {
-    "semantic": "two grey circular indicators in the browser tab bar.",
-    "box": {
-      "x1": 89.47,
-      "y1": 85.8,
-      "x2": 174.51,
-      "y2": 147.08,
-      "width": 85.04,
-      "height": 61.28,
-      "center_x": 131.99,
-      "center_y": 116.44
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.3464
-  },
-  "E183": {
-    "semantic": "title text 'REPORT TITLE LOREM IPSUM DOLOR SIT AMET' on a document template thumbnail.",
-    "box": {
-      "x1": 2557.36,
-      "y1": 599.06,
-      "x2": 2720.08,
-      "y2": 651.12,
-      "width": 162.72,
-      "height": 52.06,
-      "center_x": 2638.72,
-      "center_y": 625.09
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.3456
-  },
-  "E184": {
-    "semantic": "Google Apps menu button, represented by a 3x3 grid of dots in the page header.",
-    "box": {
-      "x1": 3229.82,
-      "y1": 340.12,
-      "x2": 3300.59,
-      "y2": 424.31,
-      "width": 70.77,
-      "height": 84.19,
-      "center_x": 3265.21,
-      "center_y": 382.22
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.3388
-  },
-  "E185": {
-    "semantic": "extension icon with a grey lightning bolt logo in the browser toolbar.",
-    "box": {
-      "x1": 3115.71,
-      "y1": 172.57,
-      "x2": 3175.66,
-      "y2": 231.79,
-      "width": 59.95,
-      "height": 59.22,
-      "center_x": 3145.68,
-      "center_y": 202.18
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.3342
-  },
-  "E186": {
-    "semantic": "Google Docs logo text next to the main menu icon.",
-    "box": {
-      "x1": 211.64,
-      "y1": 354.86,
-      "x2": 345.24,
-      "y2": 426.31,
-      "width": 133.6,
-      "height": 71.45,
-      "center_x": 278.44,
-      "center_y": 390.59
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.3337
-  },
-  "E187": {
-    "semantic": "extension icon with a yellow character and 'UI' text in the browser toolbar.",
-    "box": {
-      "x1": 1865.46,
-      "y1": 85.14,
-      "x2": 1964.98,
-      "y2": 148.88,
-      "width": 99.52,
-      "height": 63.74,
-      "center_x": 1915.22,
-      "center_y": 117.01
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.332
-  },
-  "E188": {
-    "semantic": "'Upgrade' button in the page header, blue text on a light background.",
-    "box": {
-      "x1": 2977.59,
-      "y1": 330.71,
-      "x2": 3215.58,
-      "y2": 441.02,
-      "width": 237.99,
-      "height": 110.31,
-      "center_x": 3096.59,
-      "center_y": 385.87
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.3255
-  },
-  "E189": {
-    "semantic": "Gmail extension icon in the browser toolbar, showing a red 'M' and 'In' text.",
-    "box": {
-      "x1": 2210.59,
-      "y1": 83.25,
-      "x2": 2325.42,
-      "y2": 147.75,
-      "width": 114.83,
-      "height": 64.5,
-      "center_x": 2268.01,
-      "center_y": 115.5
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.3243
-  },
-  "E190": {
-    "semantic": "course number and title text 'Course number: ECE M16 (CS M51A)' for a syllabus document.",
-    "box": {
-      "x1": 611.35,
-      "y1": 2020.3,
-      "x2": 750.01,
-      "y2": 2049.87,
-      "width": 138.66,
-      "height": 29.57,
-      "center_x": 680.68,
-      "center_y": 2035.09
-    },
-    "box_format": "xyxy",
-    "class": "button",
-    "confidence": 0.3173
-  },
   "E191": {
-    "semantic": "small grey circular indicator icon in the browser tab bar.",
+    "semantic": "Page 10 thumbnail labeled 'IMPORTANT DATA' in the bottom page navigation strip.",
     "box": {
-      "x1": 74.53,
-      "y1": 92.97,
-      "x2": 118.16,
-      "y2": 140.56,
-      "width": 43.63,
-      "height": 47.59,
-      "center_x": 96.34,
-      "center_y": 116.77
+      "x1": 3241.05,
+      "y1": 1817.8,
+      "x2": 3331.69,
+      "y2": 1851.3,
+      "width": 90.64,
+      "height": 33.5,
+      "center_x": 3286.37,
+      "center_y": 1834.55
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3151
+    "confidence": 0.3553
   },
   "E192": {
-    "semantic": "course number and title text 'Course number: ECE M16 (CS M51A)' for a document thumbnail.",
+    "semantic": "Recording icon in the browser chrome, likely indicating a screen recording or active camera.",
     "box": {
-      "x1": 612.6,
-      "y1": 2020.31,
-      "x2": 745.49,
-      "y2": 2047.53,
-      "width": 132.89,
-      "height": 27.22,
-      "center_x": 679.05,
-      "center_y": 2033.92
+      "x1": 114.28,
+      "y1": 96.33,
+      "x2": 155.46,
+      "y2": 135.08,
+      "width": 41.18,
+      "height": 38.75,
+      "center_x": 134.87,
+      "center_y": 115.7
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.313
+    "confidence": 0.354
   },
   "E193": {
-    "semantic": "up and down arrow toggle for expanding or collapsing the template gallery section.",
+    "semantic": "Right-pointing arrow graphic in the left sidebar for selection and addition to the canvas.",
     "box": {
-      "x1": 2633.28,
-      "y1": 470.3,
-      "x2": 2684.78,
-      "y2": 538.54,
-      "width": 51.5,
-      "height": 68.24,
-      "center_x": 2659.03,
-      "center_y": 504.42
+      "x1": 298.14,
+      "y1": 988.67,
+      "x2": 434.15,
+      "y2": 1113.12,
+      "width": 136.01,
+      "height": 124.45,
+      "center_x": 366.14,
+      "center_y": 1050.89
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.312
+    "confidence": 0.3467
   },
   "E194": {
-    "semantic": "label text 'Resume' for a document template.",
+    "semantic": "UCLA Bruin Learn favicon for a browser tab in the chrome.",
     "box": {
-      "x1": 1221.66,
-      "y1": 951.92,
-      "x2": 1351.88,
-      "y2": 999.96,
-      "width": 130.22,
-      "height": 48.04,
-      "center_x": 1286.77,
-      "center_y": 975.94
+      "x1": 495.14,
+      "y1": 254.74,
+      "x2": 537.5,
+      "y2": 299.35,
+      "width": 42.36,
+      "height": 44.61,
+      "center_x": 516.32,
+      "center_y": 277.05
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3059
+    "confidence": 0.3393
   },
   "E195": {
-    "semantic": "Google search shortcut icon in the browser toolbar, showing the 'G' logo and 'mi'.",
+    "semantic": "'Notes' tab label in the bottom menu bar for managing page-level notes.",
     "box": {
-      "x1": 2902.92,
-      "y1": 83.82,
-      "x2": 3050.27,
-      "y2": 154.33,
-      "width": 147.35,
-      "height": 70.51,
-      "center_x": 2976.6,
-      "center_y": 119.07
+      "x1": 889.86,
+      "y1": 1985.17,
+      "x2": 942.17,
+      "y2": 2034.01,
+      "width": 52.31,
+      "height": 48.84,
+      "center_x": 916.01,
+      "center_y": 2009.59
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3041
+    "confidence": 0.3368
   },
   "E196": {
-    "semantic": "title text 'ECE M16 (CS M51A) [Spring 2028] - Schedule' for a document thumbnail.",
+    "semantic": "Checkbox icon in the left sidebar, likely for selecting multiple elements or confirming a choice.",
     "box": {
-      "x1": 638.25,
-      "y1": 1265.68,
-      "x2": 909.8,
-      "y2": 1300.7,
-      "width": 271.55,
-      "height": 35.02,
-      "center_x": 774.02,
-      "center_y": 1283.19
+      "x1": 438.89,
+      "y1": 731.45,
+      "x2": 479.38,
+      "y2": 765.68,
+      "width": 40.49,
+      "height": 34.23,
+      "center_x": 459.13,
+      "center_y": 748.57
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3034
+    "confidence": 0.3329
   },
   "E197": {
-    "semantic": "header text 'What We're Looking For' inside a document preview.",
+    "semantic": "'Apps' button in the left sidebar for integrating third-party tools into Canva.",
     "box": {
-      "x1": 1530.55,
-      "y1": 1457.34,
-      "x2": 1666.0,
-      "y2": 1487.26,
-      "width": 135.45,
-      "height": 29.92,
-      "center_x": 1598.27,
-      "center_y": 1472.3
+      "x1": 38.09,
+      "y1": 1475.68,
+      "x2": 107.2,
+      "y2": 1541.37,
+      "width": 69.11,
+      "height": 65.69,
+      "center_x": 72.65,
+      "center_y": 1508.53
     },
     "box_format": "xyxy",
     "class": "button",
-    "confidence": 0.3
+    "confidence": 0.3327
+  },
+  "E198": {
+    "semantic": "Share button with an up arrow icon in the top right Canva toolbar for collaboration and export.",
+    "box": {
+      "x1": 3264.93,
+      "y1": 348.32,
+      "x2": 3321.17,
+      "y2": 401.33,
+      "width": 56.24,
+      "height": 53.01,
+      "center_x": 3293.05,
+      "center_y": 374.82
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3323
+  },
+  "E199": {
+    "semantic": "'Pages' button in the bottom right toolbar to open the page organizer view.",
+    "box": {
+      "x1": 3012.1,
+      "y1": 1991.6,
+      "x2": 3094.39,
+      "y2": 2032.46,
+      "width": 82.29,
+      "height": 40.86,
+      "center_x": 3053.24,
+      "center_y": 2012.03
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3312
+  },
+  "E200": {
+    "semantic": "Close button on a small UI element or notification in the editor.",
+    "box": {
+      "x1": 1911.24,
+      "y1": 89.18,
+      "x2": 1957.74,
+      "y2": 146.64,
+      "width": 46.5,
+      "height": 57.46,
+      "center_x": 1934.49,
+      "center_y": 117.91
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3246
+  },
+  "E201": {
+    "semantic": "Thumbnail for page 3 titled 'THE PROBLEM' in the bottom page navigation bar.",
+    "box": {
+      "x1": 1167.85,
+      "y1": 1816.03,
+      "x2": 1385.33,
+      "y2": 1851.64,
+      "width": 217.48,
+      "height": 35.61,
+      "center_x": 1276.59,
+      "center_y": 1833.84
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3246
+  },
+  "E202": {
+    "semantic": "Hamburger menu icon in the top left Canva toolbar for accessing main menu options.",
+    "box": {
+      "x1": 695.83,
+      "y1": 255.36,
+      "x2": 741.0,
+      "y2": 301.28,
+      "width": 45.17,
+      "height": 45.92,
+      "center_x": 718.42,
+      "center_y": 278.32
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3214
+  },
+  "E203": {
+    "semantic": "Thumbnail for page 4 titled 'PIPELINE PT. 1' in the bottom page navigation bar.",
+    "box": {
+      "x1": 1682.15,
+      "y1": 1813.74,
+      "x2": 1906.07,
+      "y2": 1848.27,
+      "width": 223.92,
+      "height": 34.53,
+      "center_x": 1794.11,
+      "center_y": 1831.01
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3212
+  },
+  "E204": {
+    "semantic": "Settings icon in the top left Canva toolbar, represented by two sliders.",
+    "box": {
+      "x1": 91.76,
+      "y1": 91.47,
+      "x2": 165.17,
+      "y2": 142.57,
+      "width": 73.41,
+      "height": 51.1,
+      "center_x": 128.47,
+      "center_y": 117.02
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3207
+  },
+  "E205": {
+    "semantic": "Close button on a browser tab titled 'Accent - Presentat...' in the chrome.",
+    "box": {
+      "x1": 1989.21,
+      "y1": 80.56,
+      "x2": 2316.68,
+      "y2": 158.93,
+      "width": 327.47,
+      "height": 78.37,
+      "center_x": 2152.95,
+      "center_y": 119.75
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3171
+  },
+  "E206": {
+    "semantic": "Curved arrow graphic with a premium crown icon in the left sidebar, indicating a paid asset.",
+    "box": {
+      "x1": 511.72,
+      "y1": 1503.49,
+      "x2": 659.12,
+      "y2": 1669.95,
+      "width": 147.4,
+      "height": 166.46,
+      "center_x": 585.42,
+      "center_y": 1586.72
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3148
+  },
+  "E207": {
+    "semantic": "Gmail favicon for an inbox tab with 'Inbox (11)' in the browser chrome.",
+    "box": {
+      "x1": 959.77,
+      "y1": 93.1,
+      "x2": 1077.18,
+      "y2": 137.56,
+      "width": 117.41,
+      "height": 44.46,
+      "center_x": 1018.48,
+      "center_y": 115.33
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3147
+  },
+  "E208": {
+    "semantic": "'Audio' button in the left sidebar with a music note icon for adding sound to the design.",
+    "box": {
+      "x1": 42.96,
+      "y1": 1641.73,
+      "x2": 113.56,
+      "y2": 1713.1,
+      "width": 70.6,
+      "height": 71.37,
+      "center_x": 78.26,
+      "center_y": 1677.41
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3146
+  },
+  "E209": {
+    "semantic": "Favicon for a browser tab titled 'School', likely a bookmark or specific educational site.",
+    "box": {
+      "x1": 3252.03,
+      "y1": 178.56,
+      "x2": 3353.74,
+      "y2": 224.82,
+      "width": 101.71,
+      "height": 46.26,
+      "center_x": 3302.89,
+      "center_y": 201.69
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3137
+  },
+  "E210": {
+    "semantic": "Thumbnail for page 8 titled 'PROJECT DATA' in the bottom page navigation bar.",
+    "box": {
+      "x1": 2716.77,
+      "y1": 1812.2,
+      "x2": 2943.96,
+      "y2": 1959.91,
+      "width": 227.19,
+      "height": 147.71,
+      "center_x": 2830.36,
+      "center_y": 1886.06
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3115
+  },
+  "E211": {
+    "semantic": "A code snippet box showing JSON data related to UI element semantic annotations.",
+    "box": {
+      "x1": 1483.42,
+      "y1": 1044.83,
+      "x2": 1847.77,
+      "y2": 1090.75,
+      "width": 364.35,
+      "height": 45.92,
+      "center_x": 1665.6,
+      "center_y": 1067.79
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3115
+  },
+  "E212": {
+    "semantic": "Favicon for a browser tab with a school crest or logo in the chrome.",
+    "box": {
+      "x1": 3200.67,
+      "y1": 175.86,
+      "x2": 3255.83,
+      "y2": 229.24,
+      "width": 55.16,
+      "height": 53.38,
+      "center_x": 3228.25,
+      "center_y": 202.55
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3081
+  },
+  "E213": {
+    "semantic": "Right-pointing arrow button in the left sidebar used to expand more options or scroll through assets.",
+    "box": {
+      "x1": 697.33,
+      "y1": 1245.42,
+      "x2": 833.26,
+      "y2": 1342.98,
+      "width": 135.93,
+      "height": 97.56,
+      "center_x": 765.3,
+      "center_y": 1294.2
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3079
+  },
+  "E214": {
+    "semantic": "'Generate' button with a magic sparkles icon in the left sidebar for AI content creation.",
+    "box": {
+      "x1": 182.61,
+      "y1": 714.31,
+      "x2": 422.66,
+      "y2": 793.73,
+      "width": 240.05,
+      "height": 79.42,
+      "center_x": 302.63,
+      "center_y": 754.02
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.3057
   }
 }

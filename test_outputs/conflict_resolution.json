@@ -1,7 +1,7 @@
 {
-  "user_intent": "I want to create a new document.",
-  "plaintext_response": "The user wants to start a new document. Since they expressed the desire to create a fresh file, the 'Blank document button' is the most direct way to initiate that process. ACTION: E5.",
-  "selected_element_id": "E5",
-  "selected_semantic": "Blank document button, page content.",
-  "direction_for_user": "Click on the blank document button to start a new file."
+  "user_intent": "Find me the color white.",
+  "plaintext_response": "The user is looking for a color selection tool. Since they mentioned 'find me the color white', the color picker button in the editing toolbar is the most relevant control for selecting or changing colors. ACTION: Select E34.",
+  "selected_element_id": "E34",
+  "selected_semantic": "color picker button in the page editing toolbar chrome",
+  "direction_for_user": "Click the color picker to find and select white."
 }
