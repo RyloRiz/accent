@@ -1,5 +1,3 @@
-**Total detections:** 46
-
-**OCR text boxes:** 33
+**Total detections:** 149
 
 **LLM enrichment:** skipped

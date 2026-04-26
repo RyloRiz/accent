@@ -10,9 +10,9 @@ import sys
 
 OUTPUT_DIR = Path("/Users/kaartiktejwani/UCLA Files/Playground Code/UI-DETR-1/test_outputs")
 DEFAULT_ANNOTATED_IMAGE_FILE = OUTPUT_DIR / "annotated_image.png"
+DEFAULT_CROP_SHEET_FILE = OUTPUT_DIR / "crop_sheet.png"
 DEFAULT_ELEMENT_IDS_FILE = OUTPUT_DIR / "element_ids.json"
 CHAT_LOG_FILE = OUTPUT_DIR / "llm_chat_log.json"
-SEMANTICS_FILE = OUTPUT_DIR / "llm_semantics.json"
 LLMS_FILE = OUTPUT_DIR / "llms.json"
 ENV_FILE = Path("/Users/kaartiktejwani/UCLA Files/Playground Code/UI-DETR-1/.env")
 
@@ -50,6 +50,7 @@ def gemini_api_url(model_name: str) -> str:
 
 def supports_thinking_level(model_name: str) -> bool:
     no_thinking_level_models = {
+        "gemini-3.1-flash-image-preview",
         "gemini-2.5-flash-lite",
         "gemini-2.5-flash-lite-preview-09-2025",
         "gemini-2.0-flash-lite",
@@ -86,10 +87,12 @@ def response_schema(element_ids: list[str]) -> dict:
 def system_prompt() -> str:
     return (
         "You are a UI semantics labeling assistant. You will receive one annotated "
-        "screenshot and a checklist of expected element ids. Green boxes identify UI "
-        "elements. Each green label is an element id such as E0, E1, E2. Use the "
-        "checklist to make sure no ids are skipped. Return only valid JSON. Do not "
-        "include markdown, explanations, arrays, coordinates, or a state field."
+        "screenshot, one crop-sheet image, and a checklist of expected element ids. "
+        "The annotated screenshot gives full-page context. The crop sheet contains "
+        "zoomed tiles labeled E0, E1, E2, etc.; those crop tiles are the source of "
+        "truth for which id belongs to which exact element. Use the checklist to make "
+        "sure no ids are skipped. Return only valid JSON. Do not include markdown, "
+        "explanations, arrays, coordinates, or a state field."
     )
 
 
@@ -120,12 +123,24 @@ def user_prompt(element_ids: list[str]) -> str:
         "Label every boxed UI element in this screenshot with what it does if clicked "
         "or used.\n\n"
         f"Element id checklist, complete and ordered:\n{element_ids_json}\n\n"
+        "You will receive two images:\n"
+        "1. Full annotated screenshot for overall screen context.\n"
+        "2. Crop sheet with one zoomed tile per element id. Use this crop sheet to "
+        "identify the exact icon/control for each id.\n\n"
         "Return exactly one JSON object in this shape:\n"
         '{"E0":"semantic meaning","E1":"semantic meaning"}\n\n'
         "Requirements:\n"
         "- Use exactly the element ids from the checklist as keys. No missing keys. No extra keys.\n"
         "- Order keys by element id ascending, exactly matching the checklist order.\n"
         "- Be specific enough that a human knows what clicking the element would do.\n"
+        "- Include useful visual details in the same string: color, shape, icon/text, "
+        "screen location, nearby visual context, selected/disabled/emphasized state, "
+        "and whether it appears in the menu bar, browser chrome, page content, meeting "
+        "controls, or dock.\n"
+        "- Use the crop sheet to decide which label belongs to which exact element. "
+        "Do not label a neighboring arrow, menu, or grouped control unless that "
+        "specific id's crop shows it.\n"
+        "- Use the full annotated screenshot only for broader context and location.\n"
         "- Inspect each box in the screenshot independently. Do not assume adjacent "
         "element ids are the same type of UI.\n"
         "- Do not write generic labels like app icon or system utility when a specific "
@@ -135,7 +150,8 @@ def user_prompt(element_ids: list[str]) -> str:
         "button, address bar, bookmark, tab, or extension button.\n"
         "- If an element is hard to read, keep its key and use the best visible "
         "interpretation. If there is no useful visual context, write unknown element.\n"
-        "- Values must be short strings, not nested objects."
+        "- Values must be single strings, not nested objects. Aim for one concise "
+        "sentence per element."
     )
 
 
@@ -196,16 +212,21 @@ def main() -> None:
 
     annotated_image_file = Path(sys.argv[1]).expanduser() if len(sys.argv) > 1 else DEFAULT_ANNOTATED_IMAGE_FILE
     element_ids_file = Path(sys.argv[2]).expanduser() if len(sys.argv) > 2 else DEFAULT_ELEMENT_IDS_FILE
+    crop_sheet_file = Path(sys.argv[3]).expanduser() if len(sys.argv) > 3 else DEFAULT_CROP_SHEET_FILE
 
     if not annotated_image_file.exists():
         raise FileNotFoundError(f"Annotated image file not found: {annotated_image_file}")
     if not element_ids_file.exists():
         raise FileNotFoundError(f"Element ids file not found: {element_ids_file}")
+    if not crop_sheet_file.exists():
+        raise FileNotFoundError(f"Crop sheet file not found: {crop_sheet_file}")
 
     element_ids = load_element_ids(element_ids_file)
-    image_bytes = image_to_png_bytes(annotated_image_file)
-    image_b64 = base64.b64encode(image_bytes).decode("ascii")
-    model_name = os.getenv("GEMINI_MODEL", "gemini-3-flash-preview")
+    annotated_image_bytes = image_to_png_bytes(annotated_image_file)
+    annotated_image_b64 = base64.b64encode(annotated_image_bytes).decode("ascii")
+    crop_sheet_bytes = image_to_png_bytes(crop_sheet_file)
+    crop_sheet_b64 = base64.b64encode(crop_sheet_bytes).decode("ascii")
+    model_name = os.getenv("GEMINI_MODEL", "gemini-3.1-pro-preview")
     prompt = user_prompt(element_ids)
 
     api_key = os.getenv("GEMINI_API_KEY")
@@ -221,10 +242,18 @@ def main() -> None:
                 "role": "user",
                 "parts": [
                     {"text": prompt},
+                    {"text": "Image 1: full annotated screenshot for context."},
                     {
                         "inlineData": {
                             "mimeType": "image/png",
-                            "data": image_b64,
+                            "data": annotated_image_b64,
+                        }
+                    },
+                    {"text": "Image 2: crop sheet. Use these labeled tiles as the source of truth for each id."},
+                    {
+                        "inlineData": {
+                            "mimeType": "image/png",
+                            "data": crop_sheet_b64,
                         }
                     },
                 ],
@@ -266,6 +295,7 @@ def main() -> None:
         "orchestrator": "rest",
         "api_version": os.getenv("GEMINI_API_VERSION", "v1alpha"),
         "annotated_image_file": str(annotated_image_file),
+        "crop_sheet_file": str(crop_sheet_file),
         "element_ids_file": str(element_ids_file),
         "element_ids": element_ids,
         "messages": [
@@ -273,7 +303,8 @@ def main() -> None:
             {
                 "role": "user",
                 "content": prompt,
-                "image_base64_png": image_b64,
+                "annotated_image_base64_png": annotated_image_b64,
+                "crop_sheet_base64_png": crop_sheet_b64,
             },
             {
                 "role": "assistant",
@@ -300,7 +331,6 @@ def main() -> None:
 
     OUTPUT_DIR.mkdir(exist_ok=True)
     CHAT_LOG_FILE.write_text(json.dumps(chat_log, indent=2), encoding="utf-8")
-    SEMANTICS_FILE.write_text(json.dumps(semantics, indent=2), encoding="utf-8")
     LLMS_FILE.write_text(json.dumps(semantics, indent=2), encoding="utf-8")
 
     print(f"Saved LLM outputs to {OUTPUT_DIR}")
@@ -309,6 +339,7 @@ def main() -> None:
     # print(f"system: {system_prompt()}")
     # print(f"user: {prompt}")
     # print(f"image: {annotated_image_file}")
+    # print(f"crop_sheet: {crop_sheet_file}")
     # print(f"element_ids: {element_ids_file}")
     # print(f"assistant: {content}")
     # print("thinking: Gemini API does not expose hidden reasoning text.")

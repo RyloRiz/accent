@@ -20,14 +20,20 @@ from rfdetr.detr import RFDETRMedium
 # UI Element classes
 CLASSES = ['button', 'field', 'heading', 'iframe', 'image', 'label', 'link', 'text']
 
-# Single color for all boxes (BGR format for OpenCV)
-BOX_COLOR = (0, 255, 0)  # Green
+# Annotation colors are BGR for OpenCV.
 LABEL_BG_COLOR = (0, 0, 0)  # Black
 LABEL_TEXT_COLOR = (255, 255, 255)  # White
+ANNOTATION_COLORS = [
+    (0, 255, 0),      # green
+    (255, 80, 80),    # blue
+    (0, 180, 255),    # orange
+    (255, 0, 255),    # magenta
+    (255, 255, 0),    # cyan
+    (0, 255, 255),    # yellow
+]
 
 # Global model variable
 model = None
-ocr_engine = None
 
 def load_model(model_path: str = "model.pth"):
     """Load RF-DETR model"""
@@ -37,67 +43,6 @@ def load_model(model_path: str = "model.pth"):
         model = RFDETRMedium(pretrain_weights=model_path, resolution=1600)
         print("Model loaded successfully!")
     return model
-
-def load_ocr_engine():
-    """Load OCR engine lazily so app startup stays quick."""
-    global ocr_engine
-    if ocr_engine is None:
-        from rapidocr_onnxruntime import RapidOCR
-        print("Loading OCR engine...")
-        ocr_engine = RapidOCR()
-        print("OCR engine loaded successfully!")
-    return ocr_engine
-
-def quad_to_box(points: List[List[float]]) -> List[float]:
-    xs = [point[0] for point in points]
-    ys = [point[1] for point in points]
-    return [min(xs), min(ys), max(xs), max(ys)]
-
-def box_area(box: List[float]) -> float:
-    return max(0.0, box[2] - box[0]) * max(0.0, box[3] - box[1])
-
-def intersection_area(a: List[float], b: List[float]) -> float:
-    x1 = max(a[0], b[0])
-    y1 = max(a[1], b[1])
-    x2 = min(a[2], b[2])
-    y2 = min(a[3], b[3])
-    return max(0.0, x2 - x1) * max(0.0, y2 - y1)
-
-def expand_box(box: List[float], margin: float, width: int, height: int) -> List[float]:
-    return [
-        max(0.0, box[0] - margin),
-        max(0.0, box[1] - margin),
-        min(float(width), box[2] + margin),
-        min(float(height), box[3] + margin),
-    ]
-
-def center_distance(a: List[float], b: List[float]) -> float:
-    ax = (a[0] + a[2]) / 2
-    ay = (a[1] + a[3]) / 2
-    bx = (b[0] + b[2]) / 2
-    by = (b[1] + b[3]) / 2
-    return float(((ax - bx) ** 2 + (ay - by) ** 2) ** 0.5)
-
-def run_ocr(image: Image.Image) -> List[Dict[str, Any]]:
-    """Run OCR once on the full screenshot and return text boxes."""
-    engine = load_ocr_engine()
-    result, _ = engine(np.array(image.convert("RGB")))
-    ocr_items = []
-
-    for item in result or []:
-        points, text, confidence = item
-        box = quad_to_box(points)
-        clean_text = str(text).strip()
-        if not clean_text:
-            continue
-        ocr_items.append({
-            "text": clean_text,
-            "confidence": round(float(confidence), 4),
-            "box": [round(float(coord), 2) for coord in box],
-            "box_format": "xyxy",
-        })
-
-    return ocr_items
 
 def action_from_text(text: str) -> str:
     value = text.lower().strip()
@@ -119,8 +64,6 @@ def action_from_text(text: str) -> str:
 def infer_rule_semantics(detection: Dict[str, Any]) -> Dict[str, Any]:
     label = detection.get("text", "")
     class_name = detection.get("class", "")
-    nearby_text = detection.get("nearby_text", [])
-    context = " ".join(nearby_text[:3])
     action = action_from_text(label)
 
     if class_name == "button":
@@ -137,54 +80,9 @@ def infer_rule_semantics(detection: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "role": role,
         "likely_action": action,
-        "context": context,
+        "context": "",
         "source": "rules",
     }
-
-def attach_ocr_to_detections(
-    detections: List[Dict[str, Any]],
-    ocr_items: List[Dict[str, Any]],
-    image_size: Tuple[int, int],
-    nearby_margin: int = 120,
-) -> List[Dict[str, Any]]:
-    width, height = image_size
-    enriched = []
-
-    for detection in detections:
-        item = dict(detection)
-        det_box = item["box"]
-        nearby_box = expand_box(det_box, nearby_margin, width, height)
-        inside_text = []
-        nearby_text = []
-
-        for ocr in ocr_items:
-            text_box = ocr["box"]
-            text_area = box_area(text_box)
-            overlap = intersection_area(det_box, text_box)
-            overlap_ratio = overlap / text_area if text_area else 0.0
-
-            if overlap_ratio >= 0.35:
-                inside_text.append(ocr)
-                continue
-
-            if intersection_area(nearby_box, text_box) > 0:
-                nearby_text.append({
-                    **ocr,
-                    "distance": round(center_distance(det_box, text_box), 2),
-                })
-
-        inside_text.sort(key=lambda entry: (entry["box"][1], entry["box"][0]))
-        nearby_text.sort(key=lambda entry: entry["distance"])
-
-        item["text"] = " ".join(entry["text"] for entry in inside_text)
-        item["matched_ocr"] = inside_text
-        item["nearby_text"] = [entry["text"] for entry in nearby_text[:8]]
-        item["nearby_ocr"] = nearby_text[:8]
-        item["semantic"] = infer_rule_semantics(item)
-        enriched.append(item)
-
-    return enriched
-
 def extract_response_text(response: Dict[str, Any]) -> str:
     if response.get("output_text"):
         return response["output_text"]
@@ -201,18 +99,17 @@ def semantic_candidates(detections: List[Dict[str, Any]]) -> List[Dict[str, Any]
         {
             "index": index,
             "class": item.get("class"),
-            "text": item.get("text"),
-            "nearby_text": item.get("nearby_text", [])[:6],
+            "element_id": item.get("element_id"),
             "box": item.get("box"),
         }
         for index, item in enumerate(detections)
-        if item.get("class") in {"button", "field", "link"} and (item.get("text") or item.get("nearby_text"))
+        if item.get("class") in {"button", "field", "link"}
     ][:40]
 
 def semantic_prompt(candidates: List[Dict[str, Any]]) -> str:
     return (
         "You enrich UI detections with concise semantics. "
-        "Use the provided screenshot, OCR text, and geometry. "
+        "Use the provided screenshot and geometry. "
         "Return only valid JSON with this exact shape: "
         '{"items":[{"index":0,"role":"string","likely_action":"string",'
         '"context":"string","confidence":0.0}]}\n\n'
@@ -223,9 +120,9 @@ def semantic_system_prompt() -> str:
     return (
         "You are a UI semantics analyzer. You receive a screenshot image and a JSON array "
         "of UI detections from an object detector. Each detection has an implicit index by "
-        "array position plus fields such as class, box, text, matched_ocr, nearby_text, "
-        "nearby_ocr, and rule-based semantic guesses. Use the screenshot as the source of "
-        "truth, and use the JSON for precise coordinates and OCR context. Do not ask for an "
+        "array position plus fields such as element_id, class, confidence, and box. Use "
+        "the screenshot as the source of truth, and use the JSON for precise coordinates. "
+        "Do not ask for an "
         "image; it is attached to the user message. Return only valid JSON. Do not include "
         "markdown or commentary. Do not include a state field."
     )
@@ -371,7 +268,7 @@ def enrich_semantics_with_openai(
                 "role": "system",
                 "content": (
                     "You enrich UI detections with concise semantics. "
-                    "Use only the provided OCR text and geometry. Return JSON only."
+                    "Use only the provided screenshot and geometry. Return JSON only."
                 ),
             },
             {
@@ -446,6 +343,60 @@ def enrich_semantics_with_llm(
         return enrich_semantics_with_openai(detections, image)
     return enrich_semantics_with_ollama(detections, image)
 
+def rects_overlap(a: Tuple[int, int, int, int], b: Tuple[int, int, int, int], padding: int = 4) -> bool:
+    return not (
+        a[2] + padding <= b[0]
+        or b[2] + padding <= a[0]
+        or a[3] + padding <= b[1]
+        or b[3] + padding <= a[1]
+    )
+
+def clamp_label_rect(
+    x1: int,
+    y1: int,
+    width: int,
+    height: int,
+    image_width: int,
+    image_height: int,
+) -> Tuple[int, int, int, int]:
+    x1 = max(0, min(x1, image_width - width - 1))
+    y1 = max(0, min(y1, image_height - height - 1))
+    return (x1, y1, x1 + width, y1 + height)
+
+def choose_label_rect(
+    box: Tuple[int, int, int, int],
+    label_width: int,
+    label_height: int,
+    image_width: int,
+    image_height: int,
+    used_label_rects: List[Tuple[int, int, int, int]],
+) -> Tuple[int, int, int, int]:
+    x1, y1, x2, y2 = box
+    gap = 8
+    candidates = [
+        (x1, y1 - label_height - gap),
+        (x1, y2 + gap),
+        (x2 - label_width, y1 - label_height - gap),
+        (x2 - label_width, y2 + gap),
+        (x2 + gap, y1),
+        (x1 - label_width - gap, y1),
+        (x1, y1),
+    ]
+
+    clamped = [
+        clamp_label_rect(x, y, label_width, label_height, image_width, image_height)
+        for x, y in candidates
+    ]
+
+    for rect in clamped:
+        if not any(rects_overlap(rect, used) for used in used_label_rects):
+            return rect
+
+    return min(
+        clamped,
+        key=lambda rect: sum(1 for used in used_label_rects if rects_overlap(rect, used)),
+    )
+
 def draw_detections(
     image: np.ndarray,
     boxes: List[Tuple[int, int, int, int]],
@@ -457,29 +408,56 @@ def draw_detections(
 ) -> np.ndarray:
     """Draw detection boxes and labels on image"""
     img_with_boxes = image.copy()
+    image_height, image_width = img_with_boxes.shape[:2]
+    used_label_rects = []
+    label_specs = []
 
-    for box, score, cls_id, element_id in zip(boxes, scores, classes, element_ids):
+    for index, (box, score, cls_id, element_id) in enumerate(zip(boxes, scores, classes, element_ids)):
         x1, y1, x2, y2 = map(int, box)
+        color = ANNOTATION_COLORS[index % len(ANNOTATION_COLORS)]
 
-        # Draw rectangle
-        cv2.rectangle(img_with_boxes, (x1, y1), (x2, y2), BOX_COLOR, thickness)
+        cv2.rectangle(img_with_boxes, (x1, y1), (x2, y2), color, thickness)
 
         label = element_id
-
-        # Calculate label size and position
         text_thickness = 4
         pad_x = 10
         pad_y = 8
         (label_width, label_height), baseline = cv2.getTextSize(
             label, cv2.FONT_HERSHEY_SIMPLEX, font_scale, thickness=text_thickness
         )
+        bg_width = label_width + (pad_x * 2)
+        bg_height = label_height + baseline + (pad_y * 2)
+        label_rect = choose_label_rect(
+            (x1, y1, x2, y2),
+            bg_width,
+            bg_height,
+            image_width,
+            image_height,
+            used_label_rects,
+        )
+        used_label_rects.append(label_rect)
+        label_specs.append({
+            "box": (x1, y1, x2, y2),
+            "label": label,
+            "label_rect": label_rect,
+            "label_width": label_width,
+            "label_height": label_height,
+            "baseline": baseline,
+            "pad_x": pad_x,
+            "pad_y": pad_y,
+            "text_thickness": text_thickness,
+            "color": color,
+        })
 
-        # Draw label background
-        label_y = max(y1 - 10, label_height + baseline + (pad_y * 2))
-        bg_x1 = x1
-        bg_y1 = label_y - label_height - baseline - (pad_y * 2)
-        bg_x2 = x1 + label_width + (pad_x * 2)
-        bg_y2 = label_y
+    for spec in label_specs:
+        x1, y1, x2, y2 = spec["box"]
+        bg_x1, bg_y1, bg_x2, bg_y2 = spec["label_rect"]
+        color = spec["color"]
+        anchor = ((x1 + x2) // 2, (y1 + y2) // 2)
+        label_anchor = ((bg_x1 + bg_x2) // 2, (bg_y1 + bg_y2) // 2)
+
+        cv2.line(img_with_boxes, label_anchor, anchor, color, max(2, thickness))
+        cv2.circle(img_with_boxes, anchor, max(4, thickness * 2), color, -1)
 
         cv2.rectangle(
             img_with_boxes,
@@ -492,19 +470,17 @@ def draw_detections(
             img_with_boxes,
             (bg_x1, bg_y1),
             (bg_x2, bg_y2),
-            BOX_COLOR,
+            color,
             max(2, thickness)
         )
-
-        # Draw label text
         cv2.putText(
             img_with_boxes,
-            label,
-            (x1 + pad_x, label_y - baseline - pad_y),
+            spec["label"],
+            (bg_x1 + spec["pad_x"], bg_y2 - spec["baseline"] - spec["pad_y"]),
             cv2.FONT_HERSHEY_SIMPLEX,
             font_scale,
             LABEL_TEXT_COLOR,
-            thickness=text_thickness
+            thickness=spec["text_thickness"]
         )
 
     return img_with_boxes
@@ -543,7 +519,6 @@ def detect_ui_elements(
 
         # Run detection (returns supervision Detections object)
         detections = model.predict(img_array, threshold=confidence_threshold)
-        ocr_items = run_ocr(image)
 
         # Extract detection data
         filtered_boxes = detections.xyxy  # Bounding boxes in xyxy format
@@ -563,7 +538,6 @@ def detect_ui_elements(
                 "box_format": "xyxy",
             })
 
-        detection_data = attach_ocr_to_detections(detection_data, ocr_items, image.size)
         raw_llm_output = {"skipped": "LLM enrichment disabled"}
 
         if use_llm:
@@ -590,7 +564,6 @@ def detect_ui_elements(
         # Create summary text
         summary_text = (
             f"**Total detections:** {len(filtered_boxes)}\n\n"
-            f"**OCR text boxes:** {len(ocr_items)}\n\n"
             f"**LLM enrichment:** {llm_status}"
         )
 
