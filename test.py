@@ -135,6 +135,7 @@ for stale_file in (
     OUTPUT_DIR / "llm_chat_log.json",
     OUTPUT_DIR / "llms.json",
     OUTPUT_DIR / "final_action_buttons.json",
+    OUTPUT_DIR / "conflict_resolution.json",
 ):
     stale_file.unlink(missing_ok=True)
 
