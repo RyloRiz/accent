@@ -1,0 +1,2226 @@
+{
+  "E0": {
+    "semantic": "Video thumbnail for 'Being a fashion student means a lot more than just making clothes.'",
+    "box": {
+      "x1": 524.61,
+      "y1": 594.37,
+      "x2": 1474.94,
+      "y2": 1125.0,
+      "width": 950.33,
+      "height": 530.63,
+      "center_x": 999.78,
+      "center_y": 859.68
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.9486
+  },
+  "E1": {
+    "semantic": "Video thumbnail for 'I Spent 24hrs with the Meat Driven Tech Founder'",
+    "box": {
+      "x1": 533.75,
+      "y1": 1436.84,
+      "x2": 1490.32,
+      "y2": 1968.77,
+      "width": 956.57,
+      "height": 531.93,
+      "center_x": 1012.04,
+      "center_y": 1702.8
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.931
+  },
+  "E2": {
+    "semantic": "Video thumbnail for 'How I caught an illegal Russian Spy'",
+    "box": {
+      "x1": 1480.36,
+      "y1": 577.66,
+      "x2": 2462.27,
+      "y2": 1141.9,
+      "width": 981.91,
+      "height": 564.24,
+      "center_x": 1971.31,
+      "center_y": 859.78
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.9284
+  },
+  "E3": {
+    "semantic": "Video thumbnail for 'How Polygamist Cults Actually Work | How Crime Works | Insider'",
+    "box": {
+      "x1": 2469.7,
+      "y1": 1443.55,
+      "x2": 3409.56,
+      "y2": 1993.68,
+      "width": 939.86,
+      "height": 550.13,
+      "center_x": 2939.63,
+      "center_y": 1718.62
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.8726
+  },
+  "E4": {
+    "semantic": "Install button in the address bar",
+    "box": {
+      "x1": 2932.15,
+      "y1": 169.45,
+      "x2": 3097.82,
+      "y2": 229.18,
+      "width": 165.67,
+      "height": 59.73,
+      "center_x": 3014.99,
+      "center_y": 199.31
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.8542
+  },
+  "E5": {
+    "semantic": "Apple Music icon in the macOS Dock",
+    "box": {
+      "x1": 1151.25,
+      "y1": 2061.24,
+      "x2": 1289.22,
+      "y2": 2219.15,
+      "width": 137.97,
+      "height": 157.91,
+      "center_x": 1220.23,
+      "center_y": 2140.19
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.8172
+  },
+  "E6": {
+    "semantic": "Empty space in the macOS Dock",
+    "box": {
+      "x1": 9.02,
+      "y1": 2064.38,
+      "x2": 391.36,
+      "y2": 2235.8,
+      "width": 382.34,
+      "height": 171.42,
+      "center_x": 200.19,
+      "center_y": 2150.09
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.8114
+  },
+  "E7": {
+    "semantic": "Google Chrome icon in the macOS Dock",
+    "box": {
+      "x1": 1802.79,
+      "y1": 2061.32,
+      "x2": 1947.54,
+      "y2": 2229.3,
+      "width": 144.75,
+      "height": 167.98,
+      "center_x": 1875.16,
+      "center_y": 2145.31
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.811
+  },
+  "E8": {
+    "semantic": "Adobe icon",
+    "box": {
+      "x1": 521.26,
+      "y1": 1133.36,
+      "x2": 612.19,
+      "y2": 1224.09,
+      "width": 90.93,
+      "height": 90.73,
+      "center_x": 566.73,
+      "center_y": 1178.72
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.8079
+  },
+  "E9": {
+    "semantic": "Launchpad icon in the macOS Dock",
+    "box": {
+      "x1": 558.14,
+      "y1": 2067.35,
+      "x2": 696.43,
+      "y2": 2216.91,
+      "width": 138.29,
+      "height": 149.56,
+      "center_x": 627.28,
+      "center_y": 2142.13
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.797
+  },
+  "E10": {
+    "semantic": "FaceTime icon in the macOS Dock",
+    "box": {
+      "x1": 855.21,
+      "y1": 2066.77,
+      "x2": 993.21,
+      "y2": 2216.96,
+      "width": 138.0,
+      "height": 150.19,
+      "center_x": 924.21,
+      "center_y": 2141.86
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7918
+  },
+  "E11": {
+    "semantic": "Finder icon in the macOS Dock",
+    "box": {
+      "x1": 409.56,
+      "y1": 2067.87,
+      "x2": 549.1,
+      "y2": 2209.22,
+      "width": 139.54,
+      "height": 141.35,
+      "center_x": 479.33,
+      "center_y": 2138.55
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7895
+  },
+  "E12": {
+    "semantic": "System Settings icon in the macOS Dock",
+    "box": {
+      "x1": 1299.58,
+      "y1": 2063.72,
+      "x2": 1447.78,
+      "y2": 2224.25,
+      "width": 148.2,
+      "height": 160.53,
+      "center_x": 1373.68,
+      "center_y": 2143.98
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7893
+  },
+  "E13": {
+    "semantic": "Visual Studio Code icon in the macOS Dock",
+    "box": {
+      "x1": 2248.28,
+      "y1": 2058.89,
+      "x2": 2391.64,
+      "y2": 2225.2,
+      "width": 143.36,
+      "height": 166.31,
+      "center_x": 2319.96,
+      "center_y": 2142.05
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7888
+  },
+  "E14": {
+    "semantic": "Warp terminal icon in the macOS Dock",
+    "box": {
+      "x1": 2548.82,
+      "y1": 2063.01,
+      "x2": 2692.49,
+      "y2": 2224.14,
+      "width": 143.67,
+      "height": 161.13,
+      "center_x": 2620.66,
+      "center_y": 2143.58
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7846
+  },
+  "E15": {
+    "semantic": "Video thumbnail for 'Recruiting at MIT While Everything Falls Apart'",
+    "box": {
+      "x1": 1482.03,
+      "y1": 1437.52,
+      "x2": 2435.74,
+      "y2": 2045.38,
+      "width": 953.71,
+      "height": 607.86,
+      "center_x": 1958.88,
+      "center_y": 1741.45
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.784
+  },
+  "E16": {
+    "semantic": "Messages icon in the macOS Dock",
+    "box": {
+      "x1": 707.01,
+      "y1": 2067.27,
+      "x2": 845.0,
+      "y2": 2218.36,
+      "width": 137.99,
+      "height": 151.09,
+      "center_x": 776.0,
+      "center_y": 2142.82
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.781
+  },
+  "E17": {
+    "semantic": "Video title 'Being a fashion student means a lot more than just making clothes.'",
+    "box": {
+      "x1": 582.77,
+      "y1": 971.53,
+      "x2": 1269.64,
+      "y2": 1105.79,
+      "width": 686.87,
+      "height": 134.26,
+      "center_x": 926.2,
+      "center_y": 1038.66
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7784
+  },
+  "E18": {
+    "semantic": "Video thumbnail for 'LA's 'No-Car' Olympics Plan Explained'",
+    "box": {
+      "x1": 2475.09,
+      "y1": 605.47,
+      "x2": 3414.23,
+      "y2": 1188.83,
+      "width": 939.14,
+      "height": 583.36,
+      "center_x": 2944.66,
+      "center_y": 897.15
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7682
+  },
+  "E19": {
+    "semantic": "Channel avatar for 'The B1M'",
+    "box": {
+      "x1": 2461.16,
+      "y1": 1133.58,
+      "x2": 2552.29,
+      "y2": 1223.6,
+      "width": 91.13,
+      "height": 90.02,
+      "center_x": 2506.72,
+      "center_y": 1178.59
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7676
+  },
+  "E20": {
+    "semantic": "Firefox icon in the macOS Dock",
+    "box": {
+      "x1": 1656.93,
+      "y1": 2063.97,
+      "x2": 1798.22,
+      "y2": 2212.75,
+      "width": 141.29,
+      "height": 148.78,
+      "center_x": 1727.58,
+      "center_y": 2138.36
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7675
+  },
+  "E21": {
+    "semantic": "All filter button",
+    "box": {
+      "x1": 516.02,
+      "y1": 443.94,
+      "x2": 620.82,
+      "y2": 532.38,
+      "width": 104.8,
+      "height": 88.44,
+      "center_x": 568.42,
+      "center_y": 488.16
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7584
+  },
+  "E22": {
+    "semantic": "Discord icon in the menu bar",
+    "box": {
+      "x1": 3305.12,
+      "y1": 171.54,
+      "x2": 3384.95,
+      "y2": 238.68,
+      "width": 79.83,
+      "height": 67.14,
+      "center_x": 3345.03,
+      "center_y": 205.11
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7537
+  },
+  "E23": {
+    "semantic": "Notes icon in the macOS Dock",
+    "box": {
+      "x1": 1002.84,
+      "y1": 2062.65,
+      "x2": 1142.56,
+      "y2": 2226.19,
+      "width": 139.72,
+      "height": 163.54,
+      "center_x": 1072.7,
+      "center_y": 2144.42
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7534
+  },
+  "E24": {
+    "semantic": "User profile icon in the YouTube top bar",
+    "box": {
+      "x1": 3320.98,
+      "y1": 335.8,
+      "x2": 3412.69,
+      "y2": 419.29,
+      "width": 91.71,
+      "height": 83.49,
+      "center_x": 3366.84,
+      "center_y": 377.55
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7511
+  },
+  "E25": {
+    "semantic": "Reddit icon in the browser tab",
+    "box": {
+      "x1": 1923.19,
+      "y1": 89.21,
+      "x2": 1997.35,
+      "y2": 140.58,
+      "width": 74.16,
+      "height": 51.37,
+      "center_x": 1960.27,
+      "center_y": 114.89
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7498
+  },
+  "E26": {
+    "semantic": "Photos icon in the macOS Dock",
+    "box": {
+      "x1": 2102.01,
+      "y1": 2065.45,
+      "x2": 2246.07,
+      "y2": 2224.65,
+      "width": 144.06,
+      "height": 159.2,
+      "center_x": 2174.04,
+      "center_y": 2145.05
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7489
+  },
+  "E27": {
+    "semantic": "Reddit icon in the browser tab",
+    "box": {
+      "x1": 1723.29,
+      "y1": 90.34,
+      "x2": 1789.83,
+      "y2": 141.78,
+      "width": 66.54,
+      "height": 51.44,
+      "center_x": 1756.56,
+      "center_y": 116.06
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7476
+  },
+  "E28": {
+    "semantic": "AlDente icon in the macOS Dock",
+    "box": {
+      "x1": 2402.47,
+      "y1": 2062.66,
+      "x2": 2541.11,
+      "y2": 2226.6,
+      "width": 138.64,
+      "height": 163.94,
+      "center_x": 2471.79,
+      "center_y": 2144.63
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7462
+  },
+  "E29": {
+    "semantic": "Activity Monitor icon in the menu bar",
+    "box": {
+      "x1": 2747.84,
+      "y1": 11.06,
+      "x2": 2804.93,
+      "y2": 65.49,
+      "width": 57.09,
+      "height": 54.43,
+      "center_x": 2776.39,
+      "center_y": 38.27
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7456
+  },
+  "E30": {
+    "semantic": "Intelligence agencies filter button",
+    "box": {
+      "x1": 1473.54,
+      "y1": 448.44,
+      "x2": 1784.13,
+      "y2": 528.97,
+      "width": 310.59,
+      "height": 80.53,
+      "center_x": 1628.84,
+      "center_y": 488.7
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7385
+  },
+  "E31": {
+    "semantic": "Video title 'How I caught an illegal Russian Spy'",
+    "box": {
+      "x1": 1596.23,
+      "y1": 1133.94,
+      "x2": 2138.09,
+      "y2": 1201.11,
+      "width": 541.86,
+      "height": 67.17,
+      "center_x": 1867.16,
+      "center_y": 1167.53
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7383
+  },
+  "E32": {
+    "semantic": "Play button",
+    "box": {
+      "x1": 2811.74,
+      "y1": 11.93,
+      "x2": 2868.77,
+      "y2": 64.23,
+      "width": 57.03,
+      "height": 52.3,
+      "center_x": 2840.25,
+      "center_y": 38.08
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7364
+  },
+  "E33": {
+    "semantic": "Learn more button",
+    "box": {
+      "x1": 1005.62,
+      "y1": 1293.4,
+      "x2": 1465.53,
+      "y2": 1379.03,
+      "width": 459.91,
+      "height": 85.63,
+      "center_x": 1235.58,
+      "center_y": 1336.22
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7362
+  },
+  "E34": {
+    "semantic": "Google search icon in the browser tab",
+    "box": {
+      "x1": 1315.61,
+      "y1": 90.36,
+      "x2": 1383.48,
+      "y2": 141.98,
+      "width": 67.87,
+      "height": 51.62,
+      "center_x": 1349.54,
+      "center_y": 116.17
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7359
+  },
+  "E35": {
+    "semantic": "Media theories filter button",
+    "box": {
+      "x1": 1214.11,
+      "y1": 449.21,
+      "x2": 1436.8,
+      "y2": 524.46,
+      "width": 222.69,
+      "height": 75.25,
+      "center_x": 1325.45,
+      "center_y": 486.83
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7349
+  },
+  "E36": {
+    "semantic": "Google search icon in the browser tab",
+    "box": {
+      "x1": 2125.78,
+      "y1": 88.29,
+      "x2": 2211.13,
+      "y2": 142.86,
+      "width": 85.35,
+      "height": 54.57,
+      "center_x": 2168.46,
+      "center_y": 115.58
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.726
+  },
+  "E37": {
+    "semantic": "Startup company filter button",
+    "box": {
+      "x1": 638.02,
+      "y1": 447.46,
+      "x2": 889.79,
+      "y2": 530.11,
+      "width": 251.77,
+      "height": 82.65,
+      "center_x": 763.9,
+      "center_y": 488.78
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7259
+  },
+  "E38": {
+    "semantic": "Security hackers filter button",
+    "box": {
+      "x1": 2347.93,
+      "y1": 445.39,
+      "x2": 2605.37,
+      "y2": 531.07,
+      "width": 257.44,
+      "height": 85.68,
+      "center_x": 2476.65,
+      "center_y": 488.23
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7255
+  },
+  "E39": {
+    "semantic": "Safari icon in the menu bar",
+    "box": {
+      "x1": 2633.73,
+      "y1": 91.54,
+      "x2": 2699.14,
+      "y2": 143.2,
+      "width": 65.41,
+      "height": 51.66,
+      "center_x": 2666.43,
+      "center_y": 117.37
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.721
+  },
+  "E40": {
+    "semantic": "Google search icon in the browser tab",
+    "box": {
+      "x1": 2532.04,
+      "y1": 89.29,
+      "x2": 2601.78,
+      "y2": 143.6,
+      "width": 69.74,
+      "height": 54.31,
+      "center_x": 2566.91,
+      "center_y": 116.45
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.717
+  },
+  "E41": {
+    "semantic": "Profiles menu item in the menu bar",
+    "box": {
+      "x1": 818.79,
+      "y1": 13.43,
+      "x2": 931.25,
+      "y2": 60.84,
+      "width": 112.46,
+      "height": 47.41,
+      "center_x": 875.02,
+      "center_y": 37.13
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7164
+  },
+  "E42": {
+    "semantic": "Share button in the address bar",
+    "box": {
+      "x1": 2737.55,
+      "y1": 90.77,
+      "x2": 2800.41,
+      "y2": 141.87,
+      "width": 62.86,
+      "height": 51.1,
+      "center_x": 2768.98,
+      "center_y": 116.32
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7135
+  },
+  "E43": {
+    "semantic": "Notifications icon in the YouTube top bar",
+    "box": {
+      "x1": 3208.34,
+      "y1": 338.99,
+      "x2": 3293.18,
+      "y2": 415.52,
+      "width": 84.84,
+      "height": 76.53,
+      "center_x": 3250.76,
+      "center_y": 377.25
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7132
+  },
+  "E44": {
+    "semantic": "Chrome menu item in the menu bar",
+    "box": {
+      "x1": 99.75,
+      "y1": 13.49,
+      "x2": 225.39,
+      "y2": 63.75,
+      "width": 125.64,
+      "height": 50.26,
+      "center_x": 162.57,
+      "center_y": 38.62
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7104
+  },
+  "E45": {
+    "semantic": "Search with your voice button",
+    "box": {
+      "x1": 2318.86,
+      "y1": 331.57,
+      "x2": 2413.83,
+      "y2": 418.76,
+      "width": 94.97,
+      "height": 87.19,
+      "center_x": 2366.35,
+      "center_y": 375.16
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7079
+  },
+  "E46": {
+    "semantic": "Closed captions icon on video thumbnail",
+    "box": {
+      "x1": 1381.12,
+      "y1": 710.76,
+      "x2": 1441.97,
+      "y2": 769.92,
+      "width": 60.85,
+      "height": 59.16,
+      "center_x": 1411.54,
+      "center_y": 740.34
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7062
+  },
+  "E47": {
+    "semantic": "ChatGPT icon in the browser tab",
+    "box": {
+      "x1": 1819.29,
+      "y1": 87.3,
+      "x2": 1899.21,
+      "y2": 142.41,
+      "width": 79.92,
+      "height": 55.11,
+      "center_x": 1859.25,
+      "center_y": 114.85
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7062
+  },
+  "E48": {
+    "semantic": "AWS icon in the browser tab",
+    "box": {
+      "x1": 1618.92,
+      "y1": 89.96,
+      "x2": 1690.24,
+      "y2": 141.05,
+      "width": 71.32,
+      "height": 51.09,
+      "center_x": 1654.58,
+      "center_y": 115.5
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7044
+  },
+  "E49": {
+    "semantic": "Industry filter button",
+    "box": {
+      "x1": 2911.33,
+      "y1": 443.78,
+      "x2": 3075.89,
+      "y2": 534.84,
+      "width": 164.56,
+      "height": 91.06,
+      "center_x": 2993.61,
+      "center_y": 489.31
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7037
+  },
+  "E50": {
+    "semantic": "Share button in the address bar",
+    "box": {
+      "x1": 2434.0,
+      "y1": 89.74,
+      "x2": 2497.36,
+      "y2": 142.53,
+      "width": 63.36,
+      "height": 52.79,
+      "center_x": 2465.68,
+      "center_y": 116.13
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.7032
+  },
+  "E51": {
+    "semantic": "Alarm clock icon in the browser tab",
+    "box": {
+      "x1": 2228.2,
+      "y1": 88.59,
+      "x2": 2307.06,
+      "y2": 143.44,
+      "width": 78.86,
+      "height": 54.85,
+      "center_x": 2267.63,
+      "center_y": 116.02
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6967
+  },
+  "E52": {
+    "semantic": "Video playlist button",
+    "box": {
+      "x1": 1497.77,
+      "y1": 1986.91,
+      "x2": 1583.83,
+      "y2": 2057.55,
+      "width": 86.06,
+      "height": 70.64,
+      "center_x": 1540.8,
+      "center_y": 2022.23
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6967
+  },
+  "E53": {
+    "semantic": "YouTube domain in the address bar",
+    "box": {
+      "x1": 309.1,
+      "y1": 179.71,
+      "x2": 500.36,
+      "y2": 225.97,
+      "width": 191.26,
+      "height": 46.26,
+      "center_x": 404.73,
+      "center_y": 202.84
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6925
+  },
+  "E54": {
+    "semantic": "Bookmarks menu item in the menu bar",
+    "box": {
+      "x1": 642.98,
+      "y1": 13.31,
+      "x2": 796.62,
+      "y2": 63.95,
+      "width": 153.64,
+      "height": 50.64,
+      "center_x": 719.8,
+      "center_y": 38.63
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6922
+  },
+  "E55": {
+    "semantic": "Activity Monitor icon in the macOS Dock",
+    "box": {
+      "x1": 1953.62,
+      "y1": 2061.66,
+      "x2": 2101.26,
+      "y2": 2227.08,
+      "width": 147.64,
+      "height": 165.42,
+      "center_x": 2027.44,
+      "center_y": 2144.37
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6921
+  },
+  "E56": {
+    "semantic": "Clock icon in the browser tab",
+    "box": {
+      "x1": 2680.06,
+      "y1": 12.02,
+      "x2": 2741.04,
+      "y2": 63.96,
+      "width": 60.98,
+      "height": 51.94,
+      "center_x": 2710.55,
+      "center_y": 37.99
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6907
+  },
+  "E57": {
+    "semantic": "Learn more button",
+    "box": {
+      "x1": 1147.9,
+      "y1": 1307.91,
+      "x2": 1323.57,
+      "y2": 1370.71,
+      "width": 175.67,
+      "height": 62.8,
+      "center_x": 1235.74,
+      "center_y": 1339.31
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.69
+  },
+  "E58": {
+    "semantic": "Downloads button in the sidebar",
+    "box": {
+      "x1": 123.07,
+      "y1": 1314.06,
+      "x2": 311.6,
+      "y2": 1384.1,
+      "width": 188.53,
+      "height": 70.04,
+      "center_x": 217.33,
+      "center_y": 1349.08
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6898
+  },
+  "E59": {
+    "semantic": "Video title 'LA's 'No-Car' Olympics Plan Explained'",
+    "box": {
+      "x1": 2560.31,
+      "y1": 1130.8,
+      "x2": 3149.12,
+      "y2": 1206.12,
+      "width": 588.81,
+      "height": 75.32,
+      "center_x": 2854.72,
+      "center_y": 1168.46
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6887
+  },
+  "E60": {
+    "semantic": "Shortcuts icon in the browser tab",
+    "box": {
+      "x1": 37.51,
+      "y1": 540.82,
+      "x2": 110.37,
+      "y2": 614.15,
+      "width": 72.86,
+      "height": 73.33,
+      "center_x": 73.94,
+      "center_y": 577.49
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6883
+  },
+  "E61": {
+    "semantic": "Podcasts filter button",
+    "box": {
+      "x1": 917.39,
+      "y1": 448.29,
+      "x2": 1088.18,
+      "y2": 525.55,
+      "width": 170.79,
+      "height": 77.26,
+      "center_x": 1002.78,
+      "center_y": 486.92
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6879
+  },
+  "E62": {
+    "semantic": "Amazon icon in the browser tab",
+    "box": {
+      "x1": 799.68,
+      "y1": 90.48,
+      "x2": 864.22,
+      "y2": 141.11,
+      "width": 64.54,
+      "height": 50.63,
+      "center_x": 831.95,
+      "center_y": 115.8
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6861
+  },
+  "E63": {
+    "semantic": "Safari icon in the browser tab",
+    "box": {
+      "x1": 697.0,
+      "y1": 91.92,
+      "x2": 760.87,
+      "y2": 140.45,
+      "width": 63.87,
+      "height": 48.53,
+      "center_x": 728.93,
+      "center_y": 116.19
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6828
+  },
+  "E64": {
+    "semantic": "AWS icon in the browser tab",
+    "box": {
+      "x1": 1418.49,
+      "y1": 92.09,
+      "x2": 1483.92,
+      "y2": 141.36,
+      "width": 65.43,
+      "height": 49.27,
+      "center_x": 1451.2,
+      "center_y": 116.73
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6822
+  },
+  "E65": {
+    "semantic": "Shorts button in the sidebar",
+    "box": {
+      "x1": 124.24,
+      "y1": 545.6,
+      "x2": 248.6,
+      "y2": 605.91,
+      "width": 124.36,
+      "height": 60.31,
+      "center_x": 186.42,
+      "center_y": 575.75
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6808
+  },
+  "E66": {
+    "semantic": "ChatGPT icon in the browser tab",
+    "box": {
+      "x1": 497.69,
+      "y1": 91.42,
+      "x2": 560.12,
+      "y2": 141.11,
+      "width": 62.43,
+      "height": 49.69,
+      "center_x": 528.9,
+      "center_y": 116.27
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.671
+  },
+  "E67": {
+    "semantic": "Aircraft filter button",
+    "box": {
+      "x1": 3247.71,
+      "y1": 449.52,
+      "x2": 3420.45,
+      "y2": 529.4,
+      "width": 172.74,
+      "height": 79.88,
+      "center_x": 3334.08,
+      "center_y": 489.46
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.67
+  },
+  "E68": {
+    "semantic": "Channel avatar for 'Insider'",
+    "box": {
+      "x1": 2465.29,
+      "y1": 1987.43,
+      "x2": 2550.51,
+      "y2": 2051.47,
+      "width": 85.22,
+      "height": 64.04,
+      "center_x": 2507.9,
+      "center_y": 2019.45
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6685
+  },
+  "E69": {
+    "semantic": "Video title 'Recruiting at MIT While Everything Falls Apart'",
+    "box": {
+      "x1": 1563.49,
+      "y1": 1980.55,
+      "x2": 2261.57,
+      "y2": 2043.45,
+      "width": 698.08,
+      "height": 62.9,
+      "center_x": 1912.53,
+      "center_y": 2012.0
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6649
+  },
+  "E70": {
+    "semantic": "Your channel button in the sidebar",
+    "box": {
+      "x1": 129.96,
+      "y1": 835.04,
+      "x2": 324.75,
+      "y2": 899.83,
+      "width": 194.79,
+      "height": 64.79,
+      "center_x": 227.36,
+      "center_y": 867.43
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6612
+  },
+  "E71": {
+    "semantic": "Liked videos button in the sidebar",
+    "box": {
+      "x1": 132.18,
+      "y1": 1155.51,
+      "x2": 314.0,
+      "y2": 1218.62,
+      "width": 181.82,
+      "height": 63.11,
+      "center_x": 223.09,
+      "center_y": 1187.07
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6608
+  },
+  "E72": {
+    "semantic": "Window menu item in the menu bar",
+    "box": {
+      "x1": 1035.95,
+      "y1": 14.12,
+      "x2": 1147.54,
+      "y2": 60.72,
+      "width": 111.59,
+      "height": 46.6,
+      "center_x": 1091.75,
+      "center_y": 37.42
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6602
+  },
+  "E73": {
+    "semantic": "Channel name 'The Christo Files' and view count",
+    "box": {
+      "x1": 1596.37,
+      "y1": 1222.61,
+      "x2": 1937.99,
+      "y2": 1317.47,
+      "width": 341.62,
+      "height": 94.86,
+      "center_x": 1767.18,
+      "center_y": 1270.04
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6599
+  },
+  "E74": {
+    "semantic": "Restaurants filter button",
+    "box": {
+      "x1": 1800.87,
+      "y1": 443.29,
+      "x2": 2005.85,
+      "y2": 531.14,
+      "width": 204.98,
+      "height": 87.85,
+      "center_x": 1903.36,
+      "center_y": 487.22
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6589
+  },
+  "E75": {
+    "semantic": "History button in the sidebar",
+    "box": {
+      "x1": 128.23,
+      "y1": 915.98,
+      "x2": 268.45,
+      "y2": 979.58,
+      "width": 140.22,
+      "height": 63.6,
+      "center_x": 198.34,
+      "center_y": 947.78
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6588
+  },
+  "E76": {
+    "semantic": "Video title 'How Polygamist Cults Actually Work | How Crime Works | Insider'",
+    "box": {
+      "x1": 2579.1,
+      "y1": 1983.04,
+      "x2": 3299.33,
+      "y2": 2045.44,
+      "width": 720.23,
+      "height": 62.4,
+      "center_x": 2939.22,
+      "center_y": 2014.24
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6576
+  },
+  "E77": {
+    "semantic": "Home button in the sidebar",
+    "box": {
+      "x1": 20.9,
+      "y1": 447.85,
+      "x2": 429.86,
+      "y2": 545.46,
+      "width": 408.96,
+      "height": 97.61,
+      "center_x": 225.38,
+      "center_y": 496.66
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6567
+  },
+  "E78": {
+    "semantic": "Law enforcement filter button",
+    "box": {
+      "x1": 2634.33,
+      "y1": 445.06,
+      "x2": 2898.06,
+      "y2": 533.17,
+      "width": 263.73,
+      "height": 88.11,
+      "center_x": 2766.19,
+      "center_y": 489.12
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6553
+  },
+  "E79": {
+    "semantic": "Settings icon in the menu bar",
+    "box": {
+      "x1": 1112.0,
+      "y1": 91.51,
+      "x2": 1172.03,
+      "y2": 139.88,
+      "width": 60.03,
+      "height": 48.37,
+      "center_x": 1142.02,
+      "center_y": 115.7
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6514
+  },
+  "E80": {
+    "semantic": "Startup company filter button",
+    "box": {
+      "x1": 650.01,
+      "y1": 457.21,
+      "x2": 881.91,
+      "y2": 519.06,
+      "width": 231.9,
+      "height": 61.85,
+      "center_x": 765.96,
+      "center_y": 488.13
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6503
+  },
+  "E81": {
+    "semantic": "Search icon in the address bar",
+    "box": {
+      "x1": 3039.89,
+      "y1": 13.53,
+      "x2": 3096.96,
+      "y2": 62.57,
+      "width": 57.07,
+      "height": 49.04,
+      "center_x": 3068.42,
+      "center_y": 38.05
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6488
+  },
+  "E82": {
+    "semantic": "Extensions icon in the menu bar",
+    "box": {
+      "x1": 3105.11,
+      "y1": 12.51,
+      "x2": 3160.75,
+      "y2": 63.43,
+      "width": 55.64,
+      "height": 50.92,
+      "center_x": 3132.93,
+      "center_y": 37.97
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6481
+  },
+  "E83": {
+    "semantic": "More options button",
+    "box": {
+      "x1": 1412.19,
+      "y1": 1980.49,
+      "x2": 1486.85,
+      "y2": 2046.46,
+      "width": 74.66,
+      "height": 65.97,
+      "center_x": 1449.52,
+      "center_y": 2013.47
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6473
+  },
+  "E84": {
+    "semantic": "URL link in the lower left corner",
+    "box": {
+      "x1": 12.6,
+      "y1": 2009.68,
+      "x2": 1196.39,
+      "y2": 2053.1,
+      "width": 1183.79,
+      "height": 43.42,
+      "center_x": 604.5,
+      "center_y": 2031.39
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6444
+  },
+  "E85": {
+    "semantic": "Netflix icon in the browser tab",
+    "box": {
+      "x1": 2332.7,
+      "y1": 89.6,
+      "x2": 2406.39,
+      "y2": 141.91,
+      "width": 73.69,
+      "height": 52.31,
+      "center_x": 2369.54,
+      "center_y": 115.75
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6407
+  },
+  "E86": {
+    "semantic": "Muted speaker icon",
+    "box": {
+      "x1": 1376.81,
+      "y1": 619.55,
+      "x2": 1445.23,
+      "y2": 670.64,
+      "width": 68.42,
+      "height": 51.09,
+      "center_x": 1411.02,
+      "center_y": 645.09
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6388
+  },
+  "E87": {
+    "semantic": "Subscriptions button in the sidebar",
+    "box": {
+      "x1": 132.2,
+      "y1": 627.68,
+      "x2": 331.24,
+      "y2": 688.89,
+      "width": 199.04,
+      "height": 61.21,
+      "center_x": 231.72,
+      "center_y": 658.28
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6376
+  },
+  "E88": {
+    "semantic": "Search button",
+    "box": {
+      "x1": 2180.2,
+      "y1": 334.91,
+      "x2": 2276.51,
+      "y2": 419.14,
+      "width": 96.31,
+      "height": 84.23,
+      "center_x": 2228.36,
+      "center_y": 377.03
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6369
+  },
+  "E89": {
+    "semantic": "Ad sponsor 'Adobe for Students'",
+    "box": {
+      "x1": 619.67,
+      "y1": 1226.91,
+      "x2": 1029.43,
+      "y2": 1292.72,
+      "width": 409.76,
+      "height": 65.81,
+      "center_x": 824.55,
+      "center_y": 1259.82
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6365
+  },
+  "E90": {
+    "semantic": "YouTube icon in the browser tab",
+    "box": {
+      "x1": 115.91,
+      "y1": 253.88,
+      "x2": 266.07,
+      "y2": 297.0,
+      "width": 150.16,
+      "height": 43.12,
+      "center_x": 190.99,
+      "center_y": 275.44
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6365
+  },
+  "E91": {
+    "semantic": "Clock icon in the browser tab",
+    "box": {
+      "x1": 23.53,
+      "y1": 1069.81,
+      "x2": 118.07,
+      "y2": 1144.39,
+      "width": 94.54,
+      "height": 74.58,
+      "center_x": 70.8,
+      "center_y": 1107.1
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6355
+  },
+  "E92": {
+    "semantic": "Apple menu icon in the menu bar",
+    "box": {
+      "x1": 28.45,
+      "y1": 9.54,
+      "x2": 83.55,
+      "y2": 61.48,
+      "width": 55.1,
+      "height": 51.94,
+      "center_x": 56.0,
+      "center_y": 35.51
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6327
+  },
+  "E93": {
+    "semantic": "Channel name 'The B1M' and view count",
+    "box": {
+      "x1": 2564.68,
+      "y1": 1225.07,
+      "x2": 2903.83,
+      "y2": 1301.76,
+      "width": 339.15,
+      "height": 76.69,
+      "center_x": 2734.25,
+      "center_y": 1263.41
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6313
+  },
+  "E94": {
+    "semantic": "Watch button",
+    "box": {
+      "x1": 706.59,
+      "y1": 1304.11,
+      "x2": 824.68,
+      "y2": 1370.55,
+      "width": 118.09,
+      "height": 66.44,
+      "center_x": 765.63,
+      "center_y": 1337.33
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6304
+  },
+  "E95": {
+    "semantic": "Empty space in the macOS Dock",
+    "box": {
+      "x1": 3065.6,
+      "y1": 2060.05,
+      "x2": 3451.21,
+      "y2": 2235.46,
+      "width": 385.61,
+      "height": 175.41,
+      "center_x": 3258.4,
+      "center_y": 2147.76
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6288
+  },
+  "E96": {
+    "semantic": "Playlists button in the sidebar",
+    "box": {
+      "x1": 124.85,
+      "y1": 994.08,
+      "x2": 266.36,
+      "y2": 1056.94,
+      "width": 141.51,
+      "height": 62.86,
+      "center_x": 195.6,
+      "center_y": 1025.51
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6271
+  },
+  "E97": {
+    "semantic": "Channel avatar in the browser tab",
+    "box": {
+      "x1": 293.73,
+      "y1": 87.77,
+      "x2": 356.63,
+      "y2": 143.13,
+      "width": 62.9,
+      "height": 55.36,
+      "center_x": 325.18,
+      "center_y": 115.45
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6252
+  },
+  "E98": {
+    "semantic": "Create button in the YouTube top bar",
+    "box": {
+      "x1": 2999.24,
+      "y1": 331.84,
+      "x2": 3196.17,
+      "y2": 420.38,
+      "width": 196.93,
+      "height": 88.54,
+      "center_x": 3097.7,
+      "center_y": 376.11
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6111
+  },
+  "E99": {
+    "semantic": "Wealth filter button",
+    "box": {
+      "x1": 2184.72,
+      "y1": 445.4,
+      "x2": 2324.15,
+      "y2": 533.29,
+      "width": 139.43,
+      "height": 87.89,
+      "center_x": 2254.43,
+      "center_y": 489.34
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.6022
+  },
+  "E100": {
+    "semantic": "Home button in the sidebar",
+    "box": {
+      "x1": 127.34,
+      "y1": 464.44,
+      "x2": 239.48,
+      "y2": 520.99,
+      "width": 112.14,
+      "height": 56.55,
+      "center_x": 183.41,
+      "center_y": 492.71
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5999
+  },
+  "E101": {
+    "semantic": "Smallpdf icon in the browser tab",
+    "box": {
+      "x1": 329.17,
+      "y1": 255.42,
+      "x2": 552.77,
+      "y2": 299.11,
+      "width": 223.6,
+      "height": 43.69,
+      "center_x": 440.97,
+      "center_y": 277.26
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5993
+  },
+  "E102": {
+    "semantic": "History icon in the browser tab",
+    "box": {
+      "x1": 32.93,
+      "y1": 906.62,
+      "x2": 114.27,
+      "y2": 985.72,
+      "width": 81.34,
+      "height": 79.1,
+      "center_x": 73.6,
+      "center_y": 946.17
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5983
+  },
+  "E103": {
+    "semantic": "Channel avatar for 'Business Insider'",
+    "box": {
+      "x1": 2487.64,
+      "y1": 1876.4,
+      "x2": 2645.68,
+      "y2": 1960.95,
+      "width": 158.04,
+      "height": 84.55,
+      "center_x": 2566.66,
+      "center_y": 1918.68
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.598
+  },
+  "E104": {
+    "semantic": "Baking filter button",
+    "box": {
+      "x1": 3087.71,
+      "y1": 452.09,
+      "x2": 3225.6,
+      "y2": 524.71,
+      "width": 137.89,
+      "height": 72.62,
+      "center_x": 3156.66,
+      "center_y": 488.4
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5962
+  },
+  "E105": {
+    "semantic": "Netflix icon in the browser tab",
+    "box": {
+      "x1": 900.92,
+      "y1": 89.38,
+      "x2": 966.64,
+      "y2": 140.5,
+      "width": 65.72,
+      "height": 51.12,
+      "center_x": 933.78,
+      "center_y": 114.94
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5948
+  },
+  "E106": {
+    "semantic": "GitHub icon in the browser tab",
+    "box": {
+      "x1": 2021.44,
+      "y1": 86.64,
+      "x2": 2105.31,
+      "y2": 144.11,
+      "width": 83.87,
+      "height": 57.47,
+      "center_x": 2063.38,
+      "center_y": 115.38
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5887
+  },
+  "E107": {
+    "semantic": "Video duration '17:19'",
+    "box": {
+      "x1": 1371.7,
+      "y1": 1902.9,
+      "x2": 1460.39,
+      "y2": 1954.47,
+      "width": 88.69,
+      "height": 51.57,
+      "center_x": 1416.05,
+      "center_y": 1928.69
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5878
+  },
+  "E108": {
+    "semantic": "Movies & TV button in the sidebar",
+    "box": {
+      "x1": 115.92,
+      "y1": 1664.1,
+      "x2": 331.15,
+      "y2": 1738.79,
+      "width": 215.23,
+      "height": 74.69,
+      "center_x": 223.53,
+      "center_y": 1701.44
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5841
+  },
+  "E109": {
+    "semantic": "Guide button in the YouTube top bar",
+    "box": {
+      "x1": 31.13,
+      "y1": 340.38,
+      "x2": 115.67,
+      "y2": 412.38,
+      "width": 84.54,
+      "height": 72.0,
+      "center_x": 73.4,
+      "center_y": 376.38
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5804
+  },
+  "E110": {
+    "semantic": "YouTube logo in the top bar",
+    "box": {
+      "x1": 206.07,
+      "y1": 346.95,
+      "x2": 344.86,
+      "y2": 410.49,
+      "width": 138.79,
+      "height": 63.54,
+      "center_x": 275.46,
+      "center_y": 378.72
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5794
+  },
+  "E111": {
+    "semantic": "Share button in the address bar",
+    "box": {
+      "x1": 2838.85,
+      "y1": 88.31,
+      "x2": 2903.69,
+      "y2": 142.92,
+      "width": 64.84,
+      "height": 54.61,
+      "center_x": 2871.27,
+      "center_y": 115.62
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5782
+  },
+  "E112": {
+    "semantic": "Mastercard icon in the browser tab",
+    "box": {
+      "x1": 33.03,
+      "y1": 95.95,
+      "x2": 91.42,
+      "y2": 141.33,
+      "width": 58.39,
+      "height": 45.38,
+      "center_x": 62.23,
+      "center_y": 118.64
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5764
+  },
+  "E113": {
+    "semantic": "User profile icon in the YouTube top bar",
+    "box": {
+      "x1": 35.48,
+      "y1": 829.47,
+      "x2": 113.49,
+      "y2": 905.02,
+      "width": 78.01,
+      "height": 75.55,
+      "center_x": 74.48,
+      "center_y": 867.25
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5701
+  },
+  "E114": {
+    "semantic": "Edit menu item in the menu bar",
+    "box": {
+      "x1": 325.49,
+      "y1": 14.54,
+      "x2": 395.24,
+      "y2": 60.77,
+      "width": 69.75,
+      "height": 46.23,
+      "center_x": 360.37,
+      "center_y": 37.66
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5691
+  },
+  "E115": {
+    "semantic": "Reload button in the browser top bar",
+    "box": {
+      "x1": 160.3,
+      "y1": 178.89,
+      "x2": 225.1,
+      "y2": 228.43,
+      "width": 64.8,
+      "height": 49.54,
+      "center_x": 192.7,
+      "center_y": 203.66
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5687
+  },
+  "E116": {
+    "semantic": "Shopping button in the sidebar",
+    "box": {
+      "x1": 127.08,
+      "y1": 1506.96,
+      "x2": 294.22,
+      "y2": 1583.19,
+      "width": 167.14,
+      "height": 76.23,
+      "center_x": 210.65,
+      "center_y": 1545.08
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5653
+  },
+  "E117": {
+    "semantic": "Back button in the browser top bar",
+    "box": {
+      "x1": 16.51,
+      "y1": 178.36,
+      "x2": 77.09,
+      "y2": 229.24,
+      "width": 60.58,
+      "height": 50.88,
+      "center_x": 46.8,
+      "center_y": 203.8
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5647
+  },
+  "E118": {
+    "semantic": "Ask Gemini button in the browser bookmarks bar",
+    "box": {
+      "x1": 3210.88,
+      "y1": 78.17,
+      "x2": 3445.44,
+      "y2": 148.29,
+      "width": 234.56,
+      "height": 70.12,
+      "center_x": 3328.16,
+      "center_y": 113.23
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5612
+  },
+  "E119": {
+    "semantic": "Channel avatar for 'The Christo Files'",
+    "box": {
+      "x1": 1496.98,
+      "y1": 1138.29,
+      "x2": 1577.37,
+      "y2": 1223.96,
+      "width": 80.39,
+      "height": 85.67,
+      "center_x": 1537.17,
+      "center_y": 1181.12
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.56
+  },
+  "E120": {
+    "semantic": "Google Workspace icon in the browser tab",
+    "box": {
+      "x1": 278.37,
+      "y1": 252.56,
+      "x2": 332.68,
+      "y2": 305.47,
+      "width": 54.31,
+      "height": 52.91,
+      "center_x": 305.52,
+      "center_y": 279.01
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5598
+  },
+  "E121": {
+    "semantic": "Video title 'LA's 'No-Car' Olympics Plan Explained' and channel info",
+    "box": {
+      "x1": 2561.48,
+      "y1": 1182.01,
+      "x2": 2719.58,
+      "y2": 1244.81,
+      "width": 158.1,
+      "height": 62.8,
+      "center_x": 2640.53,
+      "center_y": 1213.41
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5594
+  },
+  "E122": {
+    "semantic": "Tab menu item in the menu bar",
+    "box": {
+      "x1": 950.93,
+      "y1": 13.96,
+      "x2": 1017.7,
+      "y2": 59.42,
+      "width": 66.77,
+      "height": 45.46,
+      "center_x": 984.31,
+      "center_y": 36.69
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5585
+  },
+  "E123": {
+    "semantic": "Watch later button in the sidebar",
+    "box": {
+      "x1": 130.73,
+      "y1": 1070.76,
+      "x2": 305.47,
+      "y2": 1140.68,
+      "width": 174.74,
+      "height": 69.92,
+      "center_x": 218.1,
+      "center_y": 1105.72
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5526
+  },
+  "E124": {
+    "semantic": "Google Meet icon in the browser tab",
+    "box": {
+      "x1": 1516.87,
+      "y1": 90.54,
+      "x2": 1592.33,
+      "y2": 144.24,
+      "width": 75.46,
+      "height": 53.7,
+      "center_x": 1554.6,
+      "center_y": 117.39
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5472
+  },
+  "E125": {
+    "semantic": "Video title 'How I caught an illegal Russian Spy' and channel info",
+    "box": {
+      "x1": 1597.21,
+      "y1": 1182.23,
+      "x2": 1817.76,
+      "y2": 1243.12,
+      "width": 220.55,
+      "height": 60.89,
+      "center_x": 1707.49,
+      "center_y": 1212.67
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.545
+  },
+  "E126": {
+    "semantic": "Next button in the filter bar",
+    "box": {
+      "x1": 3373.43,
+      "y1": 456.51,
+      "x2": 3427.88,
+      "y2": 517.45,
+      "width": 54.45,
+      "height": 60.94,
+      "center_x": 3400.65,
+      "center_y": 486.98
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5428
+  },
+  "E127": {
+    "semantic": "Apps icon in the browser bookmarks bar",
+    "box": {
+      "x1": 12.28,
+      "y1": 248.33,
+      "x2": 78.1,
+      "y2": 300.46,
+      "width": 65.82,
+      "height": 52.13,
+      "center_x": 45.19,
+      "center_y": 274.4
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5411
+  },
+  "E128": {
+    "semantic": "Ad title 'Polish your portfolio with tools like Photoshop and Firefly. Students save 70%.'",
+    "box": {
+      "x1": 627.26,
+      "y1": 1177.85,
+      "x2": 1016.98,
+      "y2": 1241.23,
+      "width": 389.72,
+      "height": 63.38,
+      "center_x": 822.12,
+      "center_y": 1209.54
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5393
+  },
+  "E129": {
+    "semantic": "Safari icon in the browser tab",
+    "box": {
+      "x1": 2688.88,
+      "y1": 93.86,
+      "x2": 2730.24,
+      "y2": 138.59,
+      "width": 41.36,
+      "height": 44.73,
+      "center_x": 2709.56,
+      "center_y": 116.22
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5291
+  },
+  "E130": {
+    "semantic": "Trash icon in the macOS Dock",
+    "box": {
+      "x1": 2752.91,
+      "y1": 2061.86,
+      "x2": 2916.03,
+      "y2": 2228.65,
+      "width": 163.12,
+      "height": 166.79,
+      "center_x": 2834.47,
+      "center_y": 2145.26
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5284
+  },
+  "E131": {
+    "semantic": "Wealth filter button",
+    "box": {
+      "x1": 2200.04,
+      "y1": 459.97,
+      "x2": 2310.98,
+      "y2": 516.37,
+      "width": 110.94,
+      "height": 56.4,
+      "center_x": 2255.51,
+      "center_y": 488.17
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5233
+  },
+  "E132": {
+    "semantic": "Ask Gemini icon in the menu bar",
+    "box": {
+      "x1": 3221.96,
+      "y1": 86.93,
+      "x2": 3281.5,
+      "y2": 142.29,
+      "width": 59.54,
+      "height": 55.36,
+      "center_x": 3251.73,
+      "center_y": 114.61
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5229
+  },
+  "E133": {
+    "semantic": "Create button in the YouTube top bar",
+    "box": {
+      "x1": 3051.63,
+      "y1": 348.74,
+      "x2": 3172.14,
+      "y2": 400.49,
+      "width": 120.51,
+      "height": 51.75,
+      "center_x": 3111.89,
+      "center_y": 374.62
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5222
+  },
+  "E134": {
+    "semantic": "Safari icon in the browser tab",
+    "box": {
+      "x1": 2787.95,
+      "y1": 89.72,
+      "x2": 2838.59,
+      "y2": 140.06,
+      "width": 50.64,
+      "height": 50.34,
+      "center_x": 2813.27,
+      "center_y": 114.89
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5201
+  },
+  "E135": {
+    "semantic": "More from YouTube section header",
+    "box": {
+      "x1": 38.44,
+      "y1": 1867.74,
+      "x2": 361.88,
+      "y2": 1942.15,
+      "width": 323.44,
+      "height": 74.41,
+      "center_x": 200.16,
+      "center_y": 1904.94
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5116
+  },
+  "E136": {
+    "semantic": "YouTube Premium button in the sidebar",
+    "box": {
+      "x1": 136.98,
+      "y1": 347.87,
+      "x2": 213.99,
+      "y2": 408.03,
+      "width": 77.01,
+      "height": 60.16,
+      "center_x": 175.48,
+      "center_y": 377.95
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5038
+  },
+  "E137": {
+    "semantic": "Gmail icon in the browser tab",
+    "box": {
+      "x1": 595.04,
+      "y1": 88.73,
+      "x2": 666.21,
+      "y2": 141.87,
+      "width": 71.17,
+      "height": 53.14,
+      "center_x": 630.62,
+      "center_y": 115.3
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5028
+  },
+  "E138": {
+    "semantic": "History filter button",
+    "box": {
+      "x1": 2032.9,
+      "y1": 459.46,
+      "x2": 2154.64,
+      "y2": 517.21,
+      "width": 121.74,
+      "height": 57.75,
+      "center_x": 2093.77,
+      "center_y": 488.33
+    },
+    "box_format": "xyxy",
+    "class": "button",
+    "confidence": 0.5004
+  }
+}

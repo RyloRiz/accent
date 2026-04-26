@@ -7,7 +7,12 @@ import os
 import shutil
 import sys
 
-OUTPUT_DIR = Path("/Users/kaartiktejwani/UCLA Files/Playground Code/UI-DETR-1/test_outputs")
+PROJECT_DIR = Path(__file__).resolve().parent
+ENV_FILE = PROJECT_DIR / ".env"
+OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "test_outputs"))
+if not OUTPUT_DIR.is_absolute():
+    OUTPUT_DIR = PROJECT_DIR / OUTPUT_DIR
+
 INPUT_IMAGE_FILE = OUTPUT_DIR / "input_image.png"
 ANNOTATED_IMAGE_FILE = OUTPUT_DIR / "annotated_image.png"
 CROP_SHEET_FILE = OUTPUT_DIR / "crop_sheet.png"
@@ -17,11 +22,27 @@ ELEMENT_IDS_FILE = OUTPUT_DIR / "element_ids.json"
 SERVER_URL = os.getenv("GRADIO_SERVER_URL", "http://127.0.0.1:7860/")
 
 
+def load_dotenv(env_file: Path) -> None:
+    if not env_file.exists():
+        return
+
+    for line in env_file.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in stripped:
+            continue
+
+        key, value = stripped.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip("'\"")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
 def default_image_path() -> Path:
-    matches = sorted(Path("/Users/kaartiktejwani/Desktop").glob("Screenshot 2026-04-25 at 1.16.42*PM.png"))
-    if matches:
-        return matches[0]
-    return Path("/Users/kaartiktejwani/Desktop/Screenshot 2026-04-25 at 1.16.42 PM.png")
+    env_image = os.getenv("TEST_IMAGE") or os.getenv("SCREENSHOT_PATH")
+    if env_image:
+        return Path(env_image).expanduser()
+    raise FileNotFoundError("Pass an image path or set TEST_IMAGE in .env.")
 
 
 def make_crop_sheet(image_path: Path, detections: list[dict], output_path: Path) -> None:
@@ -91,6 +112,8 @@ def make_crop_sheet(image_path: Path, detections: list[dict], output_path: Path)
     sheet.save(output_path)
 
 
+load_dotenv(ENV_FILE)
+
 image_path = Path(sys.argv[1]).expanduser() if len(sys.argv) > 1 else default_image_path()
 
 if not image_path.exists():
@@ -105,12 +128,13 @@ annotated_image, summary, detections, _ = client.predict(
     api_name="/detect_ui_elements",
 )
 
-OUTPUT_DIR.mkdir(exist_ok=True)
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 for stale_file in (
     OUTPUT_DIR / "semantics.json",
     OUTPUT_DIR / "raw_gemma_output.json",
     OUTPUT_DIR / "llm_chat_log.json",
     OUTPUT_DIR / "llms.json",
+    OUTPUT_DIR / "final_action_buttons.json",
 ):
     stale_file.unlink(missing_ok=True)
 

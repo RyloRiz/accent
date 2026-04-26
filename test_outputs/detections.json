@@ -3,12 +3,12 @@
     "element_id": "E0",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.8595,
+    "confidence": 0.9486,
     "box": [
-      269.61,
-      632.69,
-      613.92,
-      698.04
+      524.61,
+      594.37,
+      1474.94,
+      1125.0
     ],
     "box_format": "xyxy"
   },
@@ -16,12 +16,12 @@
     "element_id": "E1",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.8565,
+    "confidence": 0.931,
     "box": [
-      1343.99,
-      370.69,
-      1615.09,
-      459.26
+      533.75,
+      1436.84,
+      1490.32,
+      1968.77
     ],
     "box_format": "xyxy"
   },
@@ -29,12 +29,12 @@
     "element_id": "E2",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.8502,
+    "confidence": 0.9284,
     "box": [
-      1388.22,
-      2073.63,
-      1521.9,
-      2204.88
+      1480.36,
+      577.66,
+      2462.27,
+      1141.9
     ],
     "box_format": "xyxy"
   },
@@ -42,12 +42,12 @@
     "element_id": "E3",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.8482,
+    "confidence": 0.8726,
     "box": [
-      1630.44,
-      368.52,
-      1904.89,
-      461.43
+      2469.7,
+      1443.55,
+      3409.56,
+      1993.68
     ],
     "box_format": "xyxy"
   },
@@ -55,12 +55,12 @@
     "element_id": "E4",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.839,
+    "confidence": 0.8542,
     "box": [
-      678.87,
-      2072.98,
-      808.47,
-      2214.71
+      2932.15,
+      169.45,
+      3097.82,
+      229.18
     ],
     "box_format": "xyxy"
   },
@@ -68,12 +68,12 @@
     "element_id": "E5",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.8069,
+    "confidence": 0.8172,
     "box": [
-      998.92,
-      340.71,
-      1161.69,
-      394.26
+      1151.25,
+      2061.24,
+      1289.22,
+      2219.15
     ],
     "box_format": "xyxy"
   },
@@ -81,12 +81,12 @@
     "element_id": "E6",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.8068,
+    "confidence": 0.8114,
     "box": [
-      2308.05,
-      2074.91,
-      2434.99,
-      2213.23
+      9.02,
+      2064.38,
+      391.36,
+      2235.8
     ],
     "box_format": "xyxy"
   },
@@ -94,12 +94,12 @@
     "element_id": "E7",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.805,
+    "confidence": 0.811,
     "box": [
-      1728.8,
-      2071.97,
-      1867.49,
-      2202.3
+      1802.79,
+      2061.32,
+      1947.54,
+      2229.3
     ],
     "box_format": "xyxy"
   },
@@ -107,12 +107,12 @@
     "element_id": "E8",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.8001,
+    "confidence": 0.8079,
     "box": [
-      2446.39,
-      2071.19,
-      2581.16,
-      2214.55
+      521.26,
+      1133.36,
+      612.19,
+      1224.09
     ],
     "box_format": "xyxy"
   },
@@ -120,12 +120,12 @@
     "element_id": "E9",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7951,
+    "confidence": 0.797,
     "box": [
-      835.36,
-      341.68,
-      983.01,
-      394.98
+      558.14,
+      2067.35,
+      696.43,
+      2216.91
     ],
     "box_format": "xyxy"
   },
@@ -133,12 +133,12 @@
     "element_id": "E10",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7907,
+    "confidence": 0.7918,
     "box": [
-      2651.29,
-      8.85,
-      2736.24,
-      66.9
+      855.21,
+      2066.77,
+      993.21,
+      2216.96
     ],
     "box_format": "xyxy"
   },
@@ -146,12 +146,12 @@
     "element_id": "E11",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7907,
+    "confidence": 0.7895,
     "box": [
-      307.8,
-      1552.63,
-      653.69,
-      1607.68
+      409.56,
+      2067.87,
+      549.1,
+      2209.22
     ],
     "box_format": "xyxy"
   },
@@ -159,12 +159,12 @@
     "element_id": "E12",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7888,
+    "confidence": 0.7893,
     "box": [
-      1879.83,
-      2075.5,
-      2011.01,
-      2213.74
+      1299.58,
+      2063.72,
+      1447.78,
+      2224.25
     ],
     "box_format": "xyxy"
   },
@@ -172,12 +172,12 @@
     "element_id": "E13",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7886,
+    "confidence": 0.7888,
     "box": [
-      963.66,
-      2077.07,
-      1089.53,
-      2205.04
+      2248.28,
+      2058.89,
+      2391.64,
+      2225.2
     ],
     "box_format": "xyxy"
   },
@@ -185,12 +185,12 @@
     "element_id": "E14",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7849,
+    "confidence": 0.7846,
     "box": [
-      3185.1,
-      166.45,
-      3381.66,
-      240.52
+      2548.82,
+      2063.01,
+      2692.49,
+      2224.14
     ],
     "box_format": "xyxy"
   },
@@ -198,12 +198,12 @@
     "element_id": "E15",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7787,
+    "confidence": 0.784,
     "box": [
-      1242.82,
-      2074.53,
-      1377.66,
-      2208.54
+      1482.03,
+      1437.52,
+      2435.74,
+      2045.38
     ],
     "box_format": "xyxy"
   },
@@ -211,12 +211,12 @@
     "element_id": "E16",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7759,
+    "confidence": 0.781,
     "box": [
-      304.5,
-      1748.89,
-      616.24,
-      1812.48
+      707.01,
+      2067.27,
+      845.0,
+      2218.36
     ],
     "box_format": "xyxy"
   },
@@ -224,12 +224,12 @@
     "element_id": "E17",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7711,
+    "confidence": 0.7784,
     "box": [
-      2021.57,
-      2073.41,
-      2153.76,
-      2211.18
+      582.77,
+      971.53,
+      1269.64,
+      1105.79
     ],
     "box_format": "xyxy"
   },
@@ -237,12 +237,12 @@
     "element_id": "E18",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.771,
+    "confidence": 0.7682,
     "box": [
-      822.11,
-      2076.23,
-      950.66,
-      2212.6
+      2475.09,
+      605.47,
+      3414.23,
+      1188.83
     ],
     "box_format": "xyxy"
   },
@@ -250,12 +250,12 @@
     "element_id": "E19",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7696,
+    "confidence": 0.7676,
     "box": [
-      2297.59,
-      1538.25,
-      2582.52,
-      1584.8
+      2461.16,
+      1133.58,
+      2552.29,
+      1223.6
     ],
     "box_format": "xyxy"
   },
@@ -263,12 +263,12 @@
     "element_id": "E20",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7693,
+    "confidence": 0.7675,
     "box": [
-      1219.05,
-      1215.2,
-      1820.04,
-      1268.81
+      1656.93,
+      2063.97,
+      1798.22,
+      2212.75
     ],
     "box_format": "xyxy"
   },
@@ -276,12 +276,12 @@
     "element_id": "E21",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7684,
+    "confidence": 0.7584,
     "box": [
-      2295.42,
-      738.32,
-      2513.7,
-      782.83
+      516.02,
+      443.94,
+      620.82,
+      532.38
     ],
     "box_format": "xyxy"
   },
@@ -289,12 +289,12 @@
     "element_id": "E22",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7596,
+    "confidence": 0.7537,
     "box": [
-      2165.24,
-      2075.26,
-      2292.71,
-      2211.43
+      3305.12,
+      171.54,
+      3384.95,
+      238.68
     ],
     "box_format": "xyxy"
   },
@@ -302,12 +302,12 @@
     "element_id": "E23",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.757,
+    "confidence": 0.7534,
     "box": [
-      2292.73,
-      1497.51,
-      2582.6,
-      1544.6
+      1002.84,
+      2062.65,
+      1142.56,
+      2226.19
     ],
     "box_format": "xyxy"
   },
@@ -315,12 +315,12 @@
     "element_id": "E24",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.756,
+    "confidence": 0.7511,
     "box": [
-      310.08,
-      177.69,
-      883.01,
-      227.09
+      3320.98,
+      335.8,
+      3412.69,
+      419.29
     ],
     "box_format": "xyxy"
   },
@@ -328,12 +328,12 @@
     "element_id": "E25",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7548,
+    "confidence": 0.7498,
     "box": [
-      2293.93,
-      1375.7,
-      2583.65,
-      1425.55
+      1923.19,
+      89.21,
+      1997.35,
+      140.58
     ],
     "box_format": "xyxy"
   },
@@ -341,12 +341,12 @@
     "element_id": "E26",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7503,
+    "confidence": 0.7489,
     "box": [
-      2285.92,
-      687.65,
-      2434.73,
-      733.66
+      2102.01,
+      2065.45,
+      2246.07,
+      2224.65
     ],
     "box_format": "xyxy"
   },
@@ -354,12 +354,12 @@
     "element_id": "E27",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7495,
+    "confidence": 0.7476,
     "box": [
-      1102.6,
-      2075.88,
-      1234.38,
-      2217.18
+      1723.29,
+      90.34,
+      1789.83,
+      141.78
     ],
     "box_format": "xyxy"
   },
@@ -367,12 +367,12 @@
     "element_id": "E28",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.745,
+    "confidence": 0.7462,
     "box": [
-      1530.15,
-      2071.16,
-      1658.94,
-      2206.62
+      2402.47,
+      2062.66,
+      2541.11,
+      2226.6
     ],
     "box_format": "xyxy"
   },
@@ -380,12 +380,12 @@
     "element_id": "E29",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7438,
+    "confidence": 0.7456,
     "box": [
-      537.04,
-      2074.34,
-      664.07,
-      2214.48
+      2747.84,
+      11.06,
+      2804.93,
+      65.49
     ],
     "box_format": "xyxy"
   },
@@ -393,12 +393,12 @@
     "element_id": "E30",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7258,
+    "confidence": 0.7385,
     "box": [
-      164.53,
-      256.15,
-      301.77,
-      297.75
+      1473.54,
+      448.44,
+      1784.13,
+      528.97
     ],
     "box_format": "xyxy"
   },
@@ -406,12 +406,12 @@
     "element_id": "E31",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7248,
+    "confidence": 0.7383,
     "box": [
-      1288.16,
-      602.81,
-      1481.16,
-      660.26
+      1596.23,
+      1133.94,
+      2138.09,
+      1201.11
     ],
     "box_format": "xyxy"
   },
@@ -419,12 +419,12 @@
     "element_id": "E32",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7172,
+    "confidence": 0.7364,
     "box": [
-      1959.0,
-      777.98,
-      2201.46,
-      821.71
+      2811.74,
+      11.93,
+      2868.77,
+      64.23
     ],
     "box_format": "xyxy"
   },
@@ -432,12 +432,12 @@
     "element_id": "E33",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.715,
+    "confidence": 0.7362,
     "box": [
-      2298.33,
-      1577.51,
-      2581.89,
-      1626.7
+      1005.62,
+      1293.4,
+      1465.53,
+      1379.03
     ],
     "box_format": "xyxy"
   },
@@ -445,12 +445,12 @@
     "element_id": "E34",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7146,
+    "confidence": 0.7359,
     "box": [
-      1951.99,
-      735.2,
-      2258.43,
-      783.25
+      1315.61,
+      90.36,
+      1383.48,
+      141.98
     ],
     "box_format": "xyxy"
   },
@@ -458,12 +458,12 @@
     "element_id": "E35",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7123,
+    "confidence": 0.7349,
     "box": [
-      2814.58,
-      13.48,
-      2867.25,
-      66.24
+      1214.11,
+      449.21,
+      1436.8,
+      524.46
     ],
     "box_format": "xyxy"
   },
@@ -471,12 +471,12 @@
     "element_id": "E36",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7094,
+    "confidence": 0.726,
     "box": [
-      2746.65,
-      12.08,
-      2801.97,
-      67.35
+      2125.78,
+      88.29,
+      2211.13,
+      142.86
     ],
     "box_format": "xyxy"
   },
@@ -484,12 +484,12 @@
     "element_id": "E37",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.7016,
+    "confidence": 0.7259,
     "box": [
-      1226.45,
-      1419.2,
-      1841.32,
-      1471.75
+      638.02,
+      447.46,
+      889.79,
+      530.11
     ],
     "box_format": "xyxy"
   },
@@ -497,12 +497,12 @@
     "element_id": "E38",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6991,
+    "confidence": 0.7255,
     "box": [
-      1224.77,
-      1859.61,
-      1840.85,
-      1906.6
+      2347.93,
+      445.39,
+      2605.37,
+      531.07
     ],
     "box_format": "xyxy"
   },
@@ -510,12 +510,12 @@
     "element_id": "E39",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6988,
+    "confidence": 0.721,
     "box": [
-      195.78,
-      89.9,
-      250.79,
-      142.77
+      2633.73,
+      91.54,
+      2699.14,
+      143.2
     ],
     "box_format": "xyxy"
   },
@@ -523,12 +523,12 @@
     "element_id": "E40",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6969,
+    "confidence": 0.717,
     "box": [
-      602.77,
-      91.8,
-      655.96,
-      144.23
+      2532.04,
+      89.29,
+      2601.78,
+      143.6
     ],
     "box_format": "xyxy"
   },
@@ -536,12 +536,12 @@
     "element_id": "E41",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6967,
+    "confidence": 0.7164,
     "box": [
-      2293.32,
-      775.74,
-      2562.1,
-      827.29
+      818.79,
+      13.43,
+      931.25,
+      60.84
     ],
     "box_format": "xyxy"
   },
@@ -549,12 +549,12 @@
     "element_id": "E42",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6921,
+    "confidence": 0.7135,
     "box": [
-      2295.39,
-      1775.33,
-      2582.17,
-      1827.03
+      2737.55,
+      90.77,
+      2800.41,
+      141.87
     ],
     "box_format": "xyxy"
   },
@@ -562,12 +562,12 @@
     "element_id": "E43",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.691,
+    "confidence": 0.7132,
     "box": [
-      2371.91,
-      88.48,
-      2429.71,
-      147.29
+      3208.34,
+      338.99,
+      3293.18,
+      415.52
     ],
     "box_format": "xyxy"
   },
@@ -575,12 +575,12 @@
     "element_id": "E44",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.691,
+    "confidence": 0.7104,
     "box": [
-      100.01,
-      15.41,
-      203.23,
-      61.55
+      99.75,
+      13.49,
+      225.39,
+      63.75
     ],
     "box_format": "xyxy"
   },
@@ -588,12 +588,12 @@
     "element_id": "E45",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6909,
+    "confidence": 0.7079,
     "box": [
-      1226.07,
-      1578.02,
-      1850.75,
-      1630.08
+      2318.86,
+      331.57,
+      2413.83,
+      418.76
     ],
     "box_format": "xyxy"
   },
@@ -601,12 +601,12 @@
     "element_id": "E46",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6843,
+    "confidence": 0.7062,
     "box": [
-      1143.87,
-      601.93,
-      1214.64,
-      660.61
+      1381.12,
+      710.76,
+      1441.97,
+      769.92
     ],
     "box_format": "xyxy"
   },
@@ -614,12 +614,12 @@
     "element_id": "E47",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6839,
+    "confidence": 0.7062,
     "box": [
-      2291.56,
-      816.4,
-      2559.7,
-      865.58
+      1819.29,
+      87.3,
+      1899.21,
+      142.41
     ],
     "box_format": "xyxy"
   },
@@ -627,12 +627,12 @@
     "element_id": "E48",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.682,
+    "confidence": 0.7044,
     "box": [
-      573.61,
-      12.76,
-      689.77,
-      62.89
+      1618.92,
+      89.96,
+      1690.24,
+      141.05
     ],
     "box_format": "xyxy"
   },
@@ -640,12 +640,12 @@
     "element_id": "E49",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6816,
+    "confidence": 0.7037,
     "box": [
-      859.72,
-      1700.1,
-      908.29,
-      1747.84
+      2911.33,
+      443.78,
+      3075.89,
+      534.84
     ],
     "box_format": "xyxy"
   },
@@ -653,12 +653,12 @@
     "element_id": "E50",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6816,
+    "confidence": 0.7032,
     "box": [
-      861.58,
-      606.87,
-      921.83,
-      656.34
+      2434.0,
+      89.74,
+      2497.36,
+      142.53
     ],
     "box_format": "xyxy"
   },
@@ -666,12 +666,12 @@
     "element_id": "E51",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.679,
+    "confidence": 0.6967,
     "box": [
-      1216.79,
-      601.54,
-      1278.39,
-      658.77
+      2228.2,
+      88.59,
+      2307.06,
+      143.44
     ],
     "box_format": "xyxy"
   },
@@ -679,12 +679,12 @@
     "element_id": "E52",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6754,
+    "confidence": 0.6967,
     "box": [
-      2296.67,
-      1737.6,
-      2581.47,
-      1788.2
+      1497.77,
+      1986.91,
+      1583.83,
+      2057.55
     ],
     "box_format": "xyxy"
   },
@@ -692,12 +692,12 @@
     "element_id": "E53",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6748,
+    "confidence": 0.6925,
     "box": [
-      3096.39,
-      12.13,
-      3153.47,
-      65.11
+      309.1,
+      179.71,
+      500.36,
+      225.97
     ],
     "box_format": "xyxy"
   },
@@ -705,12 +705,12 @@
     "element_id": "E54",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6705,
+    "confidence": 0.6922,
     "box": [
-      1853.91,
-      685.46,
-      1935.34,
-      736.67
+      642.98,
+      13.31,
+      796.62,
+      63.95
     ],
     "box_format": "xyxy"
   },
@@ -718,12 +718,12 @@
     "element_id": "E55",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.66,
+    "confidence": 0.6921,
     "box": [
-      1168.23,
-      1661.76,
-      1216.06,
-      1708.29
+      1953.62,
+      2061.66,
+      2101.26,
+      2227.08
     ],
     "box_format": "xyxy"
   },
@@ -731,12 +731,12 @@
     "element_id": "E56",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.66,
+    "confidence": 0.6907,
     "box": [
-      2338.08,
-      596.87,
-      2418.6,
-      666.22
+      2680.06,
+      12.02,
+      2741.04,
+      63.96
     ],
     "box_format": "xyxy"
   },
@@ -744,12 +744,12 @@
     "element_id": "E57",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6599,
+    "confidence": 0.69,
     "box": [
-      1200.13,
-      691.44,
-      1293.08,
-      732.18
+      1147.9,
+      1307.91,
+      1323.57,
+      1370.71
     ],
     "box_format": "xyxy"
   },
@@ -757,12 +757,12 @@
     "element_id": "E58",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6593,
+    "confidence": 0.6898,
     "box": [
-      855.1,
-      945.61,
-      1096.24,
-      1004.03
+      123.07,
+      1314.06,
+      311.6,
+      1384.1
     ],
     "box_format": "xyxy"
   },
@@ -770,12 +770,12 @@
     "element_id": "E59",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6584,
+    "confidence": 0.6887,
     "box": [
-      1166.95,
-      1220.88,
-      1219.46,
-      1269.31
+      2560.31,
+      1130.8,
+      3149.12,
+      1206.12
     ],
     "box_format": "xyxy"
   },
@@ -783,12 +783,12 @@
     "element_id": "E60",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6576,
+    "confidence": 0.6883,
     "box": [
-      311.43,
-      1613.73,
-      828.46,
-      1653.04
+      37.51,
+      540.82,
+      110.37,
+      614.15
     ],
     "box_format": "xyxy"
   },
@@ -796,12 +796,12 @@
     "element_id": "E61",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.657,
+    "confidence": 0.6879,
     "box": [
-      364.9,
-      254.79,
-      476.92,
-      296.92
+      917.39,
+      448.29,
+      1088.18,
+      525.55
     ],
     "box_format": "xyxy"
   },
@@ -809,12 +809,12 @@
     "element_id": "E62",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6548,
+    "confidence": 0.6861,
     "box": [
-      903.4,
-      1696.76,
-      1002.43,
-      1753.48
+      799.68,
+      90.48,
+      864.22,
+      141.11
     ],
     "box_format": "xyxy"
   },
@@ -822,12 +822,12 @@
     "element_id": "E63",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6523,
+    "confidence": 0.6828,
     "box": [
-      1224.94,
-      1373.78,
-      1820.55,
-      1425.15
+      697.0,
+      91.92,
+      760.87,
+      140.45
     ],
     "box_format": "xyxy"
   },
@@ -835,12 +835,12 @@
     "element_id": "E64",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6512,
+    "confidence": 0.6822,
     "box": [
-      2878.18,
-      13.04,
-      2954.47,
-      63.91
+      1418.49,
+      92.09,
+      1483.92,
+      141.36
     ],
     "box_format": "xyxy"
   },
@@ -848,12 +848,12 @@
     "element_id": "E65",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6505,
+    "confidence": 0.6808,
     "box": [
-      1221.93,
-      898.29,
-      1651.54,
-      943.35
+      124.24,
+      545.6,
+      248.6,
+      605.91
     ],
     "box_format": "xyxy"
   },
@@ -861,12 +861,12 @@
     "element_id": "E66",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6477,
+    "confidence": 0.671,
     "box": [
-      1165.67,
-      1501.7,
-      1217.87,
-      1544.32
+      497.69,
+      91.42,
+      560.12,
+      141.11
     ],
     "box_format": "xyxy"
   },
@@ -874,12 +874,12 @@
     "element_id": "E67",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6455,
+    "confidence": 0.67,
     "box": [
-      862.64,
-      1530.22,
-      910.71,
-      1577.93
+      3247.71,
+      449.52,
+      3420.45,
+      529.4
     ],
     "box_format": "xyxy"
   },
@@ -887,12 +887,12 @@
     "element_id": "E68",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6441,
+    "confidence": 0.6685,
     "box": [
-      2299.62,
-      1176.54,
-      2596.02,
-      1225.01
+      2465.29,
+      1987.43,
+      2550.51,
+      2051.47
     ],
     "box_format": "xyxy"
   },
@@ -900,12 +900,12 @@
     "element_id": "E69",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.64,
+    "confidence": 0.6649,
     "box": [
-      470.41,
-      91.29,
-      517.91,
-      142.91
+      1563.49,
+      1980.55,
+      2261.57,
+      2043.45
     ],
     "box_format": "xyxy"
   },
@@ -913,12 +913,12 @@
     "element_id": "E70",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6397,
+    "confidence": 0.6612,
     "box": [
-      2002.57,
-      601.1,
-      2081.61,
-      660.45
+      129.96,
+      835.04,
+      324.75,
+      899.83
     ],
     "box_format": "xyxy"
   },
@@ -926,12 +926,12 @@
     "element_id": "E71",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.631,
+    "confidence": 0.6608,
     "box": [
-      1167.59,
-      1539.69,
-      1217.66,
-      1592.51
+      132.18,
+      1155.51,
+      314.0,
+      1218.62
     ],
     "box_format": "xyxy"
   },
@@ -939,12 +939,12 @@
     "element_id": "E72",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6306,
+    "confidence": 0.6602,
     "box": [
-      1167.07,
-      1618.28,
-      1222.01,
-      1674.07
+      1035.95,
+      14.12,
+      1147.54,
+      60.72
     ],
     "box_format": "xyxy"
   },
@@ -952,12 +952,12 @@
     "element_id": "E73",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6305,
+    "confidence": 0.6599,
     "box": [
-      862.95,
-      1588.31,
-      911.7,
-      1637.68
+      1596.37,
+      1222.61,
+      1937.99,
+      1317.47
     ],
     "box_format": "xyxy"
   },
@@ -965,12 +965,12 @@
     "element_id": "E74",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6304,
+    "confidence": 0.6589,
     "box": [
-      2299.97,
-      1697.07,
-      2576.2,
-      1747.28
+      1800.87,
+      443.29,
+      2005.85,
+      531.14
     ],
     "box_format": "xyxy"
   },
@@ -978,12 +978,12 @@
     "element_id": "E75",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6294,
+    "confidence": 0.6588,
     "box": [
-      908.42,
-      894.53,
-      1063.05,
-      942.27
+      128.23,
+      915.98,
+      268.45,
+      979.58
     ],
     "box_format": "xyxy"
   },
@@ -991,12 +991,12 @@
     "element_id": "E76",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6253,
+    "confidence": 0.6576,
     "box": [
-      538.2,
-      255.52,
-      679.35,
-      296.79
+      2579.1,
+      1983.04,
+      3299.33,
+      2045.44
     ],
     "box_format": "xyxy"
   },
@@ -1004,12 +1004,12 @@
     "element_id": "E77",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6236,
+    "confidence": 0.6567,
     "box": [
-      1340.69,
-      500.46,
-      1427.86,
-      544.12
+      20.9,
+      447.85,
+      429.86,
+      545.46
     ],
     "box_format": "xyxy"
   },
@@ -1017,12 +1017,12 @@
     "element_id": "E78",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6232,
+    "confidence": 0.6553,
     "box": [
-      1954.57,
-      1736.83,
-      2255.54,
-      1784.62
+      2634.33,
+      445.06,
+      2898.06,
+      533.17
     ],
     "box_format": "xyxy"
   },
@@ -1030,12 +1030,12 @@
     "element_id": "E79",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6182,
+    "confidence": 0.6514,
     "box": [
-      2644.18,
-      89.78,
-      2695.5,
-      141.74
+      1112.0,
+      91.51,
+      1172.03,
+      139.88
     ],
     "box_format": "xyxy"
   },
@@ -1043,12 +1043,12 @@
     "element_id": "E80",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6154,
+    "confidence": 0.6503,
     "box": [
-      3171.61,
-      12.18,
-      3319.54,
-      61.83
+      650.01,
+      457.21,
+      881.91,
+      519.06
     ],
     "box_format": "xyxy"
   },
@@ -1056,12 +1056,12 @@
     "element_id": "E81",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.609,
+    "confidence": 0.6488,
     "box": [
-      3211.94,
-      77.58,
-      3447.35,
-      151.52
+      3039.89,
+      13.53,
+      3096.96,
+      62.57
     ],
     "box_format": "xyxy"
   },
@@ -1069,12 +1069,12 @@
     "element_id": "E82",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6085,
+    "confidence": 0.6481,
     "box": [
-      3072.55,
-      174.61,
-      3150.37,
-      230.21
+      3105.11,
+      12.51,
+      3160.75,
+      63.43
     ],
     "box_format": "xyxy"
   },
@@ -1082,12 +1082,12 @@
     "element_id": "E83",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6083,
+    "confidence": 0.6473,
     "box": [
-      3323.19,
-      14.0,
-      3433.12,
-      57.86
+      1412.19,
+      1980.49,
+      1486.85,
+      2046.46
     ],
     "box_format": "xyxy"
   },
@@ -1095,12 +1095,12 @@
     "element_id": "E84",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6083,
+    "confidence": 0.6444,
     "box": [
-      1979.24,
-      1937.08,
-      2253.41,
-      1990.48
+      12.6,
+      2009.68,
+      1196.39,
+      2053.1
     ],
     "box_format": "xyxy"
   },
@@ -1108,12 +1108,12 @@
     "element_id": "E85",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6024,
+    "confidence": 0.6407,
     "box": [
-      2296.56,
-      1937.08,
-      2589.93,
-      1988.82
+      2332.7,
+      89.6,
+      2406.39,
+      141.91
     ],
     "box_format": "xyxy"
   },
@@ -1121,12 +1121,12 @@
     "element_id": "E86",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6002,
+    "confidence": 0.6388,
     "box": [
-      16.38,
-      251.62,
-      78.6,
-      297.76
+      1376.81,
+      619.55,
+      1445.23,
+      670.64
     ],
     "box_format": "xyxy"
   },
@@ -1134,12 +1134,12 @@
     "element_id": "E87",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.6002,
+    "confidence": 0.6376,
     "box": [
-      1827.6,
-      91.82,
-      1886.67,
-      146.63
+      132.2,
+      627.68,
+      331.24,
+      688.89
     ],
     "box_format": "xyxy"
   },
@@ -1147,12 +1147,12 @@
     "element_id": "E88",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5949,
+    "confidence": 0.6369,
     "box": [
-      1149.09,
-      86.48,
-      1201.95,
-      146.56
+      2180.2,
+      334.91,
+      2276.51,
+      419.14
     ],
     "box_format": "xyxy"
   },
@@ -1160,12 +1160,12 @@
     "element_id": "E89",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5941,
+    "confidence": 0.6365,
     "box": [
-      31.73,
-      10.25,
-      82.74,
-      62.09
+      619.67,
+      1226.91,
+      1029.43,
+      1292.72
     ],
     "box_format": "xyxy"
   },
@@ -1173,12 +1173,12 @@
     "element_id": "E90",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5936,
+    "confidence": 0.6365,
     "box": [
-      1168.57,
-      1781.55,
-      1214.23,
-      1830.26
+      115.91,
+      253.88,
+      266.07,
+      297.0
     ],
     "box_format": "xyxy"
   },
@@ -1186,12 +1186,12 @@
     "element_id": "E91",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5935,
+    "confidence": 0.6355,
     "box": [
-      2424.66,
-      602.22,
-      2499.46,
-      660.83
+      23.53,
+      1069.81,
+      118.07,
+      1144.39
     ],
     "box_format": "xyxy"
   },
@@ -1199,12 +1199,12 @@
     "element_id": "E92",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5907,
+    "confidence": 0.6327,
     "box": [
-      1167.68,
-      1420.59,
-      1216.01,
-      1460.17
+      28.45,
+      9.54,
+      83.55,
+      61.48
     ],
     "box_format": "xyxy"
   },
@@ -1212,12 +1212,12 @@
     "element_id": "E93",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5869,
+    "confidence": 0.6313,
     "box": [
-      1219.84,
-      1139.79,
-      1477.52,
-      1219.0
+      2564.68,
+      1225.07,
+      2903.83,
+      1301.76
     ],
     "box_format": "xyxy"
   },
@@ -1225,12 +1225,12 @@
     "element_id": "E94",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5837,
+    "confidence": 0.6304,
     "box": [
-      944.43,
-      606.27,
-      986.16,
-      657.28
+      706.59,
+      1304.11,
+      824.68,
+      1370.55
     ],
     "box_format": "xyxy"
   },
@@ -1238,12 +1238,12 @@
     "element_id": "E95",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5822,
+    "confidence": 0.6288,
     "box": [
-      1161.4,
-      1938.69,
-      1221.99,
-      2002.68
+      3065.6,
+      2060.05,
+      3451.21,
+      2235.46
     ],
     "box_format": "xyxy"
   },
@@ -1251,12 +1251,12 @@
     "element_id": "E96",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.58,
+    "confidence": 0.6271,
     "box": [
-      306.92,
-      1550.73,
-      661.4,
-      1616.3
+      124.85,
+      994.08,
+      266.36,
+      1056.94
     ],
     "box_format": "xyxy"
   },
@@ -1264,12 +1264,12 @@
     "element_id": "E97",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5781,
+    "confidence": 0.6252,
     "box": [
-      1948.74,
-      1498.81,
-      2211.55,
-      1544.1
+      293.73,
+      87.77,
+      356.63,
+      143.13
     ],
     "box_format": "xyxy"
   },
@@ -1277,12 +1277,12 @@
     "element_id": "E98",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5777,
+    "confidence": 0.6111,
     "box": [
-      1167.56,
-      1101.37,
-      1216.5,
-      1145.4
+      2999.24,
+      331.84,
+      3196.17,
+      420.38
     ],
     "box_format": "xyxy"
   },
@@ -1290,12 +1290,12 @@
     "element_id": "E99",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5759,
+    "confidence": 0.6022,
     "box": [
-      748.65,
-      254.33,
-      985.18,
-      297.87
+      2184.72,
+      445.4,
+      2324.15,
+      533.29
     ],
     "box_format": "xyxy"
   },
@@ -1303,12 +1303,12 @@
     "element_id": "E100",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5753,
+    "confidence": 0.5999,
     "box": [
-      1952.27,
-      1538.3,
-      2249.58,
-      1581.66
+      127.34,
+      464.44,
+      239.48,
+      520.99
     ],
     "box_format": "xyxy"
   },
@@ -1316,12 +1316,12 @@
     "element_id": "E101",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5746,
+    "confidence": 0.5993,
     "box": [
-      856.94,
-      1813.16,
-      913.24,
-      1860.77
+      329.17,
+      255.42,
+      552.77,
+      299.11
     ],
     "box_format": "xyxy"
   },
@@ -1329,12 +1329,12 @@
     "element_id": "E102",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5726,
+    "confidence": 0.5983,
     "box": [
-      709.61,
-      14.87,
-      784.62,
-      63.42
+      32.93,
+      906.62,
+      114.27,
+      985.72
     ],
     "box_format": "xyxy"
   },
@@ -1342,12 +1342,12 @@
     "element_id": "E103",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5719,
+    "confidence": 0.598,
     "box": [
-      3042.35,
-      12.82,
-      3095.83,
-      63.68
+      2487.64,
+      1876.4,
+      2645.68,
+      1960.95
     ],
     "box_format": "xyxy"
   },
@@ -1355,12 +1355,12 @@
     "element_id": "E104",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5692,
+    "confidence": 0.5962,
     "box": [
-      2576.88,
-      594.5,
-      2663.96,
-      660.48
+      3087.71,
+      452.09,
+      3225.6,
+      524.71
     ],
     "box_format": "xyxy"
   },
@@ -1368,12 +1368,12 @@
     "element_id": "E105",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5679,
+    "confidence": 0.5948,
     "box": [
-      877.46,
-      88.52,
-      982.12,
-      141.38
+      900.92,
+      89.38,
+      966.64,
+      140.5
     ],
     "box_format": "xyxy"
   },
@@ -1381,12 +1381,12 @@
     "element_id": "E106",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5677,
+    "confidence": 0.5887,
     "box": [
-      494.16,
-      12.92,
-      554.77,
-      63.02
+      2021.44,
+      86.64,
+      2105.31,
+      144.11
     ],
     "box_format": "xyxy"
   },
@@ -1394,12 +1394,12 @@
     "element_id": "E107",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5671,
+    "confidence": 0.5878,
     "box": [
-      1168.22,
-      1583.08,
-      1217.68,
-      1626.09
+      1371.7,
+      1902.9,
+      1460.39,
+      1954.47
     ],
     "box_format": "xyxy"
   },
@@ -1407,12 +1407,12 @@
     "element_id": "E108",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5659,
+    "confidence": 0.5841,
     "box": [
-      2305.18,
-      1339.08,
-      2587.41,
-      1387.27
+      115.92,
+      1664.1,
+      331.15,
+      1738.79
     ],
     "box_format": "xyxy"
   },
@@ -1420,12 +1420,12 @@
     "element_id": "E109",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5658,
+    "confidence": 0.5804,
     "box": [
-      2968.49,
-      172.26,
-      3043.25,
-      228.52
+      31.13,
+      340.38,
+      115.67,
+      412.38
     ],
     "box_format": "xyxy"
   },
@@ -1433,12 +1433,12 @@
     "element_id": "E110",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.565,
+    "confidence": 0.5794,
     "box": [
-      910.75,
-      1754.6,
-      1044.61,
-      1811.68
+      206.07,
+      346.95,
+      344.86,
+      410.49
     ],
     "box_format": "xyxy"
   },
@@ -1446,12 +1446,12 @@
     "element_id": "E111",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5647,
+    "confidence": 0.5782,
     "box": [
-      1167.17,
-      1301.84,
-      1216.43,
-      1340.76
+      2838.85,
+      88.31,
+      2903.69,
+      142.92
     ],
     "box_format": "xyxy"
   },
@@ -1459,12 +1459,12 @@
     "element_id": "E112",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5625,
+    "confidence": 0.5764,
     "box": [
-      333.85,
-      89.39,
-      384.23,
-      141.71
+      33.03,
+      95.95,
+      91.42,
+      141.33
     ],
     "box_format": "xyxy"
   },
@@ -1472,12 +1472,12 @@
     "element_id": "E113",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5603,
+    "confidence": 0.5701,
     "box": [
-      2554.87,
-      90.23,
-      2619.72,
-      140.46
+      35.48,
+      829.47,
+      113.49,
+      905.02
     ],
     "box_format": "xyxy"
   },
@@ -1485,12 +1485,12 @@
     "element_id": "E114",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5591,
+    "confidence": 0.5691,
     "box": [
-      1222.94,
-      1496.62,
-      1842.62,
-      1553.32
+      325.49,
+      14.54,
+      395.24,
+      60.77
     ],
     "box_format": "xyxy"
   },
@@ -1498,12 +1498,12 @@
     "element_id": "E115",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5588,
+    "confidence": 0.5687,
     "box": [
-      1223.71,
-      1541.55,
-      1596.14,
-      1581.81
+      160.3,
+      178.89,
+      225.1,
+      228.43
     ],
     "box_format": "xyxy"
   },
@@ -1511,12 +1511,12 @@
     "element_id": "E116",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.55,
+    "confidence": 0.5653,
     "box": [
-      2692.19,
-      91.34,
-      2757.17,
-      138.9
+      127.08,
+      1506.96,
+      294.22,
+      1583.19
     ],
     "box_format": "xyxy"
   },
@@ -1524,12 +1524,12 @@
     "element_id": "E117",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5499,
+    "confidence": 0.5647,
     "box": [
-      1956.9,
-      816.2,
-      2201.25,
-      861.27
+      16.51,
+      178.36,
+      77.09,
+      229.24
     ],
     "box_format": "xyxy"
   },
@@ -1537,12 +1537,12 @@
     "element_id": "E118",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5462,
+    "confidence": 0.5612,
     "box": [
-      861.02,
-      1416.58,
-      911.09,
-      1469.22
+      3210.88,
+      78.17,
+      3445.44,
+      148.29
     ],
     "box_format": "xyxy"
   },
@@ -1550,12 +1550,12 @@
     "element_id": "E119",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5451,
+    "confidence": 0.56,
     "box": [
-      2299.21,
-      1816.04,
-      2588.0,
-      1865.2
+      1496.98,
+      1138.29,
+      1577.37,
+      1223.96
     ],
     "box_format": "xyxy"
   },
@@ -1563,12 +1563,12 @@
     "element_id": "E120",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5438,
+    "confidence": 0.5598,
     "box": [
-      2918.71,
-      92.22,
-      2965.28,
-      141.58
+      278.37,
+      252.56,
+      332.68,
+      305.47
     ],
     "box_format": "xyxy"
   },
@@ -1576,12 +1576,12 @@
     "element_id": "E121",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5435,
+    "confidence": 0.5594,
     "box": [
-      1166.62,
-      1024.07,
-      1213.65,
-      1066.85
+      2561.48,
+      1182.01,
+      2719.58,
+      1244.81
     ],
     "box_format": "xyxy"
   },
@@ -1589,12 +1589,12 @@
     "element_id": "E122",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5419,
+    "confidence": 0.5585,
     "box": [
-      95.58,
-      178.29,
-      143.14,
-      223.86
+      950.93,
+      13.96,
+      1017.7,
+      59.42
     ],
     "box_format": "xyxy"
   },
@@ -1602,12 +1602,12 @@
     "element_id": "E123",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5387,
+    "confidence": 0.5526,
     "box": [
-      1877.59,
-      89.06,
-      1942.74,
-      143.03
+      130.73,
+      1070.76,
+      305.47,
+      1140.68
     ],
     "box_format": "xyxy"
   },
@@ -1615,12 +1615,12 @@
     "element_id": "E124",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5377,
+    "confidence": 0.5472,
     "box": [
-      263.17,
-      546.35,
-      1252.06,
-      601.69
+      1516.87,
+      90.54,
+      1592.33,
+      144.24
     ],
     "box_format": "xyxy"
   },
@@ -1628,12 +1628,12 @@
     "element_id": "E125",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5368,
+    "confidence": 0.545,
     "box": [
-      1224.57,
-      1664.13,
-      1582.04,
-      1715.4
+      1597.21,
+      1182.23,
+      1817.76,
+      1243.12
     ],
     "box_format": "xyxy"
   },
@@ -1641,12 +1641,12 @@
     "element_id": "E126",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5345,
+    "confidence": 0.5428,
     "box": [
-      2420.62,
-      596.85,
-      2526.06,
-      664.3
+      3373.43,
+      456.51,
+      3427.88,
+      517.45
     ],
     "box_format": "xyxy"
   },
@@ -1654,12 +1654,12 @@
     "element_id": "E127",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5326,
+    "confidence": 0.5411,
     "box": [
-      1974.47,
-      1379.37,
-      2220.94,
-      1423.82
+      12.28,
+      248.33,
+      78.1,
+      300.46
     ],
     "box_format": "xyxy"
   },
@@ -1667,12 +1667,12 @@
     "element_id": "E128",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5312,
+    "confidence": 0.5393,
     "box": [
-      1169.28,
-      1177.29,
-      1215.01,
-      1222.5
+      627.26,
+      1177.85,
+      1016.98,
+      1241.23
     ],
     "box_format": "xyxy"
   },
@@ -1680,12 +1680,12 @@
     "element_id": "E129",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5287,
+    "confidence": 0.5291,
     "box": [
-      3223.79,
-      85.64,
-      3278.33,
-      140.73
+      2688.88,
+      93.86,
+      2730.24,
+      138.59
     ],
     "box_format": "xyxy"
   },
@@ -1693,12 +1693,12 @@
     "element_id": "E130",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5286,
+    "confidence": 0.5284,
     "box": [
-      33.15,
-      95.48,
-      82.63,
-      139.69
+      2752.91,
+      2061.86,
+      2916.03,
+      2228.65
     ],
     "box_format": "xyxy"
   },
@@ -1706,12 +1706,12 @@
     "element_id": "E131",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5283,
+    "confidence": 0.5233,
     "box": [
-      167.98,
-      176.6,
-      214.98,
-      223.2
+      2200.04,
+      459.97,
+      2310.98,
+      516.37
     ],
     "box_format": "xyxy"
   },
@@ -1719,12 +1719,12 @@
     "element_id": "E132",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.528,
+    "confidence": 0.5229,
     "box": [
-      2826.65,
-      89.98,
-      2891.79,
-      140.89
+      3221.96,
+      86.93,
+      3281.5,
+      142.29
     ],
     "box_format": "xyxy"
   },
@@ -1732,12 +1732,12 @@
     "element_id": "E133",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5271,
+    "confidence": 0.5222,
     "box": [
-      865.09,
-      894.27,
-      910.73,
-      941.06
+      3051.63,
+      348.74,
+      3172.14,
+      400.49
     ],
     "box_format": "xyxy"
   },
@@ -1745,12 +1745,12 @@
     "element_id": "E134",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5271,
+    "confidence": 0.5201,
     "box": [
-      858.96,
-      721.5,
-      1029.75,
-      774.11
+      2787.95,
+      89.72,
+      2838.59,
+      140.06
     ],
     "box_format": "xyxy"
   },
@@ -1758,12 +1758,12 @@
     "element_id": "E135",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5263,
+    "confidence": 0.5116,
     "box": [
-      906.61,
-      1474.46,
-      996.35,
-      1529.13
+      38.44,
+      1867.74,
+      361.88,
+      1942.15
     ],
     "box_format": "xyxy"
   },
@@ -1771,12 +1771,12 @@
     "element_id": "E136",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5203,
+    "confidence": 0.5038,
     "box": [
-      2298.86,
-      1295.22,
-      2580.5,
-      1346.9
+      136.98,
+      347.87,
+      213.99,
+      408.03
     ],
     "box_format": "xyxy"
   },
@@ -1784,12 +1784,12 @@
     "element_id": "E137",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.5191,
+    "confidence": 0.5028,
     "box": [
-      1553.7,
-      86.2,
-      1613.18,
-      148.18
+      595.04,
+      88.73,
+      666.21,
+      141.87
     ],
     "box_format": "xyxy"
   },
@@ -1797,142 +1797,12 @@
     "element_id": "E138",
     "class": "button",
     "class_id": 0,
-    "confidence": 0.519,
+    "confidence": 0.5004,
     "box": [
-      2858.66,
-      163.83,
-      2949.64,
-      243.19
-    ],
-    "box_format": "xyxy"
-  },
-  {
-    "element_id": "E139",
-    "class": "button",
-    "class_id": 0,
-    "confidence": 0.5188,
-    "box": [
-      1223.72,
-      749.61,
-      1833.23,
-      833.58
-    ],
-    "box_format": "xyxy"
-  },
-  {
-    "element_id": "E140",
-    "class": "button",
-    "class_id": 0,
-    "confidence": 0.5163,
-    "box": [
-      1833.49,
-      597.56,
-      1925.39,
-      667.47
-    ],
-    "box_format": "xyxy"
-  },
-  {
-    "element_id": "E141",
-    "class": "button",
-    "class_id": 0,
-    "confidence": 0.5154,
-    "box": [
-      25.69,
-      341.02,
-      87.49,
-      400.97
-    ],
-    "box_format": "xyxy"
-  },
-  {
-    "element_id": "E142",
-    "class": "button",
-    "class_id": 0,
-    "confidence": 0.514,
-    "box": [
-      1967.86,
-      93.21,
-      2021.21,
-      144.18
-    ],
-    "box_format": "xyxy"
-  },
-  {
-    "element_id": "E143",
-    "class": "button",
-    "class_id": 0,
-    "confidence": 0.5113,
-    "box": [
-      2294.98,
-      1899.54,
-      2585.5,
-      1944.83
-    ],
-    "box_format": "xyxy"
-  },
-  {
-    "element_id": "E144",
-    "class": "button",
-    "class_id": 0,
-    "confidence": 0.5097,
-    "box": [
-      897.02,
-      1069.11,
-      1066.87,
-      1123.57
-    ],
-    "box_format": "xyxy"
-  },
-  {
-    "element_id": "E145",
-    "class": "button",
-    "class_id": 0,
-    "confidence": 0.5043,
-    "box": [
-      2290.03,
-      1412.43,
-      2584.26,
-      1464.99
-    ],
-    "box_format": "xyxy"
-  },
-  {
-    "element_id": "E146",
-    "class": "button",
-    "class_id": 0,
-    "confidence": 0.5036,
-    "box": [
-      2506.54,
-      87.29,
-      2564.15,
-      147.42
-    ],
-    "box_format": "xyxy"
-  },
-  {
-    "element_id": "E147",
-    "class": "button",
-    "class_id": 0,
-    "confidence": 0.5024,
-    "box": [
-      1835.11,
-      595.38,
-      1923.58,
-      662.06
-    ],
-    "box_format": "xyxy"
-  },
-  {
-    "element_id": "E148",
-    "class": "button",
-    "class_id": 0,
-    "confidence": 0.5021,
-    "box": [
-      905.41,
-      837.71,
-      1025.43,
-      887.32
+      2032.9,
+      459.46,
+      2154.64,
+      517.21
     ],
     "box_format": "xyxy"
   }

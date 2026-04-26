@@ -27,7 +27,7 @@ source env/bin/activate
 
 # Install dependencies and run
 pip install -r requirements.txt
-python app.py
+<!-- python app.py -->
 
 
 # To test:

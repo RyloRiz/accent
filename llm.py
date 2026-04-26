@@ -8,13 +8,19 @@ import re
 import requests
 import sys
 
-OUTPUT_DIR = Path("/Users/kaartiktejwani/UCLA Files/Playground Code/UI-DETR-1/test_outputs")
+PROJECT_DIR = Path(__file__).resolve().parent
+OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "test_outputs"))
+if not OUTPUT_DIR.is_absolute():
+    OUTPUT_DIR = PROJECT_DIR / OUTPUT_DIR
+
 DEFAULT_ANNOTATED_IMAGE_FILE = OUTPUT_DIR / "annotated_image.png"
 DEFAULT_CROP_SHEET_FILE = OUTPUT_DIR / "crop_sheet.png"
 DEFAULT_ELEMENT_IDS_FILE = OUTPUT_DIR / "element_ids.json"
+DEFAULT_DETECTIONS_FILE = OUTPUT_DIR / "detections.json"
 CHAT_LOG_FILE = OUTPUT_DIR / "llm_chat_log.json"
 LLMS_FILE = OUTPUT_DIR / "llms.json"
-ENV_FILE = Path("/Users/kaartiktejwani/UCLA Files/Playground Code/UI-DETR-1/.env")
+FINAL_ACTION_BUTTONS_FILE = OUTPUT_DIR / "final_action_buttons.json"
+ENV_FILE = PROJECT_DIR / ".env"
 
 
 def load_dotenv(env_file: Path) -> None:
@@ -207,12 +213,55 @@ def normalize_semantics(parsed: dict, element_ids: list[str]) -> dict:
     return normalized
 
 
+def load_detections(detections_file: Path) -> list[dict]:
+    data = json.loads(detections_file.read_text(encoding="utf-8"))
+    if not isinstance(data, list):
+        raise ValueError(f"Expected {detections_file} to contain a JSON list.")
+    return [item for item in data if isinstance(item, dict)]
+
+
+def box_pixels(box: list) -> dict:
+    x1, y1, x2, y2 = [round(float(value), 2) for value in box]
+    width = round(x2 - x1, 2)
+    height = round(y2 - y1, 2)
+    return {
+        "x1": x1,
+        "y1": y1,
+        "x2": x2,
+        "y2": y2,
+        "width": width,
+        "height": height,
+        "center_x": round(x1 + (width / 2), 2),
+        "center_y": round(y1 + (height / 2), 2),
+    }
+
+
+def build_final_action_buttons(detections: list[dict], semantics: dict) -> dict:
+    final = {}
+    for detection in detections:
+        element_id = detection.get("element_id")
+        box = detection.get("box")
+        if not isinstance(element_id, str) or not isinstance(box, list) or len(box) != 4:
+            continue
+
+        final[element_id] = {
+            "semantic": semantics.get(element_id, "unknown element"),
+            "box": box_pixels(box),
+            "box_format": detection.get("box_format", "xyxy"),
+            "class": detection.get("class"),
+            "confidence": detection.get("confidence"),
+        }
+
+    return dict(sorted(final.items(), key=lambda item: int(item[0][1:])))
+
+
 def main() -> None:
     load_dotenv(ENV_FILE)
 
     annotated_image_file = Path(sys.argv[1]).expanduser() if len(sys.argv) > 1 else DEFAULT_ANNOTATED_IMAGE_FILE
     element_ids_file = Path(sys.argv[2]).expanduser() if len(sys.argv) > 2 else DEFAULT_ELEMENT_IDS_FILE
     crop_sheet_file = Path(sys.argv[3]).expanduser() if len(sys.argv) > 3 else DEFAULT_CROP_SHEET_FILE
+    detections_file = Path(sys.argv[4]).expanduser() if len(sys.argv) > 4 else DEFAULT_DETECTIONS_FILE
 
     if not annotated_image_file.exists():
         raise FileNotFoundError(f"Annotated image file not found: {annotated_image_file}")
@@ -220,8 +269,11 @@ def main() -> None:
         raise FileNotFoundError(f"Element ids file not found: {element_ids_file}")
     if not crop_sheet_file.exists():
         raise FileNotFoundError(f"Crop sheet file not found: {crop_sheet_file}")
+    if not detections_file.exists():
+        raise FileNotFoundError(f"Detections file not found: {detections_file}")
 
     element_ids = load_element_ids(element_ids_file)
+    detections = load_detections(detections_file)
     annotated_image_bytes = image_to_png_bytes(annotated_image_file)
     annotated_image_b64 = base64.b64encode(annotated_image_bytes).decode("ascii")
     crop_sheet_bytes = image_to_png_bytes(crop_sheet_file)
@@ -297,6 +349,7 @@ def main() -> None:
         "annotated_image_file": str(annotated_image_file),
         "crop_sheet_file": str(crop_sheet_file),
         "element_ids_file": str(element_ids_file),
+        "detections_file": str(detections_file),
         "element_ids": element_ids,
         "messages": [
             {"role": "system", "content": system_prompt()},
@@ -329,9 +382,13 @@ def main() -> None:
                 "_raw_content": content,
             }
 
-    OUTPUT_DIR.mkdir(exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     CHAT_LOG_FILE.write_text(json.dumps(chat_log, indent=2), encoding="utf-8")
     LLMS_FILE.write_text(json.dumps(semantics, indent=2), encoding="utf-8")
+    FINAL_ACTION_BUTTONS_FILE.write_text(
+        json.dumps(build_final_action_buttons(detections, semantics), indent=2),
+        encoding="utf-8",
+    )
 
     print(f"Saved LLM outputs to {OUTPUT_DIR}")
     # print("\n=== LLM conversation ===")
