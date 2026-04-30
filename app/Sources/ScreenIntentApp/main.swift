@@ -12,8 +12,8 @@ struct Paths {
     let speechOutputURL: URL
     let appLogURL: URL
     let runEnvURL: URL
-    let runLogURL: URL
-    let completeRunURL: URL
+    let pipelineLogURL: URL
+    let pipelineURL: URL
     let pythonURL: URL
     let conflictResolutionURL: URL
     let finalActionButtonsURL: URL
@@ -36,8 +36,8 @@ struct Paths {
             speechOutputURL: runtimeDir.appendingPathComponent("speech_output.mp3"),
             appLogURL: runtimeDir.appendingPathComponent("app.log"),
             runEnvURL: runtimeDir.appendingPathComponent("run.env"),
-            runLogURL: runtimeDir.appendingPathComponent("complete_run.log"),
-            completeRunURL: repoDir.appendingPathComponent("complete_run.py"),
+            pipelineLogURL: runtimeDir.appendingPathComponent("pipeline.log"),
+            pipelineURL: repoDir.appendingPathComponent("run_pipeline.py"),
             pythonURL: repoDir.appendingPathComponent("env/bin/python3"),
             conflictResolutionURL: outputDir.appendingPathComponent("conflict_resolution.json"),
             finalActionButtonsURL: outputDir.appendingPathComponent("final_action_buttons.json"),
@@ -1767,7 +1767,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             try writeRunEnv(intent: intent)
             loadingWindow?.show()
             startScanningWhenDetectionsAreReady()
-            runCompletePipeline()
+            startPipelineProcess()
         } catch {
             currentRunStartedAt = nil
             loadingWindow?.hide()
@@ -1804,17 +1804,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         value.replacingOccurrences(of: "'", with: "'\"'\"'")
     }
 
-    private func runCompletePipeline() {
+    private func startPipelineProcess() {
         let process = Process()
         process.executableURL = paths.pythonURL
-        process.arguments = [paths.completeRunURL.path]
+        process.arguments = [paths.pipelineURL.path]
         process.currentDirectoryURL = paths.repoDir
         var environment = ProcessInfo.processInfo.environment
         environment["PIPELINE_ENV_FILE"] = paths.runEnvURL.path
         process.environment = environment
 
-        FileManager.default.createFile(atPath: paths.runLogURL.path, contents: nil)
-        if let logHandle = try? FileHandle(forWritingTo: paths.runLogURL) {
+        FileManager.default.createFile(atPath: paths.pipelineLogURL.path, contents: nil)
+        if let logHandle = try? FileHandle(forWritingTo: paths.pipelineLogURL) {
             process.standardOutput = logHandle
             process.standardError = logHandle
         }
@@ -2003,7 +2003,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func recentLogTail() -> String {
-        guard let text = try? String(contentsOf: paths.runLogURL, encoding: .utf8) else {
+        guard let text = try? String(contentsOf: paths.pipelineLogURL, encoding: .utf8) else {
             return ""
         }
         let lines = text.split(separator: "\n", omittingEmptySubsequences: false)

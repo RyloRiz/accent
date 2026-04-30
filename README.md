@@ -1,11 +1,43 @@
 # Accent
 
-Accent is a local macOS assistant that lets you press a keyboard shortcut, ask what you want to do on screen, and get a highlighted UI element plus a short direction.
+Accent is a local macOS accessibility assistant that lets a user ask what to do on screen, then highlights the correct UI element and speaks a short direction. It is designed for older adults, non-English speakers, and anyone who needs software to feel more learnable in the moment.
+
+[Devpost](https://devpost.com/software/accent-cdw2qi) · Submitted to LA Hacks 2026
+
+# Demo
+
+![Accent demo](assets/accent-demo.gif)
+
+## Awards
+
+- 1st Place Winner, Light The Way Track (Powered by Aramco)
+- Winner, Figma Make Challenge
+
+## What It Does
+
+Accent turns voice and screen context into a concrete UI action:
+
+1. Listens to a natural language request, including vague requests like "Why can't they hear me?" or multilingual requests.
+2. Captures the current macOS screen.
+3. Detects visible UI elements with an RF-DETR-based computer vision model.
+4. Builds crop sheets and structured element metadata so an LLM can reason over the interface reliably.
+5. Resolves the user's intent with Gemini or Ollama.
+6. Highlights the selected UI element and speaks the instruction back with ElevenLabs TTS.
+
+## How It Works
+
+- **Perception:** Swift/AppKit command bar, ElevenLabs realtime speech-to-text, macOS screenshot capture, Gradio detector server, RF-DETR UI element detection.
+- **Reasoning:** Python pipeline that normalizes detections, generates crop sheets, labels UI elements, and resolves user intent with structured LLM outputs.
+- **Output:** Native macOS overlay highlights the target element while the app displays and speaks the next step.
+
+## Tech Stack
+
+Swift, AppKit, Python, Gradio, PyTorch, RF-DETR, Hugging Face, Gemini, Ollama, ElevenLabs, LangChain, OpenCV, NumPy, Pillow.
 
 The repo has three pieces:
 
-- `app.py`: Gradio detector server for UI element boxes.
-- `test.py`, `llm.py`, `intent_resolver.py`, `complete_run.py`: pipeline scripts that detect elements, label them, resolve the user intent, and write JSON outputs.
+- `detector_server.py`: Gradio detector server for UI element boxes.
+- `run_detector.py`, `label_elements.py`, `resolve_intent.py`, `run_pipeline.py`: pipeline scripts that detect elements, label them, resolve the user intent, and write JSON outputs.
 - `app/`: native Swift macOS wrapper with the command bar, microphone, waiting animation, and final highlight overlay.
 
 ## Fresh Setup
@@ -80,7 +112,7 @@ Terminal 1, from the repo root:
 
 ```sh
 source env/bin/activate
-python3 app.py
+python3 detector_server.py
 ```
 
 Keep this running. It serves the detector at `http://127.0.0.1:7860`.
@@ -102,7 +134,7 @@ The app will:
 
 1. Hide the command bar.
 2. Capture a screenshot.
-3. Run `complete_run.py`.
+3. Run `run_pipeline.py`.
 4. Show the detective waiting animation while the pipeline works.
 5. Highlight the selected element and display `direction_for_user`.
 
@@ -121,7 +153,7 @@ Then run:
 
 ```sh
 source env/bin/activate
-python3 complete_run.py
+python3 run_pipeline.py
 ```
 
 Generated outputs are written to `test_outputs/`, including:
@@ -147,7 +179,7 @@ swift build
 cd ..
 ```
 
-Then run `python3 app.py` and `swift run` as above.
+Then run `python3 detector_server.py` and `swift run` as above.
 
 ## Permissions
 
@@ -161,10 +193,10 @@ If screenshots fail, open `System Settings > Privacy & Security > Screen Recordi
 ## Logs And Cache
 
 - Swift wrapper logs: `app/runtime/app.log`
-- Pipeline logs from the app: `app/runtime/complete_run.log`
+- Pipeline logs from the app: `app/runtime/pipeline.log`
 - Pipeline outputs: `test_outputs/`
 
-`complete_run.py` reuses detector and LLM semantics when the screenshot content is unchanged. Set this in `.env` to force a full rerun:
+`run_pipeline.py` reuses detector and LLM semantics when the screenshot content is unchanged. Set this in `.env` to force a full rerun:
 
 ```sh
 FORCE_FULL_PIPELINE=true

@@ -115,13 +115,13 @@ def main() -> None:
     if image_hash and cached_semantics_are_fresh(image_hash):
         print("\n=== Reusing cached detector + LLM semantics for unchanged screenshot ===")
     else:
-        run_step("test.py")
-        run_step("llm.py")
+        run_step("run_detector.py")
+        run_step("label_elements.py")
         if image_hash:
             write_cache(image_hash)
 
-    run_step("intent_resolver.py")
-    print(f"\nComplete run finished in {time.perf_counter() - total_start:.2f}s.")
+    run_step("resolve_intent.py")
+    print(f"\nPipeline finished in {time.perf_counter() - total_start:.2f}s.")
 
 
 if __name__ == "__main__":

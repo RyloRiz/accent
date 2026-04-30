@@ -366,7 +366,7 @@ def main() -> None:
     provider = provider_name()
     api_key = os.getenv("GEMINI_API_KEY")
     if provider == "gemini" and not api_key:
-        raise EnvironmentError("Set GEMINI_API_KEY before running intent_resolver.py.")
+        raise EnvironmentError("Set GEMINI_API_KEY before running resolve_intent.py.")
 
     user_parts = [{"text": user_prompt(user_intent, semantics)}]
     if include_image:

@@ -1,3 +1,0 @@
-**Total detections:** 215
-
-**LLM enrichment:** skipped

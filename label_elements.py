@@ -451,7 +451,7 @@ def main() -> None:
 
     api_key = os.getenv("GEMINI_API_KEY")
     if provider == "gemini" and not api_key:
-        raise EnvironmentError("Set GEMINI_API_KEY before running llm.py.")
+        raise EnvironmentError("Set GEMINI_API_KEY before running label_elements.py.")
 
     id_chunks = element_id_chunks(element_ids)
     if len(crop_sheet_files) == 1 and crop_sheet_files[0] == LEGACY_CROP_SHEET_FILE:
@@ -459,7 +459,7 @@ def main() -> None:
     if len(crop_sheet_files) < len(id_chunks):
         raise ValueError(
             f"Found {len(crop_sheet_files)} crop sheet(s), but {len(id_chunks)} are needed "
-            f"for {len(element_ids)} element ids. Run test.py again."
+            f"for {len(element_ids)} element ids. Run run_detector.py again."
         )
 
     sheets_per_call = int(os.getenv("CROP_SHEETS_PER_LLM_CALL", "4"))

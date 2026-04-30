@@ -576,10 +576,10 @@ def detect_ui_elements(
         return None, error_msg, [], {}
 
 # Gradio interface
-with gr.Blocks(title="UI-DETR-1 UI Element Detector", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="Accent UI Element Detector", theme=gr.themes.Soft()) as demo:
 
     gr.Markdown("""
-    # UI-DETR-1 UI Element Detector
+    # Accent UI Element Detector
 
     Upload a screenshot or UI mockup to automatically detect elements.
     """)
