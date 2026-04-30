@@ -4,14 +4,16 @@ Accent is a local macOS accessibility assistant that lets a user ask what to do 
 
 [Devpost](https://devpost.com/software/accent-cdw2qi) · Submitted to LA Hacks 2026
 
-# Demo
-
-![Accent demo](assets/accent-demo.gif)
 
 ## Awards
 
 - 1st Place Winner, Light The Way Track (Powered by Aramco)
 - Winner, Figma Make Challenge
+
+# Demo
+
+![Accent demo](assets/accent-demo.gif)
+
 
 ## What It Does
 
@@ -202,17 +204,3 @@ If screenshots fail, open `System Settings > Privacy & Security > Screen Recordi
 FORCE_FULL_PIPELINE=true
 ```
 
-## Git Hygiene
-
-Do not commit `.env`. It is already ignored by `.gitignore`.
-
-Check before committing:
-
-```sh
-git status --short
-git check-ignore -v .env
-```
-
-The second command should show `.gitignore` as the reason `.env` is ignored.
-
-Generated files in `test_outputs/`, Swift runtime files in `app/runtime/`, local virtualenvs, and Python bytecode are ignored and should not be committed.
