@@ -458,6 +458,7 @@ final class ElevenLabsMicController: NSObject {
     }
 
     func cancel() {
+        didRequestStop = true
         transcriptionToken = UUID()
         meterTimer?.invalidate()
         meterTimer = nil
@@ -556,7 +557,7 @@ final class ElevenLabsMicController: NSObject {
         webSocket = socket
         socket.resume()
         AppLogger.shared.log("ElevenLabs realtime socket opened with model=\(model), audioFormat=\(audioFormatID)")
-        receiveRealtimeMessages()
+        receiveRealtimeMessages(token: transcriptionToken)
     }
 
     private func startAudioEngine() throws {
@@ -585,15 +586,17 @@ final class ElevenLabsMicController: NSObject {
         return supported.min(by: { abs($0 - nativeSampleRate) < abs($1 - nativeSampleRate) }) ?? 16000
     }
 
-    private func receiveRealtimeMessages() {
+    private func receiveRealtimeMessages(token: UUID) {
         webSocket?.receive { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let message):
+                guard token == self.transcriptionToken else { return }
                 self.handleRealtimeMessage(message)
-                self.receiveRealtimeMessages()
+                self.receiveRealtimeMessages(token: token)
             case .failure(let error):
                 DispatchQueue.main.async {
+                    guard token == self.transcriptionToken else { return }
                     if !self.didRequestStop {
                         AppLogger.shared.log("ElevenLabs realtime receive failed: \(error.localizedDescription)")
                         self.onError?("Realtime transcription failed: \(error.localizedDescription)")

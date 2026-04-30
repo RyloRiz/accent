@@ -91,6 +91,10 @@ Terminal 2:
 cd app
 swift run
 ```
+If you have stale paths do:
+```
+swift package clean
+```
 
 Then press `Command+Shift+Space` and start speaking. The command bar begins recording immediately. You can also type your request and press `Return` or `Go`.
 
