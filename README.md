@@ -1,6 +1,5 @@
 # Accent
 ![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)
-![AppKit](https://img.shields.io/badge/AppKit-macOS-000000?style=for-the-badge&logo=apple&logoColor=white)
 ![macOS](https://img.shields.io/badge/macOS-Native-000000?style=for-the-badge&logo=apple&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Gradio](https://img.shields.io/badge/Gradio-FF7C00?style=for-the-badge&logo=gradio&logoColor=white)
@@ -13,7 +12,7 @@
 ![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-000000?style=for-the-badge)
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
 ![ElevenLabs](https://img.shields.io/badge/ElevenLabs-Voice%20AI-000000?style=for-the-badge)
-![Git LFS](https://img.shields.io/badge/Git%20LFS-Model%20Storage-F64935?style=for-the-badge&logo=git&logoColor=white)
+
 Accent is a local macOS accessibility assistant that lets a user ask what to do on screen, then highlights the correct UI element and speaks a short direction. It is designed for older adults, non-English speakers, and anyone who needs software to feel more learnable in the moment.
 
 [Devpost](https://devpost.com/software/accent-cdw2qi) · Submitted to LA Hacks 2026
